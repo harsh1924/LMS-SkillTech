@@ -1,7 +1,4 @@
-import { match } from "assert";
-import { verify } from "crypto";
 import { Schema, model, models } from "mongoose";
-import { type } from "os";
 
 const userSchema = new Schema({
     name: {

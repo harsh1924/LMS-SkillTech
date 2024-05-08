@@ -8,13 +8,13 @@ const DashboardLayout = ({
 }) => {
     return (
         <div className="h-full">
-            <div className="h-[80px] pl-56 fixed inset-y-0 w-full z-50">
+            <div className="h-[80px] fixed inset-y-0 w-full z-40">
                 <Navbar />
             </div>
-            <div className="h-full flex w-56 flex-col fixed inset-y-0 ">
+            <div className="h-full md:flex hidden w-56 flex-col z-40 fixed inset-y-0 ">
                 <Sidebar />
             </div>
-            <main className="pl-56">
+            <main className="md:pl-56 pt-[81px]">
             {children}
             </main>
         </div>

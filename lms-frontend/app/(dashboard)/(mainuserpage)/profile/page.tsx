@@ -1,7 +1,9 @@
+import { User2Icon } from "lucide-react";
+
 const UserDashboard = () => {
     return ( 
-        <div>
-            Dashboard
+        <div className="z-50 ">
+            <User2Icon size={32}  />
         </div>
      );
 }

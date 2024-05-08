@@ -1,4 +1,5 @@
 import { match } from "assert";
+import { verify } from "crypto";
 import { Schema, model, models } from "mongoose";
 import { type } from "os";
 
@@ -19,7 +20,16 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Please provide password'],
         select: false,
-    }
+    },
+    role: {
+        type: String,
+        enum: ['USER', 'ADMIN'],
+        default: 'USER'
+    },
+    forgotPasswordToken: String,
+    forgotPasswordTokenExpiry: Date,
+    verifyToken: String,
+    verifyTokenExpiry: Date
 })
 
 const userModel = models.user || model('user', userSchema)

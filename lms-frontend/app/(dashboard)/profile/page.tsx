@@ -1,4 +1,4 @@
-import Sidebar from "./_components/sidebar";
+import Sidebar from "../_components/sidebar";
 
 const DashboardLayout = ({
     children
@@ -7,7 +7,7 @@ const DashboardLayout = ({
 }) => {
     return (
         <div className="h-full">
-            <div className="hidden h-full w-56 flex-col fixed inset-y-0 z-[-2]">
+            <div className="h-full w-56 flex-col fixed inset-y-0 z-[-2]">
                 <Sidebar />
             </div>
             {children}

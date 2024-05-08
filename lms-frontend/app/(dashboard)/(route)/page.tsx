@@ -3,7 +3,7 @@ import { Logo } from "../_components/logo";
 
 export default function Home() {
   return (
-    <div className="flex py-4 px-16 items-center justify-between">
+    <div className="flex py-4 px-16 items-center justify-between shadow-md">
       <Logo />
       <div className="flex gap-x-5">
         <Link href={'/signup'}>

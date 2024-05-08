@@ -10,7 +10,6 @@ export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
         const { name, email, password } = reqBody;
-        console.log(reqBody);
 
         //error handling
         if (!name || !password || !email) {

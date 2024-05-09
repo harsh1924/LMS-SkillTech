@@ -14,7 +14,8 @@ export default function SignInPage() {
         title: '',
         description: '',
         category: '',
-        createdBy: ''
+        createdBy: '',
+        price: ''
     });
 
     const handleUserInput = (event: { target: { name: any; value: any; }; }) => {
@@ -33,7 +34,7 @@ export default function SignInPage() {
 
             const courseId = response.data.course._id;
             router.push(`/admin/courses/${courseId}`);
-            
+
 
         } catch (error: any) {
             console.log('Course Creation failed', error.message);
@@ -44,7 +45,7 @@ export default function SignInPage() {
     }
 
     return (
-        <form onSubmit={createNewCourse} className="flex justify-center items-center h-full flex-col gap-10 pt-14">
+        <form onSubmit={createNewCourse} className="flex justify-center items-center h-full flex-col md:flex-row  gap-10 pt-14">
             <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
                 <h2 className="font-semibold text-xl">
                     Create New Course
@@ -77,10 +78,15 @@ export default function SignInPage() {
                     <input onChange={handleUserInput} value={course.createdBy} name="createdBy" type="text" id="createdBy" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. John" />
                 </div>
                 <div className="flex flex-col gap-2">
+                    <div className="gap-2 flex flex-col">
+                        <label htmlFor="price" className="font-semibold">
+                            Pricing
+                        </label>
+                        <input onChange={handleUserInput} value={course.price} name="price" type="number" id="price" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. 32000" />
+                    </div>
                     <div className="flex items-center justify-center">
                         <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Create Course</button>
                     </div>
-                    
                 </div>
             </div>
         </form>

@@ -15,6 +15,7 @@ const courseSchema = new Schema({
     },
     category: {
         type: String,
+        id: String,
         required: [true, 'Category is required'],
     },
     lectures: [
@@ -33,13 +34,10 @@ const courseSchema = new Schema({
             },
         },
     ],
-    thumbnail: {
-        public_id: {
-            type: String,
-        },
-        secure_url: {
-            type: String,
-        },
+    imageUrl: String,
+    price: {
+        type: Number,
+        default: 0
     },
     numberOfLectures: {
         type: Number,
@@ -52,7 +50,7 @@ const courseSchema = new Schema({
     isPublished: {
         type: Boolean,
         default: false
-    }
+    },
 });
 
 const courseModel = models.course || model('course', courseSchema);

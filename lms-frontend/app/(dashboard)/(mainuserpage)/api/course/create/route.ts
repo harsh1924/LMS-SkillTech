@@ -7,9 +7,9 @@ connectToDB();
 export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
-        const { title, description, category, createdBy } = reqBody;
+        const { title, description, category, createdBy, price } = reqBody;
 
-        if (!title || !description || !category || !createdBy) {
+        if (!title || !description || !category || !createdBy || !price) {
             return NextResponse.json({ error: 'All fields are required' },
                 { status: 400 }
             )
@@ -19,7 +19,8 @@ export async function POST(request: NextRequest) {
             title,
             description,
             category,
-            createdBy
+            createdBy,
+            price
         });
         if (!course) {
             return NextResponse.json({ error: 'Course creation failed' },

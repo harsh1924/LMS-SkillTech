@@ -47,10 +47,26 @@ const courseSchema = new Schema({
         type: String,
         required: [true, 'Course instructor name is required'],
     },
+    attachments: [
+        {
+            id: {
+                type: String,
+                name: String,
+                url: String
+            },
+            courseId: {
+                type: String,
+                
+            }
+
+        }
+
+    ],
     isPublished: {
         type: Boolean,
         default: false
     },
+    userId: String
 });
 
 const courseModel = models.course || model('course', courseSchema);

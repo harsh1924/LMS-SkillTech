@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NextResponse } from "next/server";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function SignInPage() {
 
@@ -33,15 +34,20 @@ export default function SignInPage() {
 
         } catch (error: any) {
             console.log('Signup failed', error.message);
-
+            if (!user.name || !user.email || !user.password) {
+                toast.error('All fields are required')
+            }
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }
     }
 
+
     return (
         <form onSubmit={onSignup} className="flex justify-center items-center h-full flex-col gap-10">
-            <div><Logo /></div>
+            <Link href={'/'}>
+                <Logo />
+            </Link>
             <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
                 <h2 className="font-semibold text-xl">
                     Create Your Account
@@ -54,6 +60,8 @@ export default function SignInPage() {
                         Name
                     </label>
                     <input onChange={handleUserInput} value={user.name} name="name" type="text" id="name" className="p-2 border rounded-md text-[12px] outline-none" placeholder="Enter Your Name" />
+                    <span>
+                    </span>
                 </div>
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="email" className="font-semibold">

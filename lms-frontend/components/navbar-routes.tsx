@@ -29,7 +29,6 @@ export const NavbarRoutes = () => {
                     <Button size='sm' variant='ghost'>
                         Teacher Mode</Button></Link>
             )}
-            <UserDashboard />
         </div>
     )
 }

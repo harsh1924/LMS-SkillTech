@@ -2,10 +2,11 @@
 
 import { Logo } from "@/app/(dashboard)/_components/logo";
 import axios from "axios";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NextResponse } from "next/server";
 import { useState } from "react";
+import { ImageUpload } from "../courses/[courseId]/_components/image-form";
+import toast from "react-hot-toast";
 
 export default function SignInPage() {
 
@@ -34,10 +35,21 @@ export default function SignInPage() {
 
             const courseId = response.data.course._id;
             router.push(`/admin/courses/${courseId}`);
+            if (response) {
+                toast.success('Course Created Successfully')
+            }
 
 
         } catch (error: any) {
             console.log('Course Creation failed', error.message);
+
+            // errors
+            if (!course.title || !course.category || !course.createdBy || !course.description || !course.price) {
+                toast.error('All fields are required')
+            }
+            if (course.description.length < 5) {
+                toast.error('Description should be atleast 5 characters')
+            }
 
             return NextResponse.json({ error: error.message },
                 { status: 400 })
@@ -53,18 +65,14 @@ export default function SignInPage() {
                 <span className="text-md text-gray-600">
                     Enter details for course creation
                 </span>
+                <ImageUpload />
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="title" className="font-semibold">
                         Title
                     </label>
                     <input onChange={handleUserInput} value={course.title} name="title" type="text" id="title" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. Web Development" />
                 </div>
-                <div className="gap-2 flex flex-col">
-                    <label htmlFor="description" className="font-semibold">
-                        Description
-                    </label>
-                    <input onChange={handleUserInput} value={course.description} name="description" type="text" id="description" className="p-2 border rounded-md text-[12px] outline-none" placeholder="What are you going to teach?" />
-                </div>
+
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="category" className="font-semibold">
                         Category
@@ -77,6 +85,12 @@ export default function SignInPage() {
                     </label>
                     <input onChange={handleUserInput} value={course.createdBy} name="createdBy" type="text" id="createdBy" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. John" />
                 </div>
+                <div className="gap-2 flex flex-col">
+                    <label htmlFor="description" className="font-semibold">
+                        Description
+                    </label>
+                    <textarea onChange={handleUserInput} value={course.description} name="description" id="description" className="p-2 border rounded-md text-[12px] outline-none h-[100px] resize-none" placeholder="What are you going to teach?" />
+                </div>
                 <div className="flex flex-col gap-2">
                     <div className="gap-2 flex flex-col">
                         <label htmlFor="price" className="font-semibold">
@@ -88,6 +102,7 @@ export default function SignInPage() {
                         <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Create Course</button>
                     </div>
                 </div>
+
             </div>
         </form>
     );

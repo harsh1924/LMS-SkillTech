@@ -4,6 +4,7 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 import { useEffect, useState } from "react";
 import CourseCard from "./courseCard";
+import { usePathname } from "next/navigation";
 
 const GetAllCourses = () => {
 
@@ -28,10 +29,12 @@ const GetAllCourses = () => {
 
     return (
         <div>
-            <div className="">
+            <div className="grid grid-cols-2 gap-x-3 px-3 md:grid-cols-3 overflow-scroll overflow-x-clip ">
                 {course.map((e) => <CourseCard
-                 key={e._id} 
-                 title={e.title} description={e.description} category={e.category} createdBy={e.createdBy} />)}
+                    key={e._id}
+                    title={e.title} description={e.description} category={e.category} createdBy={e.createdBy}
+                    price={e.price} />)}
+                
             </div>
         </div>
     );

@@ -26,7 +26,8 @@ const userSchema = new Schema({
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
-    verifyTokenExpiry: Date
+    verifyTokenExpiry: Date,
+    userId: String
 })
 
 const userModel = models.user || model('user', userSchema)

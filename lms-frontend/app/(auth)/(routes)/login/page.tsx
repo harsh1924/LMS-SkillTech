@@ -5,6 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
 
@@ -26,17 +27,22 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             const response = await axios.post('/api/user/login', user);
-            console.log(response.data);
-            
-            router.push('/profile');
+            if (response) {
+                toast.success('Login Successfull');
+            }
+            const userId = response.data.user._id;
+            router.push(`/profile/${userId}`);
         } catch (error: any) {
+            toast.error('User does not exist or details are wrong')
             console.log('Login Failed', error.message);
         }
     }
 
     return (
         <form onSubmit={onLogin} className="flex justify-center items-center h-full flex-col gap-10">
-            <div><Logo /></div>
+            <Link href={'/'}>
+                <Logo />
+            </Link>
             <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
                 <div className="flex gap-y-2 flex-col">
                     <h2 className="font-bold text-2xl">

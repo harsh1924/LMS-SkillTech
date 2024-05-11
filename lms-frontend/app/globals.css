@@ -4,9 +4,10 @@
 
 html,
 body,
-:root{
+:root {
   height: 100%;
 }
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -39,6 +40,13 @@ body,
 
     --radius: 0.5rem;
   }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
 
   .dark {
     --background: 222.2 84% 4.9%;

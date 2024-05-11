@@ -1,11 +1,24 @@
-import { User2Icon } from "lucide-react";
+"use client";
 
-const UserDashboard = () => {
-    return ( 
-        <div className="z-50 ">
-            <User2Icon size={32}  />
+import connectToDB from "@/app/server/dbconfig/dbconfig";
+import axios from "axios";
+import { GetServerSideProps } from "next";
+import { NextRequest } from "next/server";
+
+connectToDB();
+
+const userIdPage = async ({
+    params
+}: { params: { userId: string } }) => {
+
+
+
+    return (
+        <div>
+            qwkjeq
+            {params.userId}
         </div>
-     );
+    );
 }
- 
-export default UserDashboard;
+
+export default userIdPage;

@@ -51,6 +51,8 @@ export default function SignInPage() {
                 toast.error('Description should be atleast 5 characters')
             }
 
+            toast.error(error.message)
+
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }

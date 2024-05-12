@@ -25,7 +25,6 @@ export const SidebarItem = ({
         pathname?.startsWith(`${href}/`);
 
     const onClick = () => {
-        console.log('Clicked');
         router.push(href);
     }
 

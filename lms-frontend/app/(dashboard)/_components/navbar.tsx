@@ -1,4 +1,4 @@
-import { NavbarRoutes } from "@/components/navbar-routes"
+import { NavbarRoutes } from "@/app/(dashboard)/(mainuserpage)/profile/[userId]/_components/navbar-routes"
 import { MobileSidebar } from "./mobileSidebar"
 
 export const Navbar = () => {

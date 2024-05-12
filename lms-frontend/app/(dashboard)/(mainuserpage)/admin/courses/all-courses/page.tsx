@@ -1,11 +1,9 @@
 import GetAllCourses from "@/app/(dashboard)/_components/allcourses";
 
-const AdminAllCourses = () => {
+const AdminAllCoursesPage = () => {
     return ( 
-        <div className="py-4 px-2">
-            <GetAllCourses />
-        </div>
+        <GetAllCourses />
      );
 }
  
-export default AdminAllCourses;
+export default AdminAllCoursesPage;

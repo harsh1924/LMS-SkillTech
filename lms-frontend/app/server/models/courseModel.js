@@ -5,7 +5,7 @@ const courseSchema = new Schema({
     title: {
         type: String,
         required: [true, 'Title is required'],
-        maxlength: [50, 'Title cannot be more than 50 characters'],
+        // maxlength: [50, 'Title cannot be more than 50 characters'],
         trim: true,
     },
     description: {
@@ -22,16 +22,16 @@ const courseSchema = new Schema({
         {
             title: String,
             description: String,
-            lecture: {
-                public_id: {
-                    type: String,
-                    required: true,
-                },
-                secure_url: {
-                    type: String,
-                    required: true,
-                },
-            },
+            // lecture: {
+            //     public_id: {
+            //         type: String,
+            //         required: true,
+            //     },
+            //     secure_url: {
+            //         type: String,
+            //         required: true,
+            //     },
+            // },
         },
     ],
     imageUrl: String,

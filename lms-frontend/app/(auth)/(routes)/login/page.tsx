@@ -36,7 +36,7 @@ const LoginPage = () => {
             toast.error('User does not exist or details are wrong')
             console.log('Login Failed', error.message);
         }
-    }
+    } 
 
     return (
         <form onSubmit={onLogin} className="flex justify-center items-center h-full flex-col gap-10">

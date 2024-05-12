@@ -9,7 +9,8 @@ interface data {
     description: string,
     category: string,
     createdBy: string,
-    price: number
+    price: number,
+    id: string
 }
 
 
@@ -18,14 +19,16 @@ const CourseCard = ({
     description,
     category,
     createdBy,
-    price
+    price,
+    id
 }: data) => {
-
     const pathname = usePathname();
+    const courseId = id;
     const isAdminPage = pathname?.startsWith('/admin')
 
+
     return (
-        <Link href={`/course-details`} className="flex flex-col justify-between gap-y-3 rounded  border border-black py-12 px-14 font-sans mb-8">
+        <Link href={`/courses/${id}/course-details`} className="flex flex-col justify-between gap-y-3 rounded  border border-black py-12 px-14 font-sans mb-8">
             <div className="flex flex-col gap-y-3 w-full">
                 <div className="text-xl font-sans font-bold ">
                     {title}
@@ -57,9 +60,9 @@ const CourseCard = ({
             <div>
                 {isAdminPage ? (
                     <div className="flex items-center">
-                        <button className="bg-black text-white py-1 rounded-md px-4 hover:bg-white hover:text-black hover:border hover:border-black border transition-all ease-in-out duration-300">
+                        <Link href={`/admin/courses/${id}/edit-course`} className="bg-black text-white py-1 rounded-md px-4 hover:bg-white hover:text-black hover:border hover:border-black border transition-all ease-in-out duration-300">
                             Edit
-                        </button>
+                        </Link>
                     </div>
                 ) : (
                     <Link href={'/user/purchase'} className="flex items-center">

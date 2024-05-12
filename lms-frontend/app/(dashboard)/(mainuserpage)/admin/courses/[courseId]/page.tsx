@@ -8,6 +8,7 @@ import { ImageUpload } from "./_components/image-form";
 import { useState } from "react";
 import axios from "axios";
 import { NextResponse } from "next/server";
+import toast from "react-hot-toast";
 
 connectToDB();
 
@@ -31,18 +32,22 @@ const courseIdPage = ({
         });
     };
 
-    const addNewLecture = async  (e: { preventDefault: () => void; }) => {
+    const addNewLecture = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
             // API REQUEST
-            const response = await axios.post('/api/course/create/add-lecture/:id', lecture);
+            const courseId = params.courseId
+            const response = await axios.post(`/api/course/create/${courseId}/add-lecture`, lecture);
+            if (response) {
+                toast.success('Lecture Added Successfully')
+            }
             // const courseId = response.data.course._id;
             // router.push(`/admin/courses/`);
 
 
         } catch (error: any) {
-            console.log('Course Creation failed', error.message);
-
+            console.log(error.message);
+            toast.error('Lecture could not be added')
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }
@@ -64,7 +69,7 @@ const courseIdPage = ({
                     <label htmlFor="description" className="font-semibold">
                         Description
                     </label>
-                    <input onChange={handleUserInput} value={lecture.description} name="description" type="text" id="description" className="p-2 border rounded-md text-[12px] outline-none" placeholder="Enter Lecture Description" />
+                    <textarea onChange={handleUserInput} value={lecture.description} name="description" id="description" className="p-2 border rounded-md text-[12px] outline-none resize-none h-[100px]" placeholder="Enter Lecture Description" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
@@ -72,7 +77,6 @@ const courseIdPage = ({
                     </div>
                 </div>
             </div>
-            {params.courseId}
         </form>
     );
 }

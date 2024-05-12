@@ -21,7 +21,6 @@ const User = ({
             const userId = params.userId;
             const response = await axios.get(`/api/user/${userId}/profile`);
             const user = response.data.user;
-            console.log(user);
 
             //setting name data
             const newUserNameData = user.name;
@@ -45,7 +44,7 @@ const User = ({
         <div className="flex h-100vh items-center justify-center py-10">
             <div className="py-10 w-[500px] px-14 grid border-black shadow-[0_0_10px_black] border  flex-col h-full justify-center">
                 <p className="flex items-center justify-center gap-x-14">
-                    <h1 className="text-3xl font-bold font-sans pb-8">{userNameData}</h1>
+                    <span className="text-3xl font-bold font-sans pb-8">{userNameData}</span>
                 </p>
                 <p className="grid grid-cols-2 gap-x-14">
                     <span className="font-semibold text-[19px]">Email:</span>

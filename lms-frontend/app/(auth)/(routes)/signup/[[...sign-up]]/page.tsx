@@ -31,8 +31,12 @@ export default function SignInPage() {
             // API REQUEST
             const response = await axios.post('/api/user/signup', user);
             router.push('/login');
+            if (response) {
+                toast.success('Account Created Successfully')
+            }
 
         } catch (error: any) {
+            toast.error('Account already exists')
             console.log('Signup failed', error.message);
             if (!user.name || !user.email || !user.password) {
                 toast.error('All fields are required')

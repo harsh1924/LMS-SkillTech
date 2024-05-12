@@ -6,12 +6,14 @@ import { NextRequest, NextResponse } from "next/server";
 
 connectToDB();
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest, { params }: {
+    params: { courseId: string }
+}) {
     try {
         const reqBody = await request.json();
         const { title, description } = reqBody;
-        const { id } = reqBody.params;
-        // console.log(id);
+        const id = params.courseId;
+        console.log(id);
 
 
         if (!title || !description) {
@@ -20,7 +22,7 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        const course = await courseModel.findById({ id });
+        const course = await courseModel.findById(id );
         console.log(course);
 
         if (!course) {
@@ -32,6 +34,7 @@ export async function POST(request: NextRequest) {
         course.lectures.push({
             title,
             description,
+            // secure_url: 'Hello'
         });
 
         course.numberOfLectures = course.lectures.length;
@@ -46,6 +49,8 @@ export async function POST(request: NextRequest) {
         })
 
     } catch (error: any) {
+        console.log(error.message);
+        
         return NextResponse.json({ error: error.message },
             { status: 400 }
         )

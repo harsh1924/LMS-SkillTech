@@ -15,33 +15,36 @@ const User = ({
     const [courseTitleData, setCourseTitleData] = useState([]);
     const [courseDescData, setCourseDescData] = useState([]);
     const [coursePriceData, setCoursePriceData] = useState([]);
-    const [userRoleData, setUserRoleData] = useState([]);
+    const [courseCreatorData, setCourseCreatorData] = useState([]);
+    const [courseImageURLData, setCourseImageURLData] = useState([]);
 
 
-    const userDetails = async () => {
+    const courseDetails = async () => {
         try {
             const courseId = params.courseId;
             const response = await axios.get(`/api/course/course-details/${courseId}`);
             const course = response.data.course;
-            console.log(response.data);
-
             console.log(course);
 
+            //setting image
+            const courseImage = course.imageUrl;
+            setCourseImageURLData(courseImage)
+
             //setting name data
-            const newUserNameData = course.title;
-            setCourseTitleData(newUserNameData);
+            const courseTitle = course.title;
+            setCourseTitleData(courseTitle);
+
             // setting email data
-            const newUserEmailData = course.description;
-            setCourseDescData(newUserEmailData)
+            const courseEmail = course.description;
+            setCourseDescData(courseEmail)
 
+            // setting created by data
+            const courseCreator = course.createdBy;
+            setCourseCreatorData(courseCreator)
 
+            // setting course price data
             const coursePrice = course.price;
             setCoursePriceData(coursePrice)
-            console.log(coursePrice);
-            // setting role data
-            const newUserRoleData = course.lectures.map((e: any) => e);
-            // setUserRoleData(newUserRoleData)
-            console.log(newUserRoleData);
 
             console.log(course.lectures[0]);
             console.log(course.lectures[1]);
@@ -52,28 +55,34 @@ const User = ({
     }
 
     useEffect(() => {
-        userDetails()
+        courseDetails()
     }, []);
 
     return (
         <div className="flex h-100vh items-center justify-center py-10">
             <div className="py-10 w-[500px] px-14 grid border-black gap-y-4 shadow-[0_0_10px_black] border flex-col h-full justify-center">
-                <p className="flex items-center justify-center gap-x-14">
-                    <span className="text-3xl font-bold font-sans pb-8">{courseTitleData}</span>
-                </p>
                 <p>
-                    {/* <span className="font-semibold text-[19px]">Email:</span> */}
-                    <span className="font-semibold text-gray-500">{courseDescData}</span>
+                    <img src={courseImageURLData} alt="Course Thumbnail" />
+                </p>
+                <p className="flex items-center justify-center gap-x-14">
+                    <span className="text-3xl font-bold font-sans pb-8">{courseTitleData}
+                    </span>
                 </p>
                 <p className="grid grid-cols-2 gap-x-14">
-                    {/* <span className="font-semibold text-[19px]">Role:</span> */}
                     <span className="font-semibold text-gray-500">
-                        {userRoleData}
+                        {courseCreatorData}
                     </span>
-                    {/* {params.courseId} */}
+                </p>
+                <p>
+                    <span className="font-semibold">
+                        {courseDescData}
+                    </span>
                 </p>
                 <p className="font-semibold flex items-center">
-                   <IndianRupeeIcon size={17} /> <span>{coursePriceData}</span>
+                    <IndianRupeeIcon size={17} />
+                    <span>
+                        {coursePriceData}
+                    </span>
                 </p>
             </div>
         </div>

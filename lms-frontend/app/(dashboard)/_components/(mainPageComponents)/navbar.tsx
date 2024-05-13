@@ -2,8 +2,29 @@ import Link from "next/link";
 import { Logo } from "../logo";
 import { HomeMobileSidebar } from "./homemobilesiebar";
 import { MenuIcon, SquarePlay } from "lucide-react";
+import { SearchPage } from "./SeacrhInput";
 
-export const HomeNavbar = () => {
+
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import courseModel from "@/app/server/models/courseModel";
+import NavbarAllCourses from "./navbar-all-course";
+import connectToDB from "@/app/server/dbconfig/dbconfig";
+
+
+connectToDB();
+export const HomeNavbar = async () => {
+
+    const course = await courseModel.find({});
+    console.log(course);
+
+
     return (
         <div className="flex py-4 px-8 items-center justify-between shadow-md">
             <div className="">
@@ -19,14 +40,29 @@ export const HomeNavbar = () => {
             </Link>
 
             {/* all courses */}
-            <Link href={'/all-courses'} className="border px-5 py-2 rounded-sm bg-sky-500 text-white font-serif flex items-center gap-x-2">
-                <SquarePlay /> <span className="md:text-lg">All Courses</span>
-            </Link>
+            <DropdownMenu>
+                <DropdownMenuTrigger>
+                    <div className="outline-none border px-5 py-2 rounded-sm bg-sky-500 text-white font-serif flex items-center gap-x-2">
+                        <SquarePlay /> All Courses
+                    </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuLabel>Courses</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        <div className="flex flex-col ">
+                            <NavbarAllCourses data={course} />
+                        </div>
+                    </DropdownMenuItem>
+                    {/* <DropdownMenuItem>Billing</DropdownMenuItem>
+                    <DropdownMenuItem>Team</DropdownMenuItem>
+                    <DropdownMenuItem>Subscription</DropdownMenuItem> */}
+                </DropdownMenuContent>
+            </DropdownMenu>
+
 
             {/* SearchBar */}
-            <div className="hidden md:flex">
-                <input type="search" className="border px-4 py-2 rounded-3xl outline-none border-black lg:w-[400px]" placeholder="Search for anything" />
-            </div>
+            <SearchPage />
 
             {/* Buisnesses */}
             <Link href={'/buisness'} className="hidden lg:flex">

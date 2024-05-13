@@ -70,7 +70,7 @@ export const CreatedByForm = ({
                     ) : (
                         <>
                             <Pencil className='h-4 w-4 mr-2' />
-                            Edit Title
+                            Edit Creator Name
                         </>
                     )}
                 </Button>

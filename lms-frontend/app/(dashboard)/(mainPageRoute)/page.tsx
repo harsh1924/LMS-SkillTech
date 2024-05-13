@@ -1,8 +1,4 @@
 import Link from "next/link";
-import { Logo } from "../_components/logo";
-import GetAllCourses from "../_components/allcourses";
-import { HomeMobileSidebar } from "../_components/(mainPageComponents)/homemobilesiebar";
-import { MenuIcon, SquarePlay } from "lucide-react";
 import { Footer } from "../_components/(mainPageComponents)/footer";
 import CertificationArea from "../_components/(mainPageComponents)/certificationArea";
 import AvailableCourses from "../_components/(mainPageComponents)/availabel-courses";

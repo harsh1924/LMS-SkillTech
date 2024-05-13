@@ -1,5 +1,4 @@
 import { model, models, Schema } from 'mongoose';
-import { defaultConfig } from 'next/dist/server/config-shared';
 
 const courseSchema = new Schema({
     title: {
@@ -22,16 +21,19 @@ const courseSchema = new Schema({
         {
             title: String,
             description: String,
-            // lecture: {
-            //     public_id: {
-            //         type: String,
-            //         required: true,
-            //     },
-            //     secure_url: {
-            //         type: String,
-            //         required: true,
-            //     },
-            // },
+            // lecture: [
+            //     {
+            //         videoUrl: String,
+            //         id: String,
+            //         description: String,
+            //         title: String,
+            //         isPublished: {
+            //             type:Boolean,
+            //             default: false
+            //         }
+            //     }
+            // ]
+            // ,
         },
     ],
     imageUrl: String,
@@ -56,7 +58,7 @@ const courseSchema = new Schema({
             },
             courseId: {
                 type: String,
-                
+
             }
 
         }

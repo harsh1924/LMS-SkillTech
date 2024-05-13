@@ -3,7 +3,6 @@ import userModel from "@/app/server/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import toast from "react-hot-toast";
 
 connectToDB();
 
@@ -32,7 +31,7 @@ export async function POST(request: NextRequest) {
         const tokenData = {
             id: user._id,
             email: user.email,
-            name: user.name
+            role: user.role
         }
         // create token
         const token = await jwt.sign(tokenData, process.env.JWT_SECRET!, { expiresIn: '1d' });

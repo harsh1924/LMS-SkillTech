@@ -1,11 +1,9 @@
 "use client"
 
-import { Logo } from "@/app/(dashboard)/_components/logo";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { NextResponse } from "next/server";
 import { useState } from "react";
-import { ImageUpload } from "../courses/[courseId]/_components/image-form";
 import toast from "react-hot-toast";
 
 export default function SignInPage() {
@@ -34,7 +32,7 @@ export default function SignInPage() {
             const response = await axios.post('/api/course/create', course);
 
             const courseId = response.data.course._id;
-            router.push(`/admin/courses/${courseId}`);
+            router.push(`/admin/courses/${courseId}/edit-course`);
             if (response) {
                 toast.success('Course Created Successfully')
             }
@@ -67,7 +65,6 @@ export default function SignInPage() {
                 <span className="text-md text-gray-600">
                     Enter details for course creation
                 </span>
-                <ImageUpload />
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="title" className="font-semibold">
                         Title

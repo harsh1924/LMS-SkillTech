@@ -1,8 +1,8 @@
 'use client';
 
-import { DollarSign, IndianRupee, PenIcon } from "lucide-react";
+import { IndianRupee } from "lucide-react";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface data {
     title: string,
@@ -10,7 +10,8 @@ interface data {
     category: string,
     createdBy: string,
     price: number,
-    id: string
+    id: string,
+    imageUrl: string
 }
 
 
@@ -20,16 +21,18 @@ const CourseCard = ({
     category,
     createdBy,
     price,
-    id
+    id,
+    imageUrl
 }: data) => {
     const pathname = usePathname();
-    const courseId = id;
-    const isAdminPage = pathname?.startsWith('/admin')
-
+    const isAdminPage = pathname?.startsWith('/admin');
 
     return (
         <Link href={`/courses/${id}/course-details`} className="flex flex-col justify-between gap-y-3 rounded  border border-black py-12 px-14 font-sans mb-8">
             <div className="flex flex-col gap-y-3 w-full">
+                <div>
+                    <img src={imageUrl} alt="Course Thumbnail" />
+                </div>
                 <div className="text-xl font-sans font-bold ">
                     {title}
                 </div>

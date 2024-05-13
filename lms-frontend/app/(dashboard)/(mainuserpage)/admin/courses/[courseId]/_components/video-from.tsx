@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { FileUpload } from '@/components/file-upload';
 
-interface ImageFormProps {
+interface VideoFormProps {
     initialData: {
         imageUrl: string
     };
@@ -27,7 +27,7 @@ const formSchema = z.object({
 export const ImageForm = ({
     initialData,
     courseId
-}: ImageFormProps) => {
+}: VideoFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const toggleEdit = () => setIsEditing((current) => !current);

@@ -79,7 +79,7 @@ export const ImageForm = ({
                 </Button>
             </div>
             {!isEditing && (
-                <p className="text-sm mt-2">
+                <div className="text-sm mt-2">
                     {!initialData.imageUrl ? (
                         <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
                             <ImageIcon className='h-10 w-10 text-slate-500' />
@@ -94,7 +94,7 @@ export const ImageForm = ({
                                 className='object-cover rounded-md' />
                         </div>
                     )}
-                </p>
+                </div>
             )}
             {isEditing && (
                 <div>

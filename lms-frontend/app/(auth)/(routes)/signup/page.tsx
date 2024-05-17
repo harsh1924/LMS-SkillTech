@@ -46,7 +46,6 @@ export default function SignInPage() {
         }
     }
 
-
     return (
         <form onSubmit={onSignup} className="flex justify-center items-center h-full flex-col gap-10">
             <Link href={'/'}>

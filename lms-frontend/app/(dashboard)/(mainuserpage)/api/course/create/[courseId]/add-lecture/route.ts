@@ -1,7 +1,5 @@
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
-import { SearchParamsContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime";
-import { useParams } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
 connectToDB();
@@ -11,20 +9,16 @@ export async function POST(request: NextRequest, { params }: {
 }) {
     try {
         const reqBody = await request.json();
-        const { title, description } = reqBody;
+        const { title, description, videoUrl } = reqBody;
         const id = params.courseId;
-        console.log(id);
 
-
-        if (!title || !description) {
+        if (!title || !description || !videoUrl) {
             return NextResponse.json({ error: 'All fields are required' },
                 { status: 400 }
             )
         }
 
-        const course = await courseModel.findById(id );
-        console.log(course);
-
+        const course = await courseModel.findById(id);
         if (!course) {
             return NextResponse.json({ error: 'Course does not exist' },
                 { status: 400 }
@@ -34,23 +28,27 @@ export async function POST(request: NextRequest, { params }: {
         course.lectures.push({
             title,
             description,
-            // secure_url: 'Hello'
+            videoUrl,
         });
 
         course.numberOfLectures = course.lectures.length;
+        const last = course.lectures.length
         await course.save();
+        const courseLectures = course.lectures;
+        console.log(courseLectures[last - 1]);
+        const lastLecture = courseLectures[last - 1]
 
         return NextResponse.json({
             message: 'Lectures added successfully',
             success: true,
-            course
+            lastLecture
         }, {
             status: 200
         })
 
     } catch (error: any) {
         console.log(error.message);
-        
+
         return NextResponse.json({ error: error.message },
             { status: 400 }
         )

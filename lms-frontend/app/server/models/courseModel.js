@@ -4,7 +4,6 @@ const courseSchema = new Schema({
     title: {
         type: String,
         required: [true, 'Title is required'],
-        // maxlength: [50, 'Title cannot be more than 50 characters'],
         trim: true,
     },
     description: {
@@ -21,19 +20,7 @@ const courseSchema = new Schema({
         {
             title: String,
             description: String,
-            // lecture: [
-            //     {
-            //         videoUrl: String,
-            //         id: String,
-            //         description: String,
-            //         title: String,
-            //         isPublished: {
-            //             type:Boolean,
-            //             default: false
-            //         }
-            //     }
-            // ]
-            // ,
+            videoUrl: String,
         },
     ],
     imageUrl: String,
@@ -56,19 +43,12 @@ const courseSchema = new Schema({
                 name: String,
                 url: String
             },
-            courseId: {
-                type: String,
-
-            }
-
         }
-
     ],
     isPublished: {
         type: Boolean,
         default: false
     },
-    userId: String
 });
 
 const courseModel = models.course || model('course', courseSchema);

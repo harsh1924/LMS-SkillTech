@@ -1,16 +1,18 @@
+'use server'
+
 import mongoose from "mongoose";
 
 const connectToDB = async () => {
     try {
         const { connection } = await mongoose.connect(
-            process.env.MONGO_URL || `mongodb://127.0.0.1:27017/Skill-Tech-LMS`
+            `mongodb+srv://harshrpanwar:p5hCkWQaGEPpDhi5@cluster0.s8zudya.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0` 
         );
 
         if (connection) {
             console.log(`Connected to MongoDB:`);
         }
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 };
 

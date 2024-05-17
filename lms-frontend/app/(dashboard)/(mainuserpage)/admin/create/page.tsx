@@ -1,5 +1,6 @@
 "use client"
 
+import connectToDB from "@/app/server/dbconfig/dbconfig";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { NextResponse } from "next/server";
@@ -32,6 +33,7 @@ export default function SignInPage() {
             const response = await axios.post('/api/course/create', course);
 
             const courseId = response.data.course._id;
+            
             router.push(`/admin/courses/${courseId}/edit-course`);
             if (response) {
                 toast.success('Course Created Successfully')

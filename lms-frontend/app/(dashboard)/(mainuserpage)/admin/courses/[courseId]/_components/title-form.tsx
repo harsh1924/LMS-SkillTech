@@ -12,6 +12,7 @@ import {
     FormItem,
     FormMessage
 } from '@/components/ui/form'
+
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Pencil } from 'lucide-react';
@@ -46,7 +47,6 @@ export const TitleForm = ({
 
     const { isSubmitting } = form.formState;
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
         try {
             await axios.put(`/api/course/${courseId}`, values);
             toast.success('Course Updated');
@@ -55,9 +55,7 @@ export const TitleForm = ({
         } catch (error: any) {
             toast.error('Something went wrong')
             console.log(error.message);
-            
         }
-
     }
 
     return (

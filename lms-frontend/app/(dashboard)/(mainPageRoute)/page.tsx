@@ -5,6 +5,7 @@ import AvailableCourses from "../_components/(mainPageComponents)/availabel-cour
 import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
 
 export default function Home() {
+
   return (
     <div>
       {/* mobile sidebar */}

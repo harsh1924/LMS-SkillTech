@@ -67,11 +67,7 @@ const LoginPage = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Log In</button>
-                    </div>
-                    <div className="text-[13px] text-gray-500">
-                        Dont have an account? {" "}
-                        <Link href={'/signup'} className="text-sky-500 font-serif">Create New Account</Link>
+                        <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Admin Log In</button>
                     </div>
                 </div>
             </div>

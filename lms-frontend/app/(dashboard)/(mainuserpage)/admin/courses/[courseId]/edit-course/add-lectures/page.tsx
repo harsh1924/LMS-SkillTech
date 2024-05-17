@@ -1,23 +1,23 @@
 "use client";
 
-import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { useState } from "react";
 import axios from "axios";
 import { NextResponse } from "next/server";
 import toast from "react-hot-toast";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-connectToDB();
 
 const AddLecturesPage = ({
     params
 }: {
     params: { courseId: string }
 }) => {
+
     const router = useRouter();
     const [lecture, setLecture] = useState({
         title: '',
-        description: ''
+        description: '',
+        videoUrl: ''
     });
 
     const handleUserInput = (event: { target: { name: any; value: any; }; }) => {
@@ -34,12 +34,11 @@ const AddLecturesPage = ({
             // API REQUEST
             const courseId = params.courseId
             const response = await axios.post(`/api/course/create/${courseId}/add-lecture`, lecture);
+            const lectureId = response.data.lastLecture._id;
             if (response) {
                 toast.success('Lecture Added Successfully')
+                router.refresh();
             }
-            // const courseId = response.data.course._id;
-            router.refresh();
-
 
         } catch (error: any) {
             console.log(error.message);
@@ -50,7 +49,7 @@ const AddLecturesPage = ({
     }
 
     return (
-        <div>
+        <div className="flex flex-col items-center gap-y-10">
             <form onSubmit={addNewLecture} className="flex justify-center items-center h-full flex-col gap-10 pt-6">
                 <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
                     <h2 className="font-semibold text-xl">
@@ -68,6 +67,13 @@ const AddLecturesPage = ({
                         </label>
                         <textarea onChange={handleUserInput} value={lecture.description} name="description" id="description" className="p-2 border rounded-md text-[12px] outline-none resize-none h-[100px]" placeholder="Enter Lecture Description" />
                     </div>
+                    <div className="gap-2 flex flex-col">
+                        <label htmlFor="videoUrl" className="font-semibold">
+                            Video Link
+                        </label>
+                        <input type="text" onChange={handleUserInput} value={lecture.videoUrl} name="videoUrl" id="videoUrl" className="p-2 border rounded-md text-[12px] outline-none" placeholder="Enter Lecture Video Link" />
+                    </div>
+
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-center">
                             <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Add Lecture</button>
@@ -75,8 +81,12 @@ const AddLecturesPage = ({
                     </div>
                 </div>
             </form>
+            <div>
+                <Link href={`/admin/courses/${params.courseId}/edit-course/add-lectures/view-lectures`} className="px-4 py-3 border-b border-sky-500 hover:text-white hover:bg-sky-500 transition-all ease-in-out duration-300 rounded-sm">
+                    View Lectures
+                </Link>
+            </div>
         </div>
-
     );
 }
 

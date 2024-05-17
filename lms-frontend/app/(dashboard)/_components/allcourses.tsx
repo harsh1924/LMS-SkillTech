@@ -12,11 +12,10 @@ const GetAllCourses = () => {
         try {
             const response = await axios.get('/api/course/getAllCourses');
             const courseData = response.data.courses;
-            
+
             setCourse(
                 courseData
             )
-
 
         } catch (error: any) {
             return NextResponse.json({ error: error.message }, { status: 400 });
@@ -25,16 +24,18 @@ const GetAllCourses = () => {
 
     useEffect(() => {
         getAllCourses()
-    }, [])
+    }, []);
+
+    
 
     return (
         <div>
-            <div className="grid grid-cols-2 gap-x-3 px-3 md:grid-cols-3 overflow-scroll overflow-x-clip ">
-                {course.map((e) => <CourseCard
+            <div className="grid md:grid-cols-2 gap-x-3 px-3 lg:grid-cols-3">
+                {course.map((e: { title: string; description: string; imageUrl: string; _id: string; category: string; createdBy: string; price: number; isPublished: boolean }) => 
+                <CourseCard
                     key={e._id} id={e._id} imageUrl={e?.imageUrl}
                     title={e.title} description={e.description} category={e.category} createdBy={e.createdBy}
-                    price={e.price} />)}
-                
+                    price={e.price} isPublished={e.isPublished} />)}
             </div>
         </div>
     );

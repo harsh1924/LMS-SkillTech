@@ -23,11 +23,14 @@ const userSchema = new Schema({
         enum: ['USER', 'ADMIN'],
         default: 'USER'
     },
+    subscription: {
+        id: String,
+        status: String,
+    },
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date,
-    userId: String
 })
 
 const userModel = models.user || model('user', userSchema)

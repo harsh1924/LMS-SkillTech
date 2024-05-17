@@ -3,6 +3,7 @@
 import userModel from "@/app/server/models/userModel";
 import axios from "axios";
 import { IndianRupeeIcon } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -12,12 +13,13 @@ const User = ({
     params: { courseId: string }
 }) => {
 
-    const [courseTitleData, setCourseTitleData] = useState([]);
-    const [courseDescData, setCourseDescData] = useState([]);
-    const [coursePriceData, setCoursePriceData] = useState([]);
-    const [courseCreatorData, setCourseCreatorData] = useState([]);
-    const [courseImageURLData, setCourseImageURLData] = useState([]);
+    const [courseTitleData, setCourseTitleData] = useState('');
+    const [courseDescData, setCourseDescData] = useState('');
+    const [coursePriceData, setCoursePriceData] = useState('');
+    const [courseCreatorData, setCourseCreatorData] = useState('');
+    const [courseImageURLData, setCourseImageURLData] = useState('');
 
+    const [lectureTitle, setLectureTitle] = useState('')
 
     const courseDetails = async () => {
         try {
@@ -46,7 +48,9 @@ const User = ({
             const coursePrice = course.price;
             setCoursePriceData(coursePrice)
 
-            console.log(course.lectures[0]);
+            const lectureTitle = course.lectures[0].title
+            setLectureTitle(lectureTitle)
+            console.log(course.lectures[0].title);
             console.log(course.lectures[1]);
 
         } catch (error: any) {
@@ -59,7 +63,7 @@ const User = ({
     }, []);
 
     return (
-        <div className="flex h-100vh items-center justify-center py-10">
+        <div className="flex flex-col gap-y-3 h-100vh items-center justify-center py-10">
             <div className="py-10 w-[500px] px-14 grid border-black gap-y-4 shadow-[0_0_10px_black] border flex-col h-full justify-center">
                 <p>
                     <img src={courseImageURLData} alt="Course Thumbnail" />
@@ -85,6 +89,9 @@ const User = ({
                     </span>
                 </p>
             </div>
+            <Link href={`/courses/${params.courseId}/certificate`}>
+                Generate Certificate
+            </Link>
         </div>
     );
 }

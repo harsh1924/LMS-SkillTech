@@ -2,6 +2,7 @@ import { NavbarRoutes } from "@/app/(dashboard)/(mainuserpage)/profile/[userId]/
 import { MobileSidebar } from "./mobileSidebar"
 import { HomeNavbar } from "./(mainPageComponents)/navbar"
 import { Logo } from "./logo"
+import { Link } from "lucide-react"
 
 export const Navbar = () => {
     return (

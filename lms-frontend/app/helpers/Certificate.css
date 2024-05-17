@@ -1,0 +1,21 @@
+.container {
+    /* height: 400px; */
+    width: 500px;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.content h1 {
+    margin-top: 160px;
+}
+
+.content p {
+    margin-top: 25px;
+}

@@ -12,75 +12,70 @@ import {
     FormItem,
     FormMessage
 } from '@/components/ui/form'
+
+import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Pencil } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-import { Input } from '@/components/ui/input';
 
-interface PriceFormProps {
-    initialData: {
-        price: string
-    };
+interface LectureTitleFormProps {
+    title: string
+    lectureId: string,
     courseId: string
 }
 
 const formSchema = z.object({
-    price: z.string().min(1, {
-        message: 'Price is required'
-    })
+    title: z.string().min(1)
 });
 
-export const PriceForm = ({
-    initialData,
+export const LectureTitleForm = ({
+    title,
+    lectureId,
     courseId
-}: PriceFormProps) => {
-
-    const router = useRouter();
+}: LectureTitleFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const toggleEdit = () => setIsEditing((current) => !current);
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-        defaultValues: initialData
+        // defaultValues: title
     });
 
     const { isSubmitting } = form.formState;
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
         try {
-            await axios.put(`/api/course/${courseId}`, values);
+            await axios.put(`/api/course/${courseId}/lecture/${lectureId}`, values);
             toast.success('Course Updated');
             toggleEdit();
             router.refresh();
         } catch (error: any) {
             toast.error('Something went wrong')
             console.log(error.message);
-            
         }
-
     }
 
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Course Price
+                Lecture Title
                 <Button onClick={toggleEdit} variant='ghost'>
                     {isEditing ? (
                         <>Cancel</>
                     ) : (
                         <>
                             <Pencil className='h-4 w-4 mr-2' />
-                            Edit Price
+                            Edit Title
                         </>
                     )}
                 </Button>
             </div>
             {!isEditing && (
                 <p className="text-sm mt-2">
-                    {initialData.price}
+                    {title}
                 </p>
             )}
             {isEditing && (
@@ -89,21 +84,21 @@ export const PriceForm = ({
                         className='space-y-4 mt-4'>
                         <FormField
                             control={form.control}
-                            name='price'
+                            name='title'
                             render={({ field }) => (
                                 <FormItem>
                                     <FormControl>
                                         <Input
                                             disabled={isSubmitting}
-                                            placeholder="e.g. '19999 (in rupees)'"
+                                            placeholder="e.g. 'Advanced Web Development'"
                                             {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
-                            )} 
-                            />
+                            )}
+                        />
                         <div className="flex items-center gap-x-2">
-                            <Button disabled={ isSubmitting} type='submit'>
+                            <Button disabled={isSubmitting} type='submit'>
                                 Save
                             </Button>
                         </div>

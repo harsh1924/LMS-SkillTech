@@ -1,15 +1,15 @@
 "use client"
 
-import { AppWindowMacIcon, BarChart, Compass, Layout, List } from "lucide-react";
+import { BarChart, Compass, Layout, List } from "lucide-react";
 import { SidebarItem } from "./sidebaritem";
 import { usePathname } from "next/navigation";
 
 const guestRoutes = [
-    // {
-    //     icon: AppWindowMacIcon,
-    //     label: 'All Courses',
-    //     href: '/all-courses'
-    // },
+    {
+        icon: Layout,
+        label: 'Dashboard',
+        href: '/profile'
+    },
     {
         icon: Compass,
         label: 'Browse',

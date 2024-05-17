@@ -1,5 +1,8 @@
+import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
 import { NextRequest, NextResponse } from "next/server";
+
+connectToDB();
 
 export async function PUT(request: NextRequest,
     { params }: { params: { courseId: string } }
@@ -14,8 +17,10 @@ export async function PUT(request: NextRequest,
                 $set: values
             }
         );
-        console.log(course);
-        return NextResponse.json('Lecture Title Updated Successfully', { status: 200 })
+        return NextResponse.json({
+            message: 'Course Updated Successfully'
+        }
+            , { status: 200 })
 
     } catch (error: any) {
 

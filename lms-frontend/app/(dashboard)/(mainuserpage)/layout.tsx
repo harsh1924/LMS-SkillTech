@@ -1,3 +1,4 @@
+import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
 import { Navbar } from "../_components/navbar";
 import Sidebar from "../_components/sidebar";
 

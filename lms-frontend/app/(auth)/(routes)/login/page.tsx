@@ -30,8 +30,7 @@ const LoginPage = () => {
             if (response) {
                 toast.success('Login Successfull');
             }
-            const userId = response.data.user._id;
-            router.push(`/profile/`);
+            router.push(`/`);
         } catch (error: any) {
             toast.error('User does not exist or details are wrong')
             console.log('Login Failed', error.message);

@@ -10,11 +10,6 @@ const guestRoutes = [
         label: 'Dashboard',
         href: '/profile'
     },
-    {
-        icon: Compass,
-        label: 'Browse',
-        href: '/search'
-    }
 ]
 
 const adminRoutes = [

@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/server/models/userModel.js", "app/(dashboard)/_components/NewError.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/server/models/userModel.js", "app/(dashboard)/_components/NewError.js", "app/server/models/purchaseModel.ts"],
   "exclude": ["node_modules"]
 }

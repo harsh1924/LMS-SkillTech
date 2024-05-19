@@ -26,14 +26,13 @@ const LoginPage = () => {
     const onLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/user/login', user);
+            const response = await axios.post('/api/user/login/admin', user);
             if (response) {
                 toast.success('Login Successfull');
             }
-            const userId = response.data.user._id;
-            router.push(`/profile/`);
+            router.push(`/`);
         } catch (error: any) {
-            toast.error('User does not exist or details are wrong')
+            toast.error('User does not exist or user is not an admin')
             console.log('Login Failed', error.message);
         }
     } 

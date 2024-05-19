@@ -13,10 +13,13 @@ import courseModel from "@/app/server/models/courseModel";
 import NavbarAllCourses from "./navbar-all-course";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { Separator } from "@/components/ui/separator";
+import { LoginButtons } from "../(buttons)/login-signup-button";
 
 
 connectToDB();
 export const HomeNavbar = async () => {
+
+
 
     const course = await courseModel.find({});
 
@@ -36,7 +39,8 @@ export const HomeNavbar = async () => {
 
             {/* all courses */}
             <div className="outline-none border px-5 py-2 rounded-sm bg-sky-500 text-white font-serif lg:flex items-center gap-x-2 hidden group relative cursor-pointer">
-                <SquarePlay /> All Courses
+                <SquarePlay />
+                All Courses
                 <div className="hidden flex-col gap-y-4 group-hover:flex hover:flex bg-white absolute text-black top-[41px] left-0 text-lg px-5 py-2 w-[300px] transition-all ease-in-out duration-300">
                     Categories
                     <Separator />
@@ -75,23 +79,12 @@ export const HomeNavbar = async () => {
             </Link>
 
             <Link className="hidden lg:flex" href={'/become-instructor'}>
-                Become an instructor
+                Become a trainer
             </Link>
 
 
             {/* Login Signup Button */}
-            <div className="flex gap-x-5">
-                <Link href={'/login/admin'}>
-                    <button className="border rounded-md px-4 py-2 md:text-[19px] bg-sky-500 text-white font-serif hover:bg-sky-600 transition-all ease-in-out duration-300">
-                        Admin Login
-                    </button>
-                </Link>
-                <Link href={'/login'}>
-                    <button className="border border-sky-500 rounded-md px-4 py-2 md:text-[19px] text-sky-500 font-serif hover:bg-sky-500 hover:text-white transition-all ease-in-out duration-300">
-                        Student Login
-                    </button>
-                </Link>
-            </div>
+            <LoginButtons />
         </div>
     )
 }

@@ -31,6 +31,8 @@ const userSchema = new Schema({
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date,
+}, {
+    timestamps: true
 })
 
 const userModel = models.user || model('user', userSchema)

@@ -83,7 +83,7 @@ const AddLecturesPage = ({
             </form>
             <div>
                 <Link href={`/admin/courses/${params.courseId}/edit-course/add-lectures/view-lectures`} className="px-4 py-3 border-b border-sky-500 hover:text-white hover:bg-sky-500 transition-all ease-in-out duration-300 rounded-sm">
-                    View Lectures
+                    Edit Lectures
                 </Link>
             </div>
         </div>

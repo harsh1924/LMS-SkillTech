@@ -3,11 +3,9 @@ import '@/app/helpers/Certificate.css'
 import certificateImage from '@/app/helpers/Blue and Yellow Vector Modern Completion Certificate.png'
 
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import jsPDF from 'jspdf';
 import { toPng } from 'html-to-image';
 import Image from 'next/image';
 import axios from 'axios';
-import courseModel from '@/app/server/models/courseModel';
 
 const PdfCertificate = ({
     params
@@ -69,7 +67,10 @@ const PdfCertificate = ({
                     </p>
                 </div>
             </div>
-            <button className='bg-yellow-600 px-6 py-2 rounded-md text-white' onClick={onButtonClick}>Generate Certificate</button>
+            <button className='bg-yellow-600 px-6 py-2 rounded-md text-white' onClick={onButtonClick}>
+                Generate Certificate
+            </button>
+            
         </div>
     )
 };

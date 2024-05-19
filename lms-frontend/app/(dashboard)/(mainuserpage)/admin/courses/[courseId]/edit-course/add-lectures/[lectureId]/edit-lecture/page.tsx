@@ -20,7 +20,7 @@ const chapterIdPage = async (
 
     return (
         <div>
-            <div className="flex flex-col px-6 lg:flex-row lg:justify-between">
+            <div className="flex flex-col px-6 lg:justify-between">
                 <LectureTitleForm
                 title={finalChapter.title}
                 lectureId={finalChapter._id}

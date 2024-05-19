@@ -30,7 +30,7 @@ const CourseCard = ({
     const isAdminPage = pathname?.startsWith('/admin');
 
     return (
-        <Link href={`/courses/${id}/course-details`} className="flex flex-col justify-between gap-y-3 rounded  border border-black font-sans mb-8">
+        <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between gap-y-3 rounded  border border-black font-sans mb-8">
             <div className="flex flex-col gap-y-3 w-full">
                 <div>
                     <img src={imageUrl} alt="Course Thumbnail" className="h-[200px] w-full object-cover" />
@@ -73,7 +73,7 @@ const CourseCard = ({
                     </div>
                 ) : (
                     <div  className="flex items-center px-4 pb-6">
-                        <Link href={`/courses/${id}/purchase`} className="flex items-center">
+                        <Link href={`/course/${id}/purchase`} className="flex items-center">
                         <p className="bg-sky-500 text-white py-1 rounded-md px-4 hover:bg-white hover:text-sky-500 border border-sky-500 transition-all ease-in-out duration-300">
                             Enroll Now
                         </p>

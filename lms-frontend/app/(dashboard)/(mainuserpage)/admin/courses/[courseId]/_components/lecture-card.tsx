@@ -44,12 +44,14 @@ export const LectureCard = ({
                             {description}
                         </p>
                     </div>
-                    <button onClick={deleteLectureById} className="py-3">
-                        <Trash2Icon />
-                    </button>
-                    <Link href={`/admin/courses/${courseId}/edit-course/add-lectures/${id}/edit-lecture`}>
-                        <Pen />
-                    </Link>
+                    <div className="flex items-center gap-x-2">
+                        <button onClick={deleteLectureById} className="py-3">
+                            <Trash2Icon />
+                        </button>
+                        <Link href={`/admin/courses/${courseId}/edit-course/add-lectures/${id}/edit-lecture`}>
+                            <Pen />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

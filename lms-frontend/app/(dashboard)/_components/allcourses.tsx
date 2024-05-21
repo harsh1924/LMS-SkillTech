@@ -30,7 +30,7 @@ const GetAllCourses = () => {
 
     return (
         <div>
-            <div className="grid md:grid-cols-2 gap-x-3 px-3 lg:grid-cols-3">
+            <div className=" flex flex-col flex-wrap items-center md:justify-start w-full md:gap-x-2 lg:gap-x-8 md:flex-row px-4">
                 {course.map((e: { title: string; description: string; imageUrl: string; _id: string; category: string; createdBy: string; price: number; isPublished: boolean }) => 
                 <CourseCard
                     key={e._id} id={e._id} imageUrl={e?.imageUrl}

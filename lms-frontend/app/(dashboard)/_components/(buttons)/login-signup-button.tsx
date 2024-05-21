@@ -5,7 +5,17 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
-import jwt from 'jsonwebtoken'
+
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { UserCircle2Icon } from "lucide-react"
+
 
 export const LoginButtons = () => {
     const router = useRouter();
@@ -13,7 +23,6 @@ export const LoginButtons = () => {
 
     const getToken = async () => {
         const res = await axios.get('/api/getToken')
-        console.log('at user:', res.data.token);
         const token = res.data.token;
         if (token !== '') {
             setIsLoggedIn(false)
@@ -54,17 +63,44 @@ export const LoginButtons = () => {
                     </div>
                 )}
                 {!isLoggedIn && (
-                    <div className="flex gap-x-5">
+                    <div className="md:flex items-center gap-x-5 hidden">
                         <Link href={'/profile'}>
-                            <button className="bg-sky-500 text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300">
+                            <span className="bg-sky-500 text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300">
                                 Profile
-                            </button>
+                            </span>
                         </Link>
                         <button className="bg-sky-500 text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300" onClick={logout}>
                             Logout
                         </button>
                     </div>
                 )}
+                <div className="flex md:hidden">
+                    {!isLoggedIn && (
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>
+                                <UserCircle2Icon size={30} />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuLabel>
+                                    <span>
+                                        My Account
+                                    </span>
+                                </DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem>
+                                    <Link href={'/profile'}>
+                                        Profile
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                    <button onClick={logout}>
+                                        Logout
+                                    </button>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    )}
+                </div>
             </div >
         </div>
     )

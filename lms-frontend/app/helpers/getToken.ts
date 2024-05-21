@@ -4,8 +4,6 @@ import jwt from 'jsonwebtoken'
 export const GetToken = (request: NextRequest) => {
     try {
         const token = request.cookies.get('token')?.value || ''
-        // console.log(token);
-        
         return token
         
     } catch (error: any) {

@@ -7,7 +7,7 @@ const NavbarAllCourses = ({
 }: courseData) => {
     return (
         <div className="flex flex-col">
-            {data.map((e) =>
+            {data.map((e: {title: string;}) =>
                 <div className="border-b py-2">
                     <div>
                         {e.title}

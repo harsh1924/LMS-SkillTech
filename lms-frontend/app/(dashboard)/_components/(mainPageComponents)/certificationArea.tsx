@@ -11,7 +11,7 @@ const CertificationArea = () => {
                     Learn from global experts and get certified by the world's leading university
                 </p>
             </div>
-            <div className="px-14 border py-5">
+            <div className="px-8 border py-5">
                 <div>
                     <p className="text-[17px] pb-4">
                         Our Online Bootcamp
@@ -24,7 +24,7 @@ const CertificationArea = () => {
                             <div className="">
                                 <Book className="text-sky-500" size={32} />
                             </div>
-                            <div className=" w-[500px] flex flex-col gap-y-3">
+                            <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="font-bold">
                                     Develop Skills for real career growth
                                 </p>
@@ -38,7 +38,7 @@ const CertificationArea = () => {
                             <div className="">
                                 <PersonStanding className="text-sky-500" size={32} />
                             </div>
-                            <div className=" w-[500px] flex flex-col gap-y-3">
+                            <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="font-bold">
                                 Learn from experts active in their field, not out-of-touch trainers
                                 </p>
@@ -52,7 +52,7 @@ const CertificationArea = () => {
                             <div className="">
                                 <Notebook className="text-sky-500" size={32} />
                             </div>
-                            <div className=" w-[500px] flex flex-col gap-y-3">
+                            <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="font-bold">
                                 Learn by working on real-world problems
                                 </p>
@@ -66,7 +66,7 @@ const CertificationArea = () => {
                             <div className="">
                                 <Clock className="text-sky-500" size={32} />
                             </div>
-                            <div className=" w-[500px] flex flex-col gap-y-3">
+                            <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="font-bold">
                                 Structured guidance ensuring learning never stops
                                 </p>

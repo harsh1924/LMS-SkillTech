@@ -30,7 +30,7 @@ const LoginPage = () => {
             if (response) {
                 toast.success('Login Successfull');
             }
-            router.push(`/`);
+            router.push(`/admin/courses`);
         } catch (error: any) {
             toast.error('User does not exist or user is not an admin')
             console.log('Login Failed', error.message);

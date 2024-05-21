@@ -25,7 +25,7 @@ const UserPurchasedCourses = async ({
             <p className="flex text-center justify-center items-center pt-5 font-bold font-sans text-2xl text-gray-700">
                 Your Courses
             </p>
-            <div className="flex flex-col lg:flex-row flex-wrap">
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 flex-wrap">
                 {allCourses.map((e) => <UserPurchasedCoursesCard courseId={e._id} imageUrl={e.imageUrl} title={e.title} />)}
             </div>
         </div>

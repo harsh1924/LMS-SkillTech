@@ -9,7 +9,9 @@ export const Navbar = () => {
         <div>
             {/* <HomeNavbar /> */}
             <div className="p-4 border-y h-full flex items-center bg-white shadow-sm">
+                <span className="hidden md:flex">
                 <Logo />
+                </span>
                 <MobileSidebar />
                 <NavbarRoutes />
             </div>

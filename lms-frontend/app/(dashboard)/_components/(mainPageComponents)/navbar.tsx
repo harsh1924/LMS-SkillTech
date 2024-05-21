@@ -1,16 +1,10 @@
 import Link from "next/link";
+import { ArrowRight, SquarePlay } from "lucide-react";
+
 import { Logo } from "../logo";
-import { HomeMobileSidebar } from "./homemobilesiebar";
-import { ArrowRight, MenuIcon, SquarePlay } from "lucide-react";
 import { SearchPage } from "./SeacrhInput";
-
-const courses = [
-    'Web Develpoment',
-    'Software Development'
-]
-
+import { HomeMobileSidebar } from "./homemobilesiebar";
 import courseModel from "@/app/server/models/courseModel";
-import NavbarAllCourses from "./navbar-all-course";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { Separator } from "@/components/ui/separator";
 import { LoginButtons } from "../(buttons)/login-signup-button";
@@ -25,15 +19,12 @@ export const HomeNavbar = async () => {
 
     return (
         <div className="flex py-4 px-8 items-center justify-between shadow-md">
-            <div className="">
-                <MenuIcon className="flex md:hidden" />
-                <div className="md:hidden">
-                    <HomeMobileSidebar />
-                </div>
+            <div className="md:hidden">
+                <HomeMobileSidebar />
             </div>
 
             {/* logo */}
-            <Link href={'/'}>
+            <Link href={'/'} className="hidden md:flex">
                 <Logo />
             </Link>
 
@@ -82,6 +73,9 @@ export const HomeNavbar = async () => {
                 Become a trainer
             </Link>
 
+            <Link href={`/contact-us`} className="hidden lg:flex">
+                Contact us
+            </Link>
 
             {/* Login Signup Button */}
             <LoginButtons />

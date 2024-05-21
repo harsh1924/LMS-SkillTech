@@ -17,8 +17,8 @@ export const SearchPage = () => {
     }
 
     return (
-        <form className="hidden md:flex" onSubmit={onSearch}>
-            <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" className="border px-4 py-2 rounded-3xl outline-none border-black lg:w-[400px]" placeholder="Search for anything" />
+        <form className="flex" onSubmit={onSearch}>
+            <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" className="border px-4 py-2 rounded-3xl outline-none border-black lg:w-[300px]" placeholder="Search for anything" />
         </form>
     )
 }

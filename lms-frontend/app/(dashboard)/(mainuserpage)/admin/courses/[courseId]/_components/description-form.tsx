@@ -86,7 +86,7 @@ export const DescriptionForm = ({
             {isEditing && (
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}
-                        className='space-y-4 mt-4'>
+                        className='space-y-4 mt-4 '>
                         <FormField
                             control={form.control}
                             name='description'
@@ -96,7 +96,7 @@ export const DescriptionForm = ({
                                         <Textarea
                                             disabled={isSubmitting}
                                             placeholder="e.g. 'This course is about...'"
-                                            {...field} />
+                                            {...field} className='h-[200px]' />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

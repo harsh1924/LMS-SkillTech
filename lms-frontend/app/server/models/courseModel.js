@@ -49,10 +49,38 @@ const courseSchema = new Schema({
         type: Boolean,
         default: false
     },
+    isAvailable: {
+        type: Boolean,
+        default: true
+    },
     lecturesCompleted: {
         type: Number,
         default: 0
-    }
+    },
+    duration: String,
+    overview: String,
+    
+    // Key Features of Course
+    keyFeaturesOne: String,
+    keyFeaturesTwo: String,
+    keyFeaturesThree: String,
+    keyFeaturesFour: String,
+    keyFeaturesFive: String,
+    keyFeaturesSix: String,
+
+    //Skills Covered in Course
+    skillsOne: String,
+    skillsTwo: String,
+    skillsThree: String,
+    skillsFour: String,
+    skillsFive: String,
+    skillsSix: String,
+
+    // Cards for Course
+    cardOne: String,
+    cardTwo: String,
+    cardThree: String,
+    cardFour: String
 }, {
     timestamps: true
 });

@@ -28,15 +28,15 @@ export const DashboardComponent = () => {
             <SearchPage />
 
             {/* Buisnesses */}
-            <Link href={'/admin/courses'} className="hidden lg:flex">
+            {/* <Link href={'/admin/courses'} className="hidden lg:flex">
                 Teacher Mode
-            </Link>
+            </Link> */}
 
             {/* Login Signup Button */}
             <div className="flex gap-x-5">
-                <Link href={'/login/admin'}>
+                <Link href={'/profile'}>
                     <button className="border rounded-md px-4 py-2 md:text-[19px] bg-sky-500 text-white font-serif hover:bg-sky-600 transition-all ease-in-out duration-300">
-                        Admin Login
+                        Profile
                     </button>
                 </Link>
             </div>

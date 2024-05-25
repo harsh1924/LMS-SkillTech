@@ -20,7 +20,7 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        enum: ['USER', 'ADMIN'],
+        enum: ['USER', 'ADMIN', 'TRAINER'],
         default: 'USER'
     },
     subscription: {
@@ -31,6 +31,13 @@ const userSchema = new Schema({
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date,
+    userProgress: {
+        courseId: String,
+        progress: {
+            type: Number,
+            default: 0
+        }
+    }
 }, {
     timestamps: true
 })

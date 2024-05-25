@@ -20,7 +20,7 @@ const PurchaseCourse = async ({ params }: {
             <div className="w-full shadow-md py-6 px-20">
                 <Logo />
             </div>
-            <Link href={`/`} className="my-10 flex items-center gap-x-2 text-gray-500">
+            <Link href={`/`} className="my-5 flex items-center gap-x-2 text-gray-500 hover:text-black ease-in-out transition-all duration-300">
                 <ArrowLeftCircle />
                 Back
             </Link>

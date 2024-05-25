@@ -80,6 +80,9 @@ const CourseEdit = async ({
                     <Link href={'/admin/courses/all-courses'} className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">
                         Done
                     </Link>
+                    <Link href={`/admin/courses/${params.courseId}/edit-course/other-details`} className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">
+                        Other Details
+                    </Link>
                     <Link href={`/admin/courses/${params.courseId}/edit-course/add-lectures/view-lectures`} className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">
                         Edit Lectures
                     </Link>

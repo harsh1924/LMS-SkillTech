@@ -36,16 +36,16 @@ const AdminAllCourseCard = ({
                         <div className="text-xl font-sans font-bold h-[50px]">
                             {title}
                         </div>
-                        <p>
+                        {/* <p>
                             <span className="text-gray-500 font-semibold">
                                 {createdBy}
                             </span>
-                        </p>
-                        <div className="text-lg font-sans">
+                        </p> */}
+                        {/* <div className="text-lg font-sans">
                             <span className="text-lg">
                                 {description}
                             </span>
-                        </div>
+                        </div> */}
                         <p>
                             <span className="font-semibold text-lg">
                                 {category}

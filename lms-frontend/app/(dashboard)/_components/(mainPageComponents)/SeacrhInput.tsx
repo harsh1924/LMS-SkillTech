@@ -13,6 +13,8 @@ export const SearchPage = () => {
         e.preventDefault();
 
         const encodedSearchQuery = encodeURI(searchQuery);
+        console.log(encodedSearchQuery);
+
         router.push(`/search?title=${encodedSearchQuery}`)
     }
 

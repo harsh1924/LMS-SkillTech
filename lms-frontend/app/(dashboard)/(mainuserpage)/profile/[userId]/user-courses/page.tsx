@@ -11,14 +11,10 @@ const UserPurchasedCourses = async ({
     const payment = await purchaseModel.find({
         userId: params.userId
     })
-    // console.log(payment);
     const courses = payment.map((e) => e.courseId);
-    // console.log(courses);
     const allCourses = await courseModel.find({
         _id: courses
     }).select('-lectures');
-    console.log(allCourses);
-
 
     return (
         <div >

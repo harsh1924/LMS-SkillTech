@@ -10,6 +10,8 @@ export async function PUT(request: NextRequest,
     try {
         const courseId = params.courseId;
         const values = await request.json();
+        console.log(values);
+        
 
         const course = await courseModel.findByIdAndUpdate(
             courseId,

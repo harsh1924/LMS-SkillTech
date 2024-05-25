@@ -1,17 +1,16 @@
 import { NavbarRoutes } from "@/app/(dashboard)/(mainuserpage)/profile/[userId]/_components/navbar-routes"
 import { MobileSidebar } from "./mobileSidebar"
-import { HomeNavbar } from "./(mainPageComponents)/navbar"
 import { Logo } from "./logo"
-import { Link } from "lucide-react"
+import Link from "next/link"
 
 export const Navbar = () => {
     return (
         <div>
             {/* <HomeNavbar /> */}
             <div className="p-4 border-y h-full flex items-center bg-white shadow-sm">
-                <span className="hidden md:flex">
-                <Logo />
-                </span>
+                <Link href={'/'} className="hidden md:flex">
+                    <Logo />
+                </Link>
                 <MobileSidebar />
                 <NavbarRoutes />
             </div>

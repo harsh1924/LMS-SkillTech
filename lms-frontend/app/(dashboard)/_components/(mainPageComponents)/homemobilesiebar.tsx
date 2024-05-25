@@ -6,7 +6,7 @@ import HomeSidebar from "./home-sidebar";
 export const HomeMobileSidebar = () => {
     return (
         <Sheet>
-            <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition">
+            <SheetTrigger className="lg:hidden pr-4 hover:opacity-75 transition">
                 <Menu size={30} />
             </SheetTrigger>
             <SheetContent side={'left'} className="p-0 bg-white">

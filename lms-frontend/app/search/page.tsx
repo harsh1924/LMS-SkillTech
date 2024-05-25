@@ -1,8 +1,9 @@
 'use client'
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
+import { SearchPage } from "../(dashboard)/_components/(mainPageComponents)/SeacrhInput";
 
-const SearchPage = async () => {
+const SearchPageResult = async () => {
 
     // const categories = await courseModel.collection.find({
     // })
@@ -19,9 +20,10 @@ const SearchPage = async () => {
 
     return (
         <div>
+            <SearchPage />
             Search Page
         </div>
     );
 }
 
-export default SearchPage;
+export default SearchPageResult;

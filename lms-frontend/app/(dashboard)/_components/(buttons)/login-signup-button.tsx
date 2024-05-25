@@ -49,32 +49,61 @@ export const LoginButtons = () => {
         <div>
             <div className="flex gap-x-5">
                 {isLoggedIn && (
-                    <div className="flex gap-x-5">
+                    <div className="hidden lg:flex gap-x-5">
                         <Link href={'/login/admin'}>
-                            <button className="border rounded-md px-4 py-2 md:text-[19px] bg-sky-500 text-white font-serif hover:bg-sky-600 transition-all ease-in-out duration-300">
+                            <span className="border rounded-md px-4 py-2 md:text-[19px] bg-sky-500 text-white font-serif hover:bg-sky-600 transition-all ease-in-out duration-300">
                                 Admin Login
-                            </button>
+                            </span>
                         </Link>
                         <Link href={'/login'}>
-                            <button className="border border-sky-500 rounded-md px-4 py-2 md:text-[19px] text-sky-500 font-serif hover:bg-sky-500 hover:text-white transition-all ease-in-out duration-300">
+                            <span className="border border-sky-500 rounded-md px-4 py-2 md:text-[19px] text-sky-500 font-serif hover:bg-sky-500 hover:text-white transition-all ease-in-out duration-300">
                                 Student Login
-                            </button>
+                            </span>
                         </Link>
                     </div>
                 )}
+                <div className="flex lg:hidden">
+                    {isLoggedIn && (
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>
+                                <UserCircle2Icon size={30} />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuLabel>
+                                    <span>
+                                        Login to your account
+                                    </span>
+                                </DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem>
+                                    <Link href={'/login/admin'}>
+                                        Admin Login
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                    <Link href={'/login'}>
+                                        Student Login
+                                    </Link>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    )}
+                </div>
                 {!isLoggedIn && (
-                    <div className="md:flex items-center gap-x-5 hidden">
+                    <div className="lg:flex items-center gap-x-5 hidden">
                         <Link href={'/profile'}>
                             <span className="bg-sky-500 text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300">
                                 Profile
                             </span>
                         </Link>
-                        <button className="bg-sky-500 text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300" onClick={logout}>
-                            Logout
-                        </button>
+                        <div>
+                            <span className="bg-sky-500 cursor-pointer text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300" onClick={logout}>
+                                Logout
+                            </span>
+                        </div>
                     </div>
                 )}
-                <div className="flex md:hidden">
+                <div className="flex lg:hidden">
                     {!isLoggedIn && (
                         <DropdownMenu>
                             <DropdownMenuTrigger>

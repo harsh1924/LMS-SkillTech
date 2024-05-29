@@ -1,5 +1,3 @@
-'use client';
-
 import { IndianRupee } from "lucide-react";
 import Link from "next/link";
 
@@ -27,25 +25,15 @@ const AdminAllCourseCard = ({
 
     return (
         <div>
-            <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between gap-y-3 rounded  border border-black font-sans mb-8">
-                <div className="flex flex-col gap-y-3 w-full">
+            <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between rounded border border-black w-[300px] font-sans mb-4">
+                <div className="flex flex-col gap-y-1 w-full">
                     <div>
                         <img src={imageUrl} alt="Course Thumbnail" className="h-[200px] w-full object-cover" />
                     </div>
-                    <div className="flex flex-col gap-y-4 py-6 px-4">
-                        <div className="text-xl font-sans font-bold h-[50px]">
+                    <div className="flex flex-col gap-y-1 py-2 px-4">
+                        <div className="text-xl font-sans font-bold min-h-[50px]">
                             {title}
                         </div>
-                        {/* <p>
-                            <span className="text-gray-500 font-semibold">
-                                {createdBy}
-                            </span>
-                        </p> */}
-                        {/* <div className="text-lg font-sans">
-                            <span className="text-lg">
-                                {description}
-                            </span>
-                        </div> */}
                         <p>
                             <span className="font-semibold text-lg">
                                 {category}

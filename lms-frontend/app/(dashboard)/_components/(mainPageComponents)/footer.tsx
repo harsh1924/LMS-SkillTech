@@ -3,9 +3,9 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <div className="bg-black grid grid-cols-2 md:flex md:justify-around">
+        <div className="bg-black grid grid-cols-2 md:flex md:justify-around py-8 mt-16">
             <div className="px-10 py-6">
-                <h3 className="text-white text-lg ">
+                <h3 className="text-white text-lg oxygen-regular">
                     Follow us!
                 </h3>
                 <div className="py-2 flex gap-x-1">
@@ -24,10 +24,10 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="px-5 py-6">
-                <h3 className="text-white text-lg ">
+                <h3 className="text-white text-lg oxygen-regular">
                     Company
                 </h3>
-                <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm">
+                <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/about-us'}>
                        About us
                     </Link>
@@ -43,10 +43,10 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="px-10 py-6">
-                <h3 className="text-white text-lg ">
+                <h3 className="text-white text-lg oxygen-regular">
                     Help & Support
                 </h3>
-                <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm">
+                <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/help'}>
                        Help
                     </Link>
@@ -62,10 +62,10 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="px-5 py-6">
-                <h3 className="text-white text-lg ">
-                    Buisnesses
+                <h3 className="text-white text-lg oxygen-regular">
+                    Buisness
                 </h3>
-                <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm">
+                <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/skilltech-partners'}>
                        Partners
                     </Link>

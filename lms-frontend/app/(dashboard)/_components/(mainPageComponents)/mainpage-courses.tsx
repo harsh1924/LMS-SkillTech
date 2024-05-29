@@ -27,14 +27,10 @@ export const MainPageCourses = ({
 
 
     return (
-        <div className="flex flex-col gap-y-10 w-full h-[602px] overflow-y-scroll no-scrollbar">
-            <span className="text-blue-500">
-                {category} Courses
-            </span>
-            <Separator />
-            <div className="flex flex-wrap gap-x-10 gap-y-4">
-                {categoryCourses.map((course: { title: string; imageUrl: string; isPublished: boolean; _id: string }) =>
-                    <MainPageCourseCard title={course.title} imageUrl={course.imageUrl} isPublihed={course.isPublished} courseId={course._id} />
+        <div className="flex flex-col gap-y-6 w-full h-[602px] overflow-y-scroll no-scrollbar">
+            <div className="flex flex-wrap gap-x-6 gap-y-4">
+                {categoryCourses.map((course: { title: string; imageUrl: string; isPublished: boolean; _id: string; skillsOne: string; skillsTwo: string; skillsThree: string; duration: number }) =>
+                    <MainPageCourseCard key={course._id} title={course.title} imageUrl={course.imageUrl} isPublihed={course.isPublished} courseId={course._id} skillsOne={course.skillsOne} skillsTwo={course.skillsTwo} skillsThree={course.skillsThree} duration={course.duration} />
                 )}
             </div>
         </div>

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Full Stack Developer - MERN Stack",
+        "imageUrl": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "description": "Gain skill with full stack developer course to design, build, and scale frontend and backend systems. Gain exposure over 10+ tools/frameworks, 6+ real-world projects via an immersive learning approach led by live virtual classes, access to integrated labs and JobAssist services",
+        "price": "4999"
+    },
+    {
+        "title": "Java Course and Certification",
+        "imageUrl": "https://images.pexels.com/photos/574070/pexels-photo-574070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "description": "This advanced Java Certification Training is designed to guide you through the concepts of Java from introductory techniques to advanced programming skills. This Java course will also provide you with the knowledge of Core Java 8, operators, arrays, loops, methods, and constructors while giving you hands-on experience in JDBC and JUnit framework.",
+        "price": "4999"
+    },
+    {
+        "title": "Full Stack Java Developer",
+        "imageUrl": "https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "description": "This advanced Java Certification Training is designed to guide you through the concepts of Java from introductory techniques to advanced programming skills. This Java course will also provide you with the knowledge of Core Java 8, operators, arrays, loops, methods, and constructors while giving you hands-on experience in JDBC and JUnit framework.",
+        "price": "4999"
+    },
+    {
+        "title": "SQL Certification Course ",
+        "imageUrl": "https://utfs.io/f/0289a062-6639-43d0-9c35-2c302b6ba5a0-l6lza3.jpg",
+        "description": "This advanced Java Certification Training is designed to guide you through the concepts of Java from introductory techniques to advanced programming skills. This Java course will also provide you with the knowledge of Core Java 8, operators, arrays, loops, methods, and constructors while giving you hands-on experience in JDBC and JUnit framework.",
+        "price": "4999"
+    }
+]

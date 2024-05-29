@@ -3,6 +3,8 @@ import { Footer } from "../_components/(mainPageComponents)/footer";
 import CertificationArea from "../_components/(mainPageComponents)/certificationArea";
 import AvailableCourses from "../_components/(mainPageComponents)/availabel-courses";
 import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
+import { HomePageCarousel } from "../_components/(mainPageComponents)/carousel";
+import { Twitch } from "lucide-react";
 
 export default function Home() {
 
@@ -11,27 +13,25 @@ export default function Home() {
       {/* Navbar */}
       <HomeNavbar />
 
+      <HomePageCarousel />
+
       {/* landing page main heading */}
-      <div className="py-6 px-5 flex items-center">
-        <div className="w-[48%]  flex flex-col gap-y-3">
-          <h1 className="text-4xl md:px-10 md:text-5xl font-bold font-serif">
+      <div className="py-6 px-5 flex items-center justify-between">
+        <div className="w-[48%] flex flex-col gap-y-3">
+          <h1 className="text-4xl md:px-10 md:text-5xl oxygen-bold">
             Skills that drive you forward
           </h1>
-          <p className="text-xl md:px-10">
+          <p className="text-xl md:px-10 source-sans-3-regular">
             Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.
           </p>
-          <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-sky-500 text-white rounded-md font-sans font-semibold hover:bg-sky-600 transition-all ease-in-out duration-300">
+          <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-[#2B463C] text-white rounded-md font-sans font-semibold hover:bg-[#3f6457] transition-all ease-in-out duration-300">
             Explore Programs
           </a>
         </div>
         <div className="w-1/2">
-          <img src="https://as2.ftcdn.net/v2/jpg/02/93/50/51/1000_F_293505190_QACuhlzI4WXOeznVC59LLb2yUcQbf3xv.jpg" alt="" />
+          <img src="https://images.pexels.com/photos/4144221/pexels-photo-4144221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="w-[90%] rounded-md" />
         </div>
       </div>
-
-      {/* <div className="flex p-10">
-        <GetAllCourses />
-      </div> */}
 
       {/* Available Courses */}
       <AvailableCourses />
@@ -41,6 +41,14 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* chat on whatsapp */}
+      <div className="fixed top-20 right-6 z-50">
+        <a href="https://wa.me/919891476411?text=Hello%20SkillTech" target="_blank">
+          {/* <Twitch /> */}
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png" className="h-12 bg-green-500 p-2 rounded-lg"/>
+        </a>
+      </div>
 
     </div>
   );

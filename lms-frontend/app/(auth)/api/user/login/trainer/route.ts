@@ -10,6 +10,8 @@ export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
         const { email, password } = reqBody;
+        console.log(reqBody);
+
 
         // checking user exists or not
         const user = await userModel.findOne({ email }).select('+password');
@@ -19,7 +21,7 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        if (user.role === 'USER' || user.role === 'TRAINER') {
+        if (user.role === 'USER') {
             return NextResponse.json({ error: 'Unauthorized' },
                 { status: 400 }
             )

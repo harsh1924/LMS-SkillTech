@@ -1,18 +1,30 @@
+import connectToDB from "@/app/server/dbconfig/dbconfig";
 import userModel from "@/app/server/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest,
-    { params }: {
-        params: { userId: string }
-    }
+connectToDB();
+
+export async function PUT(request: NextRequest,
+    { params }: { params: { userId: string } }
 ) {
     try {
-        console.log(params.userId);
-        const id = params.userId
-        const user = await userModel.findById(id)
-    } catch (error: any) {
+        const userId = params.userId;
+        const values = await request.json();
+        const user = await userModel.findByIdAndUpdate(
+            userId,
+            {
+                $set: values
+            }
+        );
         return NextResponse.json({
-            error: error.message
-        }, { status: 400 })
+            message: 'User Updated Successfully'
+        }
+            , { status: 200 })
+
+    } catch (error: any) {
+
+        console.log(error.message);
+        return new NextResponse('Internal error', { status: 500 });
+
     }
 }

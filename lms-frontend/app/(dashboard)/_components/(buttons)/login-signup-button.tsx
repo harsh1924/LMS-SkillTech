@@ -49,15 +49,20 @@ export const LoginButtons = () => {
         <div>
             <div className="flex gap-x-5">
                 {isLoggedIn && (
-                    <div className="hidden lg:flex gap-x-5">
-                        <Link href={'/login/admin'}>
-                            <span className="border rounded-md px-4 py-2 md:text-[19px] bg-sky-500 text-white font-serif hover:bg-sky-600 transition-all ease-in-out duration-300">
+                    <div className="hidden lg:flex gap-x-3 text-[0.8rem]">
+                        <Link href={'/login/admin'} className="hidden">
+                            <span className="border border-[#2B463C] rounded-md px-4 py-2 bg-[#2B463C] text-white font-serif hover:bg-[#3f6457] transition-all ease-in-out duration-300">
                                 Admin Login
                             </span>
                         </Link>
+                        <Link href={'/login/trainer'} className="hidden">
+                            <span className="border border-[#2B463C] rounded-md px-4 py-2 bg-[#2B463C] text-white font-serif hover:bg-[#3f6457] transition-all ease-in-out duration-300">
+                                Trainer Login
+                            </span>
+                        </Link>
                         <Link href={'/login'}>
-                            <span className="border border-sky-500 rounded-md px-4 py-2 md:text-[19px] text-sky-500 font-serif hover:bg-sky-500 hover:text-white transition-all ease-in-out duration-300">
-                                Student Login
+                            <span className="rounded-md px-4 py-2 bg-[#2B463C] text-white font-serif hover:bg-[#3f6457] transition-all ease-in-out duration-300">
+                                Login
                             </span>
                         </Link>
                     </div>
@@ -76,13 +81,13 @@ export const LoginButtons = () => {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
-                                    <Link href={'/login/admin'}>
+                                    <Link href={'/login/admin'} className="hidden">
                                         Admin Login
                                     </Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem>
                                     <Link href={'/login'}>
-                                        Student Login
+                                        Login
                                     </Link>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
@@ -92,12 +97,12 @@ export const LoginButtons = () => {
                 {!isLoggedIn && (
                     <div className="lg:flex items-center gap-x-5 hidden">
                         <Link href={'/profile'}>
-                            <span className="bg-sky-500 text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300">
+                            <span className="bg-[#2B463C] text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300">
                                 Profile
                             </span>
                         </Link>
                         <div>
-                            <span className="bg-sky-500 cursor-pointer text-white px-7 py-3 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300" onClick={logout}>
+                            <span className="bg-[#2B463C] cursor-pointer text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300" onClick={logout}>
                                 Logout
                             </span>
                         </div>

@@ -1,11 +1,6 @@
 'use client';
 
-import axios from "axios";
-import { NextResponse } from "next/server";
-import { useEffect, useState } from "react";
-import CourseCard from "./courseCard";
-import { AllCoursesHoverList } from "./(mainPageComponents)/all-course-hover-courses";
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { MainPageCourses } from "./(mainPageComponents)/mainpage-courses";
 import { Separator } from "@/components/ui/separator";
 
@@ -22,46 +17,27 @@ const courses = [
 
 const GetAllCourses = () => {
 
-    const [course, setCourse] = useState([]);
-    const getAllCourses = async () => {
-        try {
-            const response = await axios.get('/api/course/getAllCourses');
-            const courseData = response.data.courses;
-
-            setCourse(
-                courseData
-            )
-
-        } catch (error: any) {
-            return NextResponse.json({ error: error.message }, { status: 400 });
-        }
-    };
-
-    useEffect(() => {
-        getAllCourses()
-    }, []);
-
     const [courseName, setCourseName] = useState('Software Development')
 
     return (
         <div>
-            <div className="flex justify-between flex-col w-full gap-x-10 gap-y-5 px-10
+            <div className="flex justify-between flex-col w-full gap-x-10 gap-y-5 px-12
                 ">
                 <div className="flex justify-start gap-x-8">
                     <div className="flex flex-col gap-y-2 w-[300px] border px-3 py-4 rounded-md shadow-lg h-[650px]">
-                        <span className="text-lg font-semibold">
+                        <span className="text-lg oxygen-bold">
                             Categories
                         </span>
                         <Separator />
-                        <div className="flex flex-col gap-y-10">
+                        <div className="flex flex-col gap-y-5 text-[15px]">
                             {courses.map((e) =>
-                                <button className="active:text-sky-500 text-start text-lg" onClick={() => setCourseName(e)}>
+                                <button className="hover:text-[#688F4E] text-start source-sans-3-regular" onClick={() => setCourseName(e)}>
                                     {e}
                                 </button>)}
                         </div>
                     </div>
-                    <div className="w-[60%]">
-                        <span className="flex rounded-md bg-slate-100 px-4 shadow-lg py-6">
+                    <div className="w-[80%]">
+                        <span className="flex border rounded-md px-4 py-6">
                             <MainPageCourses category={courseName} />
                         </span>
                     </div>

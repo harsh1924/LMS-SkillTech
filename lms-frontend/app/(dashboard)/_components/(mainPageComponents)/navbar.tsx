@@ -1,24 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, SquarePlay } from "lucide-react";
 
 import { Logo } from "../logo";
 import { SearchPage } from "./SeacrhInput";
 import { HomeMobileSidebar } from "./homemobilesiebar";
-import courseModel from "@/app/server/models/courseModel";
-import connectToDB from "@/app/server/dbconfig/dbconfig";
-import { Separator } from "@/components/ui/separator";
 import { LoginButtons } from "../(buttons)/login-signup-button";
-import { AllCoursesHoverList } from "./all-course-hover-courses";
 import { HoverAllCourses } from "./all-course-hover";
 
-
+import '@/app/(dashboard)/dashboard.css'
 
 export const HomeNavbar = () => {
 
-    // const course = await courseModel.find({});
-
     return (
-        <div className="flex py-4 px-2 items-center justify-between shadow-md">
+        <div className="flex py-4 px-2 items-center justify-between shadow-md text-[0.8rem] oxygen-regular">
             <div className="lg:hidden">
                 <HomeMobileSidebar />
             </div>
@@ -35,17 +28,22 @@ export const HomeNavbar = () => {
             <SearchPage />
 
             {/* Buisnesses */}
-            <Link href={'/buisness'} className="hidden lg:flex">
+            <Link href={'/buisness'} className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300">
                 Buisness
             </Link>
 
-            <Link className="hidden lg:flex" href={'/become-instructor'}>
+            <Link className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300" href={'/become-instructor'}>
                 Become a trainer
             </Link>
 
-            <Link href={`/contact-us`} className="hidden lg:flex">
+            <Link href={`/contact-us`} className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300">
+                Resources
+            </Link>
+
+            <Link href={`/contact-us`} className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300">
                 Contact us
             </Link>
+
 
             {/* Login Signup Button */}
             <LoginButtons />

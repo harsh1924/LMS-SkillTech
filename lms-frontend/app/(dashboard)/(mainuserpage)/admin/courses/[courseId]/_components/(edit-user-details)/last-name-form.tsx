@@ -12,36 +12,33 @@ import {
     FormItem,
     FormMessage
 } from '@/components/ui/form'
+
+import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Pencil } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 
-interface CardTwoFormProps {
+interface LastNameFormProps {
     initialData: {
-        cardTwo: string
+        lastname: string
     };
-    courseId: string
+    userId: string
 }
 
 const formSchema = z.object({
-    cardTwo: z.string().min(1, {
-        message: 'Card Details are required'
-    })
+    lastname: z.string().min(1)
 });
 
-export const CardTwo = ({
+export const LastNameForm = ({
     initialData,
-    courseId
-}: CardTwoFormProps) => {
-
-    const router = useRouter();
+    userId
+}: LastNameFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const toggleEdit = () => setIsEditing((current) => !current);
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -50,10 +47,9 @@ export const CardTwo = ({
 
     const { isSubmitting } = form.formState;
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
         try {
-            await axios.put(`/api/course/${courseId}`, values);
-            toast.success('Course Updated');
+            await axios.put(`/api/user/${userId}`, values);
+            toast.success('User Updated');
             toggleEdit();
             router.refresh();
         } catch (error: any) {
@@ -65,21 +61,21 @@ export const CardTwo = ({
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Course Card Two
+                Last Name
                 <Button onClick={toggleEdit} variant='ghost'>
                     {isEditing ? (
                         <>Cancel</>
                     ) : (
                         <>
                             <Pencil className='h-4 w-4 mr-2' />
-                            Edit Card Details
+                            Edit Last Name
                         </>
                     )}
                 </Button>
             </div>
             {!isEditing && (
                 <p className="text-sm mt-2">
-                    {initialData.cardTwo}
+                    {initialData.lastname}
                 </p>
             )}
             {isEditing && (
@@ -88,13 +84,13 @@ export const CardTwo = ({
                         className='space-y-4 mt-4'>
                         <FormField
                             control={form.control}
-                            name='cardTwo'
+                            name='lastname'
                             render={({ field }) => (
                                 <FormItem>
                                     <FormControl>
-                                        <Textarea
+                                        <Input
                                             disabled={isSubmitting}
-                                            placeholder="e.g. 'Card Details'"
+                                            placeholder="e.g. 'Wick'"
                                             {...field} />
                                     </FormControl>
                                     <FormMessage />

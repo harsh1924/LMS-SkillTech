@@ -1,6 +1,6 @@
 "use client"
 
-import { BarChart, Layout, List } from "lucide-react";
+import { BarChart, Laptop, Layout, List } from "lucide-react";
 import { SidebarItem } from "./sidebaritem";
 import { usePathname } from "next/navigation";
 
@@ -10,6 +10,11 @@ const guestRoutes = [
         label: 'Dashboard',
         href: '/profile'
     },
+    // {
+    //     icon: Laptop,
+    //     label: 'My Courses',
+
+    // }
 ]
 
 const adminRoutes = [
@@ -31,6 +36,7 @@ export const SidebarRoutes = () => {
     const isAdminPage = pathname?.includes('/admin');
     
     const routes = isAdminPage ? adminRoutes : guestRoutes;
+    
 
     return (
         <div className="flex flex-col w-full">

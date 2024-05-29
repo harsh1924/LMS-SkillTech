@@ -49,7 +49,6 @@ export const SkillsSix = ({
 
     const { isSubmitting } = form.formState;
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
         try {
             await axios.put(`/api/course/${courseId}`, values);
             toast.success('Course Updated');
@@ -64,7 +63,7 @@ export const SkillsSix = ({
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Course Skills Covered One
+                Course Skills Covered Six
                 <Button onClick={toggleEdit} variant='ghost'>
                     {isEditing ? (
                         <>Cancel</>

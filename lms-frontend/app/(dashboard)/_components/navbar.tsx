@@ -8,7 +8,7 @@ export const Navbar = () => {
         <div>
             {/* <HomeNavbar /> */}
             <div className="p-4 border-y h-full flex items-center bg-white shadow-sm">
-                <Link href={'/'} className="hidden md:flex">
+                <Link href={'/'} className="hidden md:flex ml-[50%] z-50">
                     <Logo />
                 </Link>
                 <MobileSidebar />

@@ -28,13 +28,9 @@ export const AllCoursesHoverList = ({
 
 
     return (
-        <div className="flex flex-wrap justify-between gap-y-4 h-[400px] overflow-y-scroll no-scrollbar">
-            <span className="text-blue-500">
-                {category} Courses
-            </span>
-            <Separator />
-            {categoryCourses.map((course: { title: string; imageUrl: string; isPublished: boolean; _id: string }) =>
-                <AllHoverCoursesCard title={course.title} imageUrl={course.imageUrl} isPublihed={course.isPublished} courseId={course._id} />
+        <div className="flex flex-wrap justify-between gap-y-4 h-[430px] overflow-y-scroll no-scrollbar">
+            {categoryCourses.map((course: { title: string; imageUrl: string; isPublished: boolean; _id: string; skillsOne: string; skillsTwo: string; duration: number }) =>
+                <AllHoverCoursesCard key={course._id} title={course.title} imageUrl={course.imageUrl} isPublihed={course.isPublished} courseId={course._id} skillsOne={course.skillsOne} skillsTwo={course.skillsTwo} duration={course.duration} />
             )}
         </div>
     )

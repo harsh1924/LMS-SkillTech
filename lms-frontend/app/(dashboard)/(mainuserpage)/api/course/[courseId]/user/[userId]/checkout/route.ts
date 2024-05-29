@@ -1,20 +1,23 @@
 import courseModel from "@/app/server/models/courseModel";
+import Razorpay from 'razorpay';
 import purchaseModel from "@/app/server/models/purchaseModel";
 import userModel from "@/app/server/models/userModel";
 import { stripe } from "@/lib/stripe";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from 'stripe';
+import { v4 as uuid } from "uuid";
+
 
 export async function POST(request: NextRequest
     , { params }: {
         params: { courseId: string; userId: string }
     }
-) {
+) { 
     try {
         const courseId = params.courseId;
         const userId = params.userId;
         console.log(userId);
-        
+
 
         const user = await userModel.findById(userId);
         console.log(user._id);
@@ -27,7 +30,7 @@ export async function POST(request: NextRequest
         const course = await courseModel.findById(courseId);
         // console.log(course);
         // console.log(course.title);
-        
+
         if (!course) {
             return NextResponse.json({
                 message: 'Course not found'
@@ -49,28 +52,28 @@ export async function POST(request: NextRequest
         ];
 
         // console.log(line_items[0].price_data?.product_data);
-        
+
 
         let stripeCustomer = await purchaseModel.findOne(
             { userId: user._id }
         )
 
         // console.log(stripeCustomer);
-        
+
 
         if (!stripeCustomer) {
             const customer = await stripe.customers.create({
                 email: user.email
             })
             // console.log(customer);
-            
+
             stripeCustomer = await purchaseModel.create({
                 // data: {
                     userId: user._id,
                     stripeCustomerId: customer.id,
                 // }
             })
-            
+
         }
         console.log(stripeCustomer);
 
@@ -85,7 +88,7 @@ export async function POST(request: NextRequest
                 userId: userId
             }
         });
-        
+
 
         return NextResponse.json({
             message: 'hello',
@@ -100,3 +103,56 @@ export async function POST(request: NextRequest
         }, { status: 400 })
     }
 }
+
+// RAZORPAY
+
+// const instance = new Razorpay({
+//     key_id: `${process.env.RAZORPAY_KEY_ID}`,
+//     key_secret: `${process.env.RAZORPAY_SECRET_KEY}`
+// });
+
+// export async function GET(request: NextRequest, { params }: {
+//     params: { courseId: string; userId: string }
+// }) {
+//     try {
+//         const courseId = params.courseId;
+//         const userId = params.userId;
+//         console.log(userId);
+
+//         const user = await userModel.findById(userId);
+//         console.log(user._id);
+//         if (!user) {
+//             return NextResponse.json({
+//                 message: 'User does not exists'
+//             }, { status: 400 })
+//         }
+
+//         const course = await courseModel.findById(courseId);
+//         // console.log(course);
+//         // console.log(course.title);
+
+//         if (!course) {
+//             return NextResponse.json({
+//                 message: 'Course not found'
+//             }, { status: 404 })
+//         }
+
+//         const amount = course.price * 100;
+//         const options = {
+//             amount: amount.toString(),
+//             currency: 'INR',
+//             receipt: uuid(),
+//         }
+//         const order = await instance.orders.create(options);
+//         return NextResponse.json({
+//             message: 'Success',
+//             order
+//         })
+
+//     } catch (error: any) {
+//         console.log('Course checkout error: ', error.message);
+//         return NextResponse.json({
+//             error: error.message
+//         }, { status: 400 })
+//     }
+// }

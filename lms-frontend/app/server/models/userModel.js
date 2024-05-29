@@ -8,6 +8,8 @@ const userSchema = new Schema({
         minLength: [3, 'Minimum Length should be atleast 3 characters'],
         maxLength: [50, 'Maximum Length should be atleast 50 characters']
     },
+    lastname: String,
+    phoneNumber: String,
     email: {
         type: String,
         unique: true,

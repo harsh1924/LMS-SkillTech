@@ -9,7 +9,8 @@ const userSchema = new Schema({
         maxLength: [50, 'Maximum Length should be atleast 50 characters']
     },
     lastname: String,
-    phoneNumber: String,
+    phoneNumber: Number,
+    Address: String,
     email: {
         type: String,
         unique: true,
@@ -33,13 +34,16 @@ const userSchema = new Schema({
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date,
-    userProgress: {
-        courseId: String,
+    userProgress: [{
+        course: {
+            id: String,
+            lectures: []
+        },
         progress: {
             type: Number,
             default: 0
         }
-    }
+    }]
 }, {
     timestamps: true
 })

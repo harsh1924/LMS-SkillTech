@@ -1,4 +1,6 @@
+import courseModel from "@/app/server/models/courseModel";
 import purchaseModel from "@/app/server/models/purchaseModel";
+import userModel from "@/app/server/models/userModel";
 import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
@@ -23,9 +25,13 @@ export async function POST(req: NextRequest) {
 
     const session = event.data.object as Stripe.Checkout.Session;
     const userId = session?.metadata?.userId;
-    // console.log(userId);
-    
+    const user = await userModel.findById(userId);
+    console.log(user);
+
     const courseId = session?.metadata?.courseId
+    const course = await courseModel.findById(courseId);
+    // console.log(course);
+
 
     if (event.type === 'checkout.session.completed') {
         if (!userId || !courseId) {
@@ -34,11 +40,16 @@ export async function POST(req: NextRequest) {
             }, { status: 400 })
         }
         await purchaseModel.create({
-            // data: {
-                courseId: courseId,
-                userId: userId
-            // }
+            courseId: courseId,
+            userId: userId
         });
+        user.userProgress.push({
+            course: {
+                id: courseId,
+                lectures: course.lectures
+            },
+        });
+        await user.save();
     }
     else {
         return NextResponse.json({

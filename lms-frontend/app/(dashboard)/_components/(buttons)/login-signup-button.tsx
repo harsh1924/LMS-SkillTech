@@ -50,19 +50,19 @@ export const LoginButtons = () => {
             <div className="flex gap-x-5">
                 {isLoggedIn && (
                     <div className="hidden lg:flex gap-x-3 text-[0.8rem]">
-                        <Link href={'/login/admin'} className="hidden">
+                        {/* <Link href={'/login/admin'} className="hidden">
                             <span className="border border-[#2B463C] rounded-md px-4 py-2 bg-[#2B463C] text-white font-serif hover:bg-[#3f6457] transition-all ease-in-out duration-300">
                                 Admin Login
                             </span>
-                        </Link>
-                        <Link href={'/login/trainer'} className="hidden">
+                        </Link> */}
+                        {/* <Link href={'/login/trainer'} className="hidden">
                             <span className="border border-[#2B463C] rounded-md px-4 py-2 bg-[#2B463C] text-white font-serif hover:bg-[#3f6457] transition-all ease-in-out duration-300">
                                 Trainer Login
                             </span>
-                        </Link>
+                        </Link> */}
                         <Link href={'/login'}>
                             <span className="rounded-md px-4 py-2 bg-[#2B463C] text-white font-serif hover:bg-[#3f6457] transition-all ease-in-out duration-300">
-                                Login
+                                Login/Register
                             </span>
                         </Link>
                     </div>
@@ -94,7 +94,7 @@ export const LoginButtons = () => {
                         </DropdownMenu>
                     )}
                 </div>
-                {!isLoggedIn && (
+                {/* {!isLoggedIn && (
                     <div className="lg:flex items-center gap-x-5 hidden">
                         <Link href={'/profile'}>
                             <span className="bg-[#2B463C] text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300">
@@ -107,8 +107,8 @@ export const LoginButtons = () => {
                             </span>
                         </div>
                     </div>
-                )}
-                <div className="flex lg:hidden">
+                )} */}
+                <div className="flex pr-7">
                     {!isLoggedIn && (
                         <DropdownMenu>
                             <DropdownMenuTrigger>

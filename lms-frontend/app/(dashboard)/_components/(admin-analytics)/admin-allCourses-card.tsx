@@ -1,6 +1,8 @@
 import { IndianRupee } from "lucide-react";
 import Link from "next/link";
 
+import '@/app/(dashboard)/dashboard.css'
+
 interface data {
     title: string,
     description: string,
@@ -25,33 +27,20 @@ const AdminAllCourseCard = ({
 
     return (
         <div>
-            <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between rounded border border-black w-[300px] font-sans mb-4">
+            <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between rounded border bg-white shadow-md  w-[250px] h-[270px] font-sans mb-4">
                 <div className="flex flex-col gap-y-1 w-full">
                     <div>
-                        <img src={imageUrl} alt="Course Thumbnail" className="h-[200px] w-full object-cover" />
+                        <img src={imageUrl} alt="Course Thumbnail" className="h-[100px] w-full object-cover" />
                     </div>
-                    <div className="flex flex-col gap-y-1 py-2 px-4">
-                        <div className="text-xl font-sans font-bold min-h-[50px]">
+                    <div className="flex flex-col justify-between gap-y-1 py-2 px-4">
+                        <div className="oxygen-bold text-[14px]">
                             {title}
                         </div>
-                        <p>
-                            <span className="font-semibold text-lg">
-                                {category}
-                            </span>
-                        </p>
-                        <p>
-                            <span className=" flex items-center">
-                                <IndianRupee className="text-black" size={15} />
-                                <span className="">
-                                    {price}
-                                </span>
-                            </span>
-                        </p>
                     </div>
                 </div>
                 <div>
                     <div className="flex items-center px-4 pb-6">
-                        <Link href={`/admin/courses/${id}/edit-course`} className="bg-black text-white py-1 rounded-md px-4 hover:bg-white hover:text-black hover:border hover:border-black border transition-all ease-in-out duration-300">
+                        <Link href={`/admin/courses/${id}/edit-course`} className="bg-[#2B463C] text-white py-2 rounded-md px-5 source-sans-3-regular">
                             Edit
                         </Link>
                     </div>

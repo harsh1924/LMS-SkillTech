@@ -4,6 +4,9 @@ import { Play } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react"
 import { Checkbox } from "@/components/ui/checkbox"
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface LectureData {
     title: string,
@@ -11,7 +14,9 @@ interface LectureData {
     idx: number,
     id: string,
     videoUrl: string,
-    courseId: string
+    courseId: string,
+    userId: string,
+    isCompleted: boolean
 }
 
 export const LectureList = ({
@@ -20,14 +25,29 @@ export const LectureList = ({
     idx,
     id,
     videoUrl,
-    courseId
+    courseId,
+    userId,
+    isCompleted
 }: LectureData) => {
 
+    const router = useRouter();
     const [isDisabled, setIsDisabled] = useState(false);
-    const [watchedLectures, setWatchedLectures] = useState(0);
-    const watchedLecturesFunction = () => {
-        setWatchedLectures(watchedLectures + 1)
-        setIsDisabled(true)
+
+    const courseCompletionFunction = async () => {
+        try {
+            const res = await axios.put(`/api/course/${courseId}/user/${userId}/course-completion?lectureId=${id}`);
+            const resData = res.data.responseData
+            // console.log(resData);
+            if (resData === true) {
+                // setIsDisabled(true);
+            }
+            if (res) {
+                router.refresh();
+                toast.success('Mark as completed')
+            }
+        } catch (error: any) {
+            console.log(error.message);
+        }
     }
 
     return (
@@ -36,6 +56,7 @@ export const LectureList = ({
                 <p className="flex flex-col gap-y-2">
                     <span className="font-semibold font-sans text-xl">
                         {title.toUpperCase()}
+                        {id}
                     </span>
                     <span className="text-gray-600 font-semibold">
                         {description}
@@ -43,9 +64,8 @@ export const LectureList = ({
                 </p>
                 <div className="flex flex-col gap-y-2">
                     <p>
-                        <Checkbox onClick={watchedLecturesFunction} />
+                        <input type="checkbox"  onClick={courseCompletionFunction} />
                         Mark as complete
-                        {watchedLectures}
                     </p>
                     <Link className="flex items-center gap-x-2" href={`/course/${courseId}/purchased-course-lectures/${id}/watch-lectures`}>
                         <Play size={18} /> Watch Lecture

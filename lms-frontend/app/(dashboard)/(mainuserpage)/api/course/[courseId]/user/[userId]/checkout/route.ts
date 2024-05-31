@@ -6,21 +6,21 @@ import { stripe } from "@/lib/stripe";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from 'stripe';
 import { v4 as uuid } from "uuid";
+import axios from "axios";
 
 
 export async function POST(request: NextRequest
     , { params }: {
         params: { courseId: string; userId: string }
     }
-) { 
+) {
     try {
         const courseId = params.courseId;
         const userId = params.userId;
-        console.log(userId);
-
+        // console.log(userId);
 
         const user = await userModel.findById(userId);
-        console.log(user._id);
+        // console.log(user._id);
         if (!user) {
             return NextResponse.json({
                 message: 'User does not exists'
@@ -69,8 +69,8 @@ export async function POST(request: NextRequest
 
             stripeCustomer = await purchaseModel.create({
                 // data: {
-                    userId: user._id,
-                    stripeCustomerId: customer.id,
+                userId: user._id,
+                stripeCustomerId: customer.id,
                 // }
             })
 
@@ -88,6 +88,19 @@ export async function POST(request: NextRequest
                 userId: userId
             }
         });
+
+        // await axios.put(`/api/user/${userId}`, {
+
+        // });
+        // if (session) {
+        //     user.userProgress.push({
+        //         courseId: courseId,
+        //     });
+
+        //     await user.save();
+        // }
+        console.log(user);
+
 
 
         return NextResponse.json({

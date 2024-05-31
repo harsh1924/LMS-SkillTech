@@ -35,14 +35,14 @@ const WatchLectures = async ({
                         </p>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <Link href={`/course/${params.courseId}/purchased-course-lectures`} className="flex w-[150px] gap-x-2">
                         <ArrowLeftCircle />
                         <span>
                             Go Back
                         </span>
                     </Link>
-                </div>
+                </div> */}
             </div>
         </div>
     );

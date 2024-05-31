@@ -1,11 +1,13 @@
 'use client';
 
-import { usePathname, useRouter } from "next/navigation";
-import { Button } from "../../../../../../components/ui/button";
-import { LogOut, UserCircle2Icon } from "lucide-react";
-import Link from "next/link";
 import axios from "axios";
-import { useEffect, useState } from "react";
+
+import '@/app/(dashboard)/dashboard.css'
+import { Button } from "../../../../../../components/ui/button";
+
+import { usePathname, useRouter } from "next/navigation";
+
+import Link from "next/link";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -14,7 +16,12 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+
+import { LogOut, UserCircle2Icon } from "lucide-react";
+
 
 export const NavbarRoutes = () => {
 
@@ -61,13 +68,13 @@ export const NavbarRoutes = () => {
                     </Button>
                 </Link>
             ) : (
-                <div>
+                <div className="px-5">
                     {isAdmin ? (
-                        <div className="flex items-center">
+                        <div className="flex items-center gap-x-6">
                             <Link href={'/admin/courses'}>
-                                <Button size='sm' variant='ghost'>
-                                    Teacher Mode
-                                </Button>
+                                <span className="source-sans-3-regular">
+                                    Admin Mode
+                                </span>
                             </Link>
                             <DropdownMenu>
                                 <DropdownMenuTrigger>

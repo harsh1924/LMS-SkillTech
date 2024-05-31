@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MainPageCourses } from "./(mainPageComponents)/mainpage-courses";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const courses = [
     'Software Development',
@@ -17,21 +18,24 @@ const courses = [
 
 const GetAllCourses = () => {
 
-    const [courseName, setCourseName] = useState('Software Development')
+    const [courseName, setCourseName] = useState('Software Development');
+    const [isActive, setIsActive] = useState('Software Development');
 
     return (
         <div>
             <div className="flex justify-between flex-col w-full gap-x-10 gap-y-5 px-12
                 ">
                 <div className="flex justify-start gap-x-8">
-                    <div className="flex flex-col gap-y-2 w-[300px] border px-3 py-4 rounded-md shadow-lg h-[650px]">
-                        <span className="text-lg oxygen-bold">
+                    <div className="flex flex-col gap-y-2 w-[300px] border py-4 rounded-md shadow-lg h-[650px]">
+                        <span className="text-lg oxygen-bold px-3">
                             Categories
                         </span>
                         <Separator />
-                        <div className="flex flex-col gap-y-5 text-[15px]">
+                        <div className="flex flex-col gap-y-2 text-[15px]">
                             {courses.map((e) =>
-                                <button className="hover:text-[#688F4E] text-start source-sans-3-regular" onClick={() => setCourseName(e)}>
+                                <button className={cn(
+                                    'hover:text-[#688F4E] py-2 px-3 text-start source-sans-3-regular'
+                                    , isActive === e && 'bg-[#ebffe0] hover:text-black border-r-4 border-[#2B463C]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
                                     {e}
                                 </button>)}
                         </div>

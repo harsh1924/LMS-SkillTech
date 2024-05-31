@@ -1,18 +1,25 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+import '@/app/(dashboard)/dashboard.css'
 
 const CoursePage = () => {
     return (
-        <div className="p-4 flex gap-x-10">
+        <div className="px-10 source-sans-3-regular items-center h-[150px] flex gap-x-10">
             <Link href={'/admin/courses/all-courses'}>
-            <Button className="p-6">
+            <span className="px-6 py-4 rounded-md text-white bg-[#2B463C] hover:bg-[#2c5747] duration-300 transition-all ease-in-out">
                     View all Courses
-                </Button>
+                </span>
             </Link>
             <Link href='/admin/create'>
-                <Button className="p-6">
+                <span className="px-6 py-4 rounded-md text-white bg-[#2B463C] hover:bg-[#2c5747] duration-300 transition-all ease-in-out">
                     New Course
-                </Button>
+                </span>
+            </Link>
+            <Link href='/admin/create/free-course'>
+                <span className="px-6 py-4 rounded-md text-white bg-[#2B463C] hover:bg-[#2c5747] duration-300 transition-all ease-in-out">
+                    Create Free Course
+                </span>
             </Link>
         </div>
     );

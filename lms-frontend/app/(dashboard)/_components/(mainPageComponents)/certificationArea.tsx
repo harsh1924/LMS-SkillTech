@@ -23,7 +23,7 @@ const CertificationArea = () => {
                     <div className="flex flex-col md:justify-between md:flex-row flex-wrap gap-y-12">
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <Book className="text-sky-500" size={32} />
+                                <Book className="text-[#688F4E]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">
@@ -37,7 +37,7 @@ const CertificationArea = () => {
                         </div>
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <PersonStanding className="text-sky-500" size={32} />
+                                <PersonStanding className="text-[#688F4E]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">
@@ -51,7 +51,7 @@ const CertificationArea = () => {
                         </div>
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <Notebook className="text-sky-500" size={32} />
+                                <Notebook className="text-[#688F4E]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">
@@ -65,7 +65,7 @@ const CertificationArea = () => {
                         </div>
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <Clock className="text-sky-500" size={32} />
+                                <Clock className="text-[#688F4E]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">

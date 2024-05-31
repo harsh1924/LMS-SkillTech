@@ -3,8 +3,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { AllHoverCoursesCard } from "./all-course-hover-card"
-import { useRouter } from "next/navigation"
-import { Separator } from "@/components/ui/separator"
 
 interface CourseName {
     category: string
@@ -28,7 +26,7 @@ export const AllCoursesHoverList = ({
 
 
     return (
-        <div className="flex flex-wrap justify-between gap-y-4 h-[430px] overflow-y-scroll no-scrollbar">
+        <div className="flex flex-wrap gap-y-6 h-[430px] gap-x-6 overflow-y-scroll no-scrollbar">
             {categoryCourses.map((course: { title: string; imageUrl: string; isPublished: boolean; _id: string; skillsOne: string; skillsTwo: string; duration: number }) =>
                 <AllHoverCoursesCard key={course._id} title={course.title} imageUrl={course.imageUrl} isPublihed={course.isPublished} courseId={course._id} skillsOne={course.skillsOne} skillsTwo={course.skillsTwo} duration={course.duration} />
             )}

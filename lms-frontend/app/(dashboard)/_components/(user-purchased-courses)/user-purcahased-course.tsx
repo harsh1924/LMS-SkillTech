@@ -1,27 +1,32 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import '@/app/(dashboard)/dashboard.css'
+
 interface courseData {
     courseId: string,
     title: string,
     imageUrl: string,
+    userId: string
 }
 
 export const UserPurchasedCoursesCard = async ({
     courseId,
     title,
-    imageUrl
+    imageUrl,
+    userId
 }: courseData) => {
 
     return (
-        <div className="py-10 flex items-center justify-center h-full px-10">
-            <div className="px-4 py-5 border rounded-md w-[430px]">
-                <Image height={400} width={400} src={imageUrl} alt='Course Thumbnail'></Image>
-                <p className="text-xl font-sans font-semibold my-10">
+        <div className="h-full">
+            <div className="px-4 py-5 flex flex-col justify-between border rounded-md w-[250px] h-[300px]">
+                <Image className="h-[100px] w-full" height={0} width={200} src={imageUrl} alt='Course Thumbnail'></Image>
+                <p className="text-[16px] oxygen-semibold">
                     {title}
+                    {/* {userId} */}
                 </p>
                 <p className="flex justify-center items-center text-center">
-                    <Link href={`/course/${courseId}/purchased-course-lectures`} className="border px-6 py-2 rounded-md w-full bg-yellow-600 text-white hover:bg-yellow-500 transition-all ease-in-out duration-300">
+                    <Link href={`/profile/${userId}/purchased-course-lectures/${courseId}`} className="border px-6 py-2 rounded-md w-full bg-yellow-600 text-white hover:bg-yellow-500 transition-all ease-in-out duration-300 source-sans-3-regular">
                         Continue
                     </Link>
                 </p>

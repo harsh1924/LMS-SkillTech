@@ -1,4 +1,4 @@
-import { Calendar, DotIcon } from "lucide-react"
+import { Calendar } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -24,14 +24,15 @@ export const AllHoverCoursesCard = ({
     return (
         <div>
             {isPublihed && (
-                <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[150px] w-[350px] bg-white p-2 rounded-md justify-between shadow-md">
+                <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[180px] w-[300px] bg-white p-2 rounded-md
+                 justify-between shadow-md">
                     <Image alt="Course Thumbnail" width={100} height={100} src={imageUrl} />
-                    <span className="oxygen-bold text-[13px]">
+                    <span className="oxygen-bold text-[12px]">
                         {title}
                     </span>
                     <div className="text-sm flex mt-4 gap-x-1 items-center">
                         <Calendar size={16} className="text-gray-500 " />
-                        <span className="text-[12px] text-gray-500">
+                        <span className="text-[11px] text-gray-500">
                             {duration} months
                         </span>
                     </div>

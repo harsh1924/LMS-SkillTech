@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-export default function CourseCreationPage() {
+export default function FreeCourseCreationPage() {
 
     const router = useRouter();
     const [course, setCourse] = useState({
@@ -14,7 +14,7 @@ export default function CourseCreationPage() {
         description: '',
         category: '',
         createdBy: '',
-        price: ''
+        price: '',
     });
 
     const handleUserInput = (event: { target: { name: any; value: any; }; }) => {
@@ -29,7 +29,7 @@ export default function CourseCreationPage() {
         e.preventDefault();
         try {
             // API REQUEST
-            const response = await axios.post('/api/course/create', course);
+            const response = await axios.post('/api/course/create/free-course', course);
 
             const courseId = response.data.course._id;
             
@@ -94,7 +94,7 @@ export default function CourseCreationPage() {
                 <div className="flex flex-col gap-2">
                     <div className="gap-2 flex flex-col">
                         <label htmlFor="price" className="font-semibold">
-                            Pricing
+                            Certificate Price
                         </label>
                         <input onChange={handleUserInput} value={course.price} name="price" type="number" id="price" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. 32000" />
                     </div>

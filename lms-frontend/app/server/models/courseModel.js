@@ -21,6 +21,10 @@ const courseSchema = new Schema({
             title: String,
             description: String,
             videoUrl: String,
+            isCompleted: {
+                type: Boolean,
+                default: false
+            }
         },
     ],
     imageUrl: String,
@@ -52,6 +56,10 @@ const courseSchema = new Schema({
     isAvailable: {
         type: Boolean,
         default: true
+    },
+    isFree: {
+        type: Boolean,
+        default: false
     },
     lecturesCompleted: {
         type: Number,

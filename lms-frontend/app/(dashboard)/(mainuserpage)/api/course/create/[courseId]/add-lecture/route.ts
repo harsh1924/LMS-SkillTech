@@ -37,6 +37,7 @@ export async function POST(request: NextRequest, { params }: {
         const courseLectures = course.lectures;
         console.log(courseLectures[last - 1]);
         const lastLecture = courseLectures[last - 1]
+        
 
         return NextResponse.json({
             message: 'Lectures added successfully',

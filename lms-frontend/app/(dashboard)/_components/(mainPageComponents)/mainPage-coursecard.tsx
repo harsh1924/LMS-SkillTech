@@ -1,4 +1,4 @@
-import { Calendar, Check, DotIcon } from "lucide-react"
+import { Calendar, Check } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -10,7 +10,8 @@ interface AllHoverCoursesData {
     skillsOne: string
     skillsTwo: string,
     skillsThree: string,
-    duration: number
+    duration: number,
+    isFree: boolean
 }
 
 export const MainPageCourseCard = ({
@@ -21,27 +22,28 @@ export const MainPageCourseCard = ({
     skillsOne,
     skillsTwo,
     skillsThree,
-    duration
+    duration,
+    isFree
 }: AllHoverCoursesData) => {
     return (
         <div>
             {isPublihed && (
-                <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[400px] gap-y-2 w-[250px] bg-white p-2 rounded-md justify-between shadow-md">
+                <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[400px] gap-y-2 w-[250px] bg-white p-2 rounded-md justify-between shadow-md hover:shadow-lg">
                     <Image alt="Course Thumbnail" width={230} height={100} src={imageUrl} />
                     <span className="oxygen-bold">
                         {title}
                     </span>
                     <div className="text-gray-500 text-sm source-sans-3-regular">
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-sky-500" />
-                            {skillsOne}
+                            <Check size={13}
+                                className="text-[#688F4E]" />                            {skillsOne}
                         </p>
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-sky-500" />
+                            <Check size={13} className="text-[#688F4E]" />
                             {skillsTwo}
                         </p>
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-sky-500" />
+                            <Check size={13} className="text-[#688F4E]" />
                             {skillsThree}
                         </p>
                     </div>
@@ -56,7 +58,7 @@ export const MainPageCourseCard = ({
                             <span className="text-[13px]">
                                 Online Bootcamp
                             </span>
-                            <span className="text-sky-500 text-[13px]">
+                            <span className="text-[#688F4E] text-[13px]">
                                 Know More
                             </span>
                         </p>

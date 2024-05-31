@@ -20,21 +20,21 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-interface PhoneNumberFormProps {
+interface AddressFormProps {
     initialData: {
-        phoneNumber: number
+        Address: string
     };
     userId: string
 }
 
 const formSchema = z.object({
-    phoneNumber: z.string().transform((v) => Number(v)||0)
+    Address: z.string().min(1)
 });
 
-export const PhoneNumberForm = ({
+export const AddressForm = ({
     initialData,
     userId
-}: PhoneNumberFormProps) => {
+}: AddressFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const toggleEdit = () => setIsEditing((current) => !current);
@@ -61,21 +61,21 @@ export const PhoneNumberForm = ({
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Phone Number
+                Address
                 <Button onClick={toggleEdit} variant='ghost'>
                     {isEditing ? (
                         <>Cancel</>
                     ) : (
                         <>
                             <Pencil className='h-4 w-4 mr-2' />
-                            Edit Phone Number
+                            Edit Address
                         </>
                     )}
                 </Button>
             </div>
             {!isEditing && (
                 <p className="text-sm mt-2">
-                    {initialData.phoneNumber}
+                    {initialData.Address}
                 </p>
             )}
             {isEditing && (
@@ -84,13 +84,13 @@ export const PhoneNumberForm = ({
                         className='space-y-4 mt-4'>
                         <FormField
                             control={form.control}
-                            name='phoneNumber'
+                            name='Address'
                             render={({ field }) => (
                                 <FormItem>
                                     <FormControl>
-                                        <Input type='number'  
+                                        <Input
                                             disabled={isSubmitting}
-                                            placeholder="e.g. '1111 (in indian format)'"
+                                            placeholder="e.g. 'New Delhi '"
                                             {...field} />
                                     </FormControl>
                                     <FormMessage />

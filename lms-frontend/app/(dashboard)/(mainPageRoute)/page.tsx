@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { Footer } from "../_components/(mainPageComponents)/footer";
 import CertificationArea from "../_components/(mainPageComponents)/certificationArea";
 import AvailableCourses from "../_components/(mainPageComponents)/availabel-courses";
 import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
 import { HomePageCarousel } from "../_components/(mainPageComponents)/carousel";
-import { Twitch } from "lucide-react";
+import { Testimony } from "../_components/(mainPageComponents)/testimony";
 
 export default function Home() {
 
@@ -21,7 +20,7 @@ export default function Home() {
           <h1 className="text-4xl md:px-10 md:text-5xl oxygen-bold">
             Skills that drive you forward
           </h1>
-          <p className="text-xl md:px-10 source-sans-3-regular">
+          <p className="text-[22px] md:px-10 source-sans-3-regular">
             Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.
           </p>
           <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-[#2B463C] text-white rounded-md font-sans font-semibold hover:bg-[#3f6457] transition-all ease-in-out duration-300">
@@ -36,6 +35,9 @@ export default function Home() {
       {/* Available Courses */}
       <AvailableCourses />
 
+      {/* Testimony */}
+      <Testimony />
+
       {/* Certification Area */}
       <CertificationArea />
 
@@ -43,10 +45,10 @@ export default function Home() {
       <Footer />
 
       {/* chat on whatsapp */}
-      <div className="fixed top-20 right-6 z-50">
+      <div className="fixed bottom-4 right-6 z-50">
         <a href="https://wa.me/919891476411?text=Hello%20SkillTech" target="_blank">
           {/* <Twitch /> */}
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png" className="h-12 bg-green-500 p-2 rounded-lg"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png" className="h-12 bg-green-500 p-2 rounded-lg" />
         </a>
       </div>
 

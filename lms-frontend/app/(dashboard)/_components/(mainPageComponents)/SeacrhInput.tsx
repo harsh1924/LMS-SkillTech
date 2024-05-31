@@ -15,7 +15,7 @@ export const SearchPage = () => {
         const encodedSearchQuery = encodeURI(searchQuery);
         console.log(encodedSearchQuery);
 
-        router.push(`/search?title=${encodedSearchQuery}`)
+        router.push(`/search?q=${encodedSearchQuery}`)
     }
 
     return (

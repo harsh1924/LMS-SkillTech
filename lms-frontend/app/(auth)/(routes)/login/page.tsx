@@ -46,7 +46,7 @@ const LoginPage = () => {
                 <img src="https://accounts.pwskills.com/images/signin-banner.svg" className="w-[100%] h-[100%]" />
             </div>
             <form onSubmit={onLogin} className="flex w-1/2 justify-center items-center h-full flex-col gap-10">
-                <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
+                <div className="w-[400px] border shadow-[0_0_10px_#688F4E] px-6 py-4 flex flex-col gap-y-4">
                     <div className="flex justify-center">
                         <Link href={'/'}>
                             <Logo />

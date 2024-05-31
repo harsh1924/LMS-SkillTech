@@ -4,17 +4,17 @@ const ContactUsPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="py-10 flex justify-center items-center">
-                <div className="py-6 px-5 rounded-md shadow-[0_0_20px_skyblue] flex justify-center items-center flex-col border">
-                    <h3 className="text-2xl pb-2">
+            <div className="py-10 flex justify-center items-center oxygen-regular">
+                <div className="py-6 px-5 rounded-md shadow-[0_0_20px_#688F4E] flex justify-center items-center flex-col border">
+                    <h3 className="text-xl pb-2">
                         CONTACT US
                     </h3>
-                    <p>
+                    <p className="text-[15px]">
                         Please submit this form and a representative will reach you out
                     </p>
                     <form action="https://api.web3forms.com/submit" method="POST" className="py-4 flex gap-y-3 justify-start w-full flex-col">
                     <input type="hidden" name="access_key" value="c5335490-fd96-4271-910a-4d89cf799824" />
-                        <div>
+                        <div className="text-[15px]">
                             <input required name="name" type="text" placeholder="Name*" className=" py-2 outline-none border-none w-full" />
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
@@ -34,11 +34,11 @@ const ContactUsPage = () => {
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div>
-                            <textarea name="url" placeholder="Write a message" className="border py-2 outline-none border-none h-[150px] w-full resize-none" />
+                            <textarea name="url" placeholder="Write a message" className="border py-2 outline-none border-none h-[100px] w-full" />
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div className="flex items-center justify-center">
-                            <button type="submit" className="bg-sky-500 text-white py-2 px-16 rounded-md hover:bg-sky-600 transition-all ease-in-out duration-300">
+                            <button type="submit" className="bg-[#2B463C] text-white py-2 px-16 rounded-md hover:bg-[#3f6658] transition-all ease-in-out duration-300">
                                 Submit
                             </button>
                         </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { MainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/mainpage-courses";
 import { AdminMainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/admin-allCourse-page";
+import { cn } from "@/lib/utils";
 
 const courses = [
     'Software Development',
@@ -18,7 +19,8 @@ const courses = [
 
 const GetAllCourses = () => {
 
-    const [courseName, setCourseName] = useState('Software Development')
+    const [courseName, setCourseName] = useState('Software Development');
+    const [isActive, setIsActive] = useState('Software Development');
 
     return (
         <div>
@@ -26,13 +28,12 @@ const GetAllCourses = () => {
                 ">
                 <div className="flex w-full flex-col justify-start gap-x-8">
                     <div className="flex gap-y-2 border px-3 py-4  w-full">
-                        {/* <span className="text-lg font-semibold">
-                            Categories
-                        </span> */}
-                        {/* <Separator /> */}
+                        
                         <div className="flex gap-y-2 flex-wrap">
                             {courses.map((e) =>
-                                <button className="active:text-sky-500 text-start text-[12px] h-[70px] w-[150px] px-4 rounded-md shadow-md" onClick={() => setCourseName(e)}>
+                                <button className={cn(
+                                    'hover:text-[#688F4E] py-2 px-3 text-start  rounded-md mr-1 border source-sans-3-regular'
+                                    , isActive === e && 'bg-[#ebffe0] hover:text-black shadow-md')} onClick={() => { setCourseName(e), setIsActive(e) }}>
                                     {e}
                                 </button>)}
                         </div>

@@ -30,7 +30,8 @@ export async function POST(request: NextRequest) {
             name,
             email,
             password: hashedPassword,
-            phoneNumber
+            phoneNumber,
+            role: 'TRAINER'
         });
 
         await user.save();

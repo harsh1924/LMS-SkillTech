@@ -1,43 +1,45 @@
 "use client";
 
 import axios from "axios";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+
 import Link from "next/link";
-import { UserIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+
 import { NameForm } from "../admin/courses/[courseId]/_components/(edit-user-details)/name-form";
 import { LastNameForm } from "../admin/courses/[courseId]/_components/(edit-user-details)/last-name-form";
 import { EmailForm } from "../admin/courses/[courseId]/_components/(edit-user-details)/email-form";
-import '@/app/(dashboard)/dashboard.css'
 import { PhoneNumberForm } from "../admin/courses/[courseId]/_components/(edit-user-details)/phone-number";
+
+import '@/app/(dashboard)/dashboard.css'
+import { AddressForm } from "../admin/courses/[courseId]/_components/(edit-user-details)/address-form";
 
 const userIdPage = () => {
 
     const router = useRouter();
     const [User, setUser] = useState({
         name: '',
-        lastname: '',
         email: '',
-        phoneNumber: ''
+        lastname: '',
+        phoneNumber: 91,
+        Address: ''
     });
-    const [userNameData, setUserNameData] = useState('');
-    const [userEmailData, setUserEmailData] = useState('');
-    const [userRoleData, setUserRoleData] = useState('');
     const [userIdData, setUserIdData] = useState('');
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
-        const user = res.data.user;
-        setUser(user);
-        const userName = res.data.user.name;
-        const userEmail = res.data.user.email;
-        const userRole = res.data.user.role;
+        const userData = res.data.user;
+        setUser({
+            ...User,
+            name: userData.name,
+            email: userData.email,
+            lastname: userData.lastname,
+            phoneNumber: userData.phoneNumber,
+            Address: userData.Address
+        });
         const userId = res.data.user._id;
-
-        setUserNameData(userName);
-        setUserEmailData(userEmail);
-        setUserRoleData(userRole);
         setUserIdData(userId);
     }
 
@@ -65,7 +67,7 @@ const userIdPage = () => {
                         My Profile
                     </span>
                 </p>
-                <div className="grid grid-cols-2 gap-x-10 w-full source-sans-3-regular">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 w-full source-sans-3-regular">
                     <NameForm
                         initialData={User}
                         userId={userIdData} />
@@ -78,9 +80,12 @@ const userIdPage = () => {
                     <PhoneNumberForm
                         initialData={User}
                         userId={userIdData} />
+                    <AddressForm
+                        initialData={User}
+                        userId={userIdData} />
                 </div>
             </div>
-            <div className="flex justify-between w-full px-10">
+            <div className="flex justify-between w-full px-10 mb-6">
                 <Link className="bg-[#2B463C] text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300" href={`/profile/${userIdData}/user-courses`}>
                     Your Courses
                 </Link>

@@ -32,18 +32,17 @@ export const HomeNavbar = () => {
                 Buisness
             </Link>
 
+            <Link href={`/resources`} className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300">
+                Resources
+            </Link>
+
             <Link className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300" href={'/become-instructor'}>
                 Become a trainer
             </Link>
 
             <Link href={`/contact-us`} className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300">
-                Resources
-            </Link>
-
-            <Link href={`/contact-us`} className="hidden lg:flex hover:text-[#688F4E] ease-in-out transition-all duration-300">
                 Contact us
             </Link>
-
 
             {/* Login Signup Button */}
             <LoginButtons />

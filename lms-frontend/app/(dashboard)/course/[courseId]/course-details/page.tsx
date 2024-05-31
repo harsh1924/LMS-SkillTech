@@ -1,26 +1,43 @@
 'use client';
 
-import { SkillsOne } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/(extra-details)/(skills-covered)/skills-one";
-import { LoginButtons } from "@/app/(dashboard)/_components/(buttons)/login-signup-button";
-import { SearchPage } from "@/app/(dashboard)/_components/(mainPageComponents)/SeacrhInput";
-import { HoverAllCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/all-course-hover";
+import axios from "axios";
+
+import Link from "next/link";
+import { CheckCircle, Dot, IndianRupeeIcon } from "lucide-react";
+
 import { Footer } from "@/app/(dashboard)/_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
-import { DashboardComponent } from "@/app/(dashboard)/_components/dashboard-component";
-import { Logo } from "@/app/(dashboard)/_components/logo";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import axios from "axios";
-import { Check, CheckCircle, Dot, IndianRupeeIcon } from "lucide-react";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+
+import '@/app/(dashboard)/dashboard.css'
 
 const CourseDetails = ({
     params
 }: {
     params: { courseId: string }
 }) => {
+
+    const getId = async () => {
+        const res = await axios.get('/api/user/user-details')
+        const userData = res.data.user;
+        const userIdData = res.data.user._id;
+        setUserIdData(userIdData);
+        setData({
+            ...data,
+            userId: userIdData
+        })
+    }
+    const [userId, setUserIdData] = useState('');
+    const [data, setData] = useState({
+        courseId: params.courseId,
+        userId: ''
+    })
+
+    const addFreeCourse = async () => {
+        const res = await axios.post(`/api/course/${params.courseId}/user/${userId}/add-free-course`, data)
+    }
 
     // basic data of course
     const [courseTitleData, setCourseTitleData] = useState('');
@@ -29,6 +46,7 @@ const CourseDetails = ({
     const [courseCreatorData, setCourseCreatorData] = useState('');
     const [courseImageURLData, setCourseImageURLData] = useState('');
     const [courseDurationData, setCourseDurationData] = useState('');
+    const [isFree, setIsFree] = useState(false);
 
     // overview of course
     const [courseOverviewData, setCourseOverviewData] = useState('');
@@ -55,15 +73,11 @@ const CourseDetails = ({
     const [courseCardThree, setCourseCardThree] = useState('');
     const [courseCardFour, setCourseCardFour] = useState('');
 
-    const [course, setCourse] = useState([])
-
     const courseDetails = async () => {
         try {
             const courseId = params.courseId;
             const response = await axios.get(`/api/course/course-details/${courseId}`);
             const course = response.data.course;
-            const lectures = course.lectures;
-            setCourse(lectures);
 
             //setting image
             const courseImage = course.imageUrl;
@@ -92,6 +106,9 @@ const CourseDetails = ({
             // setting course overview
             const courseOverview = course.overview;
             setCourseOverviewData(courseOverview);
+
+            const isCourseFree = course.isFree;
+            setIsFree(isCourseFree)
 
             // setting course key features
             const courseKeyFeatureOne = course.keyFeaturesOne;
@@ -137,7 +154,8 @@ const CourseDetails = ({
     }
 
     useEffect(() => {
-        courseDetails()
+        courseDetails(),
+            getId()
     }, []);
 
     return (
@@ -153,26 +171,32 @@ const CourseDetails = ({
                     <div className="py-10 w-full lg:px-8 flex flex-col-reverse lg:flex-row gap-x-4  h-full justify-center">
                         <div className="lg:w-[750px] flex gap-y-6 flex-col lg:px-8 py-3">
                             <p>
-                                <span className="lg:text-5xl text-2xl font-bold font-sans pb-8">{courseTitleData}
+                                <span className="lg:text-5xl text-2xl oxygen-bold font-sans pb-8">{courseTitleData}
                                 </span>
                             </p>
                             <p>
-                                <span className="font-semibold text-gray-500 text-lg">
+                                <span className="oxygen-semibold text-gray-500 text-lg">
                                     {courseCreatorData}
                                 </span>
                             </p>
                             <p>
-                                <span className="font-semibold">
+                                <span className="source-sans-3-regular text-lg">
                                     {courseDescData}
                                 </span>
                             </p>
-                            <Link href={`/course/${params.courseId}/purchase`} className="font-semibold border flex bg-black text-white px-4 py-2 rounded-md items-center w-[180px]">
-                                Enroll for
-                                <IndianRupeeIcon size={17} />
-                                <span>
-                                    {coursePriceData}
+                            {!isFree ? (
+                                <Link href={`/course/${params.courseId}/purchase`} className="font-semibold text-sm text-center border flex bg-[#1d2f28] text-white px-6 py-3 rounded-md items-center w-[180px]">
+                                    <span>Enroll for</span>
+                                    <IndianRupeeIcon size={17} />
+                                    <span>
+                                        {coursePriceData}
+                                    </span>
+                                </Link>
+                            ) : (
+                                <span onClick={addFreeCourse} className="font-semibold text-sm text-center border flex bg-[#1d2f28] text-white px-6 py-3 rounded-md items-center w-[150px] cursor-pointer">
+                                    Enroll for Free
                                 </span>
-                            </Link>
+                            )}
                         </div>
                         {/* <Separator className="my-8 hidden" /> */}
                         <p className="lg:w-1/2 w-[80%] text-center">
@@ -184,7 +208,7 @@ const CourseDetails = ({
             </div>
 
             {/* duration and mode of teaching */}
-            <div className="w-full px-6 lg:px-10 py-5 flex flex-col lg:flex-row justify-center gap-y-4 lg:gap-y-0">
+            <div className="w-full px-6 lg:px-10 py-5 flex flex-col lg:flex-row justify-center gap-y-4 lg:gap-y-0 source-sans-3-bold">
                 <p className="shadow-md flex flex-col items-center gap-y-3 lg:border-r border-black py-2 lg:px-20 text-lg font-semibold text-center">
                     <span>
                         Program Duration
@@ -212,66 +236,68 @@ const CourseDetails = ({
             <div className="px-6 lg:px-16 py-6">
                 <p className="text-lg flex flex-col gap-y-4">
                     <span className="text-xl flex gap-x-2">
-                        <span className="hidden lg:flex">
+                        <span className="hidden lg:flex oxygen-regular">
                             {courseTitleData}
                         </span>
-                        <span className="font-semibold">
+                        <span className="oxygen-semibold">
                             Overview
                         </span>
                     </span>
-                    {courseOverviewData}
-                    {courseDescData}
+                    <span className="source-sans-3-regular">
+                        {courseOverviewData}
+                        {courseDescData}
+                    </span>
                 </p>
             </div>
 
             {/* Cards */}
-            <div className="px-6 lg:px-16 py-10 flex flex-col md:flex-row flex-wrap gap-y-10 justify-between w-full">
-                <p className="border-b-8 border-b-blue-500 border px-4 py-8 rounded-xl w-[300px]">
+            <div className="px-6 lg:px-16 text-lg source-sans-3-regular py-10 flex flex-col md:flex-row flex-wrap gap-y-10 justify-between w-full">
+                <p className="border-b-8 border-b-[#688F4E] border px-4 py-8 rounded-xl w-[300px]">
                     {courseCardOne}
                 </p>
-                <p className="border-b-8 border-b-blue-500 border px-4 py-8 rounded-xl w-[300px]">
+                <p className="border-b-8 border-b-[#688F4E] border px-4 py-8 rounded-xl w-[300px]">
                     {courseCardTwo}
                 </p>
-                <p className="border-b-8 border-b-blue-500 border px-4 py-8 rounded-xl w-[300px]">
+                <p className="border-b-8 border-b-[#688F4E] border px-4 py-8 rounded-xl w-[300px]">
                     {courseCardThree}
                 </p>
-                <p className="border-b-8 border-b-blue-500 border px-4 py-8 rounded-xl w-[300px]">
+                <p className="border-b-8 border-b-[#688F4E] border px-4 py-8 rounded-xl w-[300px]">
                     {courseCardFour}
                 </p>
             </div>
 
             {/* key features */}
             <div className="flex px-6 lg:px-16 flex-col py-10 shadow-md bg-slate-100 rounded-md">
-                <p className=" pb-8 text-xl font-semibold">KEY FEATURES</p>
-                <div className="flex flex-wrap gap-y-8 justify-between text-[17px]">
+                <p className=" pb-8 text-xl oxygen-semibold">KEY FEATURES</p>
+                <div className="flex flex-wrap gap-y-8 justify-between text-[17px] source-sans-3-regular">
                     <p className="w-[400px]">
                         <span className="flex items-start gap-x-3">
-                            <CheckCircle size={30} className="text-blue-500" /> {courseKeyFeatureOneData}
+                            <CheckCircle size={25} className="text-[#688F4E]" /> {courseKeyFeatureOneData}
                         </span>
                     </p>
                     <p className="w-[400px]">
                         <span className="flex items-start gap-x-3">
-                            <CheckCircle size={30} className="text-blue-500" /> {courseKeyFeatureTwoData}
+                            <CheckCircle size={25} className="text-[#688F4E]" /> {courseKeyFeatureTwoData}
                         </span>
                     </p>
                     <p className="w-[400px]">
                         <span className="flex items-start gap-x-3">
-                            <CheckCircle size={30} className="text-blue-500" /> {courseKeyFeatureThreeData}
+                            <CheckCircle size={25} className="text-[#688F4E]" /> {courseKeyFeatureThreeData}
                         </span>
                     </p>
                     <p className="w-[400px]">
                         <span className="flex items-start gap-x-3">
-                            <CheckCircle size={30} className="text-blue-500" /> {courseKeyFeatureFourData}
+                            <CheckCircle size={25} className="text-[#688F4E]" /> {courseKeyFeatureFourData}
                         </span>
                     </p>
                     <p className="w-[400px]">
                         <span className="flex items-start gap-x-3">
-                            <CheckCircle size={30} className="text-blue-500" /> {courseKeyFeatureFiveData}
+                            <CheckCircle size={25} className="text-[#688F4E]" /> {courseKeyFeatureFiveData}
                         </span>
                     </p>
                     <p className="w-[400px]">
                         <span className="flex items-start gap-x-3">
-                            <CheckCircle size={30} className="text-blue-500" /> {courseKeyFeatureSixData}
+                            <CheckCircle size={25} className="text-[#688F4E]" /> {courseKeyFeatureSixData}
                         </span>
                     </p>
                 </div>
@@ -279,69 +305,69 @@ const CourseDetails = ({
 
             {/* skills Covered */}
             <div className="flex px-6 lg:px-16 flex-col py-10 ">
-                <p className="pb-8 text-xl font-semibold">
+                <p className="pb-8 text-xl oxygen-semibold">
                     SKILLS COVERED
                 </p>
-                <p className="flex flex-wrap justify-between">
+                <p className="flex flex-wrap justify-between source-sans-3-regular text-lg">
                     <span className="flex items-center gap-x-1 w-[400px]">
-                        <Dot size={40} className="text-blue-500" />  {courseSkillsCoveredOne}
+                        <Dot size={40} className="text-[#688F4E]" />  {courseSkillsCoveredOne}
                     </span>
                     <span className="flex w-[400px] items-center gap-x-1">
-                        <Dot size={40} className="text-blue-500" />  {courseSkillsCoveredTwo}
+                        <Dot size={40} className="text-[#688F4E]" />  {courseSkillsCoveredTwo}
                     </span>
                     <span className="flex w-[400px] items-center gap-x-1">
-                        <Dot size={40} className="text-blue-500" />  {courseSkillsCoveredThree}
+                        <Dot size={40} className="text-[#688F4E]" />  {courseSkillsCoveredThree}
                     </span>
                     <span className="flex w-[400px] items-center gap-x-1">
-                        <Dot size={40} className="text-blue-500" />  {courseSkillsCoveredFour}
+                        <Dot size={40} className="text-[#688F4E]" />  {courseSkillsCoveredFour}
                     </span>
                     <span className="flex w-[400px] items-center gap-x-1">
-                        <Dot size={40} className="text-blue-500" />  {courseSkillsCoveredFive}
+                        <Dot size={40} className="text-[#688F4E]" />  {courseSkillsCoveredFive}
                     </span>
                     <span className="flex w-[400px] items-center gap-x-1">
-                        <Dot size={40} className="text-blue-500" />  {courseSkillsCoveredSix}
+                        <Dot size={40} className="text-[#688F4E]" />  {courseSkillsCoveredSix}
                     </span>
                 </p>
             </div>
 
             {/* why online bootcamp section */}
-            <div className="flex px-10 flex-col py-10 bg-slate-100 rounded-md w-full gap-y-8">
-                <div className="flex gap-x-1 text-xl">
+            <div className="flex px-6 lg:px-16 flex-col py-10 bg-slate-100 rounded-md w-full gap-y-8">
+                <div className="flex gap-x-1 text-xl oxygen-regular">
                     Why
-                    <span className="font-semibold">
+                    <span className="oxygen-semibold">
                         Online Bootcamp
                     </span>
                 </div>
-                <div className="flex md:grid md:grid-cols-2 justify-between lg:px-20 flex-wrap gap-y-4">
+                <div className="flex md:grid md:grid-cols-2 justify-between lg:px-10 flex-wrap gap-y-4">
                     <div className="flex w-[300px] flex-col gap-y-2">
-                        <h1 className="text-lg font-semibold">
+                        <h1 className="text-lg oxygen-semibold">
                             Develop Skills for real career
                         </h1>
-                        <p>
+                        <p className="source-sans-3-regular text-lg">
                             Cutting-edge curriculum designed in guidance with industry and academia to develop job-ready skills
                         </p>
                     </div>
                     <div className="flex w-[300px] flex-col gap-y-2">
-                        <h1 className="text-lg font-semibold">
+                        <h1 className="text-lg oxygen-semibold">
                             Learn from experts active in their field, not out-of-touch trainers
                         </h1>
-                        <p>
+                        <p className="source-sans-3-regular text-lg">
                             Leading practitioners who bring current best practices and case studies to sessions that fit into your work schedule.
                         </p>
                     </div>
                     <div className="flex w-[300px] flex-col gap-y-2">
-                        <h1 className="text-lg font-semibold">
+                        <h1 className="text-lg oxygen-semibold">
                             Learn by working on real-world problems
                         </h1>
-                        <p>
+                        <p className="source-sans-3-regular text-lg">
                             Capstone projects involving real world data sets with virtual labs for hands-on learning
                         </p>
                     </div>
                     <div className="flex w-[300px] flex-col gap-y-2">
-                        <h1 className="text-lg font-semibold">
+                        <h1 className="text-lg oxygen-semibold">
                             Structured guidance ensuring learning never stops
                         </h1>
-                        <p>
+                        <p className="source-sans-3-regular text-lg">
                             24x7 Learning support from mentors and a community of like-minded peers to resolve any conceptual doubts
                         </p>
                     </div>

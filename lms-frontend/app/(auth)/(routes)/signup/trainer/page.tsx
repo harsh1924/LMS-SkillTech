@@ -30,7 +30,7 @@ export default function SignInPage() {
         e.preventDefault();
         try {
             // API REQUEST
-            const response = await axios.post('/api/user/signup', user);
+            const response = await axios.post('/api/user/signup/trainer', user);
             router.push('/login');
             if (response) {
                 toast.success('Account Created Successfully')
@@ -48,7 +48,7 @@ export default function SignInPage() {
     }
 
     return (
-        <form onSubmit={onSignup} className="flex mb-10 items-center h-full flex-col gap-10">
+        <form onSubmit={onSignup} className="flex py-20 items-center h-full flex-col gap-10">
             <Link href={'/'}>
                 <Logo />
             </Link>
@@ -56,9 +56,9 @@ export default function SignInPage() {
                 <h2 className="font-semibold text-xl">
                     Create Your Account
                 </h2>
-                {/* <span className="text-md text-gray-600">
+                <span className="text-md text-gray-600">
                     Unlock exclusive perks - Sign up now for early access and special offers!
-                </span> */}
+                </span>
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="name" className="font-semibold">
                         Name

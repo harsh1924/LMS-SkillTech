@@ -19,6 +19,8 @@ export const CourseEnrollButton = ({
 
     const [isLoading, setIsLoading] = useState(false);
     const [userId, setuserId] = useState('');
+    const GST = Math.floor((price * 18)/100);
+    const finalPrice = price + GST;
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
@@ -59,6 +61,15 @@ export const CourseEnrollButton = ({
                         {price}.00
                     </span>
                 </p>
+                <p className="flex justify-between text-lg w-full p-1 text-gray-500">
+                    <span>
+                        GST (18%)
+                    </span>
+                    <span className="flex items-center">
+                        <IndianRupeeIcon size={17} />
+                        {GST}.00
+                    </span>
+                </p>
                 <div className="h-[1px] my-5 bg-gray-800 "></div>
                 <p className="flex justify-between text-lg w-full p-1 font-semibold">
                     <span>
@@ -66,13 +77,13 @@ export const CourseEnrollButton = ({
                     </span>
                     <span className="flex items-center">
                         <IndianRupeeIcon size={17} />
-                        {price}.00
+                        {finalPrice}.00
                     </span>
                 </p>
             </div>
             <div className="flex w-full mt-5">
                 <Button onClick={onClick} disabled={isLoading} className="w-full">
-                    Enroll for {price}
+                    Enroll for {finalPrice}
                 </Button>
             </div>
         </div>

@@ -185,12 +185,8 @@ const CourseDetails = ({
                                 </span>
                             </p>
                             {!isFree ? (
-                                <Link href={`/course/${params.courseId}/purchase`} className="font-semibold text-sm text-center border flex bg-[#1d2f28] text-white px-6 py-3 rounded-md items-center w-[180px]">
-                                    <span>Enroll for</span>
-                                    <IndianRupeeIcon size={17} />
-                                    <span>
-                                        {coursePriceData}
-                                    </span>
+                                <Link href={`/course/${params.courseId}/purchase`} className="font-semibold text-sm text-center border flex bg-[#1d2f28] text-white px-6 py-3 rounded-md items-center w-[130px]">
+                                    <span>Enroll Now</span>
                                 </Link>
                             ) : (
                                 <span onClick={addFreeCourse} className="font-semibold text-sm text-center border flex bg-[#1d2f28] text-white px-6 py-3 rounded-md items-center w-[150px] cursor-pointer">

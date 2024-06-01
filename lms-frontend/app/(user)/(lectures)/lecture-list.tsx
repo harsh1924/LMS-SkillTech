@@ -31,13 +31,15 @@ export const LectureList = ({
 }: LectureData) => {
 
     const router = useRouter();
+    const [lectureTitle, setLectureTitle] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
 
     const courseCompletionFunction = async () => {
         try {
             const res = await axios.put(`/api/course/${courseId}/user/${userId}/course-completion?lectureId=${id}`);
-            const resData = res.data.responseData
-            // console.log(resData);
+            const resData = res.data.title
+            console.log(resData);
+            setLectureTitle(resData)
             if (resData === true) {
                 // setIsDisabled(true);
             }
@@ -55,7 +57,7 @@ export const LectureList = ({
             <div className="flex items-end justify-between gap-x-4 border px-6 py-4 shadow-lg rounded-md w-[400px]">
                 <p className="flex flex-col gap-y-2">
                     <span className="font-semibold font-sans text-xl">
-                        {title.toUpperCase()}
+                            {title.toUpperCase()}
                         {id}
                     </span>
                     <span className="text-gray-600 font-semibold">

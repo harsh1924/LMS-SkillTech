@@ -27,19 +27,33 @@ export async function PUT(request: NextRequest, {
 
         var isLectureCompleted = lectureCompletion.isCompleted
 
-        console.log(isLectureCompleted);
         if (isLectureCompleted) {
             currentCourse.progress = currentCourse.progress + 1
         }
         // if (!isLectureCompleted) {
-        isLectureCompleted = true;
+        // console.log(lectureCompletion.isCompleted);
         // }
-        console.log(isLectureCompleted);
 
+        // console.log(typeof (lectureCompletion));
+        console.log(lectureCompletion.title);
+        // console.log(lectureCompletion.description);
+        // console.log(lectureCompletion._id.valueOf());
+        // console.log(lectureCompletion.isCompleted);
+        // console.log(typeof (lectureCompletion.isCompleted));
+
+        lectureCompletion.title = 'New Title for check';
         await user.save();
+
+        // console.log(typeof (lectureCompletion));
+        console.log(lectureCompletion.title);
+        const title = lectureCompletion.title
+        // console.log(lectureCompletion.description);
+        // console.log(lectureCompletion._id.valueOf());
+        // console.log(lectureCompletion.isCompleted);
 
         return NextResponse.json({
             message: 'Done',
+            title
         })
 
 

@@ -58,7 +58,7 @@ export default function FreeCourseCreationPage() {
     }
 
     return (
-        <form onSubmit={createNewCourse} className="flex justify-center items-center h-full flex-col md:flex-row  gap-10 pt-14">
+        <form onSubmit={createNewCourse} className="flex justify-center items-center h-full flex-col md:flex-row  gap-10 py-7">
             <div className="w-[400px] border shadow-[0_0_10px_#688F4E] px-6 py-4 flex flex-col gap-y-4">
                 <h2 className="font-semibold text-xl">
                     Create New Course

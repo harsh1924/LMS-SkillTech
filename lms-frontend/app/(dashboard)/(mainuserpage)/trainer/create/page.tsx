@@ -33,7 +33,7 @@ export default function CourseCreationPage() {
 
             const courseId = response.data.course._id;
             
-            router.push(`/admin/courses/${courseId}/edit-course`);
+            router.push(`/trainer/courses/${courseId}/edit-course`);
             if (response) {
                 toast.success('Course Created Successfully')
             }

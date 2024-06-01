@@ -17,10 +17,14 @@ const PurchasedCourseLecture = async ({
 
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
+    console.log(currentCourse);
+    
 
     const currentCourseProgress = currentCourse.progress;
 
-    const courseLectures = course.lectures;
+    const courseLectures = currentCourse.course.lectures;
+    console.log(courseLectures[0]);
+    
     const courseLecturesLength = courseLectures.length;
 
     const progress = Math.floor(currentCourseProgress / courseLecturesLength * 100);

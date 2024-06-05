@@ -40,9 +40,9 @@ export const LectureList = ({
             const resData = res.data.title
             console.log(resData);
             setLectureTitle(resData)
-            if (resData === true) {
-                // setIsDisabled(true);
-            }
+            // if (resData === true) {
+            //     // setIsDisabled(true);
+            // }
             if (res) {
                 router.refresh();
                 toast.success('Mark as completed')
@@ -57,7 +57,7 @@ export const LectureList = ({
             <div className="flex items-end justify-between gap-x-4 border px-6 py-4 shadow-lg rounded-md w-[400px]">
                 <p className="flex flex-col gap-y-2">
                     <span className="font-semibold font-sans text-xl">
-                            {title.toUpperCase()}
+                            {title}
                         {id}
                     </span>
                     <span className="text-gray-600 font-semibold">
@@ -66,8 +66,9 @@ export const LectureList = ({
                 </p>
                 <div className="flex flex-col gap-y-2">
                     <p>
-                        <input type="checkbox"  onClick={courseCompletionFunction} />
+                        <button onClick={courseCompletionFunction}>
                         Mark as complete
+                        </button>
                     </p>
                     <Link className="flex items-center gap-x-2" href={`/course/${courseId}/purchased-course-lectures/${id}/watch-lectures`}>
                         <Play size={18} /> Watch Lecture

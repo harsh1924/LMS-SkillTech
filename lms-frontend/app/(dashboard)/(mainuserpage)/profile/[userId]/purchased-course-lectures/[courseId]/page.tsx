@@ -18,17 +18,14 @@ const PurchasedCourseLecture = async ({
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
     console.log(currentCourse);
-    
 
     const currentCourseProgress = currentCourse.progress;
-
     const courseLectures = currentCourse.course.lectures;
-    console.log(courseLectures[0]);
+    console.log(courseLectures);
     
     const courseLecturesLength = courseLectures.length;
-
     const progress = Math.floor(currentCourseProgress / courseLecturesLength * 100);
-    console.log(progress);
+    // console.log(progress);
 
     return (
         <div className="px-3 lg:px-10 py-7 flex flex-col gap-y-8">
@@ -48,7 +45,7 @@ const PurchasedCourseLecture = async ({
                             </span>
                         </div>
                         {!course.isFree ? (
-                            <Link href={`/courses/${params.courseId}/certificate`} className="bg-yellow-600 text-white px-5 py-3 rounded-md">
+                            <Link href={`/courses/${params.courseId}/certificate`} className="bg-yellow-600 text-white px-5 py-3 rounded-md" target="_blank">
                                 Generate Certificate
                             </Link>
                         ) : (

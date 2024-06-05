@@ -49,7 +49,7 @@ export const AdminAnalytics = ({
         <div className="flex flex-col lg:flex-row lg:justify-between lg:px-10 lg:py-6">
             <div className="flex items-center justify-center lg:w-1/2
             ">
-                <div className="w-80 h-80">
+                <div className="w-80 h-80 ">
                     <Pie data={userData} />
                 </div>
             </div>
@@ -58,8 +58,10 @@ export const AdminAnalytics = ({
                 {/* card for enrolled users */}
                 <div className="flex items-center justify-between py-5 px-5 gap-5 rounded-md shadow-md">
                     <div className="flex flex-col items-center">
-                        <p className="font-semibold">Enrolled Users</p>
-                        <h3 className="text-4xl font-bold ">{subscribedusers}</h3>
+                        <p className="oxygen-semibold">
+                            Enrolled Users
+                            </p>
+                        <h3 className="text-4xl oxygen-bold ">{subscribedusers}</h3>
                     </div>
                     <User2Icon className="text-[#F7B7A3] text-5xl" />
                 </div>
@@ -67,8 +69,10 @@ export const AdminAnalytics = ({
                 {/* card for registered users */}
                 <div className="flex items-center justify-between py-5 px-5 gap-5 rounded-md shadow-md">
                     <div className="flex flex-col items-center">
-                        <p className="font-semibold">Registered Users</p>
-                        <h3 className="text-4xl font-bold">{allUsers}</h3>
+                        <p className="oxygen-semibold">
+                            Registered Users
+                            </p>
+                        <h3 className="text-4xl oxygen-bold">{allUsers}</h3>
                     </div>
                     <User2Icon className="text-[#EA5F89] text-5xl" />
                 </div>

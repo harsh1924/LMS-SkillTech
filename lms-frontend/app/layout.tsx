@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from 'react-hot-toast'
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,13 @@ export default function RootLayout({
     <>
       <html lang="en">
         <body className={inter.className}>
-          <Toaster position="bottom-center"/>
+          <Toaster position="bottom-center" />
           {children}
         </body>
-      </html></>
-
+      </html>
+      <Script src="https://checkout.razorpay.com/v1/checkout.js"
+      />
+    </>
 
   );
 }

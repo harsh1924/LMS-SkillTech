@@ -4,7 +4,7 @@ const paymentSchema = new Schema({
     id: String,
     userId: String,
     courseId: String,
-    stripeCustomerId: String
+    paymentOrderId: String
 }, {
     timestamps: true
 });

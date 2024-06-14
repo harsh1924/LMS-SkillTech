@@ -7,17 +7,17 @@ const CoursePage = () => {
     return (
         <div className="px-10 source-sans-3-regular items-center h-[150px] flex gap-x-10">
             <Link href={'/admin/courses/all-courses'}>
-            <span className="px-6 py-4 rounded-md text-white bg-[#2B463C] hover:bg-[#2c5747] duration-300 transition-all ease-in-out">
+            <span className="px-6 py-4 rounded-md text-white bg-[#0056d2] hover:bg-[#00419e] duration-300 transition-all ease-in-out">
                     View all Courses
                 </span>
             </Link>
             <Link href='/admin/create'>
-                <span className="px-6 py-4 rounded-md text-white bg-[#2B463C] hover:bg-[#2c5747] duration-300 transition-all ease-in-out">
+                <span className="px-6 py-4 rounded-md text-white bg-[#0056d2] hover:bg-[#00419e] duration-300 transition-all ease-in-out">
                     New Course
                 </span>
             </Link>
             <Link href='/admin/create/free-course'>
-                <span className="px-6 py-4 rounded-md text-white bg-[#2B463C] hover:bg-[#2c5747] duration-300 transition-all ease-in-out">
+                <span className="px-6 py-4 rounded-md text-white bg-[#0056d2] hover:bg-[#00419e] duration-300 transition-all ease-in-out">
                     Create Free Course
                 </span>
             </Link>

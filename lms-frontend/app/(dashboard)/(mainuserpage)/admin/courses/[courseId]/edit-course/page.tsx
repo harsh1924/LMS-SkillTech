@@ -12,6 +12,7 @@ import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/u
 import { LayoutDashboard, Trash2 } from "lucide-react";
 
 import Link from "next/link";
+import { AttachmentForm } from "../_components/attachment-form";
 
 connectToDB();
 
@@ -67,6 +68,9 @@ const CourseEdit = async ({
                         initialData={course}
                         courseId={course.id} />
                     <CreatedByForm
+                        initialData={course}
+                        courseId={course.id} />
+                    <AttachmentForm
                         initialData={course}
                         courseId={course.id} />
                     <DescriptionForm

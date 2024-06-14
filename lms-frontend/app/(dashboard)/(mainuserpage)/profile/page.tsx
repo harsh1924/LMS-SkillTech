@@ -18,12 +18,14 @@ import { AddressForm } from "../admin/courses/[courseId]/_components/(edit-user-
 
 const userIdPage = () => {
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const router = useRouter();
     const [User, setUser] = useState({
         name: '',
         email: '',
         lastname: '',
-        phoneNumber: 91,
+        phoneNumber: NaN,
         Address: ''
     });
     const [userIdData, setUserIdData] = useState('');
@@ -41,6 +43,7 @@ const userIdPage = () => {
         });
         const userId = res.data.user._id;
         setUserIdData(userId);
+        setIsLoading(true);
     }
 
     const logout = async () => {
@@ -59,38 +62,46 @@ const userIdPage = () => {
     }, []);
 
     return (
-        <div className="flex gap-y-5 h-full flex-col px-10">
-            <div className="py-10 w-full px-14 grid border mt-10 flex-col h-full gap-y-4 shadow-md">
-                <p className="flex items-center gap-x-6">
-                    {/* <UserIcon size={30} /> */}
-                    <span className="text-2xl oxygen-bold">
-                        My Profile
-                    </span>
-                </p>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 w-full source-sans-3-regular">
-                    <NameForm
-                        initialData={User}
-                        userId={userIdData} />
-                    <LastNameForm
-                        initialData={User}
-                        userId={userIdData} />
-                    <EmailForm
-                        initialData={User}
-                        userId={userIdData} />
-                    <PhoneNumberForm
-                        initialData={User}
-                        userId={userIdData} />
-                    <AddressForm
-                        initialData={User}
-                        userId={userIdData} />
+        <>
+            {isLoading ? (
+                <div className="flex gap-y-5 h-full flex-col px-10">
+                    <div className="py-10 w-full px-14 grid border mt-10 flex-col h-full gap-y-4 shadow-md">
+                        <p className="flex items-center gap-x-6">
+                            {/* <UserIcon size={30} /> */}
+                            <span className="text-2xl oxygen-bold">
+                                My Profile
+                            </span>
+                        </p>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 w-full source-sans-3-regular">
+                            <NameForm
+                                initialData={User}
+                                userId={userIdData} />
+                            <LastNameForm
+                                initialData={User}
+                                userId={userIdData} />
+                            <EmailForm
+                                initialData={User}
+                                userId={userIdData} />
+                            <PhoneNumberForm
+                                initialData={User}
+                                userId={userIdData} />
+                            <AddressForm
+                                initialData={User}
+                                userId={userIdData} />
+                        </div>
+                    </div>
+                    <div className="flex justify-between w-full px-10 mb-6">
+                        <Link className="bg-[#0056d2] text-white px-7 py-3 rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300" href={`/learn/${userIdData}/user-courses`}>
+                            Your Courses
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="flex justify-between w-full px-10 mb-6">
-                <Link className="bg-[#2B463C] text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300" href={`/profile/${userIdData}/user-courses`}>
-                    Your Courses
-                </Link>
-            </div>
-        </div>
+            ) : (
+                <div className="flex h-screen w-screen items-center justify-center">
+                    <div className="animate-spin rounded-full border-4 border-gray-300 border-t-gray-900 h-12 w-12 dark:border-gray-600 dark:border-t-gray-50" />
+                </div>
+            )}
+        </>
     );
 }
 

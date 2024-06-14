@@ -24,22 +24,24 @@ const PurchaseCourse = async ({ params }: {
                 <ArrowLeftCircle />
                 Back
             </Link>
-            <div className="shadow-[0_0_10px_#C5C6D0] py-10 px-8 rounded-md max-w-[550px]">
-                <h1 className="font-bold text-2xl pb-6 text-center">
+            <div className="shadow-[0_0_10px_#C5C6D0] py-10 px-8 rounded-md max-w-[550px] mb-10">
+                <h1 className="oxygen-bold text-2xl pb-6 text-center">
                     Order Details
                 </h1>
                 <div className="bg-gray-300 h-[2px] mb-10"></div>
                 <div className="flex flex-col gap-y-6">
                     <p className="flex gap-x-6">
                         <Image width={250} height={200} src={course.imageUrl} className="rounded-md" alt="Course Thumbnail" />
-                        <span className="font-bold font-sans text-xl">
+                        <span className="oxygen-bold text-xl">
                             {course.title}
                         </span>
                     </p>
                     <div className="flex flex-col gap-y-6">
                         <CourseEnrollButton
                             price={course.price}
-                            courseId={params.courseId} />
+                            courseId={params.courseId}
+                            courseName={course.title}
+                            courseDescription={course.description} />
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@ export const MainPageCourseCard = ({
     isFree
 }: AllHoverCoursesData) => {
     return (
-        <div>
+        <div className="px-1">
             {isPublihed && (
                 <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[400px] gap-y-2 w-[250px] bg-white p-2 rounded-md justify-between shadow-md hover:shadow-lg">
                     <Image alt="Course Thumbnail" width={230} height={100} src={imageUrl} />
@@ -36,14 +36,14 @@ export const MainPageCourseCard = ({
                     <div className="text-gray-500 text-sm source-sans-3-regular">
                         <p className="flex items-center gap-x-2">
                             <Check size={13}
-                                className="text-[#688F4E]" />                            {skillsOne}
+                                className="text-[#347dfb]" />                            {skillsOne}
                         </p>
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-[#688F4E]" />
+                            <Check size={13} className="text-[#347dfb]" />
                             {skillsTwo}
                         </p>
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-[#688F4E]" />
+                            <Check size={13} className="text-[#347dfb]" />
                             {skillsThree}
                         </p>
                     </div>
@@ -58,7 +58,7 @@ export const MainPageCourseCard = ({
                             <span className="text-[13px]">
                                 Online Bootcamp
                             </span>
-                            <span className="text-[#688F4E] text-[13px]">
+                            <span className="text-[#347dfb] text-[13px]">
                                 Know More
                             </span>
                         </p>

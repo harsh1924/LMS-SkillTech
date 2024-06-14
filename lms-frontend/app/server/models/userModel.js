@@ -37,13 +37,26 @@ const userSchema = new Schema({
     userProgress: [{
         course: {
             id: String,
-            lectures: []
+            lectures: [],
+        },
+        currentLectureId: String,
+        currentLectureURL: {
+             type: String,
+             default: 'https://www.youtube.com/watch?v=DNWORpZRJv4'
+            },
+        currentLectureTitle: {
+            type: String,
+            default: 'Intro to the course'
+        },
+        currentLectureDescription: {
+            type:String,
+            default: 'Welcome to SkillTech.'
         },
         progress: {
             type: Number,
             default: 0
-        }
-    }]
+        },
+    }],
 }, {
     timestamps: true
 })

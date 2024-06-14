@@ -40,7 +40,7 @@ const AdminAllCourseCard = ({
                 </div>
                 <div>
                     <div className="flex items-center px-4 pb-6">
-                        <Link href={`/admin/courses/${id}/edit-course`} className="bg-[#2B463C] text-white py-2 rounded-md px-5 source-sans-3-regular">
+                        <Link href={`/admin/courses/${id}/edit-course`} className="bg-[#0056d2] text-white py-2 rounded-md px-5 source-sans-3-regular">
                             Edit
                         </Link>
                     </div>

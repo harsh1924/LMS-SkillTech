@@ -50,8 +50,8 @@ export const NameForm = ({
         try {
             await axios.put(`/api/user/${userId}`, values);
             toast.success('User Updated');
-            toggleEdit();
             router.refresh();
+            toggleEdit();
         } catch (error: any) {
             toast.error('Something went wrong')
             console.log(error.message);

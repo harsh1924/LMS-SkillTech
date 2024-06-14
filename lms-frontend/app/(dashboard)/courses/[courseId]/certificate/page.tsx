@@ -37,7 +37,7 @@ const PdfCertificate = ({
     const [name, setName] = useState('');
     const [course, setCourse] = useState('');
     const url = usePathname();
-    const pageUrl = `http://localhost:3000${url}`
+    const pageUrl = 'https://pwskills.com/learn/certificate/40397ae9-72f8-43d5-a39b-f2e78350c1fd/'
 
 
     const getId = async () => {
@@ -102,7 +102,15 @@ const PdfCertificate = ({
     return (
         <>
             <Head>
-                <meta property="og:image" content={certificateImage.src} key="title" />
+                <meta property="og:image" content="<generated>" />
+                <meta property="og:image:type" content="<generated>" />
+                <meta property="og:image:width" content="<generated>" />
+                <meta property="og:image:height" content="<generated>" />
+                <meta name="twitter:image" content="<generated>" />
+                <meta name="twitter:image:type" content="<generated>" />
+                <meta name="twitter:image:width" content="<generated>" />
+                <meta name="twitter:image:height" content="<generated>" />
+
             </Head>
             <div className='px-20 py-6'>
                 <Logo />
@@ -150,7 +158,7 @@ const PdfCertificate = ({
                                     <FacebookIcon size={25} round={true} />
                                 </div>
                             </FacebookShareButton>
-                            <LinkedinShareButton url={pageUrl} title='Certificate'>
+                            <LinkedinShareButton url={pageUrl} title='Certificate Page' summary='kjqwndnkqwjhd' source={pageUrl}>
                                 <div className='bg-sky-100 rounded-[50%] p-2'>
                                     <Linkedin size={25} />
                                 </div>

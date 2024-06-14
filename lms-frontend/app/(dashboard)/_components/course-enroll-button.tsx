@@ -9,12 +9,16 @@ import toast from "react-hot-toast"
 
 interface CourseEnrollButtonProps {
     price: number,
-    courseId: string
+    courseId: string,
+    courseName: string,
+    courseDescription: string
 }
 
 export const CourseEnrollButton = ({
     price,
-    courseId
+    courseId,
+    courseName,
+    courseDescription
 }: CourseEnrollButtonProps) => {
 
     const [isLoading, setIsLoading] = useState(false);
@@ -27,17 +31,10 @@ export const CourseEnrollButton = ({
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
-
         setUser(res.data.user.userProgress)
-        // const userId = res.data.user._id;
-
-        console.log(res.data.user.userProgress);
-
         setuserId(res.data.user._id)
         setUserName(res.data.user.name)
         setUserEmail(res.data.user.email)
-
-        // console.log(user);
     }
 
     // const onClick = async () => {
@@ -116,7 +113,7 @@ export const CourseEnrollButton = ({
                     email: userEmail,
                 },
                 theme: {
-                    color: '#0D94FB',
+                    color: '#0056d2',
                 },
             };
 
@@ -139,8 +136,8 @@ export const CourseEnrollButton = ({
 
     return (
         <div className="flex flex-col">
-            <div className="">
-                <p className="flex justify-between text-lg w-full p-1 text-gray-500">
+            <div>
+                <p className="flex justify-between text-lg w-full p-1 text-gray-500 source-sans-3-regular">
                     <span>
                         Subtotal
                     </span>
@@ -149,7 +146,7 @@ export const CourseEnrollButton = ({
                         {price}.00
                     </span>
                 </p>
-                <p className="flex justify-between text-lg w-full p-1 text-gray-500">
+                <p className="flex justify-between text-lg w-full p-1 text-gray-500 source-sans-3-regular">
                     <span>
                         GST (18%)
                     </span>
@@ -169,10 +166,10 @@ export const CourseEnrollButton = ({
                     </span>
                 </p>
             </div>
-            <div className="flex w-full mt-5">
-                <Button onClick={processPayment} disabled={isLoading} className="w-full">
+            <div className="flex w-full mt-5 justify-center">
+                <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
                     Enroll for {finalPrice}
-                </Button>
+                </button>
             </div>
         </div>
     )

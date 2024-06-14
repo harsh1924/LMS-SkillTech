@@ -34,8 +34,8 @@ const GetAllCourses = () => {
                         <div className="flex flex-col gap-y-2 text-[15px]">
                             {courses.map((e) =>
                                 <button className={cn(
-                                    'hover:text-[#688F4E] py-2 px-3 text-start source-sans-3-regular'
-                                    , isActive === e && 'bg-[#ebffe0] hover:text-black border-r-4 border-[#2B463C]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
+                                    'hover:text-[#347bdc] py-2 px-3 text-start source-sans-3-regular'
+                                    , isActive === e && 'bg-[#ecf2fc] hover:text-black border-r-4 border-[#00419e]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
                                     {e}
                                 </button>)}
                         </div>

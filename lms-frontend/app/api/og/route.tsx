@@ -7,13 +7,14 @@ export async function GET(req: NextRequest) {
     try {
         // const { searchParams } = new URL(req.url);
         // console.log(searchParams);
-        
+
         const title = req.nextUrl.searchParams.get('title');
         console.log(title);
-        
+
         const coverURL = `http://localhost:3000/`
         return new ImageResponse(
-            <div>{title}
+            <div>
+                {title}
             </div>
         );
     } catch (error: any) {

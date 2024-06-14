@@ -4,11 +4,23 @@ import AvailableCourses from "../_components/(mainPageComponents)/availabel-cour
 import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
 import { HomePageCarousel } from "../_components/(mainPageComponents)/carousel";
 import { Testimony } from "../_components/(mainPageComponents)/testimony";
+import Head from "next/head";
 
 export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>New App</title>
+        <meta property="og:image" content="<generated>" />
+        {/* <meta property="og:image:type" content="<generated>" />
+        <meta property="og:image:width" content="<generated>" />
+        <meta property="og:image:height" content="<generated>" /> */}
+        <meta name="twitter:image" content="<generated>" />
+        {/* <meta name="twitter:image:type" content="<generated>" />
+        <meta name="twitter:image:width" content="<generated>" />
+        <meta name="twitter:image:height" content="<generated>" /> */}
+      </Head>
       {/* Navbar */}
       <HomeNavbar />
 
@@ -23,7 +35,7 @@ export default function Home() {
           <p className="text-[22px] md:px-10 source-sans-3-regular">
             Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.
           </p>
-          <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-[#2B463C] text-white rounded-md font-sans font-semibold hover:bg-[#3f6457] transition-all ease-in-out duration-300">
+          <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-[#0056d2] text-white rounded-md font-sans font-semibold hover:bg-[#00419e] transition-all ease-in-out duration-300">
             Explore Programs
           </a>
         </div>

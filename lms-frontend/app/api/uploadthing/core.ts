@@ -28,7 +28,7 @@ export const ourFileRouter = {
             // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
             return { uploadedBy: metadata.userId };
         }),
-    courseAttachment: f(['text', 'image', 'audio', 'video', 'pdf'])
+    courseAttachment: f({ pdf: { maxFileCount: 1, maxFileSize: '16MB' } })
         .middleware(async ({ req }) => {
             // This code runs on your server before upload
             const user = await auth(req);

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react"
+import { Facebook, Instagram, LinkedinIcon, Twitter } from "lucide-react"
 import Link from "next/link"
 
 export const Footer = () => {
@@ -9,18 +9,18 @@ export const Footer = () => {
                     Follow us!
                 </h3>
                 <div className="py-2 flex gap-x-1">
-                    <span>
+                    <Link href={'https://www.facebook.com/profile.php?id=61560911574316'} className="cursor-pointer" target="_blank">
                         <Facebook size={22} className="text-white" />
-                    </span>
-                    <span>
-                        <Instagram size={22} className="text-white" />
-                    </span>
-                    <span>
+                    </Link>
+                    <Link href={'https://www.linkedin.com/in/skilltech-india-b11802312/'} target="_blank">
+                        <LinkedinIcon size={22} className="text-white" />
+                    </Link>
+                    <Link href={'/'}>
                         <Twitter size={22} className="text-white" />
-                    </span>
-                    <span>
+                    </Link>
+                    <Link href={'/'}>
                         <Instagram size={22} className="text-white" />
-                    </span>
+                    </Link>
                 </div>
             </div>
             <div className="px-5 py-6">

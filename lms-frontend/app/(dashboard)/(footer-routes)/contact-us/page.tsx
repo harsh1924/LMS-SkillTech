@@ -5,7 +5,7 @@ const ContactUsPage = () => {
         <div>
             <HomeNavbar />
             <div className="py-10 flex justify-center items-center oxygen-regular">
-                <div className="py-6 px-5 rounded-md shadow-[0_0_20px_#688F4E] flex justify-center items-center flex-col border">
+                <div className="py-6 px-5 rounded-md shadow-[0_0_20px_#347dfb] flex justify-center items-center flex-col border">
                     <h3 className="text-xl pb-2">
                         CONTACT US
                     </h3>
@@ -38,7 +38,7 @@ const ContactUsPage = () => {
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div className="flex items-center justify-center">
-                            <button type="submit" className="bg-[#2B463C] text-white py-2 px-16 rounded-md hover:bg-[#3f6658] transition-all ease-in-out duration-300">
+                            <button type="submit" className="bg-[#0056d2] text-white oxygen-regular rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300 py-2 px-16">
                                 Submit
                             </button>
                         </div>

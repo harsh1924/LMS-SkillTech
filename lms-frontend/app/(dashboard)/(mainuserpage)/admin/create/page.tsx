@@ -59,7 +59,7 @@ export default function CourseCreationPage() {
 
     return (
         <form onSubmit={createNewCourse} className="flex justify-center items-center h-full flex-col md:flex-row  gap-10 py-7">
-            <div className="w-[400px] border shadow-[0_0_10px_#688F4E] px-6 py-4 flex flex-col gap-y-4">
+            <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
                 <h2 className="font-semibold text-xl">
                     Create New Course
                 </h2>
@@ -99,7 +99,7 @@ export default function CourseCreationPage() {
                         <input onChange={handleUserInput} value={course.price} name="price" type="number" id="price" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. 32000" />
                     </div>
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="border px-4 py-2 bg-[#2B463C] text-white font-serif rounded-md">Create Course</button>
+                        <button type="submit" className="border px-4 py-2 bg-[#0056d2] text-white font-serif rounded-md">Create Course</button>
                     </div>
                 </div>
 

@@ -17,7 +17,6 @@ const PurchasedCourseLecture = async ({
 
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
-    console.log(currentCourse);
 
     const currentCourseProgress = currentCourse.progress;
     const courseLectures = currentCourse.course.lectures;
@@ -25,7 +24,6 @@ const PurchasedCourseLecture = async ({
     
     const courseLecturesLength = courseLectures.length;
     const progress = Math.floor(currentCourseProgress / courseLecturesLength * 100);
-    // console.log(progress);
 
     return (
         <div className="px-3 lg:px-10 py-7 flex flex-col gap-y-8">

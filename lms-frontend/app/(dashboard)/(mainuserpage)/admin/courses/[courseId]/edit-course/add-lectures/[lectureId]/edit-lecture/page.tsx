@@ -17,6 +17,7 @@ const chapterIdPage = async (
     const chapter = course.lectures;
     const lecture = chapter.findIndex((e: { id: string; }) => e.id === params.lectureId)
     const finalChapter = chapter[lecture];
+    
 
     return (
         <div>

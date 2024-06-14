@@ -26,7 +26,7 @@ export const UserPurchasedCoursesCard = async ({
                     {/* {userId} */}
                 </p>
                 <p className="flex justify-center items-center text-center">
-                    <Link href={`/profile/${userId}/purchased-course-lectures/${courseId}`} className="border px-6 py-2 rounded-md w-full bg-yellow-600 text-white hover:bg-yellow-500 transition-all ease-in-out duration-300 source-sans-3-regular">
+                    <Link href={`/learn/${userId}/purchased-course-lectures/${courseId}`} className="border px-6 py-2 rounded-md w-full bg-yellow-600 text-white hover:bg-yellow-500 transition-all ease-in-out duration-300 source-sans-3-regular">
                         Continue
                     </Link>
                 </p>

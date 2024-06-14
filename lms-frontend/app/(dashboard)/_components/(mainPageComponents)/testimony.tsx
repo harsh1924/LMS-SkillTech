@@ -14,7 +14,7 @@ export const Testimony = () => {
                         <span className="font-bold">Will A</span>
                     </div>
                     <div className="py-4 flex items-center justify-between gap-2">
-                        <p className="text-[#688F4E] font-bold">[NEW] Ultimate AWS Certified Cloud Practitioner - 2022</p>
+                        <p className="text-[#347dfb] font-bold">[NEW] Ultimate AWS Certified Cloud Practitioner - 2022</p>
                     </div>
                 </div>
                 <div className="border flex flex-col justify-between bg-white p-6 w-[100%] sm:w-[31%]">
@@ -30,7 +30,7 @@ export const Testimony = () => {
                         <span className="font-bold">Ron F</span>
                     </div>
                     <div className="py-4 flex items-center justify-between gap-2">
-                        <p className="text-[#688F4E] font-bold">Become a Product Manager | Learn the Skills & Get the Job</p>
+                        <p className="text-[#347dfb] font-bold">Become a Product Manager | Learn the Skills & Get the Job</p>
                     </div>
                 </div>
                 <div className="border flex flex-col justify-between bg-white p-6 w-[100%] sm:w-[31%]">
@@ -45,7 +45,7 @@ export const Testimony = () => {
                         <span className="font-bold">Phillip W</span>
                     </div>
                     <div className="py-4 flex items-center justify-between gap-2">
-                        <p className="text-[#688F4E] font-bold">Leadership: Practical Leadership Skills. Become better at management</p>
+                        <p className="text-[#347dfb] font-bold">Leadership: Practical Leadership Skills. Become better at management</p>
                     </div>
                 </div>
             </div>

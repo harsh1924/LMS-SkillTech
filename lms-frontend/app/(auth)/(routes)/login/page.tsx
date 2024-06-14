@@ -1,12 +1,13 @@
 'use client';
 
-import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
 import { Logo } from "@/app/(dashboard)/_components/logo";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+
+import '@/app/(dashboard)/dashboard.css'
 
 const LoginPage = () => {
 
@@ -46,7 +47,7 @@ const LoginPage = () => {
                 <img src="https://accounts.pwskills.com/images/signin-banner.svg" className="w-[100%] h-[100%]" />
             </div>
             <form onSubmit={onLogin} className="flex w-1/2 justify-center items-center h-full flex-col gap-10">
-                <div className="w-[400px] border shadow-[0_0_10px_#688F4E] px-6 py-4 flex flex-col gap-y-4">
+                <div className="w-[400px] border shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
                     <div className="flex justify-center">
                         <Link href={'/'}>
                             <Logo />
@@ -75,13 +76,13 @@ const LoginPage = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-center">
-                            <button type="submit" className="border px-4 py-2 bg-[#2B463C] text-white font-serif rounded-md text-sm">Log In</button>
+                            <button type="submit" className="border px-4 py-2 bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white font-serif rounded-md text-sm">Log In</button>
                         </div>
                         <div className="text-[13px] text-center text-gray-500">
                             Dont have an account? {" "}
-                            <Link href={'/signup'} className="text-[#688F4E] font-serif">Create New Account</Link>
+                            <Link href={'/signup'} className="text-[#347dfb] font-serif">Create New Account</Link>
                         </div>
-                        <div className="text-[13px] font-serif text-[#688F4E] text-center">
+                        <div className="text-[13px] font-serif text-[#347dfb] text-center">
                             Forgot Password?
                         </div>
                     </div>

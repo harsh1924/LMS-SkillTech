@@ -1,8 +1,8 @@
 'use client';
 
-import { Play } from "lucide-react";
+import { Play, PlayCircle } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Checkbox } from "@/components/ui/checkbox"
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,8 @@ interface LectureData {
     videoUrl: string,
     courseId: string,
     userId: string,
-    isCompleted: boolean
+    isCompleted: boolean,
+    currentLecture: string
 }
 
 export const LectureList = ({
@@ -27,24 +28,31 @@ export const LectureList = ({
     videoUrl,
     courseId,
     userId,
-    isCompleted
+    isCompleted,
+    currentLecture
 }: LectureData) => {
 
     const router = useRouter();
     const [lectureTitle, setLectureTitle] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
+    const ref = useRef(currentLecture);
+    // const [lectureURL]
+    // console.log(isCompleted);
+
+    const setLecture = async () => {
+        try {
+            const res = await axios.put(`/api/user/${userId}/setLectureURL/course/${courseId}/lecture?lectureId=${id}`)
+            router.refresh();
+        } catch (error: any) {
+            console.log(error.message);
+        }
+    }
 
     const courseCompletionFunction = async () => {
         try {
             const res = await axios.put(`/api/course/${courseId}/user/${userId}/course-completion?lectureId=${id}`);
-            const resData = res.data.title
-            console.log(resData);
-            setLectureTitle(resData)
-            // if (resData === true) {
-            //     // setIsDisabled(true);
-            // }
+            router.refresh();
             if (res) {
-                router.refresh();
                 toast.success('Mark as completed')
             }
         } catch (error: any) {
@@ -52,29 +60,30 @@ export const LectureList = ({
         }
     }
 
+    
     return (
+
         <div>
-            <div className="flex items-end justify-between gap-x-4 border px-6 py-4 shadow-lg rounded-md w-[400px]">
+            <div className="flex items-center justify-between gap-x-4 px-6 py-6 border-b w-[400px]">
                 <p className="flex flex-col gap-y-2">
-                    <span className="font-semibold font-sans text-xl">
-                            {title}
-                        {id}
-                    </span>
-                    <span className="text-gray-600 font-semibold">
-                        {description}
+                    <span onClick={setLecture} className="font-semibold flex items-center gap-x-2 font-sans text-xl cursor-pointer">
+                        <PlayCircle />
+                        {title}
                     </span>
                 </p>
                 <div className="flex flex-col gap-y-2">
                     <p>
                         <button onClick={courseCompletionFunction}>
-                        Mark as complete
+                            Mark as complete
                         </button>
                     </p>
-                    <Link className="flex items-center gap-x-2" href={`/course/${courseId}/purchased-course-lectures/${id}/watch-lectures`}>
-                        <Play size={18} /> Watch Lecture
-                    </Link>
+                    {/* <Link className="flex items-center gap-x-2" href={`/course/${courseId}/purchased-course-lectures/${id}/watch-lectures`}>
+                        <Play size={18} />
+                        Watch Lecture
+                    </Link> */}
                 </div>
             </div>
+
         </div>
     )
 }

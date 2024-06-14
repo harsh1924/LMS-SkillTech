@@ -49,6 +49,7 @@ const courseSchema = new Schema({
             },
         }
     ],
+    syllabus: String,
     isPublished: {
         type: Boolean,
         default: false

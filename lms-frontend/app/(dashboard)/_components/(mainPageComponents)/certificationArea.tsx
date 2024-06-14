@@ -4,14 +4,6 @@ import { Book, Clock, Notebook, PersonStanding } from "lucide-react";
 const CertificationArea = () => {
     return (
         <div>
-            {/* <div className="py-10 px-14 flex flex-col gap-y-4">
-                <h2 className="text-3xl font-semibold ">
-                    Get Certified, get Ahead with Our Programs
-                </h2>
-                <p className="text-lg">
-                    Learn from global experts and get certified by the world's leading university
-                </p>
-            </div> */}
             <div className="px-8 py-14">
                 <div>
                     <p className="text-[17px] pb-4">
@@ -23,7 +15,7 @@ const CertificationArea = () => {
                     <div className="flex flex-col md:justify-between md:flex-row flex-wrap gap-y-12">
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <Book className="text-[#688F4E]" size={32} />
+                                <Book className="text-[#347dfb]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">
@@ -37,7 +29,7 @@ const CertificationArea = () => {
                         </div>
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <PersonStanding className="text-[#688F4E]" size={32} />
+                                <PersonStanding className="text-[#347dfb]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">
@@ -51,7 +43,7 @@ const CertificationArea = () => {
                         </div>
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <Notebook className="text-[#688F4E]" size={32} />
+                                <Notebook className="text-[#347dfb]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">
@@ -65,7 +57,7 @@ const CertificationArea = () => {
                         </div>
                         <div className="flex gap-x-7 items-start">
                             <div>
-                                <Clock className="text-[#688F4E]" size={32} />
+                                <Clock className="text-[#347dfb]" size={32} />
                             </div>
                             <div className="w-[300px] md:w-[500px] flex flex-col gap-y-3">
                                 <p className="oxygen-bold">

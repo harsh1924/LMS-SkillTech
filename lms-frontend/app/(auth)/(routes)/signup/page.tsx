@@ -8,6 +8,8 @@ import { NextResponse } from "next/server";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+import '@/app/(dashboard)/dashboard.css'
+
 export default function SignInPage() {
 
     const router = useRouter();
@@ -49,54 +51,54 @@ export default function SignInPage() {
 
     return (
         <form onSubmit={onSignup} className="flex mb-10 items-center h-full flex-col gap-10">
-            <Link href={'/'}>
+            <Link href={'/'} className="py-6 shadow-md w-full flex items-center justify-center">
                 <Logo />
             </Link>
-            <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
-                <h2 className="font-semibold text-xl">
+            <div className="w-[400px] border shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
+                <h2 className="oxygen-semibold text-xl">
                     Create Your Account
                 </h2>
                 {/* <span className="text-md text-gray-600">
                     Unlock exclusive perks - Sign up now for early access and special offers!
                 </span> */}
                 <div className="gap-2 flex flex-col">
-                    <label htmlFor="name" className="font-semibold">
+                    <label htmlFor="name" className="oxygen-semibold">
                         Name
                     </label>
-                    <input onChange={handleUserInput} value={user.name} name="name" type="text" id="name" className="p-2 border rounded-md text-[12px] outline-none" placeholder="Enter Your Name" />
+                    <input onChange={handleUserInput} value={user.name} name="name" type="text" id="name" className="p-2 source-sans-3-regular border rounded-md text-[12px] outline-none" placeholder="Enter Your Name" />
                     <span>
                     </span>
                 </div>
                 <div className="gap-2 flex flex-col">
-                    <label htmlFor="email" className="font-semibold">
+                    <label htmlFor="email" className="oxygen-semibold">
                         Email
                     </label>
-                    <input onChange={handleUserInput} value={user.email} name="email" type="email" id="email" className="p-2 border rounded-md text-[12px] outline-none" placeholder="Enter Your Email" />
+                    <input onChange={handleUserInput} value={user.email} name="email" type="email" id="email" className="p-2 source-sans-3-regular border rounded-md text-[12px] outline-none" placeholder="Enter Your Email" />
                 </div>
                 <div className="gap-2 flex flex-col">
-                    <label htmlFor="phoneNumber" className="font-semibold">
+                    <label htmlFor="phoneNumber" className="oxygen-semibold">
                         Phone Number
                     </label>
                     <div className="flex items-center border gap-x-3 rounded-md p-2">
-                        <span className="text-sm">
+                        <span className="text-sm oxygen-regular">
                             +91 | 
                         </span>
-                        <input onChange={handleUserInput} value={user.phoneNumber} name="phoneNumber" type="number" id="phoneNumber" className="rounded-md text-[12px] outline-none" placeholder="Enter Your Phone Number" />
+                        <input onChange={handleUserInput} value={user.phoneNumber} name="phoneNumber" type="number" id="phoneNumber" className="rounded-md source-sans-3-regular text-[12px] outline-none" placeholder="Enter Your Phone Number" />
                     </div>
                 </div>
                 <div className="gap-2 flex flex-col">
-                    <label htmlFor="password" className="font-semibold">
+                    <label htmlFor="password" className="oxygen-semibold">
                         Password
                     </label>
-                    <input onChange={handleUserInput} value={user.password} name="password" type="password" id="password" className="p-2 border rounded-md text-[12px] outline-none" placeholder="Enter Your Password" />
+                    <input onChange={handleUserInput} value={user.password} name="password" type="password" id="password" className="p-2 source-sans-3-regular border rounded-md text-[12px] outline-none" placeholder="Enter Your Password" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Create Account</button>
+                        <button type="submit" className="border px-6 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300 rounded-md">Create Account</button>
                     </div>
-                    <div className="text-[13px] text-gray-500">
+                    <div className="source-sans-3-regular text-[15px] text-gray-500">
                         Already have an account? {" "}
-                        <Link href={'/login'} className="text-sky-500 font-serif">Log In</Link>
+                        <Link href={'/login'} className="text-[#347dfb]">Log In</Link>
                     </div>
                 </div>
             </div>

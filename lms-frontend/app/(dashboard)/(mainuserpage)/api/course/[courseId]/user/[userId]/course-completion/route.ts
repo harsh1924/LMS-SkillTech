@@ -9,28 +9,37 @@ export async function PUT(request: NextRequest, {
 }) {
     try {
         const user = await userModel.findById(params.userId);
-        const lectureId = request.nextUrl.searchParams.get('lectureId');
-        // console.log(lectureId);
         const userProgress = user.userProgress;
+        
         const courseIndex = userProgress.findIndex((e: { course: any; }) => e.course.id === params.courseId);
-        // console.log(courseIndex);
         const currentCourse = userProgress[courseIndex];
-        // console.log(currentCourse.course.lectures);
+
+        const lectureId = request.nextUrl.searchParams.get('lectureId');
         const lectureIndex = currentCourse.course.lectures.findIndex((element: any) => element._id.valueOf() === lectureId);
-        // console.log(lectureIndex);
-
         const currentLecture = currentCourse.course.lectures[lectureIndex];
-        // console.log(currentLecture);
+        console.log(currentLecture);
 
-        console.log(currentLecture.title);
-        currentLecture.title = 'Hello There';
-        console.log(currentLecture.title);
+        if (!currentLecture.isCompleted) {
+            currentCourse.progress = currentCourse.progress + 1;
+        }
 
-        // currentCourse.progress = currentCourse.progress + 1;
+        await userModel.findOneAndUpdate(
+            { _id: params.userId },
+            {
+                $set: {
+                    'userProgress.$[].course.lectures.$[lecture].isCompleted': true
+                }
+            },
+            {
+                arrayFilters: [
+                    {
+                        'lecture._id': currentLecture._id
+                    }
+                ]
+            }
+        )
 
-        // console.log(typeof (lectureCompletion));
         await user.save();
-
         return NextResponse.json({
             message: 'Done',
         }, { status: 200 })

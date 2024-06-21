@@ -37,7 +37,7 @@ const userSchema = new Schema({
     userProgress: [{
         course: {
             id: String,
-            lectures: [],
+            lectures: [], 
         },
         currentLectureId: String,
         currentLectureURL: {

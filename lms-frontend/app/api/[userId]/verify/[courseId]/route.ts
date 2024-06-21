@@ -42,18 +42,34 @@ export async function POST(request: NextRequest,
         );
     }
 
+    const userId = params.userId
+
     await purchaseModel.create({
         courseId: params.courseId,
         userId: params.userId,
         paymentOrderId: razorpayPaymentId
     });
-    user.userProgress.push({
-        course: {
-            id: params.courseId,
-            lectures: course.lectures
-        },
-    });
-    await user.save();
+    // user.userProgress.push({
+    //     course: {
+    //         id: params.courseId,
+    //         lectures: course.lectures
+    //     },
+    // });
+
+    await userModel.updateOne(
+        { _id: userId },
+        {
+            $push: {
+                userProgress: {
+                    course: {
+                        id: params.courseId,
+                        lectures: course.lectures
+                    }
+                },
+            }
+        }
+    )
+    // await user.save();
 
     return NextResponse.json(
         { message: 'payment verified successfully', isOk: true },

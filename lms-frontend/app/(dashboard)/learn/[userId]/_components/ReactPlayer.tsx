@@ -22,7 +22,6 @@ export const Player = ({
     const checkElapsedTime = (e: { target: { getDuration: () => any; getCurrentTime: () => any; }; }) => {
         const duration = e.target.getDuration();
         const currentTime = e.target.getCurrentTime();
-        console.log(currentTime / duration);
         if (currentTime / duration > 0.95) {
             courseCompletionFunction();
         }
@@ -42,17 +41,42 @@ export const Player = ({
     const videoCode = url.split("v=")[1].split("&")[0];
     const opts = {
         height: '400',
-        width: '800',
+        width: '880',
         playerVars: {
             autoplay: 0,
         },
+    };
 
+    const opts1 = {
+        height: '300',
+        width: '330',
+        playerVars: {
+            autoplay: 0,
+        },
+    };
+
+    const opts2 = {
+        height: '300',
+        width: '700',
+        playerVars: {
+            autoplay: 0,
+        },
     };
 
     return (
-        <div>
-            <YouTube videoId={videoCode} opts={opts} onStateChange={(e) => checkElapsedTime(e)}
-            />
-        </div>
+        <>
+            <div className='md:hidden'>
+                <YouTube videoId={videoCode} opts={opts1} onStateChange={(e) => checkElapsedTime(e)}
+                />
+            </div>
+            <div className='hidden md:flex lg:hidden'>
+                <YouTube videoId={videoCode} opts={opts2} onStateChange={(e) => checkElapsedTime(e)}
+                />
+            </div>
+            <div className='hidden lg:flex'>
+                <YouTube videoId={videoCode} opts={opts} onStateChange={(e) => checkElapsedTime(e)}
+                />
+            </div>
+        </>
     )
 }

@@ -61,7 +61,7 @@ export const LoginButtons = () => {
                             </span>
                         </Link> */}
                         <Link href={'/login'}>
-                            <span className="rounded-md px-5 py-2 bg-[#0056d2] text-white font-serif hover:bg-[#00419e] transition-all ease-in-out duration-300">
+                            <span className="rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300">
                                 Login/Register
                             </span>
                         </Link>

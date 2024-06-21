@@ -29,7 +29,6 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             const response = await axios.post('/api/user/login', user);
-            console.log(response);
             
             if (response) {
                 toast.success('Login Successfull');

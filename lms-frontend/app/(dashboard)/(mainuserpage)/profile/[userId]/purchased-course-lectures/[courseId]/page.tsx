@@ -47,7 +47,7 @@ const PurchasedCourseLecture = async ({
                                 Generate Certificate
                             </Link>
                         ) : (
-                            <Link href={`/`} className="bg-yellow-600 text-white px-5 py-3 rounded-md">
+                            <Link href={`/learn/${params.userId}/survey`} className="bg-yellow-600 text-white px-5 py-3 rounded-md">
                                 Generate Certificate
                             </Link>
                         )}
@@ -58,7 +58,7 @@ const PurchasedCourseLecture = async ({
             <div className="flex flex-col gap-y-6 ">
                 {courseLectures.map((e: { _id: string; title: string; description: string; videoUrl: string; userId: string; isCompleted: boolean }, idx: number) =>
                     <div>
-                        <LectureList id={e._id} title={e.title} description={e.description} idx={idx} videoUrl={e.videoUrl} courseId={params.courseId} userId={params.userId} isCompleted={e.isCompleted} />
+                        <LectureList id={e._id} title={e.title} description={e.description} idx={idx} videoUrl={e.videoUrl} courseId={params.courseId} userId={params.userId} isCompleted={e.isCompleted} currentLecture=""/>
                     </div>)
                 }
             </div>

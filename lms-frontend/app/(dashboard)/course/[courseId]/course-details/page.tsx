@@ -20,6 +20,7 @@ const CourseDetails = ({
 }) => {
 
     const [isLoading, setIsLoading] = useState(false);
+    const [userId, setUserIdData] = useState('');
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
@@ -31,7 +32,6 @@ const CourseDetails = ({
             userId: userIdData
         })
     }
-    const [userId, setUserIdData] = useState('');
     const [data, setData] = useState({
         courseId: params.courseId,
         userId: ''
@@ -41,8 +41,6 @@ const CourseDetails = ({
         const id = await getId();
         const res = await axios.post(`/api/course/${params.courseId}/user/${userId}/add-free-course`, data)
     }
-
-
 
     // basic data of course
     const [courseTitleData, setCourseTitleData] = useState('');

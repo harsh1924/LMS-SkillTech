@@ -3,7 +3,6 @@
 import axios from "axios";
 
 import '@/app/(dashboard)/dashboard.css'
-import { Button } from "../../../../../../components/ui/button";
 
 import { usePathname, useRouter } from "next/navigation";
 
@@ -21,6 +20,7 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 
 import { LogOut, UserCircle2Icon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 
 export const NavbarRoutes = () => {

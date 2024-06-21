@@ -16,7 +16,7 @@ const PurchaseCourse = async ({ params }: {
     const course = await courseModel.findById(params.courseId);
 
     return (
-        <div className="flex flex-col items-center h-full">
+        <div className="flex flex-col items-center mb-10">
             <div className="w-full shadow-md py-6 px-20">
                 <Logo />
             </div>
@@ -41,7 +41,8 @@ const PurchaseCourse = async ({ params }: {
                             price={course.price}
                             courseId={params.courseId}
                             courseName={course.title}
-                            courseDescription={course.description} />
+                            courseDescription={course.description} 
+                            isCourseFree={course.isFree}/>
                     </div>
                 </div>
             </div>

@@ -22,11 +22,10 @@ const SurveyPage = async ({
     return (
         <div>
             <div>
-
                 <HomeNavbar />
             </div>
-            <div className="px-20 pt-16">
-                <h1 className="oxygen-bold pb-3 text-2xl">
+            <div className="px-20 pt-6 flex flex-col gap-y-2">
+                <h1 className="oxygen-bold py-6 bg-[#52a6ff] text-2xl flex items-center text-white justify-center">
                     Course Evaluation Survey
                 </h1>
                 <p className="source-sans-3-regular text-lg">
@@ -39,7 +38,7 @@ const SurveyPage = async ({
                 <input type="hidden" name="access_key" value="c5335490-fd96-4271-910a-4d89cf799824" />
                 {isCourseFree ? (
                     <div>
-                        <input type="hidden" name="redirect" value={`http://localhost:3000/`} />
+                        <input type="hidden" name="redirect" value={`http://localhost:3000/course/${params.courseId}/purchase`} />
                     </div>
                 ) : (
                     <input type="hidden" name="redirect" value={`http://localhost:3000/courses/${params.courseId}/certificate`} />

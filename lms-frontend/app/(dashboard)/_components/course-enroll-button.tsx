@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import axios from "axios"
 import { IndianRupeeIcon } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { NextResponse } from "next/server"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
@@ -11,16 +12,19 @@ interface CourseEnrollButtonProps {
     price: number,
     courseId: string,
     courseName: string,
-    courseDescription: string
+    courseDescription: string,
+    isCourseFree: string
 }
 
 export const CourseEnrollButton = ({
     price,
     courseId,
     courseName,
-    courseDescription
+    courseDescription,
+    isCourseFree
 }: CourseEnrollButtonProps) => {
 
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const [userId, setuserId] = useState('');
     const [userName, setUserName] = useState('')
@@ -101,11 +105,15 @@ export const CourseEnrollButton = ({
                     });
                     const res = await result.json();
                     if (res.isOk) {
-
                         toast.success("Payment Successfull");
+                        router.push('/profile')
                     }
                     else {
                         toast.error("Payment Failed");
+                    }
+
+                    if (res.isOk && isCourseFree) {
+                        router.push(`/courses/${courseId}/certificate`)
                     }
                 },
                 prefill: {
@@ -167,9 +175,15 @@ export const CourseEnrollButton = ({
                 </p>
             </div>
             <div className="flex w-full mt-5 justify-center">
-                <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
-                    Enroll for {finalPrice}
-                </button>
+                {isCourseFree ? (
+                    <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
+                        Pay {finalPrice}
+                    </button>
+                ) : (
+                    <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
+                        Enroll for {finalPrice}
+                    </button>
+                )}
             </div>
         </div>
     )

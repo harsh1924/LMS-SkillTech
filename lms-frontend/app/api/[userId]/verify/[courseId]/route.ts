@@ -56,19 +56,21 @@ export async function POST(request: NextRequest,
     //     },
     // });
 
-    await userModel.updateOne(
-        { _id: userId },
-        {
-            $push: {
-                userProgress: {
-                    course: {
-                        id: params.courseId,
-                        lectures: course.lectures
-                    }
-                },
+    if (!course.isFree) {
+        await userModel.updateOne(
+            { _id: userId },
+            {
+                $push: {
+                    userProgress: {
+                        course: {
+                            id: params.courseId,
+                            lectures: course.lectures
+                        }
+                    },
+                }
             }
-        }
-    )
+        )
+    }
     // await user.save();
 
     return NextResponse.json(

@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 import '@/app/(dashboard)/dashboard.css'
+import { useRouter } from "next/navigation";
 
 const CourseDetails = ({
     params
@@ -19,27 +20,39 @@ const CourseDetails = ({
     params: { courseId: string }
 }) => {
 
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const [userId, setUserIdData] = useState('');
 
-    const getId = async () => {
-        const res = await axios.get('/api/user/user-details')
-        const userData = res.data.user;
-        const userIdData = res.data.user._id;
-        setUserIdData(userIdData);
-        setData({
-            ...data,
-            userId: userIdData
-        })
-    }
+    // const getId = async () => {
+    //     const res = await axios.get('/api/user/user-details')
+    //     const userData = res.data.user;
+    //     const userIdData = res.data.user._id;
+    //     setUserIdData(userIdData);
+    //     setData({
+    //         ...data,
+    //         userId: userIdData
+    //     })
+    // }
+
     const [data, setData] = useState({
         courseId: params.courseId,
         userId: ''
     })
 
     const addFreeCourse = async () => {
-        const id = await getId();
-        const res = await axios.post(`/api/course/${params.courseId}/user/${userId}/add-free-course`, data)
+        const res = await axios.get('/api/user/user-details')
+        const userIdData = res.data.user._id;
+        setUserIdData(userIdData);
+        setData({
+            ...data,
+            userId: userIdData
+        })
+        // if (data.userId != '') {
+        await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
+        toast.success('Enrolled Successfully');
+        router.push('/profile')
+        // }
     }
 
     // basic data of course

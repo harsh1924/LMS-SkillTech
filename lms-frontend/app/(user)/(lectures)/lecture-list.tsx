@@ -34,7 +34,7 @@ export const LectureList = ({
 }: LectureData) => {
 
     const router = useRouter();
-    // const ref = useRef(currentLecture);
+    const ref = useRef<null | HTMLDivElement>(null);
 
     const setLecture = async () => {
         try {
@@ -57,24 +57,20 @@ export const LectureList = ({
         }
     }
 
-    // const handleClick = () => {
-    //     ref.current?.scrollIntoView({ behavior: 'smooth' });
-    // };
-    // const scrollToElement = () => {
-    //     const currentLecture = divRef
-    //     if (currentLecture !== null) {
-    //         currentLecture.scrollIntoView({ behavior: "smooth" })
-    //     }
-    // }
+    const scrollToLecture = () => {
+        const lectureSection = document.getElementById('id')!;
+        if (lectureSection) {
+            ref.current!.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-    // useEffect(() => {
-    //     // ref.scrollIntoView({ behavior: "instant", block: "start" });
-    //     handleClick();
-    // }, [])
+    useEffect(() => {
+        scrollToLecture()
+    }, [])
     return (
 
         <div>
-            <div className="flex items-center justify-between gap-x-4 px-6 py-6 border-b w-full">
+            <div className="flex items-center justify-between gap-x-4 px-6 py-[800px] border-b w-full">
                 <div className="flex flex-col gap-y-2">
                     <div onClick={setLecture} className="font-semibold flex items-center gap-x-6 font-sans cursor-pointer" >
                         <div className="flex flex-col gap-y-2">
@@ -86,7 +82,9 @@ export const LectureList = ({
                                 )}
                             </div>
                         </div>
-                        {title}
+                        <div id="id" ref={ref}>
+                            {title}
+                        </div>
                     </div>
                 </div>
             </div>

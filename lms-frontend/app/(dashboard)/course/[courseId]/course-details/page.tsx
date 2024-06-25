@@ -49,9 +49,16 @@ const CourseDetails = ({
             userId: userIdData
         })
         // if (data.userId != '') {
-        await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
-        toast.success('Enrolled Successfully');
-        router.push('/profile')
+        setTimeout(async () => {
+            const res = await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
+            if (res) {
+                toast.success('Enrolled Successfully');
+                router.push('/profile')
+            }
+            if (!res) {
+                router.push('/login')
+            }
+        }, 2000)
         // }
     }
 

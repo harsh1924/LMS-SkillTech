@@ -22,12 +22,19 @@ export async function POST(request: NextRequest, {
 
         await purchase.save();
 
-        user.userProgress.push({
-            course: {
-                id: courseId,
-                lectures: course.lectures
-            },
-        });
+        await userModel.updateOne(
+            { _id: userId },
+            {
+                $push: {
+                    userProgress: {
+                        course: {
+                            id: params.courseId,
+                            lectures: course.lectures
+                        }
+                    },
+                }
+            }
+        )
         await user.save();
 
         return NextResponse.json({

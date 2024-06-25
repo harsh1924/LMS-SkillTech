@@ -7,6 +7,7 @@ import { LoginButtons } from "../(buttons)/login-signup-button";
 import { HoverAllCourses } from "./all-course-hover";
 
 import '@/app/(dashboard)/dashboard.css'
+import { ResourcePage } from "./resource-page";
 
 export const HomeNavbar = () => {
 
@@ -32,9 +33,9 @@ export const HomeNavbar = () => {
                 Buisness
             </Link>
 
-            <Link href={`/resources`} className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300">
-                Resources
-            </Link>
+            {/* <Link href={`/resources`} className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300"> */}
+            <ResourcePage />
+            {/* </Link> */}
 
             <Link className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300" href={'/become-instructor'}>
                 Become an instructor

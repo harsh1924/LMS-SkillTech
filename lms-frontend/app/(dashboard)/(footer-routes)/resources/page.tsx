@@ -3,8 +3,13 @@ import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 
 import '@/app/(dashboard)/dashboard.css'
 import { Footer } from "../../_components/(mainPageComponents)/footer";
+import courseModel from "@/app/server/models/courseModel";
+import Link from "next/link";
 
-const ResourcePages = () => {
+const ResourcePages = async () => {
+
+    const courses = await courseModel.find({}).select('-lectures');
+
     return (
         <div>
             <div>
@@ -20,6 +25,25 @@ const ResourcePages = () => {
             </div>
             <div className="px-6">
                 <Separator />
+            </div>
+            <div className="px-16 bg-slate-50">
+                <div className="flex flex-wrap py-6 justify-between h-[1000px] overflow-scroll no-scrollbar gap-y-6">
+                    {courses.map((course) =>
+                        <Link href={`/resources/${course.title}`} className="border h-[350px] bg-white shadow-md w-[300px] rounded-md overflow-hidden pb-4 flex flex-col justify-between">
+                            <div className="flex flex-col gap-y-10">
+                                <img alt="Course Thumbnail" src={course.imageUrl} className="w-[300px] h-[150px]" />
+                                <span className="oxygeb-bold text-lg px-6">
+                                    {course.title}
+                                </span>
+                            </div>
+                            <div className="px-6 py-[2px]">
+                                <span className="w-[100px] border border-black text-center px-6 py-[2px] rounded-xl">
+                                    Article
+                                </span>
+                            </div>
+                        </Link>
+                    )}
+                </div>
             </div>
             <div className="flex text-center py-10">
                 <div className="px-16 flex flex-col gap-y-6">
@@ -60,5 +84,7 @@ const ResourcePages = () => {
         </div>
     );
 }
+
+// 9399a6fe-b4a0-448f-b7be-26f8007eb712
 
 export default ResourcePages;

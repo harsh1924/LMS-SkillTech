@@ -49,13 +49,6 @@ export async function POST(request: NextRequest,
         userId: params.userId,
         paymentOrderId: razorpayPaymentId
     });
-    // user.userProgress.push({
-    //     course: {
-    //         id: params.courseId,
-    //         lectures: course.lectures
-    //     },
-    // });
-
     if (!course.isFree) {
         await userModel.updateOne(
             { _id: userId },
@@ -71,7 +64,6 @@ export async function POST(request: NextRequest,
             }
         )
     }
-    // await user.save();
 
     return NextResponse.json(
         { message: 'payment verified successfully', isOk: true },

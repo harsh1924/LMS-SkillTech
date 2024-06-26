@@ -14,6 +14,8 @@ const ContactUsPage = () => {
                     </p>
                     <form action="https://api.web3forms.com/submit" method="POST" className="py-4 flex gap-y-3 justify-start w-full flex-col">
                     <input type="hidden" name="access_key" value="c5335490-fd96-4271-910a-4d89cf799824" />
+                    <input type="hidden" name="subject" value="Contact us form submission"></input>
+                    <input type="hidden" name="from_name" value="Contact Us Form"></input>
                         <div className="text-[15px]">
                             <input required name="name" type="text" placeholder="Name*" className=" py-2 outline-none border-none w-full" />
                             <div className="h-[1px] bg-gray-500 w-full "></div>

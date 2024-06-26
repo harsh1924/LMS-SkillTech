@@ -15,6 +15,20 @@ export async function POST(request: NextRequest, {
         const user = await userModel.findById(userId);
         const course = await courseModel.findById(courseId);
 
+        const findPurchase = await purchaseModel.findOne({
+            'userId': userId,
+            'courseId': courseId
+        })
+        
+        if (findPurchase) {
+            return NextResponse.json({
+                message: 'Course Already Purchased',
+                success: false,
+            }, {
+                status: 400
+            })
+        }
+
         const purchase = new purchaseModel({
             courseId: courseId,
             userId: userId

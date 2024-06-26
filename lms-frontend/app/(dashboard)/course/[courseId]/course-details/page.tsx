@@ -24,16 +24,16 @@ const CourseDetails = ({
     const [isLoading, setIsLoading] = useState(false);
     const [userId, setUserIdData] = useState('');
 
-    // const getId = async () => {
-    //     const res = await axios.get('/api/user/user-details')
-    //     const userData = res.data.user;
-    //     const userIdData = res.data.user._id;
-    //     setUserIdData(userIdData);
-    //     setData({
-    //         ...data,
-    //         userId: userIdData
-    //     })
-    // }
+    const getId = async () => {
+        const res = await axios.get('/api/user/user-details')
+        const userData = res.data.user;
+        const userIdData = res.data.user._id;
+        setUserIdData(userIdData);
+        setData({
+            ...data,
+            userId: userIdData
+        })
+    }
 
     const [data, setData] = useState({
         courseId: params.courseId,
@@ -48,18 +48,11 @@ const CourseDetails = ({
             ...data,
             userId: userIdData
         })
-        // if (data.userId != '') {
-        setTimeout(async () => {
-            const res = await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
-            if (res) {
-                toast.success('Enrolled Successfully');
-                router.push('/profile')
-            }
-            if (!res) {
-                router.push('/login')
-            }
-        }, 2000)
-        // }
+        const resp = await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
+        if (resp) {
+            toast.success('Enrolled Successfully');
+            router.push('/profile')
+        }
     }
 
     // basic data of course
@@ -102,81 +95,39 @@ const CourseDetails = ({
             const courseId = params.courseId;
             const response = await axios.get(`/api/course/course-details/${courseId}`);
             const course = response.data.course;
-
-            //setting image
-            const courseImage = course.imageUrl;
-            setCourseImageURLData(courseImage)
-
-            //setting name data
-            const courseTitle = course.title;
-            setCourseTitleData(courseTitle);
-
-            // setting email data
-            const courseEmail = course.description;
-            setCourseDescData(courseEmail)
-
-            // setting created by data
-            const courseCreator = course.createdBy;
-            setCourseCreatorData(courseCreator)
-
-            // setting course price data
-            const coursePrice = course.price;
-            setCoursePriceData(coursePrice);
-
-            // setting couse duration
-            const courseDuration = course.duration;
-            setCourseDurationData(courseDuration);
-
-            // setting course overview
-            const courseOverview = course.overview;
-            setCourseOverviewData(courseOverview);
-
-            const isCourseFree = course.isFree;
-            setIsFree(isCourseFree);
-
-            const syllabus = course.syllabus;
-            setSyllabusURL(syllabus);
+            setCourseImageURLData(course.imageUrl)
+            setCourseTitleData(course.title);
+            setCourseDescData(course.description)
+            setCourseCreatorData(course.createdBy)
+            setCoursePriceData(course.price);
+            setCourseDurationData(course.duration);
+            setCourseOverviewData(course.overview);
+            setIsFree(course.isFree);
+            setSyllabusURL(course.syllabus);
 
             // setting course key features
-            const courseKeyFeatureOne = course.keyFeaturesOne;
-            setCourseKeyFeatureOneData(courseKeyFeatureOne);
-            const courseKeyFeatureTwo = course.keyFeaturesTwo;
-            setCourseKeyFeatureTwoData(courseKeyFeatureTwo);
-            const courseKeyFeatureThree = course.keyFeaturesThree;
-            setCourseKeyFeatureThreeData(courseKeyFeatureThree);
-            const courseKeyFeatureFour = course.keyFeaturesFour;
-            setCourseKeyFeatureFourData(courseKeyFeatureFour);
-            const courseKeyFeatureFive = course.keyFeaturesFive;
-            setCourseKeyFeatureFiveeData(courseKeyFeatureFive);
-            const courseKeyFeatureSix = course.keyFeaturesSix;
-            setCourseKeyFeatureSixData(courseKeyFeatureSix);
+            setCourseKeyFeatureOneData(course.keyFeaturesOne);
+            setCourseKeyFeatureTwoData(course.keyFeaturesTwo);
+            setCourseKeyFeatureThreeData(course.keyFeaturesThree);
+            setCourseKeyFeatureFourData(course.keyFeaturesFour);
+            setCourseKeyFeatureFiveeData(course.keyFeaturesFive);
+            setCourseKeyFeatureSixData(course.keyFeaturesSix);
 
             // setting course skills covered
-            const skillCoveredOne = course.skillsOne;
-            setCourseSkillsCoveredOne(skillCoveredOne)
-            const skillCoveredTwo = course.skillsTwo;
-            setCourseSkillsCoveredTwo(skillCoveredTwo)
-            const skillCoveredThree = course.skillsThree;
-            setCourseSkillsCoveredThree(skillCoveredThree)
-            const skillCoveredFour = course.skillsFour;
-            setCourseSkillsCoveredFour(skillCoveredFour)
-            const skillCoveredFive = course.skillsFive;
-            setCourseSkillsCoveredFive(skillCoveredFive)
-            const skillCoveredSix = course.skillsSix;
-            setCourseSkillsCoveredSix(skillCoveredSix)
+            setCourseSkillsCoveredOne(course.skillsOne)
+            setCourseSkillsCoveredTwo(course.skillsTwo)
+            setCourseSkillsCoveredThree(course.skillsThree)
+            setCourseSkillsCoveredFour(course.skillsFour)
+            setCourseSkillsCoveredFive(course.skillsFive)
+            setCourseSkillsCoveredSix(course.skillsSix)
 
             // setting course card details
-            const CardOne = course.cardOne;
-            setCourseCardOne(CardOne);
-            const CardTwo = course.cardTwo;
-            setCourseCardTwo(CardTwo);
-            const CardThree = course.cardThree;
-            setCourseCardThree(CardThree);
-            const CardFour = course.cardFour;
-            setCourseCardFour(CardFour);
+            setCourseCardOne(course.cardOne);
+            setCourseCardTwo(course.cardTwo);
+            setCourseCardThree(course.cardThree);
+            setCourseCardFour(course.cardFour);
 
             setIsLoading(true);
-
         } catch (error: any) {
             toast.error('Something went wrong')
         }
@@ -227,9 +178,9 @@ const CourseDetails = ({
                                                 <span>Enroll Now</span>
                                             </Link>
                                         ) : (
-                                            <span onClick={addFreeCourse} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center  cursor-pointer">
+                                            <Link href={`/courses/${params.courseId}/add-free-course`} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center  cursor-pointer">
                                                 Enroll for Free
-                                            </span>
+                                            </Link>
                                         )}
                                         <button onClick={downloadFile} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center">
                                             Download Syllabus

@@ -22,6 +22,7 @@ const PurchasedCourseLecture = async ({
 
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
+    const isCourseSurvyed = currentCourse.isSurveyed;
     const courseLectures = currentCourse.course.lectures;
 
     const courseLecturesLength = courseLectures.length;
@@ -60,9 +61,15 @@ const PurchasedCourseLecture = async ({
                         </Link>
                     )} */}
                     {progress === 100 && (
-                        <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
-                            <DownloadIcon />
-                        </Link>
+                        !isCourseSurvyed ? (
+                            <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
+                                <DownloadIcon />
+                            </Link>
+                        ) : (
+                            <Link href={`/courses/${params.courseId}/certificate`} className="bg-yellow-600 text-white px-5 py-3 rounded-md" target="_blank">
+                                Generate Certificate
+                            </Link>
+                        )
                     )}
                 </div>
             </div>

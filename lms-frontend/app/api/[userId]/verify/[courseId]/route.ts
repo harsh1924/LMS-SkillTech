@@ -31,6 +31,17 @@ export async function POST(request: NextRequest,
     const user = await userModel.findById(params.userId);
     const course = await courseModel.findById(params.courseId);
 
+    const userProgress = user.userProgress;
+
+    const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
+    const currentCourse = userProgress[courseIndex];
+    if (currentCourse) {
+        return NextResponse.json(
+            { message: 'Course Already Purchased', isOk: false },
+            { status: 400 }
+        );
+    }
+
     const { orderCreationId, razorpayPaymentId, razorpaySignature } =
         await request.json();
 

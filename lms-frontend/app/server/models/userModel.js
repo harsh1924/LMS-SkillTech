@@ -56,6 +56,10 @@ const userSchema = new Schema({
             type: Number,
             default: 0
         },
+        isSurveyed: {
+            type: Boolean,
+            default: false
+        }
     }],
 }, {
     timestamps: true

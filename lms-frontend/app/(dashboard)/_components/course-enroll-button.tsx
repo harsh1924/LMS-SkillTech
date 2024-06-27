@@ -59,7 +59,7 @@ export const CourseEnrollButton = ({
     // }
     const createOrderId = async () => {
         try {
-            const response = await fetch('/api/order', {
+            const response = await fetch(`/api/${userId}/order/${courseId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export const CourseEnrollButton = ({
             });
 
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                toast.error('Course Already Purchased')
             }
 
             const data = await response.json();

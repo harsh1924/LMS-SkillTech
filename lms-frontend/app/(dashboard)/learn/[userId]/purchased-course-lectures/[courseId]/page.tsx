@@ -60,7 +60,7 @@ const PurchasedCourseLecture = async ({
                         </Link>
                     )} */}
                     {progress === 100 && (
-                        <Link href={`/course/${params.courseId}/survey`}>
+                        <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
                             <DownloadIcon />
                         </Link>
                     )}

@@ -10,8 +10,6 @@ export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
         const { email, password } = reqBody;
-        console.log(reqBody);
-
 
         // checking user exists or not
         const user = await userModel.findOne({ email }).select('+password');

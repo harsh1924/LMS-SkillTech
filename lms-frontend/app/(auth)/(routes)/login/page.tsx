@@ -32,6 +32,7 @@ const LoginPage = () => {
             
             if (response) {
                 toast.success('Login Successfull');
+                router.push('/profile')
             }
             router.push(`/`);
         } catch (error: any) {

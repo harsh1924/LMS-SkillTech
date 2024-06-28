@@ -29,8 +29,8 @@ const LoginPage = () => {
             const response = await axios.post('/api/user/login/admin', user);
             if (response) {
                 toast.success('Login Successfull');
+                router.push(`/admin/courses`);
             }
-            router.push(`/admin/courses`);
         } catch (error: any) {
             if (!user.email || !user.password) {
                 toast.error('All fields are required')

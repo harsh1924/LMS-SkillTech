@@ -21,7 +21,7 @@ export async function POST(request: NextRequest,
 
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
-    if (currentCourse) {
+    if (currentCourse && !course.isFree) {
         return NextResponse.json(
             { message: 'Course Already Purchased', isOk: false },
             { status: 400 }

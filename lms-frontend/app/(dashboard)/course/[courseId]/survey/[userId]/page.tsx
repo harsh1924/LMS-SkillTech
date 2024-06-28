@@ -59,8 +59,8 @@ const SurveyPage = ({
                     <form className="px-16 py-4"
                         action="https://api.web3forms.com/submit" method="POST"
                     >
-                        <input type="hidden" name="access_key" value="c5335490-fd96-4271-910a-4d89cf799824" />
-                        <input type="hidden" name="subject" value="Survey Form Submission"></input>
+                        <input type="hidden" name="access_key" value="9399a6fe-b4a0-448f-b7be-26f8007eb712" />
+                        <input type="hidden" name="subject" value="New Survey Form Submitted"></input>
                         <input type="hidden" name="from_name" value={`Survey Form - ${userName}`}></input>
 
                         {isCourseFree ? (
@@ -86,51 +86,51 @@ const SurveyPage = ({
                                 <span className="oxygen-semibold text-lg py-2 w-[300px]">
                                     Course Content
                                 </span>
-                                <input type="radio" name="Course Content" value='Not Satisfied' required />
-                                <input type="radio" name="Course Content" value='Slightly' required />
-                                <input type="radio" name="Course Content" value='Moderately' required />
-                                <input type="radio" name="Course Content" value='Very' required />
-                                <input type="radio" name="Course Content" value='Highly Satisfied' required />
+                                <input type="radio" name="Course Content" value='Not Satisfied' />
+                                <input type="radio" name="Course Content" value='Slightly' />
+                                <input type="radio" name="Course Content" value='Moderately' />
+                                <input type="radio" name="Course Content" value='Very' />
+                                <input type="radio" name="Course Content" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
                                 <span className="oxygen-semibold text-lg py-2 w-[300px]">
                                     Course Delivery
                                 </span>
-                                <input type="radio" name="Course Delivery" value='Not Satisfied' required />
-                                <input type="radio" name="Course Delivery" value='Slightly' required />
-                                <input type="radio" name="Course Delivery" value='Moderately' required />
-                                <input type="radio" name="Course Delivery" value='Very' required />
-                                <input type="radio" name="Course Delivery" value='Highly Satisfied' required />
+                                <input type="radio" name="Course Delivery" value='Not Satisfied' />
+                                <input type="radio" name="Course Delivery" value='Slightly' />
+                                <input type="radio" name="Course Delivery" value='Moderately' />
+                                <input type="radio" name="Course Delivery" value='Very' />
+                                <input type="radio" name="Course Delivery" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
                                 <span className="oxygen-semibold text-lg py-2 w-[300px]">
                                     Course Support Material
                                 </span>
-                                <input type="radio" name="Course Support Material" value='Not Satisfied' required />
-                                <input type="radio" name="Course Support Material" value='Slightly' required />
-                                <input type="radio" name="Course Support Material" value='Moderately' required />
-                                <input type="radio" name="Course Support Material" value='Very' required />
-                                <input type="radio" name="Course Support Material" value='Highly Satisfied' required />
+                                <input type="radio" name="Course Support Material" value='Not Satisfied' />
+                                <input type="radio" name="Course Support Material" value='Slightly' />
+                                <input type="radio" name="Course Support Material" value='Moderately' />
+                                <input type="radio" name="Course Support Material" value='Very' />
+                                <input type="radio" name="Course Support Material" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
                                 <span className="oxygen-semibold text-lg py-2 w-[300px]">
                                     Instructors
                                 </span>
-                                <input type="radio" name="Instructors" value='Not Satisfied' required />
-                                <input type="radio" name="Instructors" value='Slightly' required />
-                                <input type="radio" name="Instructors" value='Moderately' required />
-                                <input type="radio" name="Instructors" value='Very' required />
-                                <input type="radio" name="Instructors" value='Highly Satisfied' required />
+                                <input type="radio" name="Instructors" value='Not Satisfied' />
+                                <input type="radio" name="Instructors" value='Slightly' />
+                                <input type="radio" name="Instructors" value='Moderately' />
+                                <input type="radio" name="Instructors" value='Very' />
+                                <input type="radio" name="Instructors" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
                                 <span className="oxygen-semibold text-lg py-2 w-[300px]">
                                     Course Satisfied Your Expectations
                                 </span>
-                                <input type="radio" name="Course Expectations" value='Not Satisfied' required />
-                                <input type="radio" name="Course Expectations" value='Slightly' required />
-                                <input type="radio" name="Course Expectations" value='Moderately' required />
-                                <input type="radio" name="Course Expectations" value='Very' required />
-                                <input type="radio" name="Course Expectations" value='Highly Satisfied' required />
+                                <input type="radio" name="Course Expectations" value='Not Satisfied' />
+                                <input type="radio" name="Course Expectations" value='Slightly' />
+                                <input type="radio" name="Course Expectations" value='Moderately' />
+                                <input type="radio" name="Course Expectations" value='Very' />
+                                <input type="radio" name="Course Expectations" value='Highly Satisfied' />
                             </div>
                         </div>
                         <span className="flex flex-col py-6">

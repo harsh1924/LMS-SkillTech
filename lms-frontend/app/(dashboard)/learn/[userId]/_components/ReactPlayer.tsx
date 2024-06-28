@@ -32,7 +32,7 @@ export const Player = ({
             const res = await axios.put(`/api/course/${courseId}/user/${userId}/course-completion?lectureId=${id}`);
             router.refresh();
             if (res) {
-                toast.success('Mark as completed')
+                toast.success('Lecture Completed')
             }
         } catch (error: any) {
             console.log(error.message);

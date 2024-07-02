@@ -27,11 +27,12 @@ export const CourseEnrollButton = ({
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const [userId, setuserId] = useState('');
-    const [userName, setUserName] = useState('')
-    const [userEmail, setUserEmail] = useState('')
+    const [userName, setUserName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userRole, setUserRole] = useState('');
     const GST = Math.floor((price * 18) / 100);
     const finalPrice = price + GST;
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState([]);
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
@@ -39,26 +40,16 @@ export const CourseEnrollButton = ({
         setuserId(res.data.user._id)
         setUserName(res.data.user.name)
         setUserEmail(res.data.user.email)
+        setUserRole(res.data.user.role)
     }
 
-    // const onClick = async () => {
-    // try {
-    //     setIsLoading(true);
-    //     const res = await axios.post(`/api/course/${courseId}/user/${userId}/checkout`);
-    //     window.location.assign(res.data.url);
-
-    // } catch (error: any) {
-    //     toast.error('Something went wrong')
-    //     return NextResponse.json({
-    //         message: 'Error'
-    //     }, { status: 400 });
-
-    // } finally {
-    //     setIsLoading(false);
-    // }
-    // }
     const createOrderId = async () => {
         try {
+            // if (userRole === 'ADMIN') {
+            //     toast.error('Admin cannot purchase courses')
+            //     return;
+            // }
+
             const response = await fetch(`/api/${userId}/order/${courseId}`, {
                 method: 'POST',
                 headers: {

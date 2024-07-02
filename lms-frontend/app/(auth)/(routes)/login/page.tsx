@@ -82,9 +82,9 @@ const LoginPage = () => {
                             Dont have an account? {" "}
                             <Link href={'/signup'} className="text-[#347dfb] font-serif">Create New Account</Link>
                         </div>
-                        <div className="text-[13px] font-serif text-[#347dfb] text-center">
+                        <Link href={`/forgot-password`} className="text-[13px] font-serif text-[#347dfb] text-center">
                             Forgot Password?
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </form>

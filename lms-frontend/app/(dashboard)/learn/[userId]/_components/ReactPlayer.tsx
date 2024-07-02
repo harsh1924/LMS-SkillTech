@@ -42,25 +42,20 @@ export const Player = ({
     const opts = {
         height: '400',
         width: '880',
-        playerVars: {
-            autoplay: 0,
-        },
+        playerVars: {rel: 0, showinfo: 0, ecver: 0, autoplay: 0, list: 'user_uploads'},
+        
     };
 
     const opts1 = {
         height: '300',
         width: '330',
-        playerVars: {
-            autoplay: 0,
-        },
+        playerVars: {rel: 0, showinfo: 0, ecver: 0, autoplay: 0}
     };
 
     const opts2 = {
         height: '300',
         width: '700',
-        playerVars: {
-            autoplay: 0,
-        },
+        playerVars: {rel: 0, showinfo: 0, ecver: 0, autoplay: 0}
     };
 
     return (

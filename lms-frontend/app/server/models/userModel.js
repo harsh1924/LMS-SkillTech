@@ -32,8 +32,6 @@ const userSchema = new Schema({
     },
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
-    verifyToken: String,
-    verifyTokenExpiry: Date,
     userProgress: [{
         course: {
             id: String,

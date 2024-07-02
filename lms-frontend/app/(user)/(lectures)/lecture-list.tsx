@@ -71,8 +71,8 @@ export const LectureList = ({
 
         <div>
             <div className="flex items-center justify-between gap-x-4 px-6 py-6 border-b w-full">
-                <div className="flex flex-col gap-y-2">
-                    <div onClick={setLecture} className="font-semibold flex items-center gap-x-6 font-sans cursor-pointer" >
+                <div>
+                    <div onClick={setLecture} className="oxygen-semibold flex items-center gap-x-6 cursor-pointer">
                         <div className="flex flex-col gap-y-2">
                             <div>
                                 {!isCompleted ? (
@@ -82,7 +82,7 @@ export const LectureList = ({
                                 )}
                             </div>
                         </div>
-                        <div id="id" ref={ref}>
+                        <div id="id" ref={ref} className="lg:w-[150px] overflow-hidden">
                             {title}
                         </div>
                     </div>

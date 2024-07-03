@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         // checking user exists or not
         const user = await userModel.findOne({ email }).select('+password');
         if (!user) {
-            return NextResponse.json({ error: 'User does not exits' },
+            return NextResponse.json({ error: 'User does not exists' },
                 { status: 400 }
             )
         }

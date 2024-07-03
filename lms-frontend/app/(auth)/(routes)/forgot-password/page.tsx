@@ -7,17 +7,27 @@ import toast from "react-hot-toast";
 
 const ForgotPassword = () => {
 
-    const [email, setEmail] = useState('');
+    const [user, setUser] = useState({
+        email: '',
+    });
+
+    const handleUserInput = (event: { target: { name: any; value: any; }; }) => {
+        const { name, value } = event.target;
+        setUser({
+            ...user,
+            [name]: value,
+        });
+    };
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/forgot-password', email);
+            const res = await axios.post('/api/forgot-password', user);
             if (res) {
-                toast.success('Done')
+                toast.success('Reset Link Sent')
             }
         } catch (error: any) {
-            toast.error(error.message)
+            toast.error(error.message);
         }
     }
 
@@ -34,7 +44,7 @@ const ForgotPassword = () => {
                     <label htmlFor="email" className="font-semibold">
                         Email
                     </label>
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" name="email" id="email" placeholder="youremail@gmail.com" className="border outline-none px-5 py-1 w-full rounded-lg" />
+                    <input onChange={handleUserInput} value={user.email} type="email" name="email" id="email" placeholder="youremail@gmail.com" className="border outline-none px-5 py-1 w-full rounded-lg" />
                     <button className="border py-3 rounded-lg" type="submit">
                         Submit
                     </button>
@@ -42,7 +52,6 @@ const ForgotPassword = () => {
                 <Link href={'/login'}>
                     Back to Login
                 </Link>
-                {email}
             </div>
         </div>
     );

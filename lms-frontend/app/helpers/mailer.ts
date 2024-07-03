@@ -1,30 +1,46 @@
 import nodemailer from 'nodemailer';
-import userModel from '../server/models/userModel';
-import bcryptjs from 'bcryptjs'
-import { NextResponse } from 'next/server';
-import { Html } from 'next/document';
 
-export const transpoter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_HOST),
-    secure: false,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD
-    }
-});
+const sendEmail = async function (email: string, subject: string, message: string) {
+    var transport = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: 2525,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASSWORD
+        }
+      });
 
-export const sendEmail = async (
-    to: string,
-    subject: string,
-    html: string
-): Promise<string | null> => {
-    const info = await transpoter.sendMail({
+    await transport.sendMail({
         from: process.env.EMAIL_FROM,
-        to: to,
+        to: email,
         subject: subject,
-        html: html
+        html: message
     })
-
-    return info?.messageId;
 }
+
+export default sendEmail;
+
+// export const transpoter = nodemailer.createTransport({
+//     host: process.env.SMTP_HOST,
+//     port: Number(process.env.SMTP_HOST),
+//     secure: false,
+//     auth: {
+//         user: process.env.SMTP_USER,
+//         pass: process.env.SMTP_PASSWORD
+//     }
+// });
+
+// export const sendEmail = async (
+//     email: string,
+//     subject: string,
+//     message: string
+// ): Promise<string | null> => {
+//     const info = await transpoter.sendMail({
+//         from: process.env.EMAIL_FROM,
+//         to: email,
+//         subject: subject,
+//         html: message
+//     })
+
+//     return info?.messageId;
+// }

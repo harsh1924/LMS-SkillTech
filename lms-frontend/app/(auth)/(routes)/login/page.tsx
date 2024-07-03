@@ -76,13 +76,13 @@ const LoginPage = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-center">
-                            <button type="submit" className="border px-4 py-2 bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white font-serif rounded-md text-sm">Log In</button>
+                            <button type="submit" className="border px-4 py-2 bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white oxygen-regular rounded-md text-sm">Log In</button>
                         </div>
                         <div className="text-[13px] text-center text-gray-500">
                             Dont have an account? {" "}
-                            <Link href={'/signup'} className="text-[#347dfb] font-serif">Create New Account</Link>
+                            <Link href={'/signup'} className="text-[#347dfb] oxygen-regular">Create New Account</Link>
                         </div>
-                        <Link href={`/forgot-password`} className="text-[13px] font-serif text-[#347dfb] text-center">
+                        <Link href={`/forgot-password`} className="text-[13px] oxygen-regular text-[#347dfb] text-center">
                             Forgot Password?
                         </Link>
                     </div>

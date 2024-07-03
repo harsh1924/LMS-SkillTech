@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+import '@/app/(dashboard)/dashboard.css'
+
 const ForgotPassword = () => {
 
     const [user, setUser] = useState({
@@ -25,33 +27,41 @@ const ForgotPassword = () => {
             const res = await axios.post('/api/forgot-password', user);
             if (res) {
                 toast.success('Reset Link Sent')
-            }
+            } else toast.error('Something went wrong')
         } catch (error: any) {
-            toast.error(error.message);
+            if (user.email == '') {
+                toast.error('Please Provide Email')
+            }
         }
     }
 
     return (
         <div className="h-screen w-screen flex items-center justify-center">
             <div className="flex gap-y-6 flex-col items-start shadow-lg rounded-lg p-5 w-[500px]">
-                <h1 className="oxygen-bold text-2xl">
-                    Forgot Password?
-                </h1>
-                <p className="text-lg">
-                    Don't worry it happens! Just type your registered email and we will send you the reset password link.
-                </p>
+                <div className="flex flex-col gap-y-2">
+                    <h1 className="oxygen-bold text-2xl">
+                        Forgot Password?
+                    </h1>
+                    <p className="text-lg source-sans-3-regular">
+                        Don't worry it happens! Just type your registered email and we will send you the reset password link.
+                    </p>
+                </div>
                 <form className="flex flex-col w-full gap-y-4" onSubmit={handleSubmit}>
-                    <label htmlFor="email" className="font-semibold">
-                        Email
-                    </label>
-                    <input onChange={handleUserInput} value={user.email} type="email" name="email" id="email" placeholder="youremail@gmail.com" className="border outline-none px-5 py-1 w-full rounded-lg" />
-                    <button className="border py-3 rounded-lg" type="submit">
+                    <div className="flex flex-col gap-y-1">
+                        <label htmlFor="email" className="font-semibold">
+                            Email
+                        </label>
+                        <input onChange={handleUserInput} value={user.email} type="email" name="email" id="email" placeholder="youremail@gmail.com" className="border outline-none px-5 py-1 w-full rounded-lg" />
+                    </div>
+                    <button className="rounded-md px-16 py-3 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
                         Submit
                     </button>
                 </form>
-                <Link href={'/login'}>
-                    Back to Login
-                </Link>
+                <div className="flex items-center justify-center w-full ">
+                    <Link href={'/login'} className="text-[#347dfb]">
+                        Back to Login
+                    </Link>
+                </div>
             </div>
         </div>
     );

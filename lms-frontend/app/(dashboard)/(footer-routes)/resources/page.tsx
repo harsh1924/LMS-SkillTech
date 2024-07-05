@@ -3,12 +3,53 @@ import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 
 import '@/app/(dashboard)/dashboard.css'
 import { Footer } from "../../_components/(mainPageComponents)/footer";
-import courseModel from "@/app/server/models/courseModel";
 import Link from "next/link";
+import ImageOne from '@/app/helpers/images/images-1.jpeg'
+
+const courses = [
+    {
+        "title": "Data Science",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Project Management (PMP)",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "IT Security/ Cyber Security /ISMS",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Cloud Computing",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Devops",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Business Analysis",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Software Development/Coding",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Agile & Scrum",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "IT Infrastructure",
+        "imageUrl":  ImageOne.src
+    },
+    {
+        "title": "Digital Marketing",
+        "imageUrl":  ImageOne.src
+    },
+]
 
 const ResourcePages = async () => {
-
-    const courses = await courseModel.find({}).select('-lectures');
 
     return (
         <div>

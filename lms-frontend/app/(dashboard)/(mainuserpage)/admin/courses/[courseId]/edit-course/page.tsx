@@ -13,6 +13,7 @@ import { LayoutDashboard, Trash2 } from "lucide-react";
 
 import Link from "next/link";
 import { AttachmentForm } from "../_components/attachment-form";
+import { ResourceForm } from "../_components/resource-form";
 
 connectToDB();
 
@@ -77,6 +78,9 @@ const CourseEdit = async ({
                         initialData={course}
                         courseId={course.id} />
                     <ImageForm
+                        initialData={course}
+                        courseId={course.id} />
+                    <ResourceForm
                         initialData={course}
                         courseId={course.id} />
                 </div>

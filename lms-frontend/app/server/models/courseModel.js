@@ -40,15 +40,6 @@ const courseSchema = new Schema({
         type: String,
         required: [true, 'Course instructor name is required'],
     },
-    attachments: [
-        {
-            id: {
-                type: String,
-                name: String,
-                url: String
-            },
-        }
-    ],
     syllabus: String,
     isPublished: {
         type: Boolean,
@@ -68,6 +59,7 @@ const courseSchema = new Schema({
     },
     duration: String,
     overview: String,
+    resource: String,
     
     // Key Features of Course
     keyFeaturesOne: String,

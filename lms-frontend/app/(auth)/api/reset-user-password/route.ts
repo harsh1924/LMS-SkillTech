@@ -18,10 +18,6 @@ export async function POST(request: NextRequest) {
             })
         }
 
-        console.log(password);
-        console.log(confirmPassword);
-        console.log(resetToken);
-
         const user = await userModel.findOne({ forgotPasswordToken: resetToken });
         if (!user) {
             return NextResponse.json({

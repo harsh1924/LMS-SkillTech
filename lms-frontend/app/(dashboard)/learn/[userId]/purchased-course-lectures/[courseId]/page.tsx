@@ -19,7 +19,7 @@ const PurchasedCourseLecture = async ({
     const course = await courseModel.findById(params.courseId);
     const user = await userModel.findById(params.userId);
     const userProgress = user.userProgress;
-
+    
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
     const isCourseSurvyed = currentCourse.isSurveyed;
@@ -83,11 +83,14 @@ const PurchasedCourseLecture = async ({
                     }
                 </div>
                 <div className="flex flex-col bg-slate-100 px-8 py-3 gap-y-6 lg:w-[80%] w-full">
-                    <div className="oxygen-bold">
+                    <div className="oxygen-bold flex justify-between">
                         <span>
                             Lecture:{" "}
+                            {currentCourse.currentLectureTitle}
                         </span>
-                        {currentCourse.currentLectureTitle}
+                        <a href={currentCourse.resource} target="_blank" className="cursor-pointer">
+                            Resources
+                        </a>
                     </div>
                     <div className="flex items-center justify-center lg:justify-start">
                         <Player url={currentCourse.currentLectureURL} courseId={params.courseId} userId={params.userId} id={currentCourse.currentLectureId} />
@@ -96,7 +99,6 @@ const PurchasedCourseLecture = async ({
                     <div className="source-sans-3-regular text-lg">
                         {currentCourse.currentLectureDescription}
                     </div>
-
                 </div>
             </div>
         </div>

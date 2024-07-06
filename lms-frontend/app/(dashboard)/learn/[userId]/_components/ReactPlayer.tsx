@@ -42,7 +42,7 @@ export const Player = ({
     const opts = {
         height: '400',
         width: '880',
-        playerVars: {rel: 0, showinfo: 0, ecver: 0, autoplay: 0, list: 'user_uploads'},
+        playerVars: {rel: 0, showinfo: 0, ecver: 0, autoplay: 0},
         
     };
 
@@ -61,15 +61,15 @@ export const Player = ({
     return (
         <>
             <div className='md:hidden'>
-                <YouTube videoId={videoCode} opts={opts1} onStateChange={(e) => checkElapsedTime(e)}
+                <YouTube videoId={videoCode} opts={opts1} onStateChange={(e: any) => checkElapsedTime(e)}
                 />
             </div>
             <div className='hidden md:flex lg:hidden'>
-                <YouTube videoId={videoCode} opts={opts2} onStateChange={(e) => checkElapsedTime(e)}
+                <YouTube videoId={videoCode} opts={opts2} onStateChange={(e: any) => checkElapsedTime(e)}
                 />
             </div>
             <div className='hidden lg:flex'>
-                <YouTube videoId={videoCode} opts={opts} onStateChange={(e) => checkElapsedTime(e)}
+                <YouTube videoId={videoCode} opts={opts} onStateChange={(e: any) => checkElapsedTime(e)}
                 />
             </div>
         </>

@@ -15,7 +15,7 @@ const PMPPage = () => {
                         <span>
                             A project is a temporary and unique endeavour designed to produce a product, service, or result with a defined beginning and end (usually time-constrained, and often constrained by funding or staffing) undertaken to meet unique goals and objectives, typically to bring about beneficial change or added value. Project are  temporary in nature. Business operation are as usual (or operations),which are repetitive, permanent, or semi-permanent functional activities to produce products or services.
                         </span>
-
+                        <br />
                         <span>
                             Project management is the application of knowledge, skills, tools, and techniques to project activities to meet project requirements.  It involves planning, organizing, and executing the tasks needed to turn a  idea into a tangible product, service, or deliverable.
                         </span>
@@ -43,7 +43,7 @@ const PMPPage = () => {
                         </div>
                         <div className="flex flex-col gap-y-2">
                             <span className="oxygen-semibold">
-                            Effective communication across teams
+                                Effective communication across teams
                             </span>
                         </div>
                     </p>

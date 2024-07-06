@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/server/models/userModel.js", "app/(dashboard)/_components/NewError.js", "app/server/models/purchaseModel.ts", "app/(auth)/(routes)/reset-password/[resetToken]/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/server/models/userModel.js", "app/(dashboard)/_components/NewError.js", "app/server/models/purchaseModel.ts", "app/(auth)/(routes)/reset-password/page.tsx"],
   "exclude": ["node_modules"]
 }

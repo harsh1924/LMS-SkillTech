@@ -8,6 +8,7 @@ import { HoverAllCourses } from "./all-course-hover";
 
 import '@/app/(dashboard)/dashboard.css'
 import { ResourcePage } from "./resource-page";
+import { Suspense } from "react";
 
 export const HomeNavbar = () => {
 
@@ -26,7 +27,9 @@ export const HomeNavbar = () => {
             <HoverAllCourses />
 
             {/* SearchBar */}
-            <SearchPage />
+            <Suspense>
+                <SearchPage />
+            </Suspense>
 
             {/* Buisnesses */}
             <Link href={'/buisness'} className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300">

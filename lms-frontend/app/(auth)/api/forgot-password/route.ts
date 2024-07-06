@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
 
         const resetPasswordUrl = `${process.env.HOME_URL}/reset-password?resetToken=${resetToken}`;
         console.log(resetPasswordUrl);
+        
 
         // We here need to send an email to the user with the token
         const subject = 'Reset Password';

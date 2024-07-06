@@ -15,7 +15,7 @@ const DataSciencePage = () => {
                         <span>
                             Data science is important because it combines tools, methods, and technology to generate meaning from data. Now a days devices  can automatically collect and store information. Online systems and payment portals capture more data in the fields of e-commerce, medicine, finance, and every other aspect of human life.
                         </span>
-
+                        <br />
                         <span>
                             Artificial intelligence and machine learning innovations have made data processing faster and more efficient. Industry demand has created an ecosystem of courses, degrees, and job positions within the field of data science. Because of the cross-functional skillset and expertise required, data science shows strong projected growth over the coming decades.
                         </span>
@@ -55,7 +55,7 @@ const DataSciencePage = () => {
                                 4.	Prescriptive analysis
                             </span>
                             <span>
-                            Prescriptive analytics takes predictive data to the next level. It not only predicts what is likely to happen but also suggests an optimum response to that outcome. It can analyze the potential implications of different choices and recommend the best course of action. It uses graph analysis, simulation, complex event processing, neural networks, and recommendation engines from machine learning.         
+                                Prescriptive analytics takes predictive data to the next level. It not only predicts what is likely to happen but also suggests an optimum response to that outcome. It can analyze the potential implications of different choices and recommend the best course of action. It uses graph analysis, simulation, complex event processing, neural networks, and recommendation engines from machine learning.
                             </span>
                         </div>
                     </div>

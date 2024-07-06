@@ -47,6 +47,7 @@
     "react-toastify": "^10.0.5",
     "react-whatsapp": "^0.3.0",
     "react-youtube": "^10.1.0",
+    "sharp": "^0.33.4",
     "stripe": "^15.7.0",
     "swr": "^2.2.5",
     "tailwind-merge": "^2.3.0",

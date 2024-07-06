@@ -51,15 +51,6 @@ const PurchasedCourseLecture = async ({
                             <Percent size={17} />
                         </span>
                     </div>
-                    {/* {!course.isFree ? (
-                        <Link href={`/courses/${params.courseId}/certificate`} className="bg-yellow-600 text-white px-5 py-3 rounded-md" target="_blank">
-                            Generate Certificate
-                        </Link>
-                    ) : (
-                        <Link href={`/`} className="bg-yellow-600 text-white px-5 py-3 rounded-md">
-                            Generate Certificate
-                        </Link>
-                    )} */}
                     {progress === 100 && (
                         !isCourseSurvyed ? (
                             <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
@@ -83,12 +74,12 @@ const PurchasedCourseLecture = async ({
                     }
                 </div>
                 <div className="flex flex-col bg-slate-100 px-8 py-3 gap-y-6 lg:w-[80%] w-full">
-                    <div className="oxygen-bold flex justify-between">
+                    <div className="oxygen-bold flex justify-between items-center">
                         <span>
                             Lecture:{" "}
                             {currentCourse.currentLectureTitle}
                         </span>
-                        <a href={currentCourse.resource} target="_blank" className="cursor-pointer">
+                        <a href={currentCourse.resource} target="_blank" className="cursor-pointer border border-[#00419e] rounded-md px-6 py-2">
                             Resources
                         </a>
                     </div>

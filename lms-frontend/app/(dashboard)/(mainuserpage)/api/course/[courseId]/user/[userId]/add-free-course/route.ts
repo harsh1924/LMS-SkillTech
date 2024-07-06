@@ -44,7 +44,11 @@ export async function POST(request: NextRequest, {
                         course: {
                             id: params.courseId,
                             lectures: course.lectures
-                        }
+                        },
+                        resource: course.resource,
+                        currentLectureURL: course.lectures[0].videoUrl,
+                        currentLectureTitle: course.lectures[0].title,
+                        currentLectureDescription: course.lectures[0].description,
                     },
                 }
             }

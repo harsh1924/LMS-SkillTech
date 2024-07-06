@@ -79,38 +79,6 @@ const AddFreeCourse = ({
                     <div className="animate-spin rounded-full border-4 border-gray-300 border-t-gray-900 h-12 w-12 dark:border-gray-600 dark:border-t-gray-50" />
                 </div>
             ) : (
-                // <div>
-                //     <HomeNavbar />
-                //     <div className="flex px-6 flex-col justify-between lg:gap-x-20 ">
-                //         <div className="flex flex-col gap-y-3 items-center">
-                //             <div className="py-10 w-full lg:px-8 flex flex-col-reverse lg:flex-row gap-x-4  h-full justify-center">
-                //                 <div className="lg:w-[750px] flex gap-y-6 flex-col lg:px-8 py-3">
-                //                     <p>
-                //                         <span className="lg:text-5xl text-2xl oxygen-bold font-sans pb-8">{courseTitleData}
-                //                         </span>
-                //                     </p>
-                //                     <p>
-                //                         <span className="oxygen-semibold text-gray-500 text-lg">
-                //                             {courseCreatorData}
-                //                         </span>
-                //                     </p>
-                //                     <p>
-                //                         <span className="source-sans-3-regular text-lg">
-                //                             {courseDescData}
-                //                         </span>
-                //                     </p>
-                //                 </div>
-                //                 <p className="lg:w-1/2 w-[80%] text-center">
-                //                     <img src={courseImageURLData} alt="Course Thumbnail" className="w-full rounded-xl" />
-                //                 </p>
-                //             </div>
-                //         </div>
-                //         <span onClick={addFreeCourse} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center w-[130px] cursor-pointer">
-                //             <span>Enroll Now</span>
-                //         </span>
-                //         <div className="h-[1px] bg-gray-400 "></div>
-                //     </div>
-                // </div>
                 <div className="flex flex-col items-center mb-10">
                     <div className="w-full shadow-md py-6 px-20">
                         <Logo />

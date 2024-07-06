@@ -48,7 +48,7 @@ const SurveyPage = ({
                     <div>
                         <HomeNavbar />
                     </div>
-                    <div className="px-20 pt-6 flex flex-col gap-y-2">
+                    <div className="md:px-20 px-3 pt-6 flex flex-col gap-y-2">
                         <h1 className="oxygen-bold py-6 bg-[#52a6ff] text-2xl flex items-center text-white justify-center">
                             Course Evaluation Survey
                         </h1>
@@ -56,7 +56,7 @@ const SurveyPage = ({
                             With the aim of improving our course modules. We would like to know your perceptions about the course & suggest area of improvement, please share your thoughts by filling small survey.
                         </p>
                     </div>
-                    <form className="px-16 py-4"
+                    <form className="md:px-16 px-3 py-4"
                         action="https://api.web3forms.com/submit" method="POST"
                     >
                         <input type="hidden" name="access_key" value="9399a6fe-b4a0-448f-b7be-26f8007eb712" />
@@ -74,7 +74,7 @@ const SurveyPage = ({
                             Rate the website based on the following aspects:
                         </p>
                         <div className="border px-3 py-4 rounded-md">
-                            <div className="flex pb-6 justify-between source-sans-3-regular">
+                            <div className="md:flex pb-6 justify-between text-xs source-sans-3-regular hidden">
                                 <span className="w-[300px]"></span>
                                 <span>Not Satisfied</span>
                                 <span>Slightly</span>
@@ -83,7 +83,7 @@ const SurveyPage = ({
                                 <span>Highly</span>
                             </div>
                             <div className="flex pb-6 justify-between source-sans-3-regular ">
-                                <span className="oxygen-semibold text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
                                     Course Content
                                 </span>
                                 <input type="radio" name="Course Content" value='Not Satisfied' />
@@ -93,7 +93,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Course Content" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
                                     Course Delivery
                                 </span>
                                 <input type="radio" name="Course Delivery" value='Not Satisfied' />
@@ -103,7 +103,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Course Delivery" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
                                     Course Support Material
                                 </span>
                                 <input type="radio" name="Course Support Material" value='Not Satisfied' />
@@ -113,7 +113,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Course Support Material" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
                                     Instructors
                                 </span>
                                 <input type="radio" name="Instructors" value='Not Satisfied' />
@@ -123,7 +123,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Instructors" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
                                     Course Satisfied Your Expectations
                                 </span>
                                 <input type="radio" name="Course Expectations" value='Not Satisfied' />

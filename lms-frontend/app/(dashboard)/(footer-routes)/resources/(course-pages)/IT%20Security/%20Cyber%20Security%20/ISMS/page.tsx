@@ -6,13 +6,10 @@ const ITPage = () => {
             <div className="w-screen">
                 <HomeNavbar />
             </div>
-            <div className="flex flex-col justify-center py-16 px-20 gap-y-10">
+            <div className="flex flex-col justify-center py-16 px-6 md:px-20 gap-y-10">
                 <div className="flex flex-col gap-y-4">
                     <h1 className="oxygen-bold text-2xl text-center">
                         IT Security/ Cyber Security /ISMS
-                        {/* <div className="w-screen">
-                            <img src={Image.src} alt="" />
-                        </div> */}
                     </h1>
                     <p className="source-sans-3-regular flex flex-col gap-y-3 text-lg">
                         <span>

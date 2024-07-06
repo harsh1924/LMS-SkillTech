@@ -18,7 +18,10 @@ export async function POST(request: NextRequest) {
             })
         }
 
-        const user = await userModel.findOne({ forgotPasswordToken: resetToken });
+        const user = await userModel.findOne({
+            forgotPasswordToken: resetToken,
+            forgotPasswordTokenExpiry: { $gt: Date.now() }
+        });
         if (!user) {
             return NextResponse.json({
                 error: 'Token is invalid or expired'

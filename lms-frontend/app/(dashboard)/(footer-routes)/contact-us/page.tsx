@@ -4,8 +4,8 @@ const ContactUsPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="py-10 flex justify-center items-center oxygen-regular">
-                <div className="py-6 px-5 rounded-md shadow-[0_0_20px_#347dfb] flex justify-center items-center flex-col border">
+            <div className="py-10 px-10 flex justify-center items-center oxygen-regular">
+                <div className="py-6 px-5 shadow-lg rounded-md md:shadow-[0_0_20px_#347dfb] flex justify-center items-center flex-col border">
                     <h3 className="text-xl pb-2">
                         CONTACT US
                     </h3>

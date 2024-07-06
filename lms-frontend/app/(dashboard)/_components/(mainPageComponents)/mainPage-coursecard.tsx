@@ -28,7 +28,7 @@ export const MainPageCourseCard = ({
     return (
         <div className="px-1">
             {isPublihed && (
-                <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[400px] gap-y-2 w-[250px] bg-white p-2 rounded-md justify-between shadow-md hover:shadow-lg">
+                <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[400px] gap-y-2 w-[240px] bg-white p-2 rounded-md justify-between shadow-md hover:shadow-lg">
                     <Image alt="Course Thumbnail" width={230} height={100} src={imageUrl} />
                     <span className="oxygen-bold">
                         {title}

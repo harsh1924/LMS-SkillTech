@@ -42,12 +42,12 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="flex items-center">
-            <div className="w-[70%] h-[100vh] bg-gray-50">
+        <div className="flex h-screen items-center justify-center lg:justify-start">
+            <div className="hidden lg:flex w-[70%] h-[100vh] bg-gray-50">
                 <img src="https://accounts.pwskills.com/images/signin-banner.svg" className="w-[100%] h-[100%]" />
             </div>
-            <form onSubmit={onLogin} className="flex w-1/2 justify-center items-center h-full flex-col gap-10">
-                <div className="w-[400px] border shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
+            <form onSubmit={onLogin} className="flex w-[350px] lg:w-1/2 justify-center items-center h-full flex-col gap-10">
+                <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
                     <div className="flex justify-center">
                         <Link href={'/'}>
                             <Logo />

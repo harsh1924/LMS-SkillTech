@@ -2,7 +2,7 @@ export const Testimony = () => {
     return (
         <section className="bg-[#f7f9fa] py-10 px-8">
             <h1 className="oxygen-bold text-2xl mb-5">How learners like you are achieving their goals</h1>
-            <div className="flex justify-around source-sans-3-regular">
+            <div className="flex justify-around flex-wrap source-sans-3-regular">
                 <div className="border flex flex-col justify-between bg-white p-6 w-[100%] sm:w-[31%]">
                     <p>
                         I am proud to say that after a few months of taking this course...<span className="font-bold">I passed

@@ -54,13 +54,10 @@ export default function SignInPage() {
             <Link href={'/'} className="py-6 shadow-md w-full flex items-center justify-center">
                 <Logo />
             </Link>
-            <div className="w-[400px] border shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
+            <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
                 <h2 className="oxygen-semibold text-xl">
                     Create Your Account
                 </h2>
-                {/* <span className="text-md text-gray-600">
-                    Unlock exclusive perks - Sign up now for early access and special offers!
-                </span> */}
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="name" className="oxygen-semibold">
                         Name

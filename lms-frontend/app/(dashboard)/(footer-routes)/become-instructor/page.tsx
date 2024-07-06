@@ -9,8 +9,8 @@ const InstructorForm = () => {
                     Teach. Create. Earn.
                 </h1>
             </div>
-            <div className="py-10 flex justify-center items-center">
-                <div className="py-6 px-5 rounded-md shadow-[0_0_10px_#347dfb] flex justify-center items-center flex-col border source-sans-3-regular">
+            <div className="py-10 px-10 flex justify-center items-center">
+                <div className="py-6 px-5 rounded-md shadow-lg md:shadow-[0_0_10px_#347dfb] flex justify-center items-center flex-col border source-sans-3-regular">
                     <h3 className="text-2xl pb-2">
                         INTERESTED IN WORKING WITH US
                     </h3>

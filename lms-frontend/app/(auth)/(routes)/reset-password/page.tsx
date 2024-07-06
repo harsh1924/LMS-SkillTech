@@ -39,7 +39,7 @@ const ResetPasswordPage = () => {
             try {
                 const res = await axios.post('/api/reset-user-password', user);
                 if (res) toast.success('Password Changed')
-                else toast.error('Something went wrong')
+                else toast.error('Token expired')
             } catch (error: any) {
                 toast.error('Something went wrong');
                 console.log(error.message);
@@ -49,7 +49,7 @@ const ResetPasswordPage = () => {
         return (
             <div>
                 <div className="h-screen w-screen flex items-center justify-center">
-                    <div className="flex gap-y-6 flex-col items-start shadow-lg rounded-lg p-5 w-[500px]">
+                    <div className="flex gap-y-6 flex-col items-start shadow-lg rounded-lg p-5 w-[350px] lg:w-[500px]">
                         <h1 className="oxygen-bold text-2xl">
                             Change Your Password
                         </h1>

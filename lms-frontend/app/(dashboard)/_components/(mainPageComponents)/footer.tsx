@@ -9,16 +9,16 @@ export const Footer = () => {
                     Follow us!
                 </h3>
                 <div className="py-2 flex gap-x-1">
-                    <Link href={'https://www.facebook.com/profile.php?id=61560911574316'} className="cursor-pointer" target="_blank">
+                    <Link href={'https://www.facebook.com/profile.php?id=61560911574316'} target="_blank">
                         <Facebook size={22} className="text-white" />
                     </Link>
                     <Link href={'https://www.linkedin.com/in/skilltech-india-b11802312/'} target="_blank">
                         <LinkedinIcon size={22} className="text-white" />
                     </Link>
                     <Link href={'/'}>
-                        <Twitter size={22} className="text-white" />
+                        <Twitter size={22} className="text-white" target="_blank"/>
                     </Link>
-                    <Link href={'/'}>
+                    <Link href={'https://www.instagram.com/skilltech_india01'} target="_blank">
                         <Instagram size={22} className="text-white" />
                     </Link>
                 </div>

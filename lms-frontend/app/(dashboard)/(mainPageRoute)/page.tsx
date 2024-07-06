@@ -24,12 +24,14 @@ export default function Home() {
       {/* Navbar */}
       <HomeNavbar />
 
-      <HomePageCarousel />
+      <div className="w-screen hidden lg:flex">
+        <HomePageCarousel />
+      </div>
 
       {/* landing page main heading */}
-      <div className="py-6 px-5 flex items-center justify-between">
-        <div className="w-[48%] flex flex-col gap-y-3">
-          <h1 className="text-4xl md:px-10 md:text-5xl oxygen-bold">
+      <div className="py-6 px-5 flex flex-col-reverse md:flex-row items-center justify-between gap-y-3">
+        <div className="md:w-[48%] flex flex-col gap-y-3">
+          <h1 className="text-4xl md:px-10 lg:text-5xl oxygen-bold">
             Skills that drive you forward
           </h1>
           <p className="text-[22px] md:px-10 source-sans-3-regular">
@@ -39,7 +41,7 @@ export default function Home() {
             Explore Programs
           </a>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2 justify-center flex">
           <img src="https://images.pexels.com/photos/4144221/pexels-photo-4144221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="w-[90%] rounded-md" />
         </div>
       </div>

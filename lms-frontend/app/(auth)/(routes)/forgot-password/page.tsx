@@ -37,7 +37,7 @@ const ForgotPassword = () => {
 
     return (
         <div className="h-screen w-screen flex items-center justify-center">
-            <div className="flex gap-y-6 flex-col items-start shadow-lg rounded-lg p-5 w-[500px]">
+            <div className="flex gap-y-6 flex-col items-start shadow-lg rounded-lg p-5 w-[350px] lg:w-[500px]">
                 <div className="flex flex-col gap-y-2">
                     <h1 className="oxygen-bold text-2xl">
                         Forgot Password?

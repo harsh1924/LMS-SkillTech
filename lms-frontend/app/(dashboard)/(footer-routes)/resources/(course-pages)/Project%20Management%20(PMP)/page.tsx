@@ -6,6 +6,7 @@ const PMPPage = () => {
             <div className="w-screen">
                 <HomeNavbar />
             </div>
+                       
             <div className="flex flex-col justify-center py-16 px-20 gap-y-10">
                 <div className="flex flex-col gap-y-4">
                     <h1 className="oxygen-bold text-2xl text-center">

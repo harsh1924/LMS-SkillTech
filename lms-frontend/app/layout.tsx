@@ -22,6 +22,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <Toaster position="bottom-center" />
+          <Head>
+            <title>My page title</title>
+          </Head>
           {children}
         </body>
       </html>

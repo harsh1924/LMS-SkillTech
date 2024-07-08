@@ -60,7 +60,7 @@ export default function Home() {
 
       {/* chat on whatsapp */}
       <div className="fixed bottom-4 right-6 z-50">
-        <a href="https://wa.me/919891476411?text=Hello%20SkillTech" target="_blank">
+        <a href="https://wa.me/917701885882?text=Hello%20SkillTech" target="_blank">
           {/* <Twitch /> */}
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png" className="h-12 bg-green-500 p-2 rounded-lg" />
         </a>

@@ -24,9 +24,11 @@ const SearchPageResult = () => {
                 toast.error('no');
             }
             setCourses(response.data.courses);
+            console.log(response.data.courses);
             setIsloading(true);
         }
         const { data, isLoading } = useSWR(`/api/search?q=${encodedSearchQuery}`, fetchPosts)
+        
 
         return (
             <div>

@@ -71,11 +71,6 @@ export const LoginButtons = () => {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
-                                    <Link href={'/login/admin'} className="hidden">
-                                        Admin Login
-                                    </Link>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>
                                     <Link href={'/login'}>
                                         Login
                                     </Link>
@@ -84,20 +79,6 @@ export const LoginButtons = () => {
                         </DropdownMenu>
                     )}
                 </div>
-                {/* {!isLoggedIn && (
-                    <div className="lg:flex items-center gap-x-5 hidden">
-                        <Link href={'/profile'}>
-                            <span className="bg-[#2B463C] text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300">
-                                Profile
-                            </span>
-                        </Link>
-                        <div>
-                            <span className="bg-[#2B463C] cursor-pointer text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300" onClick={logout}>
-                                Logout
-                            </span>
-                        </div>
-                    </div>
-                )} */}
                 <div className="flex pr-7">
                     {!isLoggedIn && (
                         <DropdownMenu>

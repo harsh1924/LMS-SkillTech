@@ -1,7 +1,5 @@
-import { GetIdFromToken } from "@/app/helpers/getIdFromToken";
 import { GetToken } from "@/app/helpers/getToken";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
-import userModel from "@/app/server/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 
 connectToDB()
@@ -20,4 +18,3 @@ export async function GET(request: NextRequest) {
         }, { status: 400 })
     }
 }
-// GetIdFromToken()

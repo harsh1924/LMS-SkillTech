@@ -28,8 +28,8 @@ export const LoginButtons = () => {
             if (token !== '') {
                 setIsLoggedIn(false)
             }
-            console.log(token);
-            
+            console.log('Token', token);
+
         } catch (error: any) {
             return;
         }

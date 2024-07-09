@@ -22,10 +22,14 @@ export const LoginButtons = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     const getToken = async () => {
-        const res = await axios.get('/api/getToken')
-        const token = res.data.token;
-        if (token !== '') {
-            setIsLoggedIn(false)
+        try {
+            const res = await axios.get('/api/getToken')
+            const token = res.data.token;
+            if (token !== '') {
+                setIsLoggedIn(false)
+            }
+        } catch (error: any) {
+            return;
         }
     }
 

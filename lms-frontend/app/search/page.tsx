@@ -36,7 +36,7 @@ const SearchPageResult = () => {
                             <HomeNavbar />
                         </div>
                         <div className="flex flex-wrap justify-between px-6 py-10 gap-y-6">
-                            {courses.map((course: { title: string; description: string; imageUrl: string; createdBy: string; duration: string; _id: string }) => <SearchPageCourses title={course.title} description={course.description} imageUrl={course.imageUrl} duration={course.duration} createdBy={course.createdBy} id={course._id} />)}
+                            {courses?.map((course: { title: string; description: string; imageUrl: string; createdBy: string; duration: string; _id: string }) => <SearchPageCourses title={course.title} description={course.description} imageUrl={course.imageUrl} duration={course.duration} createdBy={course.createdBy} id={course._id} />)}
                         </div>
                     </div>
                 ) : (

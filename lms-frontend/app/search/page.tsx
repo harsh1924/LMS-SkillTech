@@ -11,24 +11,28 @@ import { SearchPageCourses } from "../(dashboard)/_components/search-page-course
 const SearchPageResult = () => {
 
     function SearchFunction() {
-        const [courses, setCourses] = useState([]);
         const [isloading, setIsloading] = useState(false);
+        const [courses, setCourses] = useState([]);
 
-        const search = useSearchParams();
-        const searchQuery = search ? search.get('q') : null;
-        const encodedSearchQuery = encodeURI(searchQuery || '');
+        try {
+            const search = useSearchParams();
+            const searchQuery = search ? search.get('q') : null;
+            const encodedSearchQuery = encodeURI(searchQuery || '');
 
-        const fetchPosts = async (url: string) => {
-            const response = await axios.get(url);
-            if (!response) {
-                toast.error('no');
+            const fetchPosts = async (url: string) => {
+                const response = await axios.get(url);
+                if (!response) {
+                    toast.error('no');
+                }
+                setCourses(response.data.courses);
+                console.log(response.data.courses);
+                setIsloading(true);
             }
-            setCourses(response.data.courses);
-            console.log(response.data.courses);
-            setIsloading(true);
+            const { data, isLoading } = useSWR(`/api/search?q=${encodedSearchQuery}`, fetchPosts)
+        } catch (error: any) {
+            return;
         }
-        const { data, isLoading } = useSWR(`/api/search?q=${encodedSearchQuery}`, fetchPosts)
-        
+
 
         return (
             <div>

@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
             user
         })
 
-        response.cookies.set('token', token, { domain: 'skilltechindia.net', httpOnly: true });
+        response.cookies.set('token', token, { domain: 'skilltechindia.net', httpOnly: true, path: '/' });
 
         return response;
 

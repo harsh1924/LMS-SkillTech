@@ -23,8 +23,8 @@ export const LoginButtons = () => {
 
     const getToken = async () => {
         const res = await axios.get('/api/getToken')
-        // const token = res.data.token;
-        if (res) {
+        const token = res.data.token;
+        if (token !== '') {
             setIsLoggedIn(false)
         }
     }
@@ -48,7 +48,7 @@ export const LoginButtons = () => {
     return (
         <div>
             <div className="flex gap-x-5">
-                {!isLoggedIn && (
+                {isLoggedIn && (
                     <div className="hidden lg:flex gap-x-3 text-[0.8rem]">
                         <Link href={'/login'}>
                             <span className="rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300">
@@ -58,7 +58,7 @@ export const LoginButtons = () => {
                     </div>
                 )}
                 <div className="flex lg:hidden">
-                    {!isLoggedIn && (
+                    {isLoggedIn && (
                         <DropdownMenu>
                             <DropdownMenuTrigger>
                                 <UserCircle2Icon size={30} />
@@ -71,6 +71,11 @@ export const LoginButtons = () => {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
+                                    <Link href={'/login/admin'} className="hidden">
+                                        Admin Login
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
                                     <Link href={'/login'}>
                                         Login
                                     </Link>
@@ -79,8 +84,22 @@ export const LoginButtons = () => {
                         </DropdownMenu>
                     )}
                 </div>
+                {/* {!isLoggedIn && (
+                    <div className="lg:flex items-center gap-x-5 hidden">
+                        <Link href={'/profile'}>
+                            <span className="bg-[#2B463C] text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300">
+                                Profile
+                            </span>
+                        </Link>
+                        <div>
+                            <span className="bg-[#2B463C] cursor-pointer text-white px-7 py-3 rounded-md hover:bg-[#3f6457] transition-all ease-in-out duration-300" onClick={logout}>
+                                Logout
+                            </span>
+                        </div>
+                    </div>
+                )} */}
                 <div className="flex pr-7">
-                    {isLoggedIn && (
+                    {!isLoggedIn && (
                         <DropdownMenu>
                             <DropdownMenuTrigger>
                                 <UserCircle2Icon size={30} />

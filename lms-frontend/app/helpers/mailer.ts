@@ -3,9 +3,9 @@ import nodemailer from 'nodemailer';
 const sendEmail = async function (email: string, subject: string, message: string) {
     var transport = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
-        port: 2525,
+        port: 587,
         auth: {
-          user: process.env.SMTP_USER,
+          user: "api",
           pass: process.env.SMTP_PASSWORD
         }
       });

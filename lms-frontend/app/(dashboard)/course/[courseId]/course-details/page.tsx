@@ -182,9 +182,11 @@ const CourseDetails = ({
                                                 Enroll for Free
                                             </Link>
                                         )}
-                                        <button onClick={downloadFile} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center">
-                                            Download Syllabus
-                                        </button>
+                                        {syllabusURL && (
+                                            <button onClick={downloadFile} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center">
+                                                Download Syllabus
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                                 <p className="lg:w-1/2 w-[80%] text-center">

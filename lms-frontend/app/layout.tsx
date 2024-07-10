@@ -9,10 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SkillTech India",
-  description: "SkillTech India",
-  openGraph: {
-    images: '/opengraph-image.jpeg',
-  },
+  description: "Welcome to Skill Tech",
 };
 
 export default function RootLayout({
@@ -22,6 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <>
+      <Head>
+        <meta property="og:image" content="<generated>" />
+        <meta property="og:image:type" content="<generated>" />
+        <meta property="og:image:width" content="<generated>" />
+        <meta property="og:image:height" content="<generated>" />
+        <meta name="twitter:image" content="<generated>" />
+        <meta name="twitter:image:type" content="<generated>" />
+        <meta name="twitter:image:width" content="<generated>" />
+        <meta name="twitter:image:height" content="<generated>" />
+      </Head>
       <html lang="en">
         <body className={inter.className}>
           <Toaster position="bottom-center" />

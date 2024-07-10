@@ -11,7 +11,7 @@ const sendEmail = async function (email: string, subject: string, message: strin
   });
 
   await transport.sendMail({
-    from: process.env.EMAIL_FROM,
+    from: "harshrpanwar@gmail.com",
     to: email,
     subject: subject,
     html: message

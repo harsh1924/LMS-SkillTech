@@ -39,8 +39,14 @@ export async function POST(request: NextRequest) {
         const subject = 'Reset Password';
         const message = `You can reset your password by clicking <a href=${resetPasswordUrl} target="_blank">Reset your password</a>\n <br/> If the above link does not work for some reason then copy paste this link in new tab ${resetPasswordUrl}. <br/> If you have not requested this, kindly ignore.`;
 
+        console.log(subject);
+        
         try {
+            console.log('start');
+            
             await sendEmail(email, subject, message);
+            console.log('send');
+            
             return NextResponse.json({ message: 'Reset Password Token sent' },
                 { status: 200 }
             )

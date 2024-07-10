@@ -4,6 +4,7 @@ const sendEmail = async function (email: string, subject: string, message: strin
   var transport = nodemailer.createTransport({
     host: "live.smtp.mailtrap.io",
     port: 587,
+    secure: false,
     auth: {
       user: "api",
       pass: "accd926f99d2af31d757b1842a732ab8"

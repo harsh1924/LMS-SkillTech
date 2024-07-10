@@ -30,6 +30,8 @@ export const LoginButtons = () => {
             }
             console.log('Token', token);
             console.log('new token', token.toString());
+            console.log(JSON.stringify(token));
+            
             
 
         } catch (error: any) {

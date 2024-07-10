@@ -34,8 +34,9 @@ const PDFCertificate = ({
     const [name, setName] = useState('');
     const [course, setCourse] = useState('');
     const url = usePathname();
-    const pageUrl = `https://skilltechindia.net/learn/certificate/${params.courseId}`
+    const pageUrl = `https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`
 
+    //https://skilltechindia.net/learn/certificate/generate-certificate/6646e947a394721ac5820ec0
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')

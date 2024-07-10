@@ -40,7 +40,8 @@ export async function POST(request: NextRequest) {
             user
         })
 
-        response.cookies.set('token', token, { domain: 'www.skilltechindia.net', httpOnly: true, path: '/', secure: true, sameSite: "none" });
+        response.cookies.set('token', token,
+            { domain: 'www.skilltechindia.net', httpOnly: true, path: '/', secure: true, sameSite: "strict",  maxAge: 30 * 24 * 60 * 60, });
 
         return response;
 

@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const GetToken = (request: NextRequest) => {
     try {
         const token = request.cookies.get('token')?.value || ''
-        return token;
+        return token.toString();
         
     } catch (error: any) {
         return NextResponse.json({

@@ -29,6 +29,8 @@ export const LoginButtons = () => {
                 setIsLoggedIn(false)
             }
             console.log('Token', token);
+            console.log('new token', token.toString());
+            
 
         } catch (error: any) {
             return;

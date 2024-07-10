@@ -37,7 +37,7 @@ const PdfCertificate = ({
     const [name, setName] = useState('');
     const [course, setCourse] = useState('');
     const url = usePathname();
-    const pageUrl = 'https://pwskills.com/learn/certificate/40397ae9-72f8-43d5-a39b-f2e78350c1fd/'
+    const pageUrl = `https://skilltechindia.net/courses/${params.courseId}/certificate`
 
 
     const getId = async () => {

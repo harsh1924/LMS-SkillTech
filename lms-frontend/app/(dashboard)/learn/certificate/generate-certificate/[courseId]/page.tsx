@@ -156,7 +156,7 @@ const PDFCertificate = ({
                                     <FacebookIcon size={25} round={true} />
                                 </div>
                             </FacebookShareButton>
-                            <LinkedinShareButton url={pageUrl} title='Certificate Page' summary='kjqwndnkqwjhd' source={pageUrl}>
+                            <LinkedinShareButton url={pageUrl} title='Certificate Page' summary='Skill Tech Certificate Page' >
                                 <div className='bg-sky-100 rounded-[50%] p-2'>
                                     <Linkedin size={25} />
                                 </div>

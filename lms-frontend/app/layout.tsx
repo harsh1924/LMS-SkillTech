@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SkillTech India",
   description: "SkillTech India",
+  openGraph: {
+    images: '/opengraph-image.jpeg',
+  },
 };
 
 export default function RootLayout({

@@ -57,7 +57,7 @@ const PurchasedCourseLecture = async ({
                                 <DownloadIcon />
                             </Link>
                         ) : (
-                            <Link href={`/courses/${params.courseId}/certificate`} className="bg-yellow-600 text-white px-5 py-3 rounded-md" target="_blank">
+                            <Link href={`/learn/certificate/${params.courseId}`} className="bg-yellow-600 text-white px-5 py-3 rounded-md" target="_blank">
                                 Generate Certificate
                             </Link>
                         )

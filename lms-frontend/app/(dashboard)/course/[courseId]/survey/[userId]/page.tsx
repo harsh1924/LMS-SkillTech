@@ -65,10 +65,10 @@ const SurveyPage = ({
 
                         {isCourseFree ? (
                             <div>
-                                <input type="hidden" name="redirect" value={`${process.env.HOME_URL}/course/${params.courseId}/purchase`} />
+                                <input type="hidden" name="redirect" value={`https://skilltechindia.net/course/${params.courseId}/purchase`} />
                             </div>
                         ) : (
-                            <input type="hidden" name="redirect" value={`${process.env.HOME_URL}/courses/${params.courseId}/certificate`} />
+                            <input type="hidden" name="redirect" value={`https://skilltechindia.net/courses/${params.courseId}/certificate`} />
                         )}
                         <p className="py-2 source-sans-3-regular text-xl">
                             Rate the website based on the following aspects:

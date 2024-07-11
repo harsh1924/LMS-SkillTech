@@ -4,9 +4,10 @@ import mongoose from "mongoose";
 
 const connectToDB = async () => {
     try {
-        const { connection } = await mongoose.connect(
-            `mongodb+srv://harshrpanwar:p5hCkWQaGEPpDhi5@cluster0.s8zudya.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0` 
-        );
+
+        const DB_URL = process.env.MONGODB_URI
+
+        const { connection } = await mongoose.connect(DB_URL);
 
         if (connection) {
             console.log(`Connected to MongoDB:`);

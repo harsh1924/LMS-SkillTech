@@ -19,7 +19,7 @@ const PurchasedCourseLecture = async ({
     const course = await courseModel.findById(params.courseId);
     const user = await userModel.findById(params.userId);
     const userProgress = user.userProgress;
-    
+
     const courseIndex = userProgress.findIndex((e: { courseId: string; course: any }) => e.course.id === params.courseId)
     const currentCourse = userProgress[courseIndex];
     const isCourseSurvyed = currentCourse.isSurveyed;
@@ -54,7 +54,7 @@ const PurchasedCourseLecture = async ({
                         !isCourseSurvyed ? (
                             <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
                                 <DownloadIcon />
-                            </Link> 
+                            </Link>
                         ) : (
                             <Link href={`/learn/certificate/generate-certificate/${params.courseId}`} className="rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300" target="_blank">
                                 Generate Certificate
@@ -78,9 +78,11 @@ const PurchasedCourseLecture = async ({
                             Lecture:{" "}
                             {currentCourse.currentLectureTitle}
                         </span>
-                        <a href={currentCourse.resource} target="_blank" className="cursor-pointer border border-[#00419e] rounded-md px-6 py-2">
-                            Resources
-                        </a>
+                        {currentCourse.resource && (
+                            <a href={currentCourse.resource} target="_blank" className="cursor-pointer border border-[#00419e] rounded-md px-6 py-2">
+                                Resources
+                            </a>
+                        )}
                     </div>
                     <div className="flex items-center justify-center lg:justify-start">
                         <Player url={currentCourse.currentLectureURL} courseId={params.courseId} userId={params.userId} id={currentCourse.currentLectureId} />

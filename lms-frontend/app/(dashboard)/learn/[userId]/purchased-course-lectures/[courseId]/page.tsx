@@ -54,9 +54,9 @@ const PurchasedCourseLecture = async ({
                         !isCourseSurvyed ? (
                             <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
                                 <DownloadIcon />
-                            </Link>
+                            </Link> 
                         ) : (
-                            <Link href={`/learn/certificate/generate-certificate/${params.courseId}`} className="bg-yellow-600 text-white px-5 py-3 rounded-md" target="_blank">
+                            <Link href={`/learn/certificate/generate-certificate/${params.courseId}`} className="rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300" target="_blank">
                                 Generate Certificate
                             </Link>
                         )

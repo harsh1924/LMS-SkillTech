@@ -21,10 +21,10 @@ export default function RootLayout({
     <>
       <Head>
         <meta property="og:title" content="Your Page Title" />
-        <meta property="og:image" content="./opengraph-image.jpg" />
+        <meta property="og:image" content="https://images.pexels.com/photos/23476915/pexels-photo-23476915/free-photo-of-black-and-white-photograph-of-a-church-with-arched-windows.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content="./opengraph-image.jpg" />
+        <meta name="twitter:image" content="https://images.pexels.com/photos/23476915/pexels-photo-23476915/free-photo-of-black-and-white-photograph-of-a-church-with-arched-windows.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
         <meta name="twitter:image:width" content="1200" />
         <meta name="twitter:image:height" content="630" />
       </Head>

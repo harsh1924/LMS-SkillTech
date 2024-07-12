@@ -26,11 +26,11 @@ const TrainerLoginPage = () => {
     const onLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/user/login/admin', user);
+            const response = await axios.post('/api/user/login/trainer', user);
             if (response) {
                 toast.success('Login Successfull');
+                router.push(`/trainer/courses`);
             }
-            router.push(`/admin/courses`);
         } catch (error: any) {
             if (!user.email || !user.password) {
                 toast.error('All fields are required')

@@ -43,9 +43,9 @@ const ResetPasswordPage = () => {
             } catch (error: any) {
                 toast.error('Something went wrong');
                 console.log(error.message);
-
             }
         }
+        
         return (
             <div>
                 <div className="h-screen w-screen flex items-center justify-center">

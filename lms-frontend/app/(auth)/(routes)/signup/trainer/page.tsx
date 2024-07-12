@@ -31,7 +31,7 @@ export default function SignInPage() {
         try {
             // API REQUEST
             const response = await axios.post('/api/user/signup/trainer', user);
-            router.push('/login');
+            router.push('/login/trainer');
             if (response) {
                 toast.success('Account Created Successfully')
             }

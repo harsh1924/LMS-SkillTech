@@ -48,7 +48,7 @@ export const Player = ({
 
     const opts1 = {
         height: '300',
-        width: '330',
+        width: '400',
         playerVars: {rel: 0, showinfo: 0, ecver: 0, autoplay: 0}
     };
 

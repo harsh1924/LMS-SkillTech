@@ -30,7 +30,7 @@ const UserPurchasedCourses = async ({
             <p className="flex text-center justify-center items-center py-10 oxygen-bold text-2xl text-gray-700">
                 Your Courses
             </p>
-            <div className="flex flex-wrap px-10 gap-3">
+            <div className="flex flex-wrap px-10 gap-3 justify-center md:justify-start">
                 {allCourses.map((e) => <UserPurchasedCoursesCard key={e._id} courseId={e._id} imageUrl={e.imageUrl} title={e.title} userId={params.userId} />)}
             </div>
         </div>

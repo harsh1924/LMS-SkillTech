@@ -83,7 +83,7 @@ const SurveyPage = ({
                                 <span>Highly</span>
                             </div>
                             <div className="flex pb-6 justify-between source-sans-3-regular ">
-                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[200px] md:w-[300px]">
                                     Course Content
                                 </span>
                                 <input type="radio" name="Course Content" value='Not Satisfied' />
@@ -93,7 +93,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Course Content" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[200px] md:w-[300px]">
                                     Course Delivery
                                 </span>
                                 <input type="radio" name="Course Delivery" value='Not Satisfied' />
@@ -103,7 +103,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Course Delivery" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[200px] md:w-[300px]">
                                     Course Support Material
                                 </span>
                                 <input type="radio" name="Course Support Material" value='Not Satisfied' />
@@ -113,7 +113,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Course Support Material" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[200px] md:w-[300px]">
                                     Instructors
                                 </span>
                                 <input type="radio" name="Instructors" value='Not Satisfied' />
@@ -123,7 +123,7 @@ const SurveyPage = ({
                                 <input type="radio" name="Instructors" value='Highly Satisfied' />
                             </div>
                             <div className="flex justify-between pb-6 source-sans-3-regular">
-                                <span className="oxygen-semibold md:text-lg py-2 w-[300px]">
+                                <span className="oxygen-semibold md:text-lg py-2 w-[200px] md:w-[300px]">
                                     Course Satisfied Your Expectations
                                 </span>
                                 <input type="radio" name="Course Expectations" value='Not Satisfied' />

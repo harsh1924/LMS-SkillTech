@@ -56,11 +56,11 @@ const ResourcePages = async () => {
             <div>
                 <HomeNavbar />
             </div>
-            <div className="px-16 py-10 flex flex-col items-center justify-center gap-y-6">
-                <h1 className="text-4xl oxygen-bold">
+            <div className="lg:px-16 w-full px-3 py-10 flex flex-col items-center justify-center gap-y-6">
+                <h1 className="text-2xl lg:text-4xl oxygen-bold w-full text-center">
                     Welcome to Our Resources Page!
                 </h1>
-                <p className="text-[22px] w-[80%] text-center source-sans-3-semibold text-[#2B463C]">
+                <p className="text-lg lg:text-[22px] w-[80%] text-center source-sans-3-semibold text-[#2B463C]">
                     Explore a wealth of knowledge and tools curated to empower you on your journey. Whether you're seeking insightful articles, helpful guides, or practical tools, you'll find a diverse array of resources here to support your endeavors.
                 </p>
             </div>
@@ -86,8 +86,8 @@ const ResourcePages = async () => {
                     )}
                 </div>
             </div>
-            <div className="flex text-center py-10">
-                <div className="px-16 flex flex-col gap-y-6">
+            <div className="flex text-center flex-col md:flex-row py-10 gap-y-6">
+                <div className="px-16 flex flex-col gap-y-2 md:gap-y-6">
                     <h2 className="text-2xl oxygen-bold">
                         Stay Connected
                     </h2>
@@ -98,8 +98,8 @@ const ResourcePages = async () => {
                         Receive updates on the latest articles, guides, and tools delivered straight to your inbox. Stay informed and inspired on your journey.
                     </p>
                 </div>
-                <div className="w-[1px] bg-[#688F4E] py-2"></div>
-                <div className="px-16 flex flex-col items-center justify-center gap-y-6">
+                <div className="w-[1px] hidden md:inline bg-[#688F4E] py-2"></div>
+                <div className="px-16 flex flex-col items-center justify-center gap-y-2 md:gap-y-6">
                     <h1 className="text-2xl oxygen-bold">
                         How to Get Involved
                     </h1>
@@ -125,7 +125,5 @@ const ResourcePages = async () => {
         </div>
     );
 }
-
-// 9399a6fe-b4a0-448f-b7be-26f8007eb712
 
 export default ResourcePages;

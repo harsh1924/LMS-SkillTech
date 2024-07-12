@@ -28,7 +28,7 @@ interface PhoneNumberFormProps {
 }
 
 const formSchema = z.object({
-    phoneNumber: z.string().transform((v) => Number(v)||0)
+    phoneNumber: z.string().transform((v) => Number(v) || 0)
 });
 
 export const PhoneNumberForm = ({
@@ -61,7 +61,12 @@ export const PhoneNumberForm = ({
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Phone Number
+                <span className='hidden md:flex'>
+                    Phone Number
+                </span>
+                <span className='flex md:hidden'>
+                    PhoneNo
+                </span>
                 <Button onClick={toggleEdit} variant='ghost'>
                     {isEditing ? (
                         <>Cancel</>
@@ -88,17 +93,17 @@ export const PhoneNumberForm = ({
                             render={({ field }) => (
                                 <FormItem>
                                     <FormControl>
-                                        <Input type='number'  
+                                        <Input type='number'
                                             disabled={isSubmitting}
                                             placeholder="e.g. '1111 (in indian format)'"
                                             {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
-                            )} 
-                            />
+                            )}
+                        />
                         <div className="flex items-center gap-x-2">
-                            <Button disabled={ isSubmitting} type='submit'>
+                            <Button disabled={isSubmitting} type='submit'>
                                 Save
                             </Button>
                         </div>

@@ -29,7 +29,7 @@ const ContactUsPage = () => {
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div>
-                            <span>
+                            <span className="hidden md:inline">
                                 +91 &nbsp;| &nbsp;
                             </span>
                             <input required name="phone-number" type="number" placeholder="Phone Number*" className="border w-[300px] py-2 outline-none border-none " />

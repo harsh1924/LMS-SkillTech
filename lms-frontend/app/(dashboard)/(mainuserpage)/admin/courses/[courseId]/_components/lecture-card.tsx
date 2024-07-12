@@ -42,10 +42,6 @@ export const LectureCard = ({
         <div className="border rounded-md overflow-hidden">
             <div>
                 <p>
-                    {/* <iframe allowFullScreen className="w-[560px] md:w-full" height="240" src={videoUrl}>
-                    </iframe> */}
-                    {/* <Player url={videoUrl}></Player> */}
-                    {/* {videoUrl} */}
                     <YouTube videoId={videoCode} opts={opts} />
                 </p>
                 <div className="px-4 py-3 flex items-end justify-between">

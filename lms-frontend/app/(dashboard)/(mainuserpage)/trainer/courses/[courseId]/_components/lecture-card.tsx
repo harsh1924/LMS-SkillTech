@@ -4,6 +4,7 @@ import axios from "axios"
 import { Pen, Trash2Icon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import YouTube from "react-youtube"
 
 interface courseData {
     title: string,
@@ -22,6 +23,15 @@ export const LectureCard = ({
 }: courseData) => {
 
     const router = useRouter();
+    const videoCode = videoUrl.split("v=")[1].split("&")[0];
+    const opts = {
+        height: '240',
+        width: '330',
+        playerVars: {
+            autoplay: 0,
+        },
+    };
+
 
     const deleteLectureById = async () => {
         await axios.delete(`/api/course/?courseId=${courseId}&lectureId=${id}`);
@@ -32,8 +42,7 @@ export const LectureCard = ({
         <div className="border rounded-md overflow-hidden">
             <div>
                 <p>
-                    <iframe allowFullScreen className="w-[560px] md:w-full" height="240" src={videoUrl}>
-                    </iframe>
+                    <YouTube videoId={videoCode} opts={opts} />
                 </p>
                 <div className="px-4 py-3 flex items-end justify-between">
                     <div className="flex flex-col gap-y-3">

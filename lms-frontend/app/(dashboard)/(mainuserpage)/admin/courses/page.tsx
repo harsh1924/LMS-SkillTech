@@ -5,7 +5,7 @@ import '@/app/(dashboard)/dashboard.css'
 
 const CoursePage = () => {
     return (
-        <div className="px-10 source-sans-3-regular items-center h-[150px] flex gap-x-10">
+        <div className="px-10 source-sans-3-regular items-center h-[150px] flex gap-x-10 flex-wrap">
             <Link href={'/admin/courses/all-courses'}>
             <span className="px-6 py-4 rounded-md text-white bg-[#0056d2] hover:bg-[#00419e] duration-300 transition-all ease-in-out">
                     View all Courses

@@ -61,7 +61,12 @@ export const LastNameForm = ({
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
-                Last Name
+                <span className='hidden md:flex'>
+                    Last Name
+                </span>
+                <span className='flex md:hidden'>
+                    LastName
+                </span>
                 <Button onClick={toggleEdit} variant='ghost'>
                     {isEditing ? (
                         <>Cancel</>
@@ -95,10 +100,10 @@ export const LastNameForm = ({
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
-                            )} 
-                            />
+                            )}
+                        />
                         <div className="flex items-center gap-x-2">
-                            <Button disabled={ isSubmitting} type='submit'>
+                            <Button disabled={isSubmitting} type='submit'>
                                 Save
                             </Button>
                         </div>

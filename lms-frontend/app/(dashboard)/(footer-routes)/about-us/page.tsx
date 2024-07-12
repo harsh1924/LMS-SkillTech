@@ -6,15 +6,15 @@ const AboutUsPage = () => {
         <div>
             <HomeNavbar />
             <div className="flex items-center w-full justify-center">
-                <div className="px-6 py-10 w-[80%]">
+                <div className="md:px-6 py-10 px-4 md:w-[80%]">
                     <div className="flex flex-col items-center justify-center text-center gap-y-10 pb-6 border-b">
                         <h1 className="font-bold font-sans text-4xl">
                             Skills are the key to unlocking potential
                         </h1>
-                        <p className="font-semibold text-xl w-[70%]">
+                        <p className="font-semibold text-xl md:w-[70%]">
                             Whether you want to learn a new skill, train your teams, or share what you know with the world, you’re in the right place. As a leader in online learning, we’re here to help you achieve your goals and transform your life.
                         </p>
-                        <p className="text-xl w-[70%]">
+                        <p className="text-xl md:w-[70%]">
                             We help organizations of all types and sizes prepare for the path ahead — wherever it leads. Our curated collection of business and technical courses help companies, governments, and nonprofits go further by placing learning at the center of their strategies.
                         </p>
                     </div>

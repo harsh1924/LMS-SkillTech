@@ -16,7 +16,7 @@ export const Footer = () => {
                         <LinkedinIcon size={22} className="text-white" />
                     </Link>
                     <Link href={'/'}>
-                        <Twitter size={22} className="text-white" target="_blank"/>
+                        <Twitter size={22} className="text-white" target="_blank" />
                     </Link>
                     <Link href={'https://www.instagram.com/skilltech_india01'} target="_blank">
                         <Instagram size={22} className="text-white" />
@@ -29,10 +29,10 @@ export const Footer = () => {
                 </h3>
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/about-us'}>
-                       About us
+                        About us
                     </Link>
                     <Link href={'/contact-us'}>
-                      Contact us
+                        Contact us
                     </Link>
                     <Link href={'/resources'}>
                         Resources
@@ -48,10 +48,11 @@ export const Footer = () => {
                 </h3>
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/help'}>
-                       Help
+                        Help
                     </Link>
-                    <Link href={'/reviews'}>
-                      Alumni Speak
+                    <Link href={'#'}>
+                        {/* /reviews */}
+                        Alumni Speak
                     </Link>
                     <Link href={'/terms'}>
                         Terms
@@ -66,13 +67,16 @@ export const Footer = () => {
                     Buisness
                 </h3>
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
-                    <Link href={'/skilltech-partners'}>
-                       Partners
+                    <Link href={'#'}>
+                        {/* /skilltech-partners */}
+                        Partners
                     </Link>
-                    <Link href={'/affiliate'}>
-                      Affiliate
+                    <Link href={'#'}>
+                        {/* /affiliate */}
+                        Affiliate
                     </Link>
-                    <Link href={'/corporate-training'}>
+                    <Link href={'#'}>
+                        {/* /corporate-training */}
                         Corporate Training
                     </Link>
                 </div>

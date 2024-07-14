@@ -6,6 +6,9 @@ import userModel from "@/app/server/models/userModel";
 
 import '@/app/(dashboard)/dashboard.css'
 import { PaymentReport } from "@/app/(dashboard)/_components/(admin-analytics)/payment-report";
+import connectToDB from "@/app/server/dbconfig/dbconfig";
+
+connectToDB();
 
 const AnalyticsPage = async () => {
 
@@ -17,7 +20,6 @@ const AnalyticsPage = async () => {
     const payment = await purchaseModel.find({
         'userId': userId
     });
-    // console.log(payment);
     const paymentUsers = payment.map((e) => e.userId);
 
     const purchasedUsers = await userModel.find({

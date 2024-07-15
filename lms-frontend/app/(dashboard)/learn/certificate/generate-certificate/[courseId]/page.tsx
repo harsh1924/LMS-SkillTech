@@ -99,17 +99,6 @@ const PDFCertificate = ({
 
     return (
         <>
-            <Head>
-                <meta property="og:image" content="<generated>" />
-                <meta property="og:image:type" content="<generated>" />
-                <meta property="og:image:width" content="<generated>" />
-                <meta property="og:image:height" content="<generated>" />
-                <meta name="twitter:image" content="<generated>" />
-                <meta name="twitter:image:type" content="<generated>" />
-                <meta name="twitter:image:width" content="<generated>" />
-                <meta name="twitter:image:height" content="<generated>" />
-
-            </Head>
             <div className='px-20 py-6'>
                 <Logo />
             </div>
@@ -156,7 +145,7 @@ const PDFCertificate = ({
                                     <FacebookIcon size={25} round={true} />
                                 </div>
                             </FacebookShareButton>
-                            <LinkedinShareButton url={pageUrl} title='Certificate Page' summary='Skill Tech Certificate Page' >
+                            <LinkedinShareButton url={pageUrl}  >
                                 <div className='bg-sky-100 rounded-[50%] p-2'>
                                     <Linkedin size={25} />
                                 </div>

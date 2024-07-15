@@ -11,15 +11,14 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>New App</title>
-        <meta property="og:image" content="<generated>" />
-        {/* <meta property="og:image:type" content="<generated>" />
-        <meta property="og:image:width" content="<generated>" />
-        <meta property="og:image:height" content="<generated>" /> */}
-        <meta name="twitter:image" content="<generated>" />
-        {/* <meta name="twitter:image:type" content="<generated>" />
-        <meta name="twitter:image:width" content="<generated>" />
-        <meta name="twitter:image:height" content="<generated>" /> */}
+        <title>Your Page Title</title>
+        <meta property="og:title" content="Your Website Title" />
+        <meta property="og:description" content="Description of your website" />
+        <meta property="og:image" content="../app/opengraph-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://www.skilltechindia.net" />
+        <meta property="og:type" content="website" />
       </Head>
       {/* Navbar */}
       <HomeNavbar />

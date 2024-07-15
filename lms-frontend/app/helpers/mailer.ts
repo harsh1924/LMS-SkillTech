@@ -2,20 +2,21 @@ import nodemailer from 'nodemailer';
 
 const sendEmail = async function (email: string, subject: string, message: string) {
   var transport = nodemailer.createTransport({
-    host: "live.smtp.mailtrap.io",
+    host: process.env.SMTP_HOST,
+    service: process.env.SMTP_SERVICE,
     port: 587,
     secure: false,
     auth: {
-      user: "api",
-      pass: "accd926f99d2af31d757b1842a732ab8"
+      user: process.env.SMTP_USER,
+      // api
+      pass: process.env.SMTP_PASSWORD
+      // accd926f99d2af31d757b1842a732ab8
     }
   });
-  console.log('hello mailer');
-  console.log(email);
-  
 
   await transport.sendMail({
-    from: "skilltechindia.net",
+    from: process.env.EMAIL_FROM,
+    //skilltechindia.net
     to: email,
     subject: subject,
     html: message

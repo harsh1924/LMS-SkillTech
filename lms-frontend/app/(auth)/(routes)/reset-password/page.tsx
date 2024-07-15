@@ -1,7 +1,7 @@
 'use client'
 
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -9,6 +9,8 @@ const ResetPasswordPage = () => {
 
     function ResetFunction() {
         const searchParams = useSearchParams();
+        const router = useRouter();
+        
         const search = searchParams ? searchParams.get('resetToken') : null
 
         const [user, setUser] = useState({
@@ -38,14 +40,17 @@ const ResetPasswordPage = () => {
 
             try {
                 const res = await axios.post('/api/reset-user-password', user);
-                if (res) toast.success('Password Changed')
+                if (res) {
+                    toast.success('Password Changed');
+                    router.push('/')
+                }
                 else toast.error('Token expired')
             } catch (error: any) {
                 toast.error('Something went wrong');
                 console.log(error.message);
             }
         }
-        
+
         return (
             <div>
                 <div className="h-screen w-screen flex items-center justify-center">

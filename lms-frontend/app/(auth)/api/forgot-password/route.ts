@@ -31,13 +31,17 @@ export async function POST(request: NextRequest) {
         user.forgotPasswordTokenExpiry = Date.now() + 3600000;
         await user.save();
 
-        const resetPasswordUrl = `https://skilltechindia.net/reset-password?resetToken=${resetToken}`;
+        const resetPasswordUrl = `https://skilltechindia.net/reset-user-password?resetToken=${resetToken}`;
+        console.log(resetPasswordUrl);
+        
 
         // We here need to send an email to the user with the token
         const subject = 'Reset Password';
         const message = `You can reset your password by clicking <a href=${resetPasswordUrl} target="_blank">Reset your password</a>\n <br/> If the above link does not work for some reason then copy paste this link in new tab ${resetPasswordUrl}. <br/> If you have not requested this, kindly ignore.`;
 
         try {
+            console.log('start');
+            
             await sendEmail(email, subject, message);
             
             return NextResponse.json({ message: 'Reset Password Token sent' },

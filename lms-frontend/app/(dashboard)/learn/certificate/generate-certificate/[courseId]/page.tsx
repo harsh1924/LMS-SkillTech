@@ -38,6 +38,8 @@ const PDFCertificate = ({
 
     //https://skilltechindia.net/learn/certificate/generate-certificate/6646e947a394721ac5820ec0
 
+
+
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
 
@@ -135,12 +137,12 @@ const PDFCertificate = ({
                             </div>
                         </div>
                         <div className='flex gap-x-3'>
-                            <TwitterShareButton url={pageUrl} title='Certificate' onClick={shareButton}>
+                            <TwitterShareButton url={`https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`} title={'Certificate'}>
                                 <div className='bg-sky-100 rounded-[50%] p-2'>
                                     <TwitterIcon round={true} size={25} />
                                 </div>
                             </TwitterShareButton>
-                            <FacebookShareButton url={pageUrl} >
+                            <FacebookShareButton url={`https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`} >
                                 <div className='bg-violet-200 rounded-[50%] p-2'>
                                     <FacebookIcon size={25} round={true} />
                                 </div>

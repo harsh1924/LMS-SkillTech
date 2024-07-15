@@ -1,3 +1,4 @@
+import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 
 const ContactUsPage = () => {
@@ -29,7 +30,7 @@ const ContactUsPage = () => {
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div>
-                            <span className="hidden md:inline">
+                            <span className="hidden lg:inline">
                                 +91 &nbsp;| &nbsp;
                             </span>
                             <input required name="phone-number" type="number" placeholder="Phone Number*" className="border w-[300px] py-2 outline-none border-none " />
@@ -47,6 +48,7 @@ const ContactUsPage = () => {
                     </form>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

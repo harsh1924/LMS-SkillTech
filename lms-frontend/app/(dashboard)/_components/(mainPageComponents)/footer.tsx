@@ -52,7 +52,7 @@ export const Footer = () => {
                     </Link>
                     <Link href={'#'}>
                         {/* /reviews */}
-                        Alumni Speak
+                        {/* Alumni Speak */}
                     </Link>
                     <Link href={'/terms'}>
                         Terms
@@ -67,17 +67,17 @@ export const Footer = () => {
                     Buisness
                 </h3>
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
-                    <Link href={'#'}>
+                    <Link href={'/buisness'}>
                         {/* /skilltech-partners */}
                         Partners
                     </Link>
                     <Link href={'#'}>
                         {/* /affiliate */}
-                        Affiliate
+                        {/* Affiliate */}
                     </Link>
                     <Link href={'#'}>
                         {/* /corporate-training */}
-                        Corporate Training
+                        {/* Corporate Training */}
                     </Link>
                 </div>
             </div>

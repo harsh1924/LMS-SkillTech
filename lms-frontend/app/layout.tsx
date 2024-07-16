@@ -11,7 +11,15 @@ export const metadata: Metadata = {
   title: "SkillTech India",
   description: "Welcome to Skill Tech India",
   openGraph: {
-    images: 'https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load',
+    images: [
+      {
+        url: 'https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load',
+        width: 1200,
+        height: 630,
+        alt: "Hello"
+      }
+
+    ]
   },
 };
 

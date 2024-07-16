@@ -9,6 +9,8 @@ import '@/app/(dashboard)/dashboard.css'
 
 const ForgotPassword = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const [user, setUser] = useState({
         email: '',
     });
@@ -24,9 +26,11 @@ const ForgotPassword = () => {
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
+            setIsLoading(false);
             const res = await axios.post('/api/forgot-password', user);
             if (res) {
-                toast.success('Reset Link Sent')
+                setIsLoading(true)
+                toast.success('Reset Link Sent');
             } else toast.error('Something went wrong')
         } catch (error: any) {
             if (user.email == '') {
@@ -53,9 +57,15 @@ const ForgotPassword = () => {
                         </label>
                         <input onChange={handleUserInput} value={user.email} type="email" name="email" id="email" placeholder="youremail@gmail.com" className="border outline-none px-5 py-1 w-full rounded-lg" />
                     </div>
-                    <button className="rounded-md px-16 py-3 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
-                        Submit
-                    </button>
+                    {isLoading ? (
+                        <button className="rounded-md px-16 py-3 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                            Submit
+                        </button>
+                    ) : (
+                        <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                            Sending Reset Link....
+                        </div>
+                    )}
                 </form>
                 <div className="flex items-center justify-center w-full ">
                     <Link href={'/login'} className="text-[#347dfb]">

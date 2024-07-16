@@ -38,7 +38,8 @@ export async function POST(request: NextRequest) {
         const message = `Hi ${email} 
         <br/>
          You can reset your password by clicking <br/>  
-        <a href=${resetPasswordUrl} target="_blank" class="rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300"> 
+         
+        <a href=${resetPasswordUrl} target="_blank" > 
         Reset your password
         </a>
         <br/> If the above link does not work for some reason then copy paste this link in new tab ${resetPasswordUrl}. <br/> If you have not requested this, kindly ignore.`;

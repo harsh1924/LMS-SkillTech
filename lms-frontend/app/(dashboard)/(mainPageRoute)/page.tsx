@@ -14,7 +14,7 @@ export default function Home() {
         <title>Your Page Title</title>
         <meta property="og:title" content="Your Website Title" />
         <meta property="og:description" content="Description of your website" />
-        <meta property="og:image" content="../app/opengraph-image.jpg" />
+        <meta property="og:image" content="https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://www.skilltechindia.net" />

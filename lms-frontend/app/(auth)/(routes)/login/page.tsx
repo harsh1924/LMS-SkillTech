@@ -11,6 +11,8 @@ import '@/app/(dashboard)/dashboard.css'
 
 const LoginPage = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const router = useRouter();
     const [user, setUser] = useState({
         email: '',
@@ -31,13 +33,16 @@ const LoginPage = () => {
             toast.error('Please fill all the details')
         }
         try {
+            setIsLoading(false);
             const response = await axios.post('/api/user/login', user);
 
             if (response) {
                 toast.success('Login Successfull');
                 router.push('/profile')
+                setIsLoading(true)
             } else toast.error('User does not exist or details are wrong')
         } catch (error: any) {
+            setIsLoading(true)
             console.log('Login Failed', error.message);
         }
     }
@@ -77,7 +82,15 @@ const LoginPage = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-center">
-                            <button type="submit" className="border px-4 py-2 bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white oxygen-regular rounded-md text-sm">Log In</button>
+                        {isLoading ? (
+                        <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                            Log In
+                        </button>
+                    ) : (
+                        <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                            Processing....
+                        </div>
+                    )}
                         </div>
                         <div className="text-[13px] text-center text-gray-500">
                             Dont have an account? {" "}

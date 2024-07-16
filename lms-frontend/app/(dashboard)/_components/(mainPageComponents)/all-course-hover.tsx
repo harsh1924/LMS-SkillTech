@@ -25,7 +25,7 @@ export const HoverAllCourses = () => {
         <div className="navbar">
             <div className="outline-none border px-5 z-50 py-2 rounded-sm bg-[#0056d2] text-white font-serif lg:flex items-center gap-x-2 hidden group relative cursor-pointer">
                 All Courses
-                <div className="hidden border rounded-md flex-col gap-y-4 group-hover:flex hover:flex bg-white absolute text-black top-[41px] left-0 text-lg py-2 w-[280px] transition-all ease-in-out duration-300">
+                <div className="hidden border rounded-md flex-col gap-y-4 group-hover:flex hover:flex bg-white absolute text-black top-[41px] left-[-150px] text-lg py-2 w-[280px] transition-all ease-in-out duration-300">
                     <span className="pt-4 oxygen-bold px-5">
                         CATEGORIES
                     </span>
@@ -40,7 +40,7 @@ export const HoverAllCourses = () => {
                                     , isActive === e && 'bg-[#ecf2fc] hover:text-black border-r-4 border-[#00419e]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
                                     {e}
                                 </button>)}
-                            <span className="hidden py-8 group-hover:flex absolute left-[277px] top-0 border rounded-md z-50 w-[750px] bg-slate-100 px-4">
+                            <span className="hidden py-8 group-hover:flex absolute left-[277px] top-0 border rounded-md z-50 w-[1000px] bg-slate-100 px-4">
                                 <AllCoursesHoverList category={courseName} />
                             </span>
                         </div>

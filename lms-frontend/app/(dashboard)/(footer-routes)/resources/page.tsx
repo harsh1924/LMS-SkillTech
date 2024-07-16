@@ -1,3 +1,5 @@
+'use client'
+
 import { Separator } from "@/components/ui/separator";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 
@@ -5,51 +7,77 @@ import '@/app/(dashboard)/dashboard.css'
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import Link from "next/link";
 import ImageOne from '@/app/helpers/images/images-1.jpeg'
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const courses = [
     {
         "title": "Data Science",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Data Science'
     },
     {
         "title": "Project Management (PMP)",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Project Management'
     },
     {
         "title": "IT Security/ Cyber Security /ISMS",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Software Development'
     },
     {
         "title": "Cloud Computing",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Cloud Computing'
     },
     {
         "title": "Devops",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'DevOps'
     },
     {
         "title": "Business Analysis",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Business Analysis'
     },
     {
         "title": "Software Development/Coding",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Software Development'
     },
     {
         "title": "Agile & Scrum",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Agile & Scrum'
     },
     {
         "title": "IT Infrastructure",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'IT Service'
     },
     {
         "title": "Digital Marketing",
-        "imageUrl":  ImageOne.src
+        "imageUrl": ImageOne.src,
+        'category': 'Digital Marketing'
     },
 ]
 
-const ResourcePages = async () => {
+const categories = [
+    'Software Development',
+    'Data Science',
+    'Cyber Security',
+    'Cloud Computing',
+    'AI and ML',
+    'Digital Marketing',
+    'IT Service',
+    'Project Management'
+]
+
+const ResourcePages = () => {
+
+    const [courseName, setCourseName] = useState('Software Development');
+    const [isActive, setIsActive] = useState('Software Development');
 
     return (
         <div>
@@ -67,10 +95,26 @@ const ResourcePages = async () => {
             <div className="px-6">
                 <Separator />
             </div>
-            <div className="px-16 bg-slate-50">
-                <div className="flex flex-wrap py-6 justify-between h-[1000px] overflow-scroll no-scrollbar gap-y-6">
-                    {courses.map((course) =>
-                        <Link href={`/resources/${course.title}`} className="border h-[350px] bg-white shadow-md w-[300px] rounded-md overflow-hidden pb-4 flex flex-col justify-between">
+            <div className="px-8 flex-col md:flex-row bg-slate-50 flex gap-x-6">
+                <div className="flex py-6 flex-col md:flex-row justify-start gap-x-8 ">
+                    <div className="flex flex-col gap-y-2 md:w-[300px] border py-4 rounded-md shadow-lg md:h-[1000px]">
+                        <span className="text-lg oxygen-bold px-3">
+                            Categories
+                        </span>
+                        <Separator />
+                        <div className="flex md:flex-col flex-wrap gap-y-2 text-[15px]">
+                            {categories.map((e) =>
+                                <button className={cn(
+                                    'hover:text-[#347bdc] py-2 px-3 text-start source-sans-3-regular'
+                                    , isActive === e && 'bg-[#ecf2fc] hover:text-black border-r-4 border-[#00419e]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
+                                    {e}
+                                </button>)}
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-wrap gap-x-4 py-6 h-[1000px] overflow-scroll no-scrollbar gap-y-6">
+                    {courses.map((course) => course.category === courseName &&
+                        (<Link href={`/resources/${course.title}`} className="border h-[350px] bg-white shadow-md w-[250px] rounded-md overflow-hidden pb-4 flex flex-col justify-between">
                             <div className="flex flex-col gap-y-10">
                                 <img alt="Course Thumbnail" src={course.imageUrl} className="w-[300px] h-[150px]" />
                                 <span className="oxygeb-bold text-lg px-6">
@@ -82,8 +126,9 @@ const ResourcePages = async () => {
                                     Article
                                 </span>
                             </div>
-                        </Link>
-                    )}
+                        </Link>)
+                    )
+                    }
                 </div>
             </div>
             <div className="flex text-center flex-col md:flex-row py-10 gap-y-6">

@@ -37,6 +37,7 @@ const PDFCertificate = ({
     const pageUrl = `https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`
 
     //https://skilltechindia.net/learn/certificate/generate-certificate/6646e947a394721ac5820ec0
+    
 
 
 
@@ -101,6 +102,9 @@ const PDFCertificate = ({
 
     return (
         <>
+            <Head>
+                <meta property="og:image" content="'https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load'" />
+            </Head>
             <div className='px-20 py-6'>
                 <Logo />
             </div>
@@ -130,19 +134,19 @@ const PDFCertificate = ({
                                     {name}
                                 </span>
                             </div>
-                            <div className="">
+                            {/* <div className="">
                                 <span>
                                     Issue Date:
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
                         <div className='flex gap-x-3'>
-                            <TwitterShareButton url={`https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`} title={'Certificate'}>
+                            <TwitterShareButton url={pageUrl} title={'Certificate'}>
                                 <div className='bg-sky-100 rounded-[50%] p-2'>
                                     <TwitterIcon round={true} size={25} />
                                 </div>
                             </TwitterShareButton>
-                            <FacebookShareButton url={`https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`} >
+                            <FacebookShareButton url={pageUrl} >
                                 <div className='bg-violet-200 rounded-[50%] p-2'>
                                     <FacebookIcon size={25} round={true} />
                                 </div>

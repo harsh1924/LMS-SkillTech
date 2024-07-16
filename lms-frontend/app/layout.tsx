@@ -8,10 +8,10 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SkillTech India 2024",
-  description: "Welcome to Skill Tech India in 2024",
+  title: "SkillTech India",
+  description: "Welcome to Skill Tech India",
   openGraph: {
-    images: '/opengraph-image.jpg',
+    images: 'https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load',
   },
 };
 

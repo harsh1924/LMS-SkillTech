@@ -19,7 +19,4 @@ const sendEmail = async function (email: string, subject: string, message: strin
   })
 }
 
-console.log('end');
-
-
 export default sendEmail;

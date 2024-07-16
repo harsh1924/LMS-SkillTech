@@ -27,15 +27,17 @@ const LoginPage = () => {
 
     const onLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        if (user.email === '' || user.password === '') {
+            toast.error('Please fill all the details')
+        }
         try {
             const response = await axios.post('/api/user/login', user);
-            
+
             if (response) {
                 toast.success('Login Successfull');
                 router.push('/profile')
-            }
+            } else toast.error('User does not exist or details are wrong')
         } catch (error: any) {
-            toast.error('User does not exist or details are wrong')
             console.log('Login Failed', error.message);
         }
     }

@@ -30,20 +30,18 @@ export default function SignInPage() {
 
     const onSignup = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        if (!user.name || !user.email || !user.password) {
+            toast.error('All fields are required')
+        }
         try {
-            // API REQUEST
             const response = await axios.post('/api/user/signup', user);
             router.push('/login');
             if (response) {
                 toast.success('Account Created Successfully')
-            }
+            } else toast.error('Account already exists')
 
         } catch (error: any) {
-            toast.error('Account already exists')
             console.log('Signup failed', error.message);
-            if (!user.name || !user.email || !user.password) {
-                toast.error('All fields are required')
-            }
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }
@@ -78,7 +76,7 @@ export default function SignInPage() {
                     </label>
                     <div className="flex items-center border gap-x-3 rounded-md p-2">
                         <span className="text-sm oxygen-regular">
-                            +91 | 
+                            +91 |
                         </span>
                         <input onChange={handleUserInput} value={user.phoneNumber} name="phoneNumber" type="number" id="phoneNumber" className="rounded-md source-sans-3-regular text-[12px] outline-none" placeholder="Enter Your Phone Number" />
                     </div>

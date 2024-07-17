@@ -8,8 +8,8 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SkillTech India",
-  description: "Welcome to Skill Tech India",
+  title: "Online Courses - Learn to Code Anywhere, Anytime | SkillTech",
+  description: "Learn from best tutors of India",
   openGraph: {
     images: [
       {

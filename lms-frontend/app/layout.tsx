@@ -17,10 +17,15 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Hello"
-      }
-
-    ]
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "SkillTech India",
+    description: "Welcome to Skill Tech India",
+    images: ['https://skilltechindia.net/api/og?title=SkillTech',]
+  }
 };
 
 export default function RootLayout({

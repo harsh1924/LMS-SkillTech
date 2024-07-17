@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
 
         return new (ImageResponse as any)(
             <div tw="flex flex-col w-full h-full bg-white">
-                <img src={imageData} tw="w-full h-[75%]" />
+                <img src={imageData} tw="w-full h-full" />
                 {/* <div tw="flex flex-col px-6 pt-3">
                     <span tw="font-light text-2xl">
                         {title}

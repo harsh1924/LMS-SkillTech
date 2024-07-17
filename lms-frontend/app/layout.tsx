@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SkillTech India",
     description: "Welcome to Skill Tech India",
-    images: ['https://skilltechindia.net/api/og?title=SkillTech',]
-  }
+    images: ['https://skilltechindia.net/api/og?title=SkillTech']
+  },
 };
 
 export default function RootLayout({

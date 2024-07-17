@@ -36,11 +36,6 @@ const PDFCertificate = ({
     const url = usePathname();
     const pageUrl = `https://skilltechindia.net/learn/certificate/generate-certificate/${params.courseId}`
 
-    //https://skilltechindia.net/learn/certificate/generate-certificate/6646e947a394721ac5820ec0
-    
-
-
-
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
 
@@ -102,9 +97,6 @@ const PDFCertificate = ({
 
     return (
         <>
-            <Head>
-                <meta property="og:image" content="'https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load'" />
-            </Head>
             <div className='px-20 py-6'>
                 <Logo />
             </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://images.pexels.com/photos/18939401/pexels-photo-18939401/free-photo-of-cars-and-motorbikes-on-street-at-sunset-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load',
+        url: 'https://skilltechindia.net/api/og?title=SkillTech',
         width: 1200,
         height: 630,
         alt: "Hello"

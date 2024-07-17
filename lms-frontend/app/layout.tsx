@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://skilltechindia.net/api/og?title=SkillTech',
+        url: 'https://skilltechindia.net/api/og',
         width: 1200,
         height: 630,
         alt: "Hello"
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SkillTech India",
     description: "Welcome to Skill Tech India",
-    images: ['https://skilltechindia.net/api/og?title=SkillTech']
+    images: ['https://skilltechindia.net/api/og']
   },
 };
 

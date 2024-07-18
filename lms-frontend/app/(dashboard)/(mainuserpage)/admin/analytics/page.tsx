@@ -13,7 +13,7 @@ connectToDB();
 const AnalyticsPage = async () => {
 
     const users = await userModel.find({
-        'role': 'USER'
+        'role': 'USER' 
     });
     const userId = users.map((e: any) => e._id);
 

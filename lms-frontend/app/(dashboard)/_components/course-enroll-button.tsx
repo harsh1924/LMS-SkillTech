@@ -45,10 +45,10 @@ export const CourseEnrollButton = ({
 
     const createOrderId = async () => {
         try {
-            // if (userRole === 'ADMIN') {
-            //     toast.error('Admin cannot purchase courses')
-            //     return;
-            // }
+            if (userRole === 'ADMIN') {
+                toast.error('Admin cannot purchase courses')
+                return;
+            }
 
             const response = await fetch(`/api/${userId}/order/${courseId}`, {
                 method: 'POST',

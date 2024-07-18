@@ -28,6 +28,9 @@ export default function SignInPage() {
 
     const onSignup = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        if (!user.name || !user.email || !user.password) {
+            toast.error('All fields are required')
+        }
         try {
             // API REQUEST
             const response = await axios.post('/api/user/signup/trainer', user);

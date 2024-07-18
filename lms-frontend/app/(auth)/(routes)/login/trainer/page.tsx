@@ -25,6 +25,10 @@ const TrainerLoginPage = () => {
 
     const onLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        if (user.email === '' || user.password === '') {
+            toast.error('Please fill all the details');
+            return;
+        }
         try {
             const response = await axios.post('/api/user/login/trainer', user);
             if (response) {

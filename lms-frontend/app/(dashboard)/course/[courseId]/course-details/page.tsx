@@ -204,7 +204,11 @@ const CourseDetails = ({
                                 Program Duration
                             </span>
                             <span>
-                                {courseDurationData} Months
+                                {courseDurationData && (
+                                    <div>
+                                        {courseDurationData} Months
+                                    </div>
+                                )}
                             </span>
                         </p>
                         <p className="shadow-md border-black lg:border-r flex flex-col items-center gap-y-3 py-2 text-center lg:px-20 text-lg font-semibold">
@@ -242,54 +246,74 @@ const CourseDetails = ({
 
                     {/* Cards */}
                     <div className="px-6 lg:px-16 text-lg source-sans-3-regular py-10 flex flex-col md:flex-row flex-wrap gap-y-10 justify-between w-full">
-                        <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                            {courseCardOne}
-                        </p>
-                        <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                            {courseCardTwo}
-                        </p>
-                        <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                            {courseCardThree}
-                        </p>
-                        <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                            {courseCardFour}
-                        </p>
+                        {courseCardOne && (
+                            <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
+                                {courseCardOne}
+                            </p>
+                        )}
+                        {courseCardTwo && (
+                            <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
+                                {courseCardTwo}
+                            </p>
+                        )}
+                        {courseCardThree && (
+                            <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
+                                {courseCardThree}
+                            </p>
+                        )}
+                        {courseCardFour && (
+                            <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
+                                {courseCardFour}
+                            </p>
+                        )}
                     </div>
 
                     {/* key features */}
                     <div className="flex px-6 lg:px-16 flex-col py-10 shadow-md bg-slate-100 rounded-md">
                         <p className=" pb-8 text-xl oxygen-semibold">KEY FEATURES</p>
                         <div className="flex flex-wrap gap-y-8 justify-between text-[17px] source-sans-3-regular">
-                            <p className="w-[400px]">
-                                <span className="flex items-start gap-x-3">
-                                    <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureOneData}
-                                </span>
-                            </p>
-                            <p className="w-[400px]">
-                                <span className="flex items-start gap-x-3">
-                                    <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureTwoData}
-                                </span>
-                            </p>
-                            <p className="w-[400px]">
-                                <span className="flex items-start gap-x-3">
-                                    <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureThreeData}
-                                </span>
-                            </p>
-                            <p className="w-[400px]">
-                                <span className="flex items-start gap-x-3">
-                                    <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureFourData}
-                                </span>
-                            </p>
-                            <p className="w-[400px]">
-                                <span className="flex items-start gap-x-3">
-                                    <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureFiveData}
-                                </span>
-                            </p>
-                            <p className="w-[400px]">
-                                <span className="flex items-start gap-x-3">
-                                    <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureSixData}
-                                </span>
-                            </p>
+                            {courseKeyFeatureOneData && (
+                                <p className="w-[400px]">
+                                    <span className="flex items-start gap-x-3">
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureOneData}
+                                    </span>
+                                </p>
+                            )}
+                            {courseKeyFeatureTwoData && (
+                                <p className="w-[400px]">
+                                    <span className="flex items-start gap-x-3">
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureTwoData}
+                                    </span>
+                                </p>
+                            )}
+                            {courseKeyFeatureThreeData && (
+                                <p className="w-[400px]">
+                                    <span className="flex items-start gap-x-3">
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureThreeData}
+                                    </span>
+                                </p>
+                            )}
+                            {courseKeyFeatureFourData && (
+                                <p className="w-[400px]">
+                                    <span className="flex items-start gap-x-3">
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureFourData}
+                                    </span>
+                                </p>
+                            )}
+                            {courseKeyFeatureFiveData && (
+                                <p className="w-[400px]">
+                                    <span className="flex items-start gap-x-3">
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureFiveData}
+                                    </span>
+                                </p>
+                            )}
+                            {courseKeyFeatureSixData && (
+                                <p className="w-[400px]">
+                                    <span className="flex items-start gap-x-3">
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureSixData}
+                                    </span>
+                                </p>
+                            )}
                         </div>
                     </div>
 
@@ -299,24 +323,36 @@ const CourseDetails = ({
                             SKILLS COVERED
                         </p>
                         <p className="flex flex-wrap justify-between source-sans-3-regular text-lg">
-                            <span className="flex items-center gap-x-1 w-[400px]">
-                                <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredOne}
-                            </span>
-                            <span className="flex w-[400px] items-center gap-x-1">
-                                <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredTwo}
-                            </span>
-                            <span className="flex w-[400px] items-center gap-x-1">
-                                <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredThree}
-                            </span>
-                            <span className="flex w-[400px] items-center gap-x-1">
-                                <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredFour}
-                            </span>
-                            <span className="flex w-[400px] items-center gap-x-1">
-                                <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredFive}
-                            </span>
-                            <span className="flex w-[400px] items-center gap-x-1">
-                                <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredSix}
-                            </span>
+                            {courseSkillsCoveredOne && (
+                                <span className="flex items-center gap-x-1 w-[400px]">
+                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredOne}
+                                </span>
+                            )}
+                            {courseSkillsCoveredTwo && (
+                                <span className="flex w-[400px] items-center gap-x-1">
+                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredTwo}
+                                </span>
+                            )}
+                            {courseSkillsCoveredThree && (
+                                <span className="flex w-[400px] items-center gap-x-1">
+                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredThree}
+                                </span>
+                            )}
+                            {courseSkillsCoveredFour && (
+                                <span className="flex w-[400px] items-center gap-x-1">
+                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredFour}
+                                </span>
+                            )}
+                            {courseSkillsCoveredFive && (
+                                <span className="flex w-[400px] items-center gap-x-1">
+                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredFive}
+                                </span>
+                            )}
+                            {courseSkillsCoveredSix && (
+                                <span className="flex w-[400px] items-center gap-x-1">
+                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredSix}
+                                </span>
+                            )}
                         </p>
                     </div>
 

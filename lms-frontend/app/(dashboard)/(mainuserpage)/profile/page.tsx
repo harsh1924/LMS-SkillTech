@@ -19,6 +19,7 @@ import { AddressForm } from "../admin/courses/[courseId]/_components/(edit-user-
 const userIdPage = () => {
 
     const [isLoading, setIsLoading] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const router = useRouter();
     const [User, setUser] = useState({
@@ -44,6 +45,9 @@ const userIdPage = () => {
         const userId = res.data.user._id;
         setUserIdData(userId);
         setIsLoading(true);
+        if (res.data.user.role === 'ADMIN') {
+            setIsAdmin(true);
+        }
     }
 
     const logout = async () => {
@@ -90,11 +94,19 @@ const userIdPage = () => {
                                 userId={userIdData} />
                         </div>
                     </div>
-                    <div className="flex justify-between w-full px-10 mb-6">
-                        <Link className="bg-[#0056d2] text-white px-7 py-3 rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300" href={`/learn/${userIdData}/user-courses`}>
-                            Your Courses
-                        </Link>
-                    </div>
+                    {isAdmin ? (
+                        <div className="flex justify-between w-full px-10 mb-6">
+                            <Link className="bg-[#0056d2] text-white px-7 py-3 rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300" href={`/admin/courses`}>
+                                Edit / Create Courses
+                            </Link>
+                        </div>
+                    ) : (
+                        <div className="flex justify-between w-full px-10 mb-6">
+                            <Link className="bg-[#0056d2] text-white px-7 py-3 rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300" href={`/learn/${userIdData}/user-courses`}>
+                                Your Courses
+                            </Link>
+                        </div>
+                    )}
                 </div>
             ) : (
                 <div className="flex h-screen w-screen items-center justify-center">

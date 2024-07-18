@@ -30,7 +30,8 @@ const LoginPage = () => {
     const onLogin = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (user.email === '' || user.password === '') {
-            toast.error('Please fill all the details')
+            toast.error('Please fill all the details');
+            return;
         }
         try {
             setIsLoading(false);

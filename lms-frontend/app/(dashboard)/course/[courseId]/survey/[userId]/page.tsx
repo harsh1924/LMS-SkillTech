@@ -33,6 +33,8 @@ const SurveyPage = ({
         }
     }
 
+
+    
     useEffect(() => {
         findCourse()
     }, []);
@@ -74,6 +76,7 @@ const SurveyPage = ({
                         )}
                         <p className="py-2 source-sans-3-regular text-xl">
                             Rate the website based on the following aspects:
+                            
                         </p>
                         <div className="border px-3 py-4 rounded-md">
                             <div className="md:flex pb-6 justify-between text-xs source-sans-3-regular hidden">

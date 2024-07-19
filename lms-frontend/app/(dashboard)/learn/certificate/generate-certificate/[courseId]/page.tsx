@@ -81,7 +81,7 @@ const PDFCertificate = ({
                 const link = document.createElement('a')
                 // link.download = 'Blue and Yellow Vector Modern Completion Certificate.png'
                 link.href = dataUrl
-                link.click()
+                link.click() 
 
             })
             .catch((err) => {

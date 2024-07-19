@@ -104,7 +104,7 @@ export const CourseEnrollButton = ({
                     }
 
                     if (res.isOk && isCourseFree) {
-                        router.push(`/courses/${courseId}/certificate`)
+                        router.push(`https://skilltechindia.net/learn/certificate/generate-certificate/${courseId}`)
                     }
                 },
                 prefill: {

@@ -15,10 +15,12 @@ const biometricData = {
 export async function POST(req: NextRequest) {
     try {
         console.log(req.body);
+        const hello = req.body
         
         console.log('Recieved Biometric Data:', biometricData);
         return NextResponse.json({
             message: 'done',
+            hello
         }, {
             status: 200
         })

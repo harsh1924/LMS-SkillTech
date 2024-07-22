@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
         console.log('Recieved Biometric Data:', biometricData);
         return NextResponse.json({
             message: 'done',
-            hello
+            // hello
         }, {
             status: 200
         })

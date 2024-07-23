@@ -33,10 +33,8 @@ const ForgotPassword = () => {
                 toast.success('Reset Link Sent');
             } else toast.error('Something went wrong')
         } catch (error: any) {
-            setIsLoading(true)
-            if (user.email == '') {
-                toast.error('Please Provide Email')
-            }
+            toast.error(error.response.data.error);
+            setIsLoading(true) 
         }
     }
 

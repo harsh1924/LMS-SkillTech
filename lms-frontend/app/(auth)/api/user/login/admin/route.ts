@@ -14,13 +14,13 @@ export async function POST(request: NextRequest) {
         // checking user exists or not
         const user = await userModel.findOne({ email }).select('+password');
         if (!user) {
-            return NextResponse.json({ error: 'User does not exits' },
+            return NextResponse.json({ error: 'User does not exsits' },
                 { status: 400 }
             )
         }
 
         if (user.role === 'USER' || user.role === 'TRAINER') {
-            return NextResponse.json({ error: 'Unauthorized' },
+            return NextResponse.json({ error: 'Unauthorized! Only Admin can Login' },
                 { status: 400 }
             )
         }

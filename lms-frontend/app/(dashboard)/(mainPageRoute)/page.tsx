@@ -23,7 +23,7 @@ export default function Home() {
       {/* Navbar */}
       <HomeNavbar />
 
-      <div className="w-screen hidden lg:flex">
+      <div className=" hidden lg:flex">
         <HomePageCarousel />
       </div>
 

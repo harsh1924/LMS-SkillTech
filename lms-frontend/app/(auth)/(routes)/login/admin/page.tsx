@@ -39,7 +39,7 @@ const LoginPage = () => {
             if (!user.email || !user.password) {
                 toast.error('All fields are required')
             }
-            toast.error('User does not exist or user is not an admin')
+            toast.error(error.response.data.error);
             console.log('Login Failed', error.message);
         }
     }

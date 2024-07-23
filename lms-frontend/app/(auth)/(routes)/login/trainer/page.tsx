@@ -36,10 +36,10 @@ const TrainerLoginPage = () => {
                 router.push(`/trainer/courses`);
             }
         } catch (error: any) {
+            toast.error(error.response.data.error);
             if (!user.email || !user.password) {
                 toast.error('All fields are required')
             }
-            toast.error('User does not exist or user is not an admin')
             console.log('Login Failed', error.message);
         }
     }

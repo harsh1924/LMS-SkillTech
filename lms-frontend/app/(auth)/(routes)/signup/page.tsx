@@ -30,18 +30,15 @@ export default function SignInPage() {
 
     const onSignup = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        if (!user.name || !user.email || !user.password) {
-            toast.error('All fields are required')
-        }
         try {
             const response = await axios.post('/api/user/signup', user);
-            router.push('/login');
+
             if (response) {
                 toast.success('Account Created Successfully')
-            } else toast.error('Account already exists')
-
+                router.push('/login');
+            }
         } catch (error: any) {
-            console.log('Signup failed', error.message);
+            toast.error(error.response.data.error);
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }

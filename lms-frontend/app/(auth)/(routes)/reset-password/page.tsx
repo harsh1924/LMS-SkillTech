@@ -46,6 +46,7 @@ const ResetPasswordPage = () => {
                 }
                 else toast.error('Token expired')
             } catch (error: any) {
+                toast.error(error.response.data.error);
                 toast.error('Something went wrong');
                 console.log(error.message);
             }

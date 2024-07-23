@@ -40,11 +40,7 @@ export default function SignInPage() {
             }
 
         } catch (error: any) {
-            toast.error('Account already exists')
-            console.log('Signup failed', error.message);
-            if (!user.name || !user.email || !user.password) {
-                toast.error('All fields are required')
-            }
+            toast.error(error.response.data.error);
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }
@@ -55,7 +51,7 @@ export default function SignInPage() {
             <Link href={'/'}>
                 <Logo />
             </Link>
-            <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
+            <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 mb-10 flex flex-col gap-y-4">
                 <h2 className="font-semibold text-xl">
                     Create Your Account
                 </h2>

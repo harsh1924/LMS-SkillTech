@@ -19,7 +19,9 @@ export async function POST(request: NextRequest) {
         // checking user exists or not
         const userExists = await userModel.findOne({ email });
         if (userExists) {
-            return NextResponse.json({ error: 'User already exists' }, { status: 400 })
+            return NextResponse.json({ 
+                error: 'User already exists' ,
+            }, { status: 400 })
         }
 
         //hashing password

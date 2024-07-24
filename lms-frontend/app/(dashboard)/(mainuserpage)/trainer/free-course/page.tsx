@@ -30,7 +30,6 @@ export default function FreeCourseCreationPage() {
         try {
             // API REQUEST
             const response = await axios.post('/api/course/create/free-course', course);
-
             const courseId = response.data.course._id;
             
             router.push(`/trainer/courses/${courseId}/edit-course`);
@@ -38,20 +37,8 @@ export default function FreeCourseCreationPage() {
                 toast.success('Course Created Successfully')
             }
 
-
         } catch (error: any) {
-            console.log('Course Creation failed', error.message);
-
-            // errors
-            if (!course.title || !course.category || !course.createdBy || !course.description || !course.price) {
-                toast.error('All fields are required')
-            }
-            if (course.description.length < 5) {
-                toast.error('Description should be atleast 5 characters')
-            }
-
-            toast.error(error.message)
-
+            toast.error(error.response.data.error)
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }

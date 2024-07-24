@@ -15,6 +15,12 @@ export async function POST(request: NextRequest) {
             )
         }
 
+        if (description.length < 5) {
+            return NextResponse.json({ error: 'Description should be atleast 5 characters long' },
+                { status: 400 }
+            )
+        }
+
         const course = new courseModel({
             title,
             description,

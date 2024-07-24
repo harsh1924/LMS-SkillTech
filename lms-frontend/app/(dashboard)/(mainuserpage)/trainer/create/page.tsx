@@ -40,18 +40,7 @@ export default function CourseCreationPage() {
 
 
         } catch (error: any) {
-            console.log('Course Creation failed', error.message);
-
-            // errors
-            if (!course.title || !course.category || !course.createdBy || !course.description || !course.price) {
-                toast.error('All fields are required')
-            }
-            if (course.description.length < 5) {
-                toast.error('Description should be atleast 5 characters')
-            }
-
-            toast.error(error.message)
-
+            toast.error(error.response.data.error)
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }

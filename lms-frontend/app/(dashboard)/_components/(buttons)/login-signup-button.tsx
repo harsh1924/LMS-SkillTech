@@ -20,14 +20,18 @@ import { UserCircle2Icon } from "lucide-react"
 export const LoginButtons = () => {
     const router = useRouter();
     const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [userIdData, setUserIdData] = useState('');
+    const [userRole, setUserRole] = useState('');
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const getToken = async () => {
         try {
             const res = await axios.get('/api/getToken')
             const token = res.data.token;
-            
+
             if (token !== '\"\"') {
-                setIsLoggedIn(false)
+                setIsLoggedIn(false);
+                getId()
             }
 
         } catch (error: any) {
@@ -44,6 +48,16 @@ export const LoginButtons = () => {
         } catch (error: any) {
             console.log(error.message);
             toast.error(error.message)
+        }
+    }
+
+    const getId = async () => {
+        const res = await axios.get('/api/user/user-details')
+        const userId = res.data.user._id;
+        setUserIdData(userId);
+        setUserRole(res.data.user.role);
+        if (userRole === 'ADMIN') {
+            setIsAdmin(true)
         }
     }
 
@@ -101,6 +115,11 @@ export const LoginButtons = () => {
                                 <DropdownMenuItem>
                                     <Link href={'/profile'}>
                                         Profile
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                    <Link href={`/learn/${userIdData}/user-courses`}>
+                                        My Courses
                                     </Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem>

@@ -11,12 +11,12 @@ const CoursePage = () => {
                     View all Courses
                 </span>
             </Link>
-            <Link href='/admin/create'>
+            <Link href='/trainer/create'>
                 <span className="px-6 py-4 rounded-md text-white bg-[#0056d2]">
                     New Course
                 </span>
             </Link>
-            <Link href='/admin/create/free-course'>
+            <Link href='/trainer/create/free-course'>
                 <span className="px-6 py-4 rounded-md text-white bg-[#0056d2]">
                     Create Free Course
                 </span>

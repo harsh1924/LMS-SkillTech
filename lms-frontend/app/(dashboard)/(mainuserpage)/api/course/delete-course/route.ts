@@ -7,11 +7,7 @@ connectToDB();
 export async function DELETE(request: NextRequest) {
     try {
         const courseId = request.nextUrl.searchParams.get('courseId');
-        console.log(courseId);
-        
-
         const course = await courseModel.findById(courseId);
-        console.log(course);
         
         if (!course) {
             return NextResponse.json({

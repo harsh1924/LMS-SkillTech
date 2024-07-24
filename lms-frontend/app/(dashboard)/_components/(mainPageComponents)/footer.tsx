@@ -5,10 +5,10 @@ export const Footer = () => {
     return (
         <div className="bg-black grid grid-cols-2 md:flex md:justify-around py-8 mt-16">
             <div className="px-10 py-6">
-                <h3 className="text-white text-lg oxygen-regular">
+                <h3 className="text-white pl-1 text-lg oxygen-regular">
                     Follow us!
                 </h3>
-                <div className="py-2 flex gap-x-1">
+                <div className="py-1 flex gap-x-1 items-start justify-start">
                     <Link href={'https://www.facebook.com/profile.php?id=61560911574316'} target="_blank">
                         <Facebook size={22} className="text-white" />
                     </Link>

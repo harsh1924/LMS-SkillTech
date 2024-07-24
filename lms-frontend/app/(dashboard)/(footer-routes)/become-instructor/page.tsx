@@ -60,7 +60,11 @@ const InstructorForm = () => {
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div>
-                            <input required name="course" type="text" placeholder="Select Course*" className="border w-[300px] py-2 outline-none border-none " />
+                            <input required name="course" type="text" placeholder="Subject*" className="border w-[300px] py-2 outline-none border-none " />
+                            <div className="h-[1px] bg-gray-500 w-full "></div>
+                        </div>
+                        <div>
+                            <input required name="education" type="text" placeholder="Highest Education*" className="border w-[300px] py-2 outline-none border-none " />
                             <div className="h-[1px] bg-gray-500 w-full "></div>
                         </div>
                         <div>

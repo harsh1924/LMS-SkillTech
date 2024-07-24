@@ -121,7 +121,7 @@ export const NavbarRoutes = () => {
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem>
-                                        <Link href={`/profile/${UserId}/user-courses`}>
+                                        <Link href={`/learn/${UserId}/user-courses`}>
                                             My Courses
                                         </Link>
                                     </DropdownMenuItem>

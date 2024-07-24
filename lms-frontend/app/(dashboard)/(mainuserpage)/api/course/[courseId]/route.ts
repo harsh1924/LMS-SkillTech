@@ -1,17 +1,18 @@
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
+import userModel from "@/app/server/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 
 connectToDB();
 
 export async function PUT(request: NextRequest,
-    { params }: { params: { courseId: string } }
+    { params }: { params: { courseId: string; userId: string } }
 ) {
     try {
+        const user = await userModel.findById(params.userId);
+        
         const courseId = params.courseId;
         const values = await request.json();
-        console.log(values);
-        
 
         const course = await courseModel.findByIdAndUpdate(
             courseId,

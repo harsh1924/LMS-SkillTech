@@ -1,10 +1,10 @@
 import courseModel from "@/app/server/models/courseModel";
-import { TitleForm } from "../_components/title-form";
-import { DescriptionForm } from "../_components/description-form";
-import { PriceForm } from "../_components/price-form";
-import { CategoryForm } from "../_components/category-form";
-import { CreatedByForm } from "../_components/createdBy-form";
-import { ImageForm } from "../_components/image-form";
+import { TitleForm } from "../../../_components/title-form";
+import { DescriptionForm } from "../../../_components/description-form";
+import { PriceForm } from "../../../_components/price-form";
+import { CategoryForm } from "../../../_components/category-form";
+import { CreatedByForm } from "../../../_components/createdBy-form";
+import { ImageForm } from "../../../_components/image-form";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { PublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/publish-course-button";
 import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/unpublish-course-button";
@@ -12,18 +12,24 @@ import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/u
 import { LayoutDashboard, Trash2 } from "lucide-react";
 
 import Link from "next/link";
-import { AttachmentForm } from "../_components/attachment-form";
-import { ResourceForm } from "../_components/resource-form";
+import { AttachmentForm } from "../../../_components/attachment-form";
+import { ResourceForm } from "../../../_components/resource-form";
+import userModel from "@/app/server/models/userModel";
 
 connectToDB();
 
 const CourseEdit = async ({
     params
 }: {
-    params: { courseId: string }
+    params: { courseId: string; userId: string }
 }) => {
 
     const course = await courseModel.findById(params.courseId).select('-lectures');
+    const user = await userModel.findById(params.userId);
+    console.log(user.id);
+    
+    
+
 
     return (
         <div>
@@ -51,7 +57,7 @@ const CourseEdit = async ({
                             ) : (
                                 <UnPublishCourseButton courseId={params.courseId} />
                             )}
-                            
+
                             <Link href={`/admin/courses/${params.courseId}/edit-course/delete-course`} className="bg-red-600 hover:bg-red-700 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">
                                 <Trash2 size={20} />
                             </Link>
@@ -61,10 +67,12 @@ const CourseEdit = async ({
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6">
                     <TitleForm
                         initialData={course}
-                        courseId={course.id} />
+                        courseId={course.id}
+                        userId={user.id} />
                     <PriceForm
                         initialData={course}
-                        courseId={course.id} />
+                        courseId={course.id}
+                        userId={user.id} />
                     <CategoryForm
                         initialData={course}
                         courseId={course.id} />

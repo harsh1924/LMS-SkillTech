@@ -12,6 +12,7 @@ import '@/app/(dashboard)/dashboard.css'
 
 export default function SignInPage() {
 
+    const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
     const [user, setUser] = useState({
         name: '',
@@ -31,13 +32,16 @@ export default function SignInPage() {
     const onSignup = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
+            setIsLoading(false)
             const response = await axios.post('/api/user/signup', user);
 
             if (response) {
                 toast.success('Account Created Successfully')
+                setIsLoading(true)
                 router.push('/login');
             }
         } catch (error: any) {
+            setIsLoading(true)
             toast.error(error.response.data.error);
             return NextResponse.json({ error: error.message },
                 { status: 400 })
@@ -86,7 +90,15 @@ export default function SignInPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="border px-6 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300 rounded-md">Create Account</button>
+                        {isLoading ? (
+                            <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                                Create Account
+                            </button>
+                        ) : (
+                            <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                                Processing....
+                            </div>
+                        )}
                     </div>
                     <div className="source-sans-3-regular text-[15px] text-gray-500">
                         Already have an account? {" "}

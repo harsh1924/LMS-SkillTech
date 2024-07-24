@@ -24,7 +24,8 @@ interface TitleFormProps {
     initialData: {
         title: string
     };
-    courseId: string
+    courseId: string;
+    userId: string
 }
 
 const formSchema = z.object({
@@ -33,7 +34,8 @@ const formSchema = z.object({
 
 export const TitleForm = ({
     initialData,
-    courseId
+    courseId,
+    userId
 }: TitleFormProps) => {
 
     const [isEditing, setIsEditing] = useState(false);
@@ -53,7 +55,7 @@ export const TitleForm = ({
             toggleEdit();
             router.refresh();
         } catch (error: any) {
-            toast.error('Something went wrong')
+            toast.error(error.response.data.error)
             console.log(error.message);
         }
     }

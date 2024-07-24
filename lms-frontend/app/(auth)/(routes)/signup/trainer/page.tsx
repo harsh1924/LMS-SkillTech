@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 
 export default function SignInPage() {
 
+    const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
     const [user, setUser] = useState({
         name: '',
@@ -32,15 +33,17 @@ export default function SignInPage() {
             toast.error('All fields are required')
         }
         try {
-            // API REQUEST
+            setIsLoading(false);
             const response = await axios.post('/api/user/signup/trainer', user);
-            router.push('/login/trainer');
             if (response) {
                 toast.success('Account Created Successfully')
+                setIsLoading(true)
+                router.push('/login/trainer');
             }
 
         } catch (error: any) {
             toast.error(error.response.data.error);
+            setIsLoading(true)
             return NextResponse.json({ error: error.message },
                 { status: 400 })
         }
@@ -51,7 +54,7 @@ export default function SignInPage() {
             <Link href={'/'}>
                 <Logo />
             </Link>
-            <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 mb-10 flex flex-col gap-y-4">
+            <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_skyblue] px-6 py-4 mb-10 flex flex-col gap-y-4">
                 <h2 className="font-semibold text-xl">
                     Create Your Account
                 </h2>
@@ -91,11 +94,19 @@ export default function SignInPage() {
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Create Account</button>
+                    {isLoading ? (
+                            <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                                Create Account
+                            </button>
+                        ) : (
+                            <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                                Processing....
+                            </div>
+                        )}
                     </div>
                     <div className="text-[13px] text-gray-500">
                         Already have an account? {" "}
-                        <Link href={'/login'} className="text-sky-500 font-serif">Log In</Link>
+                        <Link href={'/login/trainer'} className="text-sky-500 font-serif">Log In</Link>
                     </div>
                 </div>
             </div>

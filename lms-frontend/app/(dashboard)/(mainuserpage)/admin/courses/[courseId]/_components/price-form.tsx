@@ -23,7 +23,8 @@ interface PriceFormProps {
     initialData: {
         price: string
     };
-    courseId: string
+    courseId: string;
+    userId: string
 }
 
 const formSchema = z.object({
@@ -34,7 +35,8 @@ const formSchema = z.object({
 
 export const PriceForm = ({
     initialData,
-    courseId
+    courseId,
+    userId
 }: PriceFormProps) => {
 
     const router = useRouter();
@@ -56,7 +58,7 @@ export const PriceForm = ({
             toggleEdit();
             router.refresh();
         } catch (error: any) {
-            toast.error('Something went wrong')
+            toast.error(error.response.data.error)
             console.log(error.message);
             
         }

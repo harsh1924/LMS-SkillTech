@@ -41,7 +41,7 @@ const LoginPage = () => {
                 toast.success('Login Successfull');
                 router.push('/')
                 setIsLoading(true)
-            } else toast.error('User does not exist or details are wrong')
+            }
         } catch (error: any) {
             toast.error(error.response.data.error);
             setIsLoading(true)
@@ -84,15 +84,15 @@ const LoginPage = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-center">
-                        {isLoading ? (
-                        <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
-                            Log In
-                        </button>
-                    ) : (
-                        <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
-                            Processing....
-                        </div>
-                    )}
+                            {isLoading ? (
+                                <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                                    Log In
+                                </button>
+                            ) : (
+                                <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                                    Processing....
+                                </div>
+                            )}
                         </div>
                         <div className="text-[13px] text-center text-gray-500">
                             Dont have an account? {" "}

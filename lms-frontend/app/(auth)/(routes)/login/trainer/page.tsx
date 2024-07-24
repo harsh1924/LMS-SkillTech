@@ -8,7 +8,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const TrainerLoginPage = () => {
-
+    const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
     const [user, setUser] = useState({
         email: '',
@@ -30,12 +30,15 @@ const TrainerLoginPage = () => {
             return;
         }
         try {
+            setIsLoading(false);
             const response = await axios.post('/api/user/login/trainer', user);
             if (response) {
                 toast.success('Login Successfull');
+                setIsLoading(true)
                 router.push(`/trainer/courses`);
             }
         } catch (error: any) {
+            setIsLoading(true)
             toast.error(error.response.data.error);
             if (!user.email || !user.password) {
                 toast.error('All fields are required')
@@ -49,7 +52,7 @@ const TrainerLoginPage = () => {
             <Link href={'/'}>
                 <Logo />
             </Link>
-            <div className="w-[400px] border shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
+            <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
                 <div className="flex gap-y-2 flex-col">
                     <h2 className="font-bold text-2xl">
                         Welcome to Skill Tech
@@ -73,7 +76,15 @@ const TrainerLoginPage = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="border px-4 py-2 bg-sky-500 text-white font-serif rounded-md">Trainer Log In</button>
+                    {isLoading ? (
+                        <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                            Trainer Log In
+                        </button>
+                    ) : (
+                        <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                            Processing....
+                        </div>
+                    )}
                     </div>
                 </div>
             </div>

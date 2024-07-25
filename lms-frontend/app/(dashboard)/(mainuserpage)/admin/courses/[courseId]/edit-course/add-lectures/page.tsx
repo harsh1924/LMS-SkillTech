@@ -38,6 +38,9 @@ const AddLecturesPage = ({
             if (response) {
                 toast.success('Lecture Added Successfully')
                 router.refresh();
+                lecture.title = ''
+                lecture.description = ''
+                lecture.videoUrl = ''
             }
 
         } catch (error: any) {

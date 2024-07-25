@@ -1,10 +1,4 @@
 import courseModel from "@/app/server/models/courseModel";
-import { TitleForm } from "../../../_components/title-form";
-import { DescriptionForm } from "../../../_components/description-form";
-import { PriceForm } from "../../../_components/price-form";
-import { CategoryForm } from "../../../_components/category-form";
-import { CreatedByForm } from "../../../_components/createdBy-form";
-import { ImageForm } from "../../../_components/image-form";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { PublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/publish-course-button";
 import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/unpublish-course-button";
@@ -12,24 +6,25 @@ import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/u
 import { LayoutDashboard, Trash2 } from "lucide-react";
 
 import Link from "next/link";
-import { AttachmentForm } from "../../../_components/attachment-form";
-import { ResourceForm } from "../../../_components/resource-form";
 import userModel from "@/app/server/models/userModel";
+import { TitleForm } from "../_components/title-form";
+import { PriceForm } from "../_components/price-form";
+import { CategoryForm } from "../_components/category-form";
+import { CreatedByForm } from "../_components/createdBy-form";
+import { AttachmentForm } from "../_components/attachment-form";
+import { DescriptionForm } from "../_components/description-form";
+import { ImageForm } from "../_components/image-form";
+import { ResourceForm } from "../_components/resource-form";
 
 connectToDB();
 
 const CourseEdit = async ({
     params
 }: {
-    params: { courseId: string; userId: string }
+    params: { courseId: string }
 }) => {
 
     const course = await courseModel.findById(params.courseId).select('-lectures');
-    const user = await userModel.findById(params.userId);
-    console.log(user.id);
-    
-    
-
 
     return (
         <div>
@@ -68,11 +63,11 @@ const CourseEdit = async ({
                     <TitleForm
                         initialData={course}
                         courseId={course.id}
-                        userId={user.id} />
+                        userId={'User'} />
                     <PriceForm
                         initialData={course}
                         courseId={course.id}
-                        userId={user.id} />
+                        userId={"user"} />
                     <CategoryForm
                         initialData={course}
                         courseId={course.id} />

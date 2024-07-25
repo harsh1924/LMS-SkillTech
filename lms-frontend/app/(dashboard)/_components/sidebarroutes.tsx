@@ -15,22 +15,27 @@ const guestRoutes = [
 const adminRoutes = [
     {
         icon: List,
-        label: 'Course',
-        href: '/admin/courses'
+        label: 'All Courses',
+        href: '/admin/courses/all-courses/edit_details_of_all_courses'
+    },
+    {
+        icon: List,
+        label: 'New Course',
+        href: '/admin/create/create_new_paid_courses'
+    },
+    {
+        icon: List,
+        label: 'Free Course',
+        href: '/admin/create/free-course/create_new_free_courses'
     },
     {
         icon: BarChart,
         label: 'Analytics',
-        href: '/admin/analytics'
+        href: '/admin/analytics/reports_of_enrolledUsers_payment_and_all_users'
     }
 ]
 
 const trainerRoutes = [
-    // {
-    //     icon: List,
-    //     label: 'Course',
-    //     href: '/trainer/courses'
-    // },
     {
         icon: Laptop,
         label: 'All Courses',

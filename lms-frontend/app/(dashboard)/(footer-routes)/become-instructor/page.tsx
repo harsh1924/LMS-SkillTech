@@ -7,7 +7,7 @@ const InstructorForm = () => {
             <HomeNavbar />
             <div className="px-20 py-10 bg-[#347dfb] text-white">
                 <h1 className="text-2xl font-sans md:text-4xl">
-                    Teach. Create. Earn.
+                    Learn. Earn. Grow.
                 </h1>
             </div>
             <div className="py-10 px-10 flex justify-center lg:justify-around items-center gap-x-20">

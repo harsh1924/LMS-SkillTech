@@ -99,7 +99,7 @@ export const NavbarRoutes = () => {
                 <div className="px-5">
                     {isAdmin ? (
                         <div className="flex items-center gap-x-6">
-                            <Link href={'/admin/courses'}>
+                            <Link href={'/admin/courses/create_free_and_paid_courses_edit_courses'}>
                                 <span className="source-sans-3-regular">
                                     Admin Mode
                                 </span>

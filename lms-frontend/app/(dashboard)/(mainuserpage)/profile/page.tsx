@@ -101,7 +101,7 @@ const userIdPage = () => {
                     <div className="flex justify-start items-start flex-wrap">
                         {isAdmin ? (
                             <div className="flex justify-between px-10 mb-6">
-                                <Link className="bg-[#0056d2] text-white px-7 py-3 rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300" href={`/admin/courses`}>
+                                <Link className="bg-[#0056d2] text-white px-7 py-3 rounded-md hover:bg-[#00419e] transition-all ease-in-out duration-300" href={'/admin/courses/create_free_and_paid_courses_edit_courses'}>
                                     Edit / Create Courses
                                 </Link>
                             </div>

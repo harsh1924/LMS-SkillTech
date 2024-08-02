@@ -36,7 +36,7 @@ const LoginPage = () => {
             if (response) {
                 toast.success('Login Successfull');
                 setIsLoading(true);
-                router.push(`/admin/courses`);
+                router.push(`/admin/courses/create_free_and_paid_courses_edit_courses`);
             }
         } catch (error: any) {
             if (!user.email || !user.password) {

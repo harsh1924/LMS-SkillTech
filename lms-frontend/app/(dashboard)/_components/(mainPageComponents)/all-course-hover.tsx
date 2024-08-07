@@ -23,7 +23,7 @@ export const HoverAllCourses = () => {
 
     return (
         <div className="navbar">
-            <div className="outline-none border px-5 z-50 py-2 rounded-sm bg-[#0056d2] text-white font-serif lg:flex items-center gap-x-2 hidden group relative cursor-pointer">
+            <div className="outline-none border px-5 z-50 py-2 rounded-sm bg-[#0056d2] text-white oxygen-bold lg:flex items-center hidden group relative cursor-pointer">
                 All Courses
                 <div className="hidden border rounded-md flex-col gap-y-4 group-hover:flex hover:flex bg-white absolute text-black top-[41px] left-[-150px] text-lg py-2 w-[280px] transition-all ease-in-out duration-300">
                     <span className="pt-4 oxygen-bold px-5">

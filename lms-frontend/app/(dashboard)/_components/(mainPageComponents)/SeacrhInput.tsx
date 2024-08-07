@@ -1,5 +1,6 @@
 'use client';
 
+import { SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -20,7 +21,13 @@ export const SearchPage = () => {
 
     return (
         <form className="flex" onSubmit={onSearch}>
-            <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" className="border px-4 py-2 rounded-3xl outline-none border-black lg:w-[300px]" placeholder="Search for anything" />
+            <div className="border rounded-sm outline-none border-[#0056d2] lg:w-[300px] placeholder-[#0056d2] flex items-center justify-between">
+                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" className="px-3 py-2 rounded-sm outline-none border-[#0056d2] lg:w-[260px] placeholder-[#0056d2]" placeholder="Search Courses" />
+                <button type="submit" className="h-full rounded-sm px-2 text-[#0056d2] bg-[#ecf2fc]">
+                    <SearchIcon />
+                </button>
+            </div>
+
         </form>
     )
 }

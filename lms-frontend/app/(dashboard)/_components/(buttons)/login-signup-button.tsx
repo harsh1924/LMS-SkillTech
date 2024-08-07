@@ -71,7 +71,7 @@ export const LoginButtons = () => {
                 {isLoggedIn && (
                     <div className="hidden lg:flex gap-x-3 text-[0.8rem]">
                         <Link href={'/login'}>
-                            <span className="rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300">
+                            <span className="rounded-sm px-5 py-[10px] bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300">
                                 Login/Register
                             </span>
                         </Link>

@@ -13,7 +13,7 @@ import { Suspense } from "react";
 export const HomeNavbar = () => {
 
     return (
-        <div className="flex py-4 px-2 items-center justify-between shadow-md text-[0.8rem] oxygen-regular">
+        <div className="flex py-4 px-2 items-center justify-between shadow-md text-[0.8rem] oxygen-bold">
             <div className="lg:hidden">
                 <HomeMobileSidebar />
             </div>

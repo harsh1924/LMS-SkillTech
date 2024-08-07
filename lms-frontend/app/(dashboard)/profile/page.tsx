@@ -91,7 +91,9 @@ const userIdPage = () => {
             {isLoading ? (
                 <div className="flex h-full flex-col">
                     <div className="py-5 px-6 shadow-md flex justify-between items-center oxygen-bold">
-                        <Logo />
+                        <Link href={'/'}>
+                            <Logo />
+                        </Link>
                         <SearchPage />
                         <div className="flex gap-x-3 items-center">
                             {!isAdmin && (

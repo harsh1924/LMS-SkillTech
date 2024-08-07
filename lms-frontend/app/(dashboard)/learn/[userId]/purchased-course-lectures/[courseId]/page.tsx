@@ -44,16 +44,30 @@ const PurchasedCourseLecture = async ({
                     </span>
                 </div>
                 <div className="flex items-center gap-x-4">
-                    <div className="flex items-center gap-x-1 text-[#00419e] bg-[#ecf2fc] py-1 px-1 md:px-3 rounded-md oxygen-bold">
-                        {progress}
-                        <span>
-                            <Percent size={17} />
-                        </span>
-                    </div>
+                    {progress !== 100 ? (
+                        <div className="flex items-center gap-x-1 text-[#00419e] bg-[#ecf2fc] py-1 px-1 md:px-3 rounded-md oxygen-bold">
+                            <span>
+                                Completion Status :
+                            </span>
+                            <div className="flex items-center">
+                                {progress}
+                                <span>
+                                    <Percent size={17} />
+                                </span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="text-[#00419e] bg-[#ecf2fc] py-2 px-1 md:px-5 rounded-md oxygen-bold">
+                            Completed
+                        </div>
+                    )}
                     {progress === 100 && (
                         !isCourseSurvyed ? (
                             <Link href={`/course/${params.courseId}/survey/${params.userId}`}>
-                                <DownloadIcon />
+                                <DownloadIcon className="flex lg:hidden" />
+                                <span className="hidden lg:flex rounded-md px-5 py-2 bg-[#0056d2] text-white oxygen-bold hover:bg-[#00419e] transition-all ease-in-out duration-300 w-full">
+                                    Generate Certificate
+                                </span>
                             </Link>
                         ) : (
                             <div>

@@ -21,18 +21,34 @@ const UserPurchasedCourses = async ({
     const allCourses = await courseModel.find({
         _id: courses
     }).select('-lectures');
+    const courseExists = allCourses.length;
 
     return (
         <div>
             <div>
                 <HomeNavbar />
             </div>
-            <p className="flex text-center justify-center items-center py-10 oxygen-bold text-2xl text-gray-700">
-                Your Courses
-            </p>
-            <div className="flex flex-wrap px-10 gap-3 justify-center md:justify-start">
-                {allCourses.map((e) => <UserPurchasedCoursesCard key={e._id} courseId={e._id} imageUrl={e.imageUrl} title={e.title} userId={params.userId} />)}
-            </div>
+            {courseExists !== 0 ? (
+                <div>
+                    <p className="flex text-center justify-center items-center py-10 oxygen-bold text-2xl text-gray-700">
+                        Your Courses
+                    </p>
+                    <div className="flex flex-wrap px-10 gap-3 justify-center md:justify-start">
+                        {allCourses.map((e) => <UserPurchasedCoursesCard key={e._id} courseId={e._id} imageUrl={e.imageUrl} title={e.title} userId={params.userId} />)}
+                    </div>
+                </div>
+            ) : (
+                <div>
+                    <div className="flex flex-col items-center justify-center min-h-[300px]">
+                        <main className="text-center">
+                            <h1 className="text-4xl font-bold text-gray-900">You Have No Courses</h1>
+                            <p className="mt-4 text-lg text-gray-600">
+                                It looks like you don't have any courses at the moment.
+                            </p>
+                        </main>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

@@ -27,6 +27,7 @@ import { SearchPage } from "../_components/(mainPageComponents)/SeacrhInput";
 import { Logo } from "../_components/logo";
 import { LogOut, UserCircle2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HoverAllCourses } from "../_components/(mainPageComponents)/all-course-hover";
 
 const userIdPage = () => {
 
@@ -94,6 +95,9 @@ const userIdPage = () => {
                         <Link href={'/'}>
                             <Logo />
                         </Link>
+                        {!isTrainer && !isAdmin && (
+                            <HoverAllCourses />
+                        )}
                         <SearchPage />
                         <div className="flex gap-x-3 items-center">
                             {!isAdmin && (

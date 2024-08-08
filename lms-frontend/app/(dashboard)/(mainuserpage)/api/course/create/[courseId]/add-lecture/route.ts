@@ -35,7 +35,6 @@ export async function POST(request: NextRequest, { params }: {
         const last = course.lectures.length
         await course.save();
         const courseLectures = course.lectures;
-        console.log(courseLectures[last - 1]);
         const lastLecture = courseLectures[last - 1]
         
 
@@ -49,7 +48,6 @@ export async function POST(request: NextRequest, { params }: {
 
     } catch (error: any) {
         console.log(error.message);
-
         return NextResponse.json({ error: error.message },
             { status: 400 }
         )

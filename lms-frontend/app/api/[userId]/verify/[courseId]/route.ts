@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import userModel from '@/app/server/models/userModel';
 import courseModel from '@/app/server/models/courseModel';
 import purchaseModel from '@/app/server/models/purchaseModel';
+import sendEmail from '@/app/helpers/mailer';
 
 const generatedSignature = (
     razorpayOrderId: string,
@@ -55,11 +56,7 @@ export async function POST(request: NextRequest,
 
     const userId = params.userId
 
-    await purchaseModel.create({
-        courseId: params.courseId,
-        userId: params.userId,
-        paymentOrderId: razorpayPaymentId
-    });
+
     if (!course.isFree) {
         await userModel.updateOne(
             { _id: userId },
@@ -79,6 +76,66 @@ export async function POST(request: NextRequest,
             }
         )
     }
+
+    await purchaseModel.create({
+        courseId: params.courseId,
+        userId: params.userId,
+        paymentOrderId: razorpayPaymentId,
+        userName: user.name,
+        courseName: course.title
+    });
+
+    const timestamp = Date.now();
+    const currentDate = new Date(timestamp);
+    // Extract hours, minutes, and date from the currentDate object
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const date = currentDate.getDate();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    const subject = 'New Course';
+    const email = user.email
+    const message = `Hi ${user.name} 
+    <br/>
+    <p>
+        Your recent purchase of the ${course.title} has been successfully processed. You are now enrolled and have full access to the course materials.
+    </p>
+    <p>
+        Course Name: ${course.title}
+    </p>
+    <p>
+        Order Number: ${razorpayPaymentId}
+    </p>
+    <p>
+        Date of Purchase: ${date}/${month}/${year} ${hours}:${minutes}
+    </p>
+
+    You can start exploring the course content immediately by logging into your account on our platform. If you encounter any issues or have questions about the course, feel free to reach out to our support team`;
+
+    await sendEmail(email, subject, message);
+
+    const adminSubject = 'New Course Purchase Notification';
+    const adminEmail = 'info@skilltechindia.net'
+    const adminMessage = `
+    <p>
+        A new course purchase has been made:
+    </p>
+    <p>
+        Course Name: ${course.title}
+    </p>
+    <p>
+        User Name: ${user.name}
+    </p>
+    <p>
+        Order Number: ${razorpayPaymentId}
+    </p>
+    <p>
+        Date of Purchase: ${date}/${month}/${year} ${hours}:${minutes}
+    </p>
+    `;
+
+    await sendEmail(adminEmail, adminSubject, adminMessage);
 
     return NextResponse.json(
         { message: 'payment verified successfully', isOk: true },

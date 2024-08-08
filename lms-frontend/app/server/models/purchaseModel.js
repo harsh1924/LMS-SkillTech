@@ -4,7 +4,9 @@ const paymentSchema = new Schema({
     id: String,
     userId: String,
     courseId: String,
-    paymentOrderId: String
+    paymentOrderId: String,
+    userName: String,
+    courseName: String
 }, {
     timestamps: true
 });

@@ -44,7 +44,6 @@ const AddLecturesPage = ({
             }
 
         } catch (error: any) {
-            console.log(error.message);
             toast.error('Lecture could not be added')
             return NextResponse.json({ error: error.message },
                 { status: 400 })

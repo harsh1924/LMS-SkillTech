@@ -16,6 +16,7 @@ const AnalyticsPage = async () => {
         $or: [
             { 'role': 'USER' },
             { 'role': 'TRAINER' },
+            
         ]
     });
     const userId = users.map((e: any) => e._id);

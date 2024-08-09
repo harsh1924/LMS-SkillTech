@@ -15,7 +15,7 @@ const DeleteCourse = ({
 
     const deleteCourse = async () => {
         await axios.delete(`/api/course/delete-course/?courseId=${params.courseId}`);
-        router.push('/admin/courses/all-courses');
+        router.push('/admin/courses/all-courses/edit_details_of_all_courses');
         toast.success('Course Deleted Successfully');
     }
 

@@ -60,7 +60,7 @@ export const AdminAnalytics = ({
                     <div className="flex flex-col items-center">
                         <p className="oxygen-semibold">
                             Enrolled Users
-                            </p>
+                        </p>
                         <h3 className="text-4xl oxygen-bold ">{subscribedusers}</h3>
                     </div>
                     <User2Icon className="text-[#F7B7A3] text-5xl" />
@@ -71,8 +71,9 @@ export const AdminAnalytics = ({
                     <div className="flex flex-col items-center">
                         <p className="oxygen-semibold">
                             Registered Users
-                            </p>
-                        <h3 className="text-4xl oxygen-bold">{allUsers}</h3>
+                        </p>
+                        <h3 className="text-4xl oxygen-bold">{allUsers}
+                        </h3>
                     </div>
                     <User2Icon className="text-[#EA5F89] text-5xl" />
                 </div>

@@ -29,7 +29,7 @@ const AdminAllCourseCard = ({
 
     return (
         <div>
-            <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between rounded border bg-white shadow-md  w-[250px] h-[270px] font-sans mb-4">
+            <Link href={`/course/${id}/course-details`} className="flex flex-col justify-between rounded border bg-white shadow-md  w-[250px] h-[270px] mb-4">
                 <div className="flex flex-col gap-y-1 w-full">
                     <div>
                         <img src={imageUrl} alt="Course Thumbnail" className="h-[100px] w-full object-cover" />

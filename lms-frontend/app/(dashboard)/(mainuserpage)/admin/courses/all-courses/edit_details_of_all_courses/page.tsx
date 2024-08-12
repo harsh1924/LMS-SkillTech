@@ -4,8 +4,12 @@ import { useEffect, useState } from "react";
 import { AdminMainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/admin-allCourse-page";
 import { cn } from "@/lib/utils";
 import axios from "axios";
+import courseModel from "@/app/server/models/courseModel";
+import LoadingState from "@/app/(dashboard)/_components/LoadingState";
+import Link from "next/link";
 
 const courses = [
+    'All Courses',
     'Software Development',
     'Data Science and Business Analytics',
     'Cyber Security',
@@ -18,23 +22,30 @@ const courses = [
 
 const GetAllCourses = () => {
 
-    const [courseName, setCourseName] = useState('Software Development');
-    const [isActive, setIsActive] = useState('Software Development');
+    const [courseName, setCourseName] = useState('All Courses');
+    const [isActive, setIsActive] = useState('All Courses');
     const [userIdData, setUserIdData] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [allCourses, setAllCourses] = useState<any[]>([]);
 
     const getId = async () => {
         const res = await axios.get('/api/user/user-details')
         const userId = res.data.user._id;
         if (res) {
             setUserIdData(userId);
+            getCourses();
             setIsLoading(true);
         }
-        // setUserRole(res.data.user.role);
         if (res.data.user.role === 'ADMIN') {
             setIsAdmin(true)
         }
+    }
+
+    const getCourses = async () => {
+        const response = await axios.get('/api/course/get-all-courses');
+        const allCourses: any[] = response.data.courses;
+        setAllCourses(allCourses);
     }
 
     useEffect(() => {
@@ -58,17 +69,53 @@ const GetAllCourses = () => {
                     </div>
                     {isLoading ? (
                         <div className="w-full">
-                            <span className="flex rounded-md bg-slate-100 px-4 shadow-lg py-6">
-                                <AdminMainPageCourses category={courseName} userId={userIdData}/>
-                            </span>
+                            {courseName != 'All Courses' && (
+                                <span className="flex rounded-md bg-slate-100 px-4 shadow-lg py-6">
+                                    <AdminMainPageCourses category={courseName} userId={userIdData} />
+                                </span>
+                            )}
                         </div>
                     ) : (
-                        <div className="flex h-screen w-screen items-center justify-center">
-                            <div className="animate-spin rounded-full border-4 border-gray-300 border-t-gray-900 h-12 w-12 dark:border-gray-600 dark:border-t-gray-50" />
-                        </div>
+                        <LoadingState />
                     )}
                 </div>
             </div>
+            {courseName === 'All Courses' && (
+                <div>
+                    {!isLoading ? (
+                        <LoadingState />
+                    ) : (
+                        <div className="flex flex-wrap rounded-md bg-slate-100 px-4 shadow-lg py-6 h-[900px] overflow-scroll no-scrollbar">
+                            {allCourses.map((course) =>
+                                <div className="flex flex-col gap-y-6 mx-6">
+                                    <Link href={`/course/${course._id}/course-details`} className="flex flex-col justify-between rounded border bg-white shadow-md w-[250px] h-[300px] font-sans mb-4">
+                                        <div className="flex flex-col gap-y-1 w-full">
+                                            <div>
+                                                <img src={course.imageUrl} alt="Course Thumbnail" className="h-[100px] w-full object-cover" />
+                                            </div>
+                                            <div className="flex flex-col gap-y-1 min-h-[130px] justify-around py-2 px-4">
+                                                <div className="oxygen-bold text-[14px]">
+                                                    {course.title}
+                                                </div>
+                                                <div className="oxygen-regular text-[14px]">
+                                                    {course.category}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex items-center px-4 pb-6">
+                                                <Link href={`/admin/courses/${course._id}/edit-course`} className="bg-[#0056d2] text-white py-2 rounded-md px-5 source-sans-3-regular">
+                                                    Edit
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     );
 }

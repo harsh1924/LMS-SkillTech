@@ -62,10 +62,10 @@ export async function POST(request: NextRequest) {
     <p>
         User Phone Number: ${user.phoneNumber}
     </p>
-    <p>
-        Date of Account Creation: ${date}/${month}/${year} ${hours}:${minutes}
-    </p>
     `;
+    // <p>
+    //     Date of Account Creation: ${date}/${month}/${year} ${hours + 5}:${minutes + 30}
+    // </p>
 
         await sendEmail(mailtrapEmail, subject, adminMessage);
 

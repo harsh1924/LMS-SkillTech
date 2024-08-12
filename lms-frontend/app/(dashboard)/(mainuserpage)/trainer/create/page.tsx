@@ -66,7 +66,17 @@ export default function CourseCreationPage() {
                     <label htmlFor="category" className="font-semibold">
                         Category
                     </label>
-                    <input onChange={handleUserInput} value={course.category} name="category" type="text" id="category" className="p-2 border rounded-md text-[12px] outline-none" placeholder="e.g. AI & ML" />
+                    <select id="options" value={course.category} onChange={handleUserInput} name="category" className="p-2 border rounded-md text-[13px] outline-none">
+                        <option value="">Select Course</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="Data Science and Business Analytics">Data Science and Business Analytics</option>
+                        <option value="Cyber Security">Cyber Security</option>
+                        <option value="Cloud Computing">Cloud Computing</option>
+                        <option value="AI and ML">AI and ML</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="IT Service">IT Service</option>
+                        <option value="Project Management">Project Management</option>
+                    </select>
                 </div>
                 <div className="gap-2 flex flex-col">
                     <label htmlFor="category" className="font-semibold">

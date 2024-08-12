@@ -16,7 +16,6 @@ const AnalyticsPage = async () => {
         $or: [
             { 'role': 'USER' },
             { 'role': 'TRAINER' },
-            
         ]
     });
     const userId = users.map((e: any) => e._id);
@@ -69,17 +68,18 @@ const AnalyticsPage = async () => {
                     </div>
 
                 </div>
-                <div className="flex flex-col gap-y-4 lg:border lg:px-10 lg:py-6 lg:rounded-md p-3 shadow-[0_0_10px_#EA5F89]">
+                <div className="flex flex-col gap-y-4 lg:border lg:px-6 lg:py-6 lg:rounded-md p-3 shadow-[0_0_10px_#EA5F89]">
                     <p className="text-[#EA5F89] text-xl oxygen-bold text-center">
                         All Users
                     </p>
-                    <div className="hidden md:grid grid-cols-1 md:grid-cols-3 oxygen-bold border-b py-2">
+                    <div className="hidden md:grid grid-cols-1 md:grid-cols-4 oxygen-bold border-b py-2">
+                        <span>Sr. No.</span>
                         <span>Name</span>
                         <span>Email</span>
-                        <span>Phone Number</span>
+                        <span className="text-center">Phone Number</span>
                     </div>
                     <div className="flex flex-col gap-y-3">
-                        {users.map((e) => <AllUsers key={e.id} name={e.name} email={e.email} phoneNumber={e.phoneNumber} />)}
+                        {users.map((e, idx) => <AllUsers idx={idx} key={e.id} name={e.name} email={e.email} phoneNumber={e.phoneNumber} />)}
                     </div>
                 </div>
             </div>

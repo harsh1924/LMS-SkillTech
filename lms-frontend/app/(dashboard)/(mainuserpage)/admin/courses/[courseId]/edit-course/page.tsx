@@ -88,7 +88,7 @@ const CourseEdit = async ({
                         courseId={course.id} />
                 </div>
                 <div className="my-6 flex justify-between items-center flex-wrap gap-y-2">
-                    <Link href={'/admin/courses/all-courses'} className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">
+                    <Link href={'/admin/courses/all-courses/edit_details_of_all_courses'} className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">
                         Done
                     </Link>
                     <Link href={`/admin/courses/${params.courseId}/edit-course/other-details`} className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 ease-in-out text-white py-2 rounded-md px-5">

@@ -1,6 +1,9 @@
+import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel"
 import userModel from "@/app/server/models/userModel";
 
+
+connectToDB()
 interface PaymentData {
     courseId: string,
     userId: string,

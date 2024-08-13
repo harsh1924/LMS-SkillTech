@@ -1,5 +1,5 @@
 import XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
+import fileSaver from 'file-saver';
 
 export const downloadExcel = (data: any[], fileName: string) => {
   // Create a new workbook and worksheet
@@ -12,5 +12,5 @@ export const downloadExcel = (data: any[], fileName: string) => {
 
   // Create a Blob and trigger the download
   const blob = new Blob([wbout], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-  saveAs(blob, fileName);
+  fileSaver.saveAs(blob, fileName);
 };

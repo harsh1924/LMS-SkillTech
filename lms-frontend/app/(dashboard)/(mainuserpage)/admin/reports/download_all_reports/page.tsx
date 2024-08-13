@@ -4,7 +4,6 @@ import { Download } from "lucide-react";
 import { downloadExcel } from '@/app/helpers/downloadReport/reportFunction';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import LoadingState from "@/app/(dashboard)/_components/LoadingState";
 
 const DownloadReportsPage = () => {
 

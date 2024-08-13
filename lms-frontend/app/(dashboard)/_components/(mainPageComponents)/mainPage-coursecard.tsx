@@ -26,7 +26,7 @@ export const MainPageCourseCard = ({
     isFree
 }: AllHoverCoursesData) => {
     return (
-        <div className="px-1">
+        <div>
             {isPublihed && (
                 <Link href={`/course/${courseId}/course-details`} className="flex flex-col min-h-[400px] gap-y-2 w-[240px] bg-white p-2 rounded-md justify-between shadow-md hover:shadow-lg">
                     <Image alt="Course Thumbnail" width={230} height={100} src={imageUrl} />

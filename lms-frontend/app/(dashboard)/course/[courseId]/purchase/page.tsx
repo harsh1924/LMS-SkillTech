@@ -17,9 +17,9 @@ const PurchaseCourse = async ({ params }: {
 
     return (
         <div className="flex flex-col items-center mb-10">
-            <div className="w-full shadow-md py-6 px-20">
+            <Link href={'/'} className="w-full shadow-md py-6 px-20">
                 <Logo />
-            </div>
+            </Link>
             <Link href={`/`} className="my-5 flex items-center gap-x-2 text-gray-500 hover:text-black ease-in-out transition-all duration-300">
                 <ArrowLeftCircle />
                 Back

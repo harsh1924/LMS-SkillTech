@@ -47,12 +47,11 @@ const AddFreeCourse = ({
             const res = await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
             if (res) {
                 toast.success('Enrolled Successfully');
-                router.push('/profile')
+                router.refresh()
+                router.push(`/learn/${userIdData}/user-courses`)
             }
         } catch (error: any) {
-            console.log(error.message);
-            toast.error('Course Already Purchased');
-            router.push('/profile');
+            toast.error(error.response.data.message)
         }
     }
 
@@ -80,9 +79,9 @@ const AddFreeCourse = ({
                 </div>
             ) : (
                 <div className="flex flex-col items-center mb-10">
-                    <div className="w-full shadow-md py-6 px-20">
+                    <Link href={'/'} className="w-full shadow-md py-6 px-20">
                         <Logo />
-                    </div>
+                    </Link>
                     <Link href={`/`} className="my-5 flex items-center gap-x-2 text-gray-500 hover:text-black ease-in-out transition-all duration-300">
                         <ArrowLeftCircle />
                         Back

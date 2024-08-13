@@ -44,15 +44,17 @@ const DownloadReportsPage = () => {
 
     useEffect(() => {
         getPayments(),
-        getEnrolledusers(),
-        getAllUsers()
+            getEnrolledusers(),
+            getAllUsers()
     }, []);
 
 
     return (
         <div>
             {isLoading ? (
-                <LoadingState />
+                <div className="flex h-[900px] items-center justify-center">
+                    <div className="animate-spin rounded-full border-4 border-gray-300 border-t-gray-900 h-12 w-12 dark:border-gray-600 dark:border-t-gray-50" />
+                </div>
             ) : (
                 <div className="lg:px-10 lg:py-8 text-center">
                     <div className="flex flex-col gap-y-3">
@@ -79,8 +81,8 @@ const DownloadReportsPage = () => {
                             <span>
                                 All Users Reports
                             </span>
-                            <span  onClick={handleDownloadTwo} className="flex justify-center cursor-pointer">
-                                <Download />
+                            <span onClick={handleDownloadTwo} className="flex justify-center cursor-pointer">
+                                <Download className="hover:text-primarycolor" />
                             </span>
                         </div>
                         <div className="grid grid-cols-2 w-full py-3">
@@ -88,7 +90,7 @@ const DownloadReportsPage = () => {
                                 Enrolled Users Reports
                             </span>
                             <span onClick={handleDownloadOne} className="flex justify-center cursor-pointer">
-                                <Download />
+                                <Download className="hover:text-primarycolor" />
                             </span>
                         </div>
                         <div className="grid grid-cols-2 w-full bg-gray-50 py-3">
@@ -96,7 +98,7 @@ const DownloadReportsPage = () => {
                                 Payment Reports
                             </span>
                             <span onClick={handleDownload} className="flex justify-center cursor-pointer">
-                                <Download />
+                                <Download className="hover:text-primarycolor" />
                             </span>
                         </div>
                     </div>

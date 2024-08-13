@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
 import axios from "axios"
 import { IndianRupeeIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
@@ -89,6 +88,8 @@ export const CourseEnrollButton = ({
                         razorpaySignature: response.razorpay_signature,
                     };
 
+                    setIsLoading(true)
+
                     const result = await fetch(`/api/${userId}/verify/${courseId}`, {
                         method: 'POST',
                         body: JSON.stringify(data),
@@ -97,10 +98,11 @@ export const CourseEnrollButton = ({
                     const res = await result.json();
                     if (res.isOk) {
                         toast.success("Payment Successfull");
-                        router.push('/profile')
+                        router.push(`/learn/${userId}/user-courses`)
                     }
                     else {
                         toast.error("Payment Failed");
+                        router.push(`/`)
                     }
 
                     if (res.isOk && isCourseFree) {
@@ -134,48 +136,58 @@ export const CourseEnrollButton = ({
     }, []);
 
     return (
-        <div className="flex flex-col">
-            <div>
-                <p className="flex justify-between text-lg w-full p-1 text-gray-500 source-sans-3-regular">
-                    <span>
-                        Subtotal
-                    </span>
-                    <span className="flex items-center">
-                        <IndianRupeeIcon size={17} />
-                        {price}.00
-                    </span>
-                </p>
-                <p className="flex justify-between text-lg w-full p-1 text-gray-500 source-sans-3-regular">
-                    <span>
-                        GST (18%)
-                    </span>
-                    <span className="flex items-center">
-                        <IndianRupeeIcon size={17} />
-                        {GST}.00
-                    </span>
-                </p>
-                <div className="h-[1px] my-5 bg-gray-800 "></div>
-                <p className="flex justify-between text-lg w-full p-1 font-semibold">
-                    <span>
-                        Total
-                    </span>
-                    <span className="flex items-center">
-                        <IndianRupeeIcon size={17} />
-                        {finalPrice}.00
-                    </span>
-                </p>
-            </div>
-            <div className="flex w-full mt-5 justify-center">
-                {isCourseFree ? (
-                    <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
-                        Pay {finalPrice}
-                    </button>
-                ) : (
-                    <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
-                        Enroll for {finalPrice}
-                    </button>
-                )}
-            </div>
+        <div>
+            {!isLoading ? (
+                <div className="flex flex-col">
+                    <div>
+                        <p className="flex justify-between text-lg w-full p-1 text-gray-500 source-sans-3-regular">
+                            <span>
+                                Subtotal
+                            </span>
+                            <span className="flex items-center">
+                                <IndianRupeeIcon size={17} />
+                                {price}.00
+                            </span>
+                        </p>
+                        <p className="flex justify-between text-lg w-full p-1 text-gray-500 source-sans-3-regular">
+                            <span>
+                                GST (18%)
+                            </span>
+                            <span className="flex items-center">
+                                <IndianRupeeIcon size={17} />
+                                {GST}.00
+                            </span>
+                        </p>
+                        <div className="h-[1px] my-5 bg-gray-800 "></div>
+                        <p className="flex justify-between text-lg w-full p-1 font-semibold">
+                            <span>
+                                Total
+                            </span>
+                            <span className="flex items-center">
+                                <IndianRupeeIcon size={17} />
+                                {finalPrice}.00
+                            </span>
+                        </p>
+                    </div>
+                    <div className="flex w-full mt-5 justify-center">
+                        {isCourseFree ? (
+                            <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
+                                Pay {finalPrice}
+                            </button>
+                        ) : (
+                            <button onClick={processPayment} disabled={isLoading} className=" rounded-md px-16 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300">
+                                Enroll for {finalPrice}
+                            </button>
+                        )}
+                    </div>
+                </div>
+            ) : (
+                <div className="flex justify-center items-center py-10 border-t border-black">
+                    <h1 className="oxygen-bold text-xl text-primarycolor">
+                        Processing Your Payment...
+                    </h1>
+                </div>
+            )}
         </div>
     )
 }

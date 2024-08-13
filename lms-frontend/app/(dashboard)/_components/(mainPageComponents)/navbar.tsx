@@ -24,7 +24,9 @@ export const HomeNavbar = () => {
             </Link>
 
             {/* all courses */}
-            <HoverAllCourses />
+            <Link href={'/all-courses'}>
+                <HoverAllCourses />
+            </Link>
 
             {/* SearchBar */}
             <Suspense>

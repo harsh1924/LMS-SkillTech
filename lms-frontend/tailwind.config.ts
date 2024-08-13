@@ -53,6 +53,7 @@ const config = withUt({
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        primarycolor: '#00419e',
       },
       borderRadius: {
         lg: "var(--radius)",

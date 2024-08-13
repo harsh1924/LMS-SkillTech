@@ -86,7 +86,7 @@ export async function POST(request: NextRequest, {
         await sendEmail(email, subject, message);
 
         const adminSubject = 'New Free Course Purchase Notification';
-        const adminEmail = 'info@skilltechindia.net@gmail.com'
+        const adminEmail = 'info@skilltechindia.net'
         const adminMessage = `
         <p>
         A new free course purchase has been made:

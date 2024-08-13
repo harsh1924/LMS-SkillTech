@@ -1,0 +1,109 @@
+'use client'
+
+import { Download } from "lucide-react";
+import { downloadExcel } from '@/app/helpers/downloadReport/reportFunction';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import LoadingState from "@/app/(dashboard)/_components/LoadingState";
+
+const DownloadReportsPage = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [paymentReportdata, setPaymentReportData] = useState([]);
+    const [enrolledUsersReportData, setEnrolledUsersReportData] = useState([]);
+    const [allUsersReportData, setAllUsersReportData] = useState([]);
+
+    const getPayments = async () => {
+        const res = await axios.get('/api/get-all-payment-details');
+        const data = res.data.payments;
+        setPaymentReportData(data);
+        setIsLoading(false);
+    }
+    const getEnrolledusers = async () => {
+        const res = await axios.get('/api/get-enrolled-users');
+        const data = res.data.enrolledUsers;
+        setEnrolledUsersReportData(data);
+        setIsLoading(false);
+    }
+    const getAllUsers = async () => {
+        const res = await axios.get('/api/get-all-users');
+        const data = res.data.allUsers;
+        setAllUsersReportData(data);
+        setIsLoading(false);
+    }
+
+    const handleDownload = () => {
+        downloadExcel(paymentReportdata, 'Payment-Report.xlsx');
+    };
+    const handleDownloadOne = () => {
+        downloadExcel(enrolledUsersReportData, 'Enrolled-Users-Report.xlsx');
+    };
+    const handleDownloadTwo = () => {
+        downloadExcel(allUsersReportData, 'All-Users-Report.xlsx');
+    };
+
+    useEffect(() => {
+        getPayments(),
+        getEnrolledusers(),
+        getAllUsers()
+    }, []);
+
+
+    return (
+        <div>
+            {isLoading ? (
+                <LoadingState />
+            ) : (
+                <div className="lg:px-10 lg:py-8 text-center">
+                    <div className="flex flex-col gap-y-3">
+                        <h1 className="oxygen-bold lg:text-3xl">
+                            Admin Reports Dashboard
+                        </h1>
+                        <p className="source-sans-regular text-xl ">
+                            This page allows you to access and manage all available reports, including user activity, payment reports, and enrolled users.
+                        </p>
+                        <p className="source-sans-regular text-xl ">
+                            Here is a list of all available reports.
+                        </p>
+                    </div>
+                    <div className="mt-6 border rounded-sm">
+                        <div className="grid grid-cols-2 py-3 oxygen-bold text-lg">
+                            <span>
+                                Report Name
+                            </span>
+                            <span>
+                                Download Report
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 w-full bg-gray-50 py-3">
+                            <span>
+                                All Users Reports
+                            </span>
+                            <span  onClick={handleDownloadTwo} className="flex justify-center cursor-pointer">
+                                <Download />
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 w-full py-3">
+                            <span>
+                                Enrolled Users Reports
+                            </span>
+                            <span onClick={handleDownloadOne} className="flex justify-center cursor-pointer">
+                                <Download />
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 w-full bg-gray-50 py-3">
+                            <span>
+                                Payment Reports
+                            </span>
+                            <span onClick={handleDownload} className="flex justify-center cursor-pointer">
+                                <Download />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default DownloadReportsPage;

@@ -70,7 +70,7 @@ const GetAllCourses = () => {
                     {isLoading ? (
                         <div className="w-full">
                             {courseName != 'All Courses' && (
-                                <span className="flex rounded-md bg-slate-100 px-4 shadow-lg py-6">
+                                <span className="flex rounded-md bg-slate-100 px-4 shadow-lg py-6 h-[900px] overflow-scroll no-scrollbar">
                                     <AdminMainPageCourses category={courseName} userId={userIdData} />
                                 </span>
                             )}
@@ -87,7 +87,7 @@ const GetAllCourses = () => {
                     ) : (
                         <div className="flex flex-wrap rounded-md bg-slate-100 px-4 shadow-lg py-6 h-[900px] overflow-scroll no-scrollbar">
                             {allCourses.map((course) =>
-                                <div className="flex flex-col gap-y-6 mx-6">
+                                <div className="flex flex-col ml-2 mr-8">
                                     <Link href={`/course/${course._id}/course-details`} className="flex flex-col justify-between rounded border bg-white shadow-md w-[250px] h-[300px] font-sans mb-4">
                                         <div className="flex flex-col gap-y-1 w-full">
                                             <div>

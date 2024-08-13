@@ -38,7 +38,7 @@ export const Footer = () => {
                         Resources
                     </Link>
                     <Link href={'/become-instructor'}>
-                        Teach on Skill Tech
+                        Become an instructor
                     </Link>
                 </div>
             </div>
@@ -63,9 +63,9 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="px-5 py-6">
-                <h3 className="text-white text-lg oxygen-regular">
+                <Link href={'/buisness'} className="text-white text-lg oxygen-regular">
                     Buisness
-                </h3>
+                </Link>
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/buisness'}>
                         {/* /skilltech-partners */}

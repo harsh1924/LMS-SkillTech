@@ -37,20 +37,20 @@ export async function POST(request: NextRequest) {
 
         await user.save();
 
-        const subject = 'New User';
+        const subject = 'New Trainer';
         const mailtrapEmail = 'harshrpanwar@gmail.com'
         const adminMessage = `
     <p>
         A new trainer has created account on the website:
     </p>
     <p>
-        User Name: ${user.name}
+        Trainer Name: ${user.name}
     </p>
     <p>
-        User Email: ${user.email}
+        Trainer Email: ${user.email}
     </p>
     <p>
-        User Phone Number: ${user.phoneNumber}
+        Trainer Phone Number: ${user.phoneNumber}
     </p>
     `;
     // <p>

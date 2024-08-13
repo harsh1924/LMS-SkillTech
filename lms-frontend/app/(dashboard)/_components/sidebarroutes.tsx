@@ -1,6 +1,6 @@
 "use client"
 
-import { BarChart, GraduationCapIcon, Laptop, Layout, List, NotebookPenIcon } from "lucide-react";
+import { BarChart, GraduationCapIcon, Laptop, Layout, LineChart, List, NotebookPenIcon } from "lucide-react";
 import { SidebarItem } from "./sidebaritem";
 import { usePathname } from "next/navigation";
 
@@ -32,6 +32,11 @@ const adminRoutes = [
         icon: BarChart,
         label: 'Analytics',
         href: '/admin/analytics/reports_of_enrolledUsers_payment_and_all_users'
+    },
+    {
+        icon: LineChart,
+        label: 'Reports',
+        href: '/admin/reports/download_all_reports'
     }
 ]
 

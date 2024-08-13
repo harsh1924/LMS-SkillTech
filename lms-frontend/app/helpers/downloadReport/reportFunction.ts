@@ -1,4 +1,4 @@
-import XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 import fileSaver from 'file-saver';
 
 export const downloadExcel = (data: any[], fileName: string) => {

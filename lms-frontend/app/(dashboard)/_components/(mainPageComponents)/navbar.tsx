@@ -35,7 +35,7 @@ export const HomeNavbar = () => {
 
             {/* Buisnesses */}
             <Link href={'/buisness'} className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300">
-                Buisness
+                Business
             </Link>
 
             {/* <Link href={`/resources`} className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300"> */}

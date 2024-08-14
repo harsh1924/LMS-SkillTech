@@ -64,7 +64,7 @@ export const Footer = () => {
             </div>
             <div className="px-5 py-6">
                 <Link href={'/buisness'} className="text-white text-lg oxygen-regular">
-                    Buisness
+                    Business
                 </Link>
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/buisness'}>

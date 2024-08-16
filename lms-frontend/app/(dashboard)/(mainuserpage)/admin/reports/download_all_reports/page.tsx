@@ -11,6 +11,7 @@ const DownloadReportsPage = () => {
     const [paymentReportdata, setPaymentReportData] = useState([]);
     const [enrolledUsersReportData, setEnrolledUsersReportData] = useState([]);
     const [allUsersReportData, setAllUsersReportData] = useState([]);
+    const [allTrainersData, setAllTrainersData] = useState([]);
 
     const getPayments = async () => {
         const res = await axios.get('/api/get-all-payment-details');
@@ -30,6 +31,13 @@ const DownloadReportsPage = () => {
         setAllUsersReportData(data);
         setIsLoading(false);
     }
+    const getAllTrainers = async () => {
+        const res = await axios.get('/api/get-trainer-details');
+        const data = res.data.allUsers;
+        setAllTrainersData(data);
+        setIsLoading(false);
+    }
+
 
     const handleDownload = () => {
         downloadExcel(paymentReportdata, 'Payment-Report.xlsx');
@@ -40,11 +48,15 @@ const DownloadReportsPage = () => {
     const handleDownloadTwo = () => {
         downloadExcel(allUsersReportData, 'All-Users-Report.xlsx');
     };
+    const handleDownloadThree = () => {
+        downloadExcel(allTrainersData, 'All-Trainer-Report.xlsx');
+    }
 
     useEffect(() => {
         getPayments(),
             getEnrolledusers(),
-            getAllUsers()
+            getAllUsers(),
+            getAllTrainers()
     }, []);
 
 
@@ -55,7 +67,7 @@ const DownloadReportsPage = () => {
                     <div className="animate-spin rounded-full border-4 border-gray-300 border-t-gray-900 h-12 w-12 dark:border-gray-600 dark:border-t-gray-50" />
                 </div>
             ) : (
-                <div className="lg:px-10 lg:py-8 text-center">
+                <div className="px-3 py-2 lg:px-10 lg:py-8 text-center">
                     <div className="flex flex-col gap-y-3">
                         <h1 className="oxygen-bold lg:text-3xl">
                             Admin Reports Dashboard
@@ -86,7 +98,7 @@ const DownloadReportsPage = () => {
                         </div>
                         <div className="grid grid-cols-2 w-full py-3">
                             <span>
-                                Enrolled Users Reports
+                                Enrolled Students Reports
                             </span>
                             <span onClick={handleDownloadOne} className="flex justify-center cursor-pointer">
                                 <Download className="hover:text-primarycolor" />
@@ -97,6 +109,14 @@ const DownloadReportsPage = () => {
                                 Payment Reports
                             </span>
                             <span onClick={handleDownload} className="flex justify-center cursor-pointer">
+                                <Download className="hover:text-primarycolor" />
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 w-full bg-gray-50 py-3">
+                            <span>
+                                Trainer Reports
+                            </span>
+                            <span onClick={handleDownloadThree} className="flex justify-center cursor-pointer">
                                 <Download className="hover:text-primarycolor" />
                             </span>
                         </div>

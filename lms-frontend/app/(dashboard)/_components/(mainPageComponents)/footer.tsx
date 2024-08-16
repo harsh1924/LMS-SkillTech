@@ -39,6 +39,7 @@ export const Footer = () => {
                     </Link>
                     <Link href={'/become-instructor'}>
                         Become an instructor
+                        
                     </Link>
                 </div>
             </div>

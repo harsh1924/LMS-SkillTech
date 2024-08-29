@@ -5,81 +5,84 @@ const AboutUsPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="flex items-center w-full justify-center">
-                <div className="md:px-6 py-10 px-4 md:w-[80%]">
-                    <div className="flex flex-col items-center justify-center text-center gap-y-10 pb-6 border-b">
-                        <h1 className="font-bold font-sans text-4xl">
-                            Skills are the key to unlocking potential
-                        </h1>
-                        <p className="font-semibold text-xl md:w-[70%]">
-                            Whether you want to learn a new skill, train your teams, or share what you know with the world, you’re in the right place. As a leader in online learning, we’re here to help you achieve your goals and transform your life.
-                        </p>
-                        <p className="text-xl md:w-[70%]">
-                            We help organizations of all types and sizes prepare for the path ahead — wherever it leads. Our curated collection of business and technical courses help companies, governments, and nonprofits go further by placing learning at the center of their strategies.
-                        </p>
-                    </div>
-                    <section className="bg-[#f7f9fa] py-10 px-4">
-                        <h1 className="font-bold text-2xl mb-5">How learners like you are achieving their goals</h1>
-                        <div className="sm:flex sm:justify-around ">
-                            <div className="border bg-white p-6 w-[100%] sm:w-[31%]">
-                                <i className="fa-solid fa-quote-left"></i>
+            <div className="flex flex-col items-center w-full justify-center">
+                <div className="py-10 px-4 lg:px-12 flex flex-col gap-y-4">
+                    <h1 className="text-center oxygen-bold lg:text-3xl text-2xl mb-6">
+                        About Us
+                    </h1>
+                    <p className="lg:text-xl text-lg">
+                        <span className="font-bold">
+                            SkillTech is one of the India's leading skills development provider,
+                        </span>
+                        our training “mostly on-job trainings” enable candidate to get job faster as per their skillset.Our education programs and certifications helps learners to achieve their career goals. Founded in 2015, based in New Delhi, India. SkillTech trainings is specially designed and developed to skill, reskill and upskill Indian individuals through an online and offline training platform.
+                    </p>
+                    <p className="lg:text-xl text-lg">
+                        We are providing trainings in many fields like Software, Automation, Artificial Intelligence, Data Science Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning, AI & NLP, Engineering, Manufacturing Technology, Mechanical & Automobiles technology, Business & Business Application Business, Accounts & Finance, Business & Management, Process Engineering, Industrial Engineering, Electronic &Electrical Technology, Communication Technology, vocational trainings,we are preparing students for jobs, we helping millions of undergraduate, graduated and post graduate students to prepare for jobs.
+                    </p>
+                    <h1 className="text-center oxygen-bold lg:text-3xl text-2xl my-6">
+                        Our Mission
+                    </h1>
+                    <p className="lg:text-xl text-lg">
+                        Through strategic partnerships and innovative models, we are building a robust skill ecosystem that will meets current and future industry demands, also we are analysing and developing training programs for future based on our future skill requirement research, we are helping India's youth to contribute significantly to the nation’s growth and development. Ours mission statement is “Learn Earn Grow”.
+                    </p>
+                </div>
+                <div className="flex flex-col">
+                    <h1 className="text-center oxygen-bold lg:text-3xl text-2xl my-6">
+                        Meet the Leadership Team
+                    </h1>
+                    <div className="flex gap-10 flex-wrap px-4 lg:px-10">
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                            <div className="group-hover:hidden">
+                                <h2>
+                                    Bharti Biswas
+                                </h2>
                                 <p>
-                                    I am proud to say that after a few months of taking this course...<span className="font-bold">I passed
-                                        my exam and am now an AWS Certified Cloud Practitioner!</span> This content was exactly what the
-                                    CCP exam covered.
+                                    Co-Founder and Managing Director
                                 </p>
-                                <div className="pt-2 flex gap-2 pb-8 border-b-2">
-                                    <div className="w-10 h-10 flex justify-center items-center rounded-full text-white bg-black">WA</div>
-                                    <span className="font-bold">Will A</span>
-                                </div>
-                                <div className="py-4 flex items-center justify-between gap-2">
-                                    <i className="fa-sharp fa-solid fa-circle-play text-4xl" ></i>
-                                    <p className="text-[#5624d0] font-bold">[NEW] Ultimate AWS Certified Cloud Practitioner - 2022</p>
-                                </div>
                             </div>
-                            <div className="border bg-white p-6 w-[100%] sm:w-[31%]">
-                                <i className="fa-solid fa-quote-left"></i>
-                                <p>
-                                    This course helped me
-                                    <span className="font-bold">freshen up on my product manager skills and land a job at Facebook!</span>
-                                    Even people with no prior knowledge of any visualization tools can become a master after completing
-                                    this course.
-                                </p>
-                                <div className="pt-2 flex gap-2 pb-8 border-b-2">
-                                    <div className="w-10 h-10 flex justify-center items-center rounded-full text-white bg-black">RF</div>
-                                    <span className="font-bold">Ron F</span>
-                                </div>
-                                <div className="py-4 flex items-center justify-between gap-2">
-                                    <i className="fa-sharp fa-solid fa-circle-play text-4xl" ></i>
-                                    <p className="text-[#5624d0] font-bold">Become a Product Manager | Learn the Skills & Get the Job</p>
-                                </div>
-                            </div>
-                            <div className="border bg-white p-6 w-[100%] sm:w-[31%]">
-                                <i className="fa-solid fa-quote-left"></i>
-                                <p>
-                                    One of the best courses on management and leadership I have come across so far. The advice is
-                                    practical, and examples highly relatable. <span className="font-bold">Would help anyone become a better
-                                        manager.
-                                    </span>
-                                </p>
-                                <div className="pt-2 flex gap-2 pb-8 border-b-2">
-                                    <div className="w-10 h-10 flex justify-center items-center rounded-full text-white bg-black">PW</div>
-                                    <span className="font-bold">Phillip W</span>
-                                </div>
-                                <div className="py-4 flex items-center justify-between gap-2">
-                                    <i className="fa-sharp fa-solid fa-circle-play text-4xl" ></i>
-                                    <p className="text-[#5624d0] font-bold">Leadership: Practical Leadership Skills</p>
-                                </div>
-                            </div>
+                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
+                                A serial entrepreneur and business woman, with over 15 year experience with corporates, she has developed and matured many growth team across India, her strategic vision and guidance is instrumental in the growth of SkillTech, touching new height every quarter. Alumnus of NIT and IIM Raipur, she began her career with Meta in Corporate Strategy.
+                            </p>
                         </div>
-                    </section>
-                    <div className="flex flex-col justify-center gap-y-6 py-6">
-                        <h2 className="text-2xl font-bold">
-                            See our research
-                        </h2>
-                        <p className="text-lg">
-                            We’re committed to improving lives through learning. Dig into our original research to learn about the forces that are shaping the modern workplace.
-                        </p>
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                            <div className="group-hover:hidden">
+                                <h2>
+                                Dr. Rakesh Kumar
+                                </h2>
+                                <p>
+                                Financial Advisor and Strategic Partner.
+                                </p>
+                            </div>
+                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
+                            A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi. 
+                            </p>
+                        </div>
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                            <div className="group-hover:hidden">
+                                <h2>
+                                Akhil Biswas 
+                                </h2>
+                                <p>
+                                Technology Officer
+                                </p>
+                            </div>
+                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
+                            {/* A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi.  */}
+                            </p>
+                        </div>
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                            <div className="group-hover:hidden">
+                                <h2>
+                                S. Biswas
+                                </h2>
+                                <p>
+                                Head Sales and Marketing
+                                </p>
+                            </div>
+                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
+                            A dynamic marketing leader with two decades of experience, he is helping SkillTech to achieve sales target. He is guiding sales and marketing team, also helping SkillTech to increase market capitalization of “SkillTech” brand. Alumnus of IIT Delhi, he has started his career with leading global NMC. SkillTech is achieving positive growth under his guidance.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

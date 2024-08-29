@@ -5,38 +5,44 @@ const InstructorForm = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="px-20 py-10 bg-[#347dfb] text-white">
-                <h1 className="text-2xl font-sans md:text-4xl">
+            <div className="px-10 py-6 bg-[#347dfb] text-white">
+                <h1 className="text-2xl oxygen-regular md:text-4xl">
                     Learn Earn Grow
                 </h1>
             </div>
-            <div className="py-10 px-10 flex justify-center lg:justify-around items-center gap-x-20">
+            <div className="py-10 px-10 flex justify-center lg:justify-around items-start gap-x-20">
                 <div className="hidden lg:flex flex-col gap-y-8">
                     <p>
                         Passionate about teaching? Looking for a platform where you can share your knowledge, connect with professionals, and enrich careers, all while earning supplemental income?
                     </p>
                     <div className="flex flex-col gap-y-4">
                         <h1 className="oxygen-bold text-2xl">
-                            You've come to the right place.
+                        Change the Lives of other, earn and grow.
                         </h1>
                         <p>
-                            At SkillTech, our constant endeavour is to create a network of world-class trainers and industry-experts who, in turn, create high-quality courseware that resonates with professionals the world over, cutting across domains, especially Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning and NLP.
+                        Do you want to change the life of others, earn respect & recognition.if you are a subject matter expert (SEM), share your knowledge with others in your free time and on weekends, skill & help others to get a job, connect with professionals, and enrich careers, at the same time earn respectable income for yourself. If you are looking for a platform where you can share your knowledge and earn handsome income for yourself, you are at right place. 
+                        </p>
+                        <p>
+                        At SkillTech, our constant endeavour is to create a network of world-class trainers and subject matter expert who, in turn, create high-quality courseware& training materialacross cutting edge domains , especially Software, Automation, Artificial Intelligence, Data Science Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning, AI & NLP, Engineering, Manufacturing Technology, Mechanical & Automobiles technology, Business & Business Application Business, Accounts & Finance, Business & Management, Process Engineering, Industrial Engineering, Electronic & Electrical Technology, Communication Technology, vocational trainings.
                         </p>
                     </div>
                     <div className="flex flex-col gap-y-4">
                         <h1 className="oxygen-bold text-2xl">
-                            What's in it for me?
+                        How will I benefited?
                         </h1>
                         <p>
-                            We're glad you asked! The material you produce will be used to train professionals worldwide, meaning increased visibility, a larger audience for your content, and the chance to become a part of an elite worldwide training community!
+                            The material you produce will be used to train professionals worldwide, meaning increased visibility, a larger audience for your content, and the chance to become a part of an elite worldwide training community!
                         </p>
                     </div>
                     <div className="flex flex-col gap-y-4">
                         <h1 className="oxygen-bold text-2xl">
-                            Show me the money!
+                        Compensation
                         </h1>
                         <p>
-                            At SkillTech, we know the value of your time and effort, and also understand that offering fair and flexible compensation is a part of your business ethos. With our revenue-sharing model, you have the opportunity to earn tens of thousands of dollars every month!
+                        At SkillTech, we know the value of your time and effort, and understand that offering fair and flexible compensation is a part of your business ethos. With our revenue-sharing model, you have the opportunity to earn tens of thousands of every month, we will share the value of your time which will make you happy.
+                        </p>
+                        <p>
+                        If you are excited about the opportunity please fill the form our executive will contact you and explain you all benefits and answer your query.
                         </p>
                     </div>
                 </div>

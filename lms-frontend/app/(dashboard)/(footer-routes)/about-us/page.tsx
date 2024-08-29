@@ -73,9 +73,9 @@ const AboutUsPage = () => {
                         Meet the Leadership Team
                     </h1>
                     <div className="flex gap-10 flex-wrap px-4 lg:px-10">
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2>
+                                <h2 className="font-bold">
                                     Bharti Biswas
                                 </h2>
                                 <p>
@@ -86,9 +86,9 @@ const AboutUsPage = () => {
                                 A serial entrepreneur and business woman, with over 15 year experience with corporates, she has developed and matured many growth team across India, her strategic vision and guidance is instrumental in the growth of SkillTech, touching new height every quarter. Alumnus of NIT and IIM Raipur, she began her career with Meta in Corporate Strategy.
                             </p>
                         </div>
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2>
+                                <h2 className="font-bold">
                                     Dr. Rakesh Kumar
                                 </h2>
                                 <p>
@@ -99,9 +99,9 @@ const AboutUsPage = () => {
                                 A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi.
                             </p>
                         </div>
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2>
+                                <h2 className="font-bold">
                                     Akhil Biswas
                                 </h2>
                                 <p>
@@ -112,9 +112,9 @@ const AboutUsPage = () => {
                                 {/* A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi.  */}
                             </p>
                         </div>
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out">
+                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2>
+                                <h2 className="font-bold">
                                     S. Biswas
                                 </h2>
                                 <p>

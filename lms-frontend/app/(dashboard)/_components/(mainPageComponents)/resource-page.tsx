@@ -11,7 +11,7 @@ export const ResourcePage = () => {
     return (
         <span>
             <div onClick={() => router.push('/resources')} className="hover:text-[#347bdc] ease-in-out transition-all duration-300 z-50 py-2 rounded-sm lg:flex items-center gap-x-2 hidden group relative cursor-pointer">
-                <span className="flex group">
+                <span className="flex group items-center">
                     Resources
                     <ChevronDown className="group-hover:hidden" size={20} />
                     <ChevronUp className="hidden group-hover:block" size={20} />

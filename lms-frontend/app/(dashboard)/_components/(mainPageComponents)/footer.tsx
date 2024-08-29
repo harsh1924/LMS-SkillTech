@@ -70,7 +70,7 @@ export const Footer = () => {
                 <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                     <Link href={'/buisness'}>
                         {/* /skilltech-partners */}
-                        Partners
+                        Corporate Solution
                     </Link>
                     <Link href={'#'}>
                         {/* /affiliate */}

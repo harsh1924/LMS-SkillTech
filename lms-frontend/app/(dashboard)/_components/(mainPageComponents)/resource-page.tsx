@@ -1,5 +1,6 @@
 'use client'
 
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +11,11 @@ export const ResourcePage = () => {
     return (
         <span>
             <div onClick={() => router.push('/resources')} className="hover:text-[#347bdc] ease-in-out transition-all duration-300 z-50 py-2 rounded-sm lg:flex items-center gap-x-2 hidden group relative cursor-pointer">
-                Resources
+                <span className="flex group">
+                    Resources
+                    <ChevronDown className="group-hover:hidden" size={20} />
+                    <ChevronUp className="hidden group-hover:block" size={20} />
+                </span>
                 <span className="hidden border rounded-md flex-col gap-y-4 group-hover:flex hover:flex bg-white absolute text-black top-[38px] left-0 text-lg py-2 w-[280px] transition-all ease-in-out duration-300">
                     <span className="flex flex-col gap-y-5 ">
                         <span className="flex flex-col gap-y-1">

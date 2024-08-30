@@ -122,7 +122,7 @@ const AboutUsPage = () => {
                                 </p>
                             </div>
                             <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
-                                A dynamic marketing leader with two decades of experience, he is helping SkillTech to achieve sales target. He is guiding sales and marketing team, also helping SkillTech to increase market capitalization of “SkillTech” brand. Alumnus of IIT Delhi, he has started his career with leading global NMC. SkillTech is achieving positive growth under his guidance.
+                                A dynamic marketing leader  with two decades of experience, he is helping SkillTech to achieve sales target. He is guiding sales and marketing team, also helping SkillTech to increase market capitalization of “SkillTech” brand. Alumnus of IIT Delhi, he has started his career with leading global NMC. SkillTech is achieving positive growth under his guidance.
                             </p>
                         </div>
                     </div>

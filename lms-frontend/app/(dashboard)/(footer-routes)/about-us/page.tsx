@@ -12,8 +12,8 @@ const AboutUsPage = () => {
                         <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
                             About Us
                         </h1>
-                        <p className="lg:text-xl text-lg">
-                            <span className="font-bold">
+                        <p className="lg:text-xl text-lg source-sans-3-regular">
+                            <span className="font-bold pr-1">
                                 SkillTech is one of the India's leading skills development provider,
                             </span>
                             our training “mostly on-job trainings” enable candidate to get job faster as per their skillset.Our education programs and certifications helps learners to achieve their career goals. Founded in 2015, based in New Delhi, India. SkillTech trainings is specially designed and developed to skill, reskill and upskill Indian individuals through an online and offline training platform.
@@ -55,7 +55,7 @@ const AboutUsPage = () => {
                         <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
                             Who Are We?
                         </h1>
-                        <p className="lg:text-xl text-lg">
+                        <p className="lg:text-xl text-lg source-sans-3-regular">
                             We are providing trainings in many fields like Software, Automation, Artificial Intelligence, Data Science Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning, AI & NLP, Engineering, Manufacturing Technology, Mechanical & Automobiles technology, Business & Business Application Business, Accounts & Finance, Business & Management, Process Engineering, Industrial Engineering, Electronic &Electrical Technology, Communication Technology, vocational trainings,we are preparing students for jobs, we helping millions of undergraduate, graduated and post graduate students to prepare for jobs.
                         </p>
                     </div>
@@ -63,66 +63,66 @@ const AboutUsPage = () => {
                         <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
                             Our Mission
                         </h1>
-                        <p className="lg:text-xl text-lg">
+                        <p className="lg:text-xl text-lg source-sans-3-regular">
                             Through strategic partnerships and innovative models, we are building a robust skill ecosystem that will meets current and future industry demands, also we are analysing and developing training programs for future based on our future skill requirement research, we are helping India's youth to contribute significantly to the nation’s growth and development. Ours mission statement is “Learn Earn Grow”.
                         </p>
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <h1 className="text-center oxygen-bold lg:text-3xl text-2xl my-6">
+                    <h1 className="text-center oxygen-bold lg:text-3xl text-2xl my-10">
                         Meet the Leadership Team
                     </h1>
                     <div className="flex gap-10 flex-wrap px-4 lg:px-10">
                         <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2 className="font-bold">
+                                <h2 className="oxygen-bold">
                                     Bharti Biswas
                                 </h2>
-                                <p>
+                                <p className="source-sans-3-semibold">
                                     Co-Founder and Managing Director
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
                                 A serial entrepreneur and business woman, with over 15 year experience with corporates, she has developed and matured many growth team across India, her strategic vision and guidance is instrumental in the growth of SkillTech, touching new height every quarter. Alumnus of NIT and IIM Raipur, she began her career with Meta in Corporate Strategy.
                             </p>
                         </div>
                         <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2 className="font-bold">
+                                <h2 className="oxygen-bold">
                                     Dr. Rakesh Kumar
                                 </h2>
-                                <p>
+                                <p className="source-sans-3-semibold">
                                     Financial Advisor and Strategic Partner.
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
                                 A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi.
                             </p>
                         </div>
                         <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2 className="font-bold">
+                                <h2 className="oxygen-bold">
                                     Akhil Biswas
                                 </h2>
-                                <p>
+                                <p className="source-sans-3-semibold">
                                     Technology Officer
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
-                                {/* A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi.  */}
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
+                            Alumnus of IIT Delhi, he has started his career with leading global NMC. He worked many global companies in Europe, USA, UK and many other countries around the world. SkillTech is achieving positive growth under his guidance. He is continuously bringing innovation in SkillTech technology requirement. 
                             </p>
                         </div>
                         <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
-                                <h2 className="font-bold">
-                                    S. Biswas
+                                <h2 className="oxygen-bold">
+                                    S. Kumar
                                 </h2>
-                                <p>
-                                    Head Sales and Marketing
+                                <p className="source-sans-3-semibold">
+                                    Head of Sales, Marketing and Branding.
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all duration-300 ease-in-out">
-                                A dynamic marketing leader  with two decades of experience, he is helping SkillTech to achieve sales target. He is guiding sales and marketing team, also helping SkillTech to increase market capitalization of “SkillTech” brand. Alumnus of IIT Delhi, he has started his career with leading global NMC. SkillTech is achieving positive growth under his guidance.
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
+                            A marketer by profession, he hold MBA in sales and marketing from prestigious institute in Delhi. He has a rich experience of 18 years in sales and marketing. He is helping Skilltech to acquire new Business and Clients. Under his guidance Skilltech is achieving new height.
                             </p>
                         </div>
                     </div>

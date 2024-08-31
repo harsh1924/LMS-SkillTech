@@ -7,7 +7,7 @@ const BusinessPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="px-4 lg:px-10 py-10">
+            <div className="px-4 lg:px-10 py-10 source-sans-3-regular">
                 <p className="text-lg">
                     We are helping corporates to increase their productivity by training their staffs.  We are designing customize training program to increase the productivity based on industry and skill requirements.
                 </p>
@@ -37,7 +37,7 @@ const BusinessPage = () => {
                         6.	Assessment test.
                     </p>
                 </div>
-                <p>
+                <p className="text-lg">
                     Please contact our sales and marketing team for more information.
                 </p>
             </div>

@@ -32,11 +32,11 @@ export const Footer = () => {
                         <Link href={'/about-us'}>
                             About us
                         </Link>
-                        <Link href={'/contact-us'}>
-                            Contact us
-                        </Link>
                         <Link href={'/resources'}>
                             Resources
+                        </Link>
+                        <Link href={'/contact-us'}>
+                            Contact us
                         </Link>
                         <Link href={'/become-instructor'}>
                             Become an instructor
@@ -51,15 +51,14 @@ export const Footer = () => {
                         <Link href={'/help'}>
                             Help
                         </Link>
-                        <Link href={'#'}>
-                            {/* /reviews */}
-                            {/* Alumni Speak */}
-                        </Link>
-                        <Link href={'/terms'}>
-                            Terms
+                        <Link href={'/refund-policy'}>
+                            Refund Policy
                         </Link>
                         <Link href={'/terms/policy'}>
                             Privacy Policy
+                        </Link>
+                        <Link href={'/terms'}>
+                            Terms & Conditions
                         </Link>
                     </div>
                 </div>

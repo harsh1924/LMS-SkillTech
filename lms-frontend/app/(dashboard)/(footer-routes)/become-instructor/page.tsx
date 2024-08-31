@@ -5,13 +5,13 @@ const InstructorForm = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="px-10 py-6 bg-[#347dfb] text-white">
-                <h1 className="text-2xl oxygen-regular md:text-4xl">
+            <div className="px-10 py-3 bg-[#347dfb] text-white">
+                <h1 className="text-2xl source-sans-3-regular md:text-4xl">
                     Learn Earn Grow
                 </h1>
             </div>
             <div className="py-10 px-10 flex justify-center lg:justify-around items-start gap-x-20">
-                <div className="hidden lg:flex flex-col gap-y-8">
+                <div className="hidden lg:flex flex-col gap-y-8 source-sans-3-regular">
                     <p>
                         Passionate about teaching? Looking for a platform where you can share your knowledge, connect with professionals, and enrich careers, all while earning supplemental income?
                     </p>
@@ -47,7 +47,7 @@ const InstructorForm = () => {
                     </div>
                 </div>
                 <div className="py-6 px-5 rounded-md shadow-lg md:shadow-[0_0_10px_#347dfb] flex justify-center items-center flex-col border source-sans-3-regular">
-                    <h3 className="text-2xl pb-2">
+                    <h3 className="text-2xl pb-2 oxygen-bold">
                         INTERESTED IN WORKING WITH US
                     </h3>
                     <p>

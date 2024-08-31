@@ -39,8 +39,8 @@ export const HomeNavbar = () => {
             </Link>
 
             {/* <Link href={`/resources`} className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300"> */}
-            <ResourcePage />
             {/* </Link> */}
+            <ResourcePage />
 
             <Link className="hidden lg:flex hover:text-[#347bdc] ease-in-out transition-all duration-300" href={'/become-instructor'}>
                 Become an instructor

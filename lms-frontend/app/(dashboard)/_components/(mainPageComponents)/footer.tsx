@@ -4,7 +4,7 @@ import Link from "next/link"
 export const Footer = () => {
     return (
         <div className="bg-black">
-            <div className="grid grid-cols-2 md:flex md:justify-around py-8 mt-16">
+            <div className="grid grid-cols-2 md:flex md:justify-around py-4 mt-16">
                 <div className="px-10 py-6">
                     <h3 className="text-white pl-1 text-lg oxygen-regular">
                         Follow us!
@@ -28,7 +28,7 @@ export const Footer = () => {
                     <h3 className="text-white text-lg oxygen-regular">
                         Company
                     </h3>
-                    <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
+                    <div className="py-2 flex gap-3 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                         <Link href={'/about-us'}>
                             About us
                         </Link>
@@ -47,7 +47,7 @@ export const Footer = () => {
                     <h3 className="text-white text-lg oxygen-regular">
                         Help & Support
                     </h3>
-                    <div className="py-2 flex gap-x-1 text-slate-300 flex-col md:text-sm source-sans-3-regular">
+                    <div className="py-2 flex gap-3 text-slate-300 flex-col md:text-sm source-sans-3-regular">
                         <Link href={'/help'}>
                             Help
                         </Link>
@@ -79,6 +79,40 @@ export const Footer = () => {
                             {/* /corporate-training */}
                             {/* Corporate Training */}
                         </Link>
+                    </div>
+                </div>
+                <div className="px-5 py-6">
+                    <p className="text-white text-lg oxygen-regular">
+                        Get In Touch
+                    </p>
+                    <div className="py-2 flex text-slate-300 flex-col md:text-sm source-sans-3-regular w-[250px] gap-2">
+                        <div>
+                            <p className="font-semibold text-[16px] text-white">
+                                Address:
+                            </p>
+                            <p>
+                                C-26, 2nd Floor, Pocket-C , Sector-3, Dwarka, New Delhi-110078
+                            </p>
+                        </div>
+                        <div>
+                            <p className="font-semibold text-[16px] text-white">
+                                Email Address:
+                            </p>
+                            <p>
+                                Send Resume : cv@metajobworks.com
+                            </p>
+                            <p>
+                                For Information : info@skilltechindia.net
+                            </p>
+                        </div>
+                        <div>
+                            <p className="font-semibold text-[16px] text-white">
+                                Contact No:
+                            </p>
+                            <p>
+                                +91 8368008245
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

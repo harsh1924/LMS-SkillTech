@@ -6,7 +6,7 @@ import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 import '@/app/(dashboard)/dashboard.css'
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import Link from "next/link";
-import ImageOne from '@/app/helpers/images/images-1.jpeg'
+import ImageOne from '@/app/helpers/images/images-1.jpg'
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 

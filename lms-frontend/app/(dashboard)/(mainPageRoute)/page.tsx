@@ -5,6 +5,7 @@ import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
 import { HomePageCarousel } from "../_components/(mainPageComponents)/carousel";
 import { Testimony } from "../_components/(mainPageComponents)/testimony";
 import Head from "next/head";
+import MainPageImage from '@/app/helpers/images/MainPage-image/MainPage-Image.jpeg'
 
 export default function Home() {
 
@@ -41,18 +42,16 @@ export default function Home() {
           </a>
         </div>
         <div className="md:w-1/2 justify-center flex">
-          <img src="https://images.pexels.com/photos/4144221/pexels-photo-4144221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="w-[90%] rounded-md" />
+          <img src={MainPageImage.src} alt="Main Page Image" className="w-[90%] rounded-md" />
         </div>
       </div>
 
       {/* Available Courses */}
       <AvailableCourses />
 
-      {/* Testimony */}
-      <Testimony />
+      {/* <Testimony /> */}
 
-      {/* Certification Area */}
-      <CertificationArea />
+      {/* <CertificationArea /> */}
 
       {/* Footer */}
       <Footer />

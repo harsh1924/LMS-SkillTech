@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import Banner1 from '@/app/helpers/images/Banner-images/Banner1.jpg'
 import Banner2 from '@/app/helpers/images/Banner-images/Banner2.jpg'
-import Banner3 from '@/app/helpers/images/Banner-images/Banner3.jpg'
+import Banner3 from '@/app/helpers/images/Banner-images/Banner2.jpg'
 import Banner4 from '@/app/helpers/images/Banner-images/BAnner4.jpg'
 
 
@@ -67,7 +67,7 @@ export const HomePageCarousel = () => {
                                                 </span>
                                             </div>
                                             <div className="flex items-center justify-center w-full h-full">
-                                                <img src={course.imageUrl} width={2300} height={1000} className="opacity-90" />
+                                                <img src={course.imageUrl} width={2300} height={1000} className="opacity-90  object-fill" />
                                             </div>
                                         </Link>
                                     </CardContent>

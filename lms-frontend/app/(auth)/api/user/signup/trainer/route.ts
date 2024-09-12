@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
         await user.save();
 
         const subject = 'New Trainer';
-        const mailtrapEmail = 'harshrpanwar@gmail.com'
+        const mailtrapEmail = 'info@skilltechindia.net'
         const adminMessage = `
     <p>
         A new trainer has created account on the website:
@@ -53,9 +53,6 @@ export async function POST(request: NextRequest) {
         Trainer Phone Number: ${user.phoneNumber}
     </p>
     `;
-    // <p>
-    //     Date of Account Creation: ${date}/${month}/${year} ${hours + 5}:${minutes + 30}
-    // </p>
 
         await sendEmail(mailtrapEmail, subject, adminMessage);
 

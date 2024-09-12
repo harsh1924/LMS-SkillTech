@@ -6,7 +6,7 @@ const AboutUsPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="flex flex-col items-center w-full justify-center">
+            <div className="flex flex-col items-center w-full justify-center text-justify">
                 <div className="flex flex-col gap-y-4">
                     <div className="py-10 px-4 lg:px-12">
                         <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">

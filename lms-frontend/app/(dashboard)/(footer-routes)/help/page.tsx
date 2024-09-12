@@ -8,7 +8,7 @@ const HelpPage = () => {
             <div className="w-full">
                 <HomeNavbar />
             </div>
-            <div className="px-3 lg:px-16 py-10 flex flex-col gap-y-8">
+            <div className="px-3 lg:px-16 py-10 flex flex-col gap-y-8 text-justify">
                 <div className="flex flex-col gap-y-3 lg:gap-y-6">
                     <h1 className="oxygen-bold text-2xl lg:text-4xl">
                         SkillTech Help Page

@@ -148,7 +148,7 @@ const CourseDetails = ({
     return (
         <>
             {isLoading ? (
-                <div className="flex flex-col gap-y-3 h-100vh items-center ">
+                <div className="flex flex-col gap-y-3 h-100vh items-center">
                     <div className="w-full">
                         <HomeNavbar />
                     </div>
@@ -198,8 +198,8 @@ const CourseDetails = ({
                     </div>
 
                     {/* duration and mode of teaching */}
-                    <div className="w-full px-6 lg:px-10 py-5 flex flex-col lg:flex-row justify-center gap-y-4 lg:gap-y-0 source-sans-3-bold">
-                        <p className="shadow-md flex flex-col items-center gap-y-3 lg:border-r border-black py-2 lg:px-20 text-lg font-semibold text-center">
+                    <div className="shadow-md  w-full px-6 lg:px-10 py-5 flex flex-col lg:flex-row justify-center gap-y-4 lg:gap-y-0 source-sans-3-bold">
+                        <p className="flex flex-col items-center gap-y-3 lg:border-r border-black py-2 lg:px-20 text-lg font-semibold text-center">
                             <span>
                                 Program Duration
                             </span>
@@ -211,7 +211,7 @@ const CourseDetails = ({
                                 )}
                             </span>
                         </p>
-                        <p className="shadow-md border-black lg:border-r flex flex-col items-center gap-y-3 py-2 text-center lg:px-20 text-lg font-semibold">
+                        <p className="border-black lg:border-r flex flex-col items-center gap-y-3 py-2 text-center lg:px-20 text-lg font-semibold">
                             <span>
                                 Mode of teaching
                             </span>
@@ -219,7 +219,7 @@ const CourseDetails = ({
                                 Online Bootcamp
                             </span>
                         </p>
-                        <p className="shadow-md flex text-center items-center justify-center py-2 px-20 text-lg font-semibold">
+                        <p className="flex text-center justify-center py-2 px-20 text-lg font-semibold">
                             <span>
                                 Limited Seats Available
                             </span>

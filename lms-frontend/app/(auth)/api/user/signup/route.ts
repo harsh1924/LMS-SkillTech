@@ -38,17 +38,8 @@ export async function POST(request: NextRequest) {
 
         await user.save();
 
-        const timestamp = Date.now();
-        const currentDate = new Date(timestamp);
-        // Extract hours, minutes, and date from the currentDate object
-        const hours = currentDate.getHours();
-        const minutes = currentDate.getMinutes();
-        const date = currentDate.getDate();
-        const year = currentDate.getFullYear();
-        const month = currentDate.getMonth();
-
         const subject = 'New User';
-        const mailtrapEmail = 'harshrpanwar@gmail.com'
+        const mailtrapEmail = 'info@skilltechindia.net'
         const adminMessage = `
     <p>
         A new user has created account on the website:
@@ -63,9 +54,6 @@ export async function POST(request: NextRequest) {
         User Phone Number: ${user.phoneNumber}
     </p>
     `;
-    // <p>
-    //     Date of Account Creation: ${date}/${month}/${year} ${hours + 5}:${minutes + 30}
-    // </p>
 
         await sendEmail(mailtrapEmail, subject, adminMessage);
 

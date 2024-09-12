@@ -11,7 +11,7 @@ const InstructorForm = () => {
                     Learn Earn Grow
                 </h1>
             </div>
-            <div className="py-10 px-10 flex justify-center lg:justify-around items-start gap-x-20">
+            <div className="py-10 px-10 flex justify-center lg:justify-around items-start gap-x-20 text-justify">
                 <div className="hidden lg:flex flex-col gap-y-8 source-sans-3-regular">
                     <p>
                         Passionate about teaching? Looking for a platform where you can share your knowledge, connect with professionals, and enrich careers, all while earning supplemental income?

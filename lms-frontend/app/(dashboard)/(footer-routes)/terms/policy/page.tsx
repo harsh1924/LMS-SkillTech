@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
     return (
         <div>
             <HomeNavbar />
-            <div>
+            <div className="text-justify">
                 <h1 className="oxygen-bold text-primarycolor text-xl lg:text-3xl px-4 lg:px-10 py-6">
                     Privacy Policy
                 </h1>

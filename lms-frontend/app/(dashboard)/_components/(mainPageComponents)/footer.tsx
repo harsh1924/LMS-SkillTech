@@ -51,6 +51,9 @@ export const Footer = () => {
                         <Link href={'/help'}>
                             Help
                         </Link>
+                        <Link href={'/disclaimer'}>
+                            Disclaimer
+                        </Link>
                         <Link href={'/refund-policy'}>
                             Refund Policy
                         </Link>
@@ -59,9 +62,6 @@ export const Footer = () => {
                         </Link>
                         <Link href={'/terms'}>
                             Terms & Conditions
-                        </Link>
-                        <Link href={'/disclaimer'}>
-                            Disclaimer
                         </Link>
                     </div>
                 </div>

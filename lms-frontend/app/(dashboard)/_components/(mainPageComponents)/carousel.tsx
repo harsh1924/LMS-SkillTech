@@ -67,7 +67,7 @@ export const HomePageCarousel = () => {
                                                 </span>
                                             </div>
                                             <div className="flex items-center justify-center w-full h-full">
-                                                <img src={course.imageUrl} width={3000} height={2700} className="opacity-90  object-fill" />
+                                                <img src={course.imageUrl} width={3000} height={2700} className="opacity-90  object-fill" loading="lazy" />
                                             </div>
                                         </Link>
                                     </CardContent>

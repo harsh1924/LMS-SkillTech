@@ -26,7 +26,7 @@ export const ResourcePage = () => {
                                 Question Bank
                             </Link>
                             <Link href={'/resources//interview-tips'} className='hover:text-[#347bdc] py-1 px-5 text-start text-[14px] source-sans-3-regular'>
-                                Iterview Tips
+                                Interview Tips
                             </Link>
                         </span>
                     </span>

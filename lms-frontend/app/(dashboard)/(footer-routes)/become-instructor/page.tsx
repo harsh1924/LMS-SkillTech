@@ -16,6 +16,7 @@ const InstructorForm = () => {
                     <p>
                         Passionate about teaching? Looking for a platform where you can share your knowledge, connect with professionals, and enrich careers, all while earning supplemental income?
                     </p>
+                    <img src={InstructorImage.src} alt="Instructor Page Image" className="h-[350px] rounded-sm" />
                     <div className="flex flex-col gap-y-4">
                         <h1 className="oxygen-bold text-2xl">
                             Change the Lives of other, earn and grow.
@@ -27,7 +28,7 @@ const InstructorForm = () => {
                             At SkillTech, our constant endeavour is to create a network of world-class trainers and subject matter expert who, in turn, create high-quality courseware& training materialacross cutting edge domains , especially Software, Automation, Artificial Intelligence, Data Science Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning, AI & NLP, Engineering, Manufacturing Technology, Mechanical & Automobiles technology, Business & Business Application Business, Accounts & Finance, Business & Management, Process Engineering, Industrial Engineering, Electronic & Electrical Technology, Communication Technology, vocational trainings.
                         </p>
                     </div>
-                    <img src={InstructorImage.src} alt="Instructor Page Image" className="h-[350px] rounded-sm" />
+
                     <div className="flex flex-col gap-y-4">
                         <h1 className="oxygen-bold text-2xl">
                             How will I benefited?

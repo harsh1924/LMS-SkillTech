@@ -3,7 +3,7 @@ import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/n
 
 const InterviewTipsPage = () => {
     return (
-        <div>
+        <div className="text-justify">
             <HomeNavbar />
             <div>
                 <h1 className="oxygen-bold text-xl lg:text-3xl px-4 lg:px-10 py-6">

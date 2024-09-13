@@ -1,12 +1,11 @@
+import { Footer } from "@/app/(dashboard)/_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
 
 const CloudComputingPage = () => {
     return (
         <div>
-            <div className="w-screen">
-                <HomeNavbar />
-            </div>
-            <div className="flex flex-col justify-center py-16 px-6 md:px-20 gap-y-10">
+            <HomeNavbar />
+            <div className="flex flex-col justify-center py-6 px-4 lg:px-10 gap-y-10 text-justify">
                 <div className="flex flex-col gap-y-4">
                     <h1 className="oxygen-bold text-2xl text-center">
                         Cloud Computing
@@ -154,15 +153,16 @@ const CloudComputingPage = () => {
                         </div>
                         <div className="flex flex-col gap-y-2">
                             <span className="oxygen-semibold">
-                            Serverless computing
+                                Serverless computing
                             </span>
                             <span>
-                            Overlapping with PaaS, serverless computing focuses on building app functionality without spending time continually managing the servers and infrastructure required to do so. The cloud provider handles the setup, capacity planning, and server management for you. Serverless architectures are highly scalable and event-driven, only using resources when a specific function or trigger occurs.
+                                Overlapping with PaaS, serverless computing focuses on building app functionality without spending time continually managing the servers and infrastructure required to do so. The cloud provider handles the setup, capacity planning, and server management for you. Serverless architectures are highly scalable and event-driven, only using resources when a specific function or trigger occurs.
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

@@ -60,6 +60,9 @@ export const Footer = () => {
                         <Link href={'/terms'}>
                             Terms & Conditions
                         </Link>
+                        <Link href={'/disclaimer'}>
+                            Disclaimer
+                        </Link>
                     </div>
                 </div>
                 <div className="px-5 py-6">
@@ -99,7 +102,7 @@ export const Footer = () => {
                                 Email Address:
                             </p>
                             <p>
-                                Send Resume : cv@metajobworks.com
+                                Send Resume : cv@skilltechindia.net
                             </p>
                             <p>
                                 For Information : info@skilltechindia.net
@@ -110,64 +113,13 @@ export const Footer = () => {
                                 Contact No:
                             </p>
                             <p>
-                                +91 8368008245
+                                +91 7701885882
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="h-[1px] bg-gray-500 mb-16"></div>
-            <div className="text-[#807c26] pb-10 px-10 flex flex-col gap-y-3">
-                <span className="text-white font-semibold text-lg">
-                    Disclaimer
-                </span>
-                <ul className="list-disc list-outside flex flex-col gap-y-3 px-5">
-                    <li>
-                        PMP, PMI, PgMP, PfMP, ACP, PBA, RMP, PMBOK, CAPM, SP, and OPM3 are registered marks of the Project Management Institute, Inc.
-                    </li>
-                    <li>
-                        ITIL® is a registered trade mark of AXELOS Limited.
-                    </li>
-                    <li>
-                        PRINCE2® is a [registered] trade mark of AXELOS Limited.
-
-                    </li>
-                    <li>
-                        MSP® is a [registered] trade mark of AXELOS Limited.
-                    </li>
-                    <li>
-                        CISA® is a Registered Trade Mark of the Information Systems Audit and Control Association (ISACA) and the IT Governance Institute.
-                    </li>
-                    <li>
-                        CISSP® is a registered mark of The International Information Systems Security Certification Consortium ((ISC)2).
-                    </li>
-                    <li>
-                        CISCO®, CCNA®, and CCNP® are trademarks of Cisco and registered trademarks in the United States and certain other countries.
-                    </li>
-                    <li>
-                        Skilltech and its affiliates, predecessors, successors and assigns are in no way associated, sponsored or promoted by SAP SE and neither do they provide any SAP based online or real-time courses or trainings
-                    </li>
-                    <li>
-                        Professional Scrum Master is a registered trademark of Scrum.org
-                    </li>
-                    <li>
-                        The APMG-International Finance for Non-Financial Managers and Swirl Device logo is a trade mark of The APM Group Limited.
-
-                    </li>
-                    <li>
-                        The Open Group®, TOGAF® are trademarks of The Open Group.
-                    </li>
-                    <li>
-                        IIBA®, the IIBA® logo, BABOK® and Business Analysis Body of Knowledge® are registered trademarks owned by International Institute of Business Analysis.
-                    </li>
-                    <li>
-                        CBAP® is a registered certification mark owned by International Institute of Business Analysis. Certified Business Analysis Professional, EEP and the EEP logo are trademarks owned by International Institute of Business Analysis.
-                    </li>
-                    <li>
-                        COBIT® is a trademark of ISACA® registered in the United States and other countries.
-                    </li>
-                </ul>
-            </div>
         </div>
     )
 }

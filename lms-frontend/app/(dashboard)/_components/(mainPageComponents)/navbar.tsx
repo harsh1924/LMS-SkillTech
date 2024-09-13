@@ -19,7 +19,7 @@ export const HomeNavbar = () => {
             </div>
 
             {/* logo */}
-            <Link href={'/'} className="hidden md:flex">
+            <Link href={'/'} className="hidden md:flex ">
                 <Logo />
             </Link>
 

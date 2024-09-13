@@ -8,7 +8,7 @@ const TermsOfUse = () => {
             <div className="w-full">
                 <HomeNavbar />
             </div>
-            <div className="px-3 lg:px-16 py-10 flex flex-col gap-y-8 text-justify">
+            <div className="px-4 lg:px-10 py-6 flex flex-col gap-y-8 text-justify">
                 <div className="flex flex-col gap-y-3 lg:gap-y-6">
                     <h1 className="oxygen-bold text-2xl lg:text-4xl">
                         SkillTech Terms and Conditions

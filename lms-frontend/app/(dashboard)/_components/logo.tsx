@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import LogoImage from '@/app/helpers/images/BlueLogo.png'
 
 export const Logo = () => {
     return ( 
@@ -6,6 +7,6 @@ export const Logo = () => {
         height={100}
         width={150}
         alt='logo'
-        src='/logo.svg'/>
+        src={LogoImage}/>
      );
 }

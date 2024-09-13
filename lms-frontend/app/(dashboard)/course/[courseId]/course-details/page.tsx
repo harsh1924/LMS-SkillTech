@@ -190,7 +190,7 @@ const CourseDetails = ({
                                     </div>
                                 </div>
                                 <p className="lg:w-1/2 w-[80%] text-center">
-                                    <img src={courseImageURLData} alt="Course Thumbnail" className="w-full rounded-xl" />
+                                    <img src={courseImageURLData} alt="Course Thumbnail" className="w-full rounded-xl" loading="lazy" />
                                 </p>
                             </div>
                         </div>

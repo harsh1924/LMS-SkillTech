@@ -49,9 +49,6 @@ export default function Home() {
       {/* Available Courses */}
       <AvailableCourses />
 
-      {/* <Testimony /> */}
-
-      {/* <CertificationArea /> */}
 
       {/* Footer */}
       <Footer />

@@ -31,7 +31,7 @@ const PurchaseCourse = async ({ params }: {
                 <div className="bg-gray-300 h-[2px] mb-10"></div>
                 <div className="flex flex-col gap-y-6">
                     <p className="flex gap-x-6">
-                        <Image width={250} height={200} src={course.imageUrl} className="rounded-md" alt="Course Thumbnail" />
+                        <Image width={250} height={200} src={course.imageUrl} className="rounded-md" alt="Course Thumbnail" loading="lazy" />
                         <span className="oxygen-bold text-xl">
                             {course.title}
                         </span>

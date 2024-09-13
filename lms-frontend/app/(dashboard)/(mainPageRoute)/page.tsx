@@ -42,7 +42,7 @@ export default function Home() {
           </a>
         </div>
         <div className="md:w-1/2 justify-center flex">
-          <img src={MainPageImage.src} alt="Main Page Image" className="w-[90%] rounded-md" />
+          <img src={MainPageImage.src} alt="Main Page Image" className="w-[90%] rounded-md" loading="lazy" />
         </div>
       </div>
 

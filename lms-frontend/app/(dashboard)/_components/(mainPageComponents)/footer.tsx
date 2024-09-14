@@ -119,7 +119,6 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-[1px] bg-gray-500 mb-16"></div>
         </div>
     )
 }

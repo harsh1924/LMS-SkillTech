@@ -1,7 +1,7 @@
 import React from 'react'
 import jsPDF from 'jspdf'
 import { Base64 } from 'js-base64';
-import img from '@/app/helpers/Blue and Yellow Vector Modern Completion Certificate.png'
+import img from '@/app/helpers/images/Final Certificate-01.jpg'
 
 const generateCertificate = (name: string, course: string) => {
   // Create a new jsPDF instance
@@ -14,13 +14,13 @@ const generateCertificate = (name: string, course: string) => {
   doc.addImage(img.src, 'PNG', 15, 40, 180, 160);
 
   // Add recipient name
-  doc.setFontSize(36);
+  doc.setFontSize(20);
   doc.setFont('helvetica'); // Change the font family and style
-  doc.text(name, 103, 140, { align: 'center' }); // 105 and 160: horizontal and vertical positions of the text
+  doc.text(name, 103, 110, { align: 'center' }); // 105 and 160: horizontal and vertical positions of the text
 
   // Add course name
-  doc.setFontSize(20);
-  doc.text(course, 105, 167, { align: 'center' }); // 105 and 195: horizontal and vertical positions of the text
+  doc.setFontSize(17);
+  doc.text(course, 105, 132, { align: 'center' }); // 105 and 195: horizontal and vertical positions of the text
 
   // Save the PDF
   doc.save(`${name}-${course}.pdf`);

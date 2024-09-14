@@ -13,17 +13,14 @@ const InstructorForm = () => {
             </div>
             <div className="py-10 px-10 flex justify-center lg:justify-around items-start gap-x-20 text-justify">
                 <div className="hidden lg:flex flex-col gap-y-8 source-sans-3-regular">
-                    <p>
-                        Passionate about teaching? Looking for a platform where you can share your knowledge, connect with professionals, and enrich careers, all while earning supplemental income?
-                    </p>
-                    <img src={InstructorImage.src} alt="Instructor Page Image" className="h-[350px] rounded-sm" />
                     <div className="flex flex-col gap-y-4">
                         <h1 className="oxygen-bold text-2xl">
-                            Change the Lives of other, earn and grow.
+                            Change the Lives of other. Learn, Earn and Grow.
                         </h1>
                         <p>
                             Do you want to change the life of others, earn respect & recognition.if you are a subject matter expert (SEM), share your knowledge with others in your free time and on weekends, skill & help others to get a job, connect with professionals, and enrich careers, at the same time earn respectable income for yourself. If you are looking for a platform where you can share your knowledge and earn handsome income for yourself, you are at right place.
                         </p>
+                        <img src={InstructorImage.src} alt="Instructor Page Image" className="h-[350px] rounded-sm" />
                         <p>
                             At SkillTech, our constant endeavour is to create a network of world-class trainers and subject matter expert who, in turn, create high-quality courseware& training materialacross cutting edge domains , especially Software, Automation, Artificial Intelligence, Data Science Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning, AI & NLP, Engineering, Manufacturing Technology, Mechanical & Automobiles technology, Business & Business Application Business, Accounts & Finance, Business & Management, Process Engineering, Industrial Engineering, Electronic & Electrical Technology, Communication Technology, vocational trainings.
                         </p>

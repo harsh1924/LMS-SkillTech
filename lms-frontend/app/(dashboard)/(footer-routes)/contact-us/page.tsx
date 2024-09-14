@@ -1,11 +1,15 @@
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
+import ContactUsImage from '@/app/helpers/images/ContactUs.jpg'
 
 const ContactUsPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="py-10 px-10 flex justify-center items-center oxygen-regular">
+            <div className="py-10 px-10 flex justify-center lg:justify-around items-center source-sans-3-regular">
+                <div className="">
+                    <img src={ContactUsImage.src} alt="Contact us page image" height={500} width={500} className="hidden lg:flex" />
+                </div>
                 <div className="py-6 px-5 shadow-lg rounded-md md:shadow-[0_0_20px_#347dfb] flex justify-center items-center flex-col border">
                     <h3 className="text-xl pb-2">
                         CONTACT US

@@ -2,6 +2,11 @@ import { Book, Cloud, Computer, ComputerIcon, Laptop, WashingMachine } from "luc
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 
+import Bharti from '@/app/helpers/images/Team/Bharti.jpg'
+import Akhil from '@/app/helpers/images/Team/Akhil.png'
+import Rakesh from '@/app/helpers/images/Team/Rakesh.jpg'
+
+
 const AboutUsPage = () => {
     return (
         <div>
@@ -73,8 +78,9 @@ const AboutUsPage = () => {
                         Meet the Leadership Team
                     </h1>
                     <div className="flex gap-10 flex-wrap px-4 lg:px-10">
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
+                        <div className="rounded-sm w-[300px] group transition-all duration-300 ease-in-out h-[420px]">
                             <div className="group-hover:hidden">
+                                <img src={Bharti.src} alt="Bharti Biswas" className="h-[300px] w-[300px] mb-3" />
                                 <h2 className="oxygen-bold">
                                     Bharti Biswas
                                 </h2>
@@ -82,12 +88,13 @@ const AboutUsPage = () => {
                                     Co-Founder and Managing Director
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out border h-full p-5 rounded-sm">
                                 A serial entrepreneur and business woman, with over 15 year experience with corporates, she has developed and matured many growth team across India, her strategic vision and guidance is instrumental in the growth of SkillTech, touching new height every quarter. Alumnus of NIT and IIM Raipur, she began her career with Meta in Corporate Strategy.
                             </p>
                         </div>
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
+                        <div className="rounded-sm w-[300px] group transition-all duration-300 ease-in-out h-[420px]">
                             <div className="group-hover:hidden">
+                                <img src={Rakesh.src} alt="Bharti Biswas" className="h-[300px] w-[300px] mb-3" />
                                 <h2 className="oxygen-bold">
                                     Dr. Rakesh Kumar
                                 </h2>
@@ -95,12 +102,13 @@ const AboutUsPage = () => {
                                     Financial Advisor and Strategic Partner.
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out border h-full p-5 rounded-sm">
                                 A teacher by profession in a prestigious university in India, he is guiding and helping SkillTech to achieve positive revenue growth and achieving revenue targets. He is guiding SkillTech commercial team for B2B business. He is holding PHD from Himachal University and Alumnus of IIT Delhi.
                             </p>
                         </div>
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
+                        <div className="rounded-sm w-[300px] group transition-all duration-300 ease-in-out h-[420px]">
                             <div className="group-hover:hidden">
+                                <img src={Akhil.src} alt="Bharti Biswas" className="h-[300px] w-[300px] mb-3" />
                                 <h2 className="oxygen-bold">
                                     Akhil Biswas
                                 </h2>
@@ -108,11 +116,11 @@ const AboutUsPage = () => {
                                     Technology Officer
                                 </p>
                             </div>
-                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
-                            Alumnus of IIT Delhi, he has started his career with leading global NMC. He worked many global companies in Europe, USA, UK and many other countries around the world. SkillTech is achieving positive growth under his guidance. He is continuously bringing innovation in SkillTech technology requirement. 
+                            <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out border h-full p-5 rounded-sm">
+                                Alumnus of IIT Delhi, he has started his career with leading global NMC. He worked many global companies in Europe, USA, UK and many other countries around the world. SkillTech is achieving positive growth under his guidance. He is continuously bringing innovation in SkillTech technology requirement.
                             </p>
                         </div>
-                        <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
+                        {/* <div className="border p-5 rounded-sm w-[360px] group transition-all duration-300 ease-in-out h-[300px]">
                             <div className="group-hover:hidden">
                                 <h2 className="oxygen-bold">
                                     S. Kumar
@@ -124,7 +132,7 @@ const AboutUsPage = () => {
                             <p className="hidden group-hover:flex transition-all source-sans-3-regular duration-300 ease-in-out">
                             A marketer by profession, he hold MBA in sales and marketing from prestigious institute in Delhi. He has a rich experience of 18 years in sales and marketing. He is helping Skilltech to acquire new Business and Clients. Under his guidance Skilltech is achieving new height.
                             </p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

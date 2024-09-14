@@ -1,7 +1,7 @@
 'use client'
 
 import '@/app/helpers/Certificate.css'
-import certificateImage from '@/app/helpers/Blue and Yellow Vector Modern Completion Certificate.png'
+import certificateImage from '@/app/helpers/images/Final Certificate-01.jpg'
 
 import {
     FacebookShareButton,
@@ -18,7 +18,6 @@ import axios from 'axios';
 import {
     FacebookIcon,
 } from 'next-share'
-import Head from 'next/head';
 import { Linkedin } from 'lucide-react';
 import { Logo } from '@/app/(dashboard)/_components/logo';
 import { usePathname } from 'next/navigation';
@@ -59,7 +58,7 @@ const PDFCertificate = ({
         toPng(ref.current, { cacheBust: true, })
             .then((dataUrl) => {
                 const link = document.createElement('a')
-                link.download = 'Blue and Yellow Vector Modern Completion Certificate.png'
+                link.download = `${course} Certificate`
                 link.href = dataUrl
                 link.click()
 
@@ -104,11 +103,11 @@ const PDFCertificate = ({
                 <div className='flex flex-col gap-y-6 items-center lg:items-start justify-around lg:flex-row py-10 px-16'>
                     <div className="w-[300px] md:w-[500px] lg:w-[800px] relative" ref={ref}>
                         <Image alt='Certificate Image' className='border border-black' src={certificateImage} />
-                        <div className="absolute top-[120px] md:top-[195px] lg:top-[320px] left-0 w-full">
-                            <h1 className='oxygen-bold md:text-2xl lg:text-4xl font-sans flex text-[13px] text-orange-600 items-center justify-center mb-[15px] md:mb-[30px] lg:mb-[60px]'>
+                        <div className="absolute top-[80px] md:top-[135px] lg:top-[220px] left-0 w-full">
+                            <h1 className='md:text-xl lg:text-4xl source-sans-3-bold flex text-[10px]  text-primarycolor items-center justify-center mb-[15px] md:mb-[23px] lg:mb-[43px]'>
                                 {name}
                             </h1>
-                            <p className='oxygen-semibold text-orange-600 text-[13px] md:text-lg lg:text-xl flex justify-center items-center'>
+                            <p className='text-primarycolor source-sans-3-bold text-[10px] md:text-[16px] lg:text-2xl flex justify-center items-center'>
                                 {course}
                             </p>
                         </div>

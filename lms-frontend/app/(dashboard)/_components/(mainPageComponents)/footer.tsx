@@ -84,7 +84,7 @@ export const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="px-5 py-6">
+                <div className="px-10 py-6">
                     <p className="text-white text-lg oxygen-regular">
                         Get In Touch
                     </p>

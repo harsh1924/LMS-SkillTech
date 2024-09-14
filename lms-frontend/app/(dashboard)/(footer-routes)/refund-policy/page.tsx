@@ -7,7 +7,7 @@ const RefundpolicyPage = () => {
         <div>
             <HomeNavbar />
             <div className="text-justify">
-                <h1 className="oxygen-bold text-primarycolor text-xl lg:text-3xl px-4 lg:px-10 py-6">
+                <h1 className="oxygen-bold text-xl lg:text-3xl px-4 lg:px-10 py-6">
                     Refund Policy
                 </h1>
                 <div className="px-4 lg:px-10 pb-3 source-sans-3-regular text-lg">
@@ -26,7 +26,8 @@ const RefundpolicyPage = () => {
                         To qualify for a refund, you must:
                         <ol className="px-4 list-decimal list-outside">
                             <li>
-                                Submit your refund request within 7 days of purchasing a course via mail.
+                                Submit your refund request within 7 days of purchasing a course via mail to
+                                <span className="font-bold">info@skilltechindia.net</span>
                             </li>
                             <li>
                                 You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care
@@ -38,7 +39,7 @@ const RefundpolicyPage = () => {
                                 Provide the details of course, purchase date and amount.
                             </li>
                             <li>
-                                Refund will be processed in 7 working days .
+                                Refund will be processed in 7 working days.
                             </li>
                         </ol>
                     </div>
@@ -48,13 +49,13 @@ const RefundpolicyPage = () => {
                 </div>
                 <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
                     <h1 className="oxygen-bold text-xl lg:text-2xl">
-                        Term and condition for University Partnered Programs /Bootcamps:
+                        Term and condition for University Partnered Programs / Bootcamps:
                     </h1>
                     <div className="flex flex-col gap-y-2">
                         To qualify for a refund, you must submit your refund request within 7 days from the start date of the regular class (Live or Recorded as the case maybe) whether attended or not. Any refund request failing to meet this requirement will not be accepted and no refund will be provided.
                         <ol className="px-4 list-decimal list-outside">
                             <li>
-                                Submit your refund request within 7 days of purchasing a course via mail.
+                                Submit your refund request within 7 days of purchasing a course via mail to <span className="font-bold">info@skilltechindia.net</span>
                             </li>
                             <li>
                                 You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care.
@@ -66,7 +67,7 @@ const RefundpolicyPage = () => {
                                 Provide the details of course, purchase date and amount.
                             </li>
                             <li>
-                                working days .
+                            Refund will be processed in 7 working days.
                             </li>
                         </ol>
                     </div>
@@ -76,13 +77,13 @@ const RefundpolicyPage = () => {
                 </div>
                 <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
                     <h1 className="oxygen-bold text-xl lg:text-2xl">
-                        Term and condition for Cancellation& Refunds: For CSM, CSPO, PSM, PSPO programs:
+                        Term and condition for Cancellation & Refunds
                     </h1>
                     <div className="flex flex-col gap-y-2">
                         We reserve the right to reschedule/cancel a class/session due to any unavoidable circumstances, or change the location of a class [if applicable]. To qualify for a refund, you must:
                         <ol className="px-4 list-decimal list-outside">
                             <li>
-                                Submit your refund request within 7 days of purchasing a course via mail.
+                                Submit your refund request within 7 days of purchasing a course via mail to <span className="font-bold">info@skilltechindia.net</span>
                             </li>
                             <li>
                                 You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care.
@@ -94,7 +95,7 @@ const RefundpolicyPage = () => {
                                 Provide the details of course, purchase date and amount.
                             </li>
                             <li>
-                                working days .
+                            Refund will be processed in 7 working days.
                             </li>
                         </ol>
                     </div>

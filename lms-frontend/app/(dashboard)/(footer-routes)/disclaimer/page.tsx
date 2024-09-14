@@ -6,10 +6,10 @@ const DisclaimerPage = () => {
         <div>
             <HomeNavbar />
             <div className="text-justify py-10 px-10 flex flex-col gap-y-3">
-                <h1 className="oxygen-bold text-primarycolor text-xl lg:text-3xl">
+                <h1 className="oxygen-bold text-xl lg:text-2xl">
                     Disclaimer
                 </h1>
-                <ul className="list-disc list-outside flex flex-col gap-y-3 px-5">
+                <ul className="list-disc list-outside flex flex-col gap-y-3 px-5 source-sans-3-regular">
                     <li>
                         PMP, PMI, PgMP, PfMP, ACP, PBA, RMP, PMBOK, CAPM, SP, and OPM3 are registered marks of the Project Management Institute, Inc.
                     </li>

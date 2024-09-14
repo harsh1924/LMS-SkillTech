@@ -10,10 +10,10 @@ const TermsOfUse = () => {
             </div>
             <div className="px-4 lg:px-10 py-6 flex flex-col gap-y-8 text-justify">
                 <div className="flex flex-col gap-y-3 lg:gap-y-6">
-                    <h1 className="oxygen-bold text-2xl lg:text-4xl">
+                    <h1 className="oxygen-bold text-xl lg:text-4xl">
                         SkillTech Terms and Conditions
                     </h1>
-                    <p className="lg:text-2xl source-sans-3-regular">
+                    <p className="lg:text-xl source-sans-3-regular">
                         Welcome to SkillTech! These Terms and Conditions govern your use of the SkillTech website and services. By accessing or using SkillTech, you agree to be bound by these Terms and Conditions. Please read them carefully before proceeding.
                     </p>
                 </div>

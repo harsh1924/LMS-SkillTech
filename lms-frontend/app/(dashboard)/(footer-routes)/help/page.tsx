@@ -8,28 +8,28 @@ const HelpPage = () => {
             <div className="w-full">
                 <HomeNavbar />
             </div>
-            <div className="px-3 lg:px-16 py-10 flex flex-col gap-y-8 text-justify">
+            <div className="px-4 lg:px-10 py-6 flex flex-col gap-y-8 text-justify">
                 <div className="flex flex-col gap-y-3 lg:gap-y-6">
-                    <h1 className="oxygen-bold text-2xl lg:text-4xl">
+                    <h1 className="oxygen-bold text-xl lg:text-2xl">
                         SkillTech Help Page
                     </h1>
-                    <p className="lg:text-2xl source-sans-3-regular">
+                    <p className="lg:text-xl source-sans-3-regular">
                         Welcome to SkillTech Help! Here you will find answers to common questions and issues related to using our website effectively.
                     </p>
                 </div>
                 <div className="flex flex-col gap-y-4 lg:gap-y-4">
-                    <h2 className="oxygen-bold text-lg lg:text-2xl">
+                    <h2 className="oxygen-bold text-xl">
                         1. Getting Started
                     </h2>
                     <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg lg:text-2xl">
+                        <h3 className="oxygen-bold text-lg">
                             Creating an Account
                         </h3>
-                        <p className="lg:text-xl source-sans-3-regular">
+                        <p className="source-sans-3-regular">
                             To create an account on SkillTech:
                         </p>
                         <div className="flex flex-col gap-y-2">
-                            <div className="lg:text-xl source-sans-3-regular">
+                            <div className="source-sans-3-regular">
                                 <ol className="list-decimal px-6">
                                     <li>
                                         Navigate to the homepage.
@@ -51,14 +51,14 @@ const HelpPage = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg lg:text-2xl">
+                        <h3 className="oxygen-bold text-lg">
                             Logging In
                         </h3>
-                        <p className="lg:text-xl source-sans-3-regular">
+                        <p className="source-sans-3-regular">
                             To log into your SkillTech account:
                         </p>
                         <div className="flex flex-col gap-y-2">
-                            <div className="lg:text-xl source-sans-3-regular">
+                            <div className="source-sans-3-regular">
                                 <ol className="list-decimal px-6">
                                     <li>
                                         Go to the homepage.
@@ -77,14 +77,14 @@ const HelpPage = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg lg:text-2xl">
+                        <h3 className="oxygen-bold text-lg">
                             Resetting Password
                         </h3>
-                        <p className="lg:text-xl source-sans-3-regular">
+                        <p className="source-sans-3-regular">
                             If you forget your password:
                         </p>
                         <div className="flex flex-col gap-y-2">
-                            <div className="lg:text-xl source-sans-3-regular">
+                            <div className="source-sans-3-regular">
                                 <ol className="list-decimal px-6">
                                     <li>
                                         Go to the login page.
@@ -106,18 +106,18 @@ const HelpPage = () => {
                 <Separator />
 
                 <div className="flex flex-col gap-y-4 lg:gap-y-4">
-                    <h2 className="oxygen-bold text-lg lg:text-2xl">
+                    <h2 className="oxygen-bold text-lg lg:text-xl">
                         2. Using SkillTech
                     </h2>
                     <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg lg:text-2xl">
+                        <h3 className="oxygen-bold text-lg">
                             Browsing Courses
                         </h3>
-                        <p className="lg:text-xl source-sans-3-regular">
+                        <p className="source-sans-3-regular">
                             To find courses on SkillTech:
                         </p>
                         <div className="flex flex-col gap-y-2">
-                            <div className="lg:text-xl source-sans-3-regular">
+                            <div className="source-sans-3-regular">
                                 <ol className="list-decimal px-6">
                                     <li>
                                         Browse the homepage for featured courses.
@@ -133,14 +133,14 @@ const HelpPage = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg lg:text-2xl">
+                        <h3 className="oxygen-bold text-lg">
                             Enrolling in Courses
                         </h3>
-                        <p className="lg:text-xl source-sans-3-regular">
+                        <p className="source-sans-3-regular">
                             To enroll in a course:
                         </p>
                         <div className="flex flex-col gap-y-2">
-                            <div className="lg:text-xl source-sans-3-regular">
+                            <div className="source-sans-3-regular">
                                 <ol className="list-decimal px-6">
                                     <li>
                                         Go to the course page.
@@ -156,14 +156,14 @@ const HelpPage = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg lg:text-2xl">
+                        <h3 className="oxygen-bold text-lg">
                             Managing Your Profile
                         </h3>
-                        <p className="lg:text-xl source-sans-3-regular">
+                        <p className="source-sans-3-regular">
                             To manage your profile:
                         </p>
                         <div className="flex flex-col gap-y-2">
-                            <div className="lg:text-xl source-sans-3-regular">
+                            <div className="source-sans-3-regular">
                                 <ol className="list-decimal px-6">
                                     <li>
                                         Click on your profile icon.

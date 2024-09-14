@@ -24,7 +24,7 @@ const AboutUsPage = () => {
                             our training “mostly on-job trainings” enable candidate to get job faster as per their skillset.Our education programs and certifications helps learners to achieve their career goals. Founded in 2015, based in New Delhi, India. SkillTech trainings is specially designed and developed to skill, reskill and upskill Indian individuals through an online and offline training platform.
                         </p>
                     </div>
-                    <div className="py-10 px-4 lg:px-12 flex justify-center gap-x-8 flex-wrap gap-y-3 items-center">
+                    {/* <div className="py-10 px-4 lg:px-12 flex justify-center gap-x-8 flex-wrap gap-y-3 items-center">
                         <div className="border rounded-sm w-[310px]">
                             <span className="flex items-center border border-[#76C3EF] bg-[#DBEEFF] oxygen-bold px-6 py-8 gap-x-2 text-xl">
                                 <Computer size={20} />
@@ -55,7 +55,7 @@ const AboutUsPage = () => {
                                 AI & NLP
                             </span>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="py-10 px-4 lg:px-12">
                         <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
                             Who Are We?

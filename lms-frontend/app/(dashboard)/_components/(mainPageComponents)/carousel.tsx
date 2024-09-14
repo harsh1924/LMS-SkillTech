@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import Banner1 from '@/app/helpers/images/Banner-images/Banner1.jpg'
 import Banner2 from '@/app/helpers/images/Banner-images/Banner2.jpg'
-import Banner3 from '@/app/helpers/images/Banner-images/Banner2.jpg'
+import Banner3 from '@/app/helpers/images/Banner-images/Banner3.jpg'
 import Banner4 from '@/app/helpers/images/Banner-images/BAnner4.jpg'
 
 

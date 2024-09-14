@@ -24,7 +24,7 @@ export default function Home() {
       {/* Navbar */}
       <HomeNavbar />
 
-      <div className=" hidden lg:flex">
+      <div className="hidden lg:flex">
         <HomePageCarousel />
       </div>
 

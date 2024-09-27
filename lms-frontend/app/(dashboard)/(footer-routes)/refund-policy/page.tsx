@@ -6,11 +6,11 @@ const RefundpolicyPage = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="text-justify">
-                <h1 className="oxygen-bold text-xl lg:text-3xl px-4 lg:px-10 py-6">
+            <div className="text-justify py-3">
+                <h1 className="source-sans-3-bold text-xl px-4 lg:px-10 py-2">
                     Refund Policy
                 </h1>
-                <div className="px-4 lg:px-10 pb-3 source-sans-3-regular text-lg">
+                <div className="px-4 lg:px-10 pb-3 source-sans-3-regular">
                     <p>
                         Thank you for purchasing our courses. We hope you will learn a lot from our course material which will help you to achieve the required skill for your career.
                     </p>
@@ -18,8 +18,8 @@ const RefundpolicyPage = () => {
                         We understand that due to some unavoidable circumstances you require to reschedule or re-plan your course and you may require refund. We governed by terms and conditions , when you buy a training course from us, you agree to our Privacy Policy, Terms of Use&our Refund Policy.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="px-4 lg:px-10 py-3 source-sans-3-regular flex flex-col gap-y-3">
+                    <h1 className="source-sans-3-bold text-xl">
                         Term and Condition for Self Paced Learning and Instructor Led Training:
                     </h1>
                     <div className="flex flex-col gap-y-2">
@@ -27,7 +27,7 @@ const RefundpolicyPage = () => {
                         <ol className="px-4 list-decimal list-outside">
                             <li>
                                 Submit your refund request within 7 days of purchasing a course via mail to
-                                <span className="font-bold">info@skilltechindia.net</span>
+                                <span className="font-bold pl-1">info@skilltechindia.net</span>
                             </li>
                             <li>
                                 You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care
@@ -47,8 +47,8 @@ const RefundpolicyPage = () => {
                         Any refund request failing to meet any of the requirements will not be accepted and no refund will be provided.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="px-4 lg:px-10 py-3 source-sans-3-regular flex flex-col gap-y-3">
+                    <h1 className="source-sans-3-bold text-xl">
                         Term and condition for University Partnered Programs / Bootcamps:
                     </h1>
                     <div className="flex flex-col gap-y-2">
@@ -75,8 +75,8 @@ const RefundpolicyPage = () => {
                         For instructor led training & University Partnered programs, Skilltech reserves the right to reschedule/cancel a class/session due to any unavoidable circumstances.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="px-4 lg:px-10 py-3 source-sans-3-regular flex flex-col gap-y-3">
+                    <h1 className="source-sans-3-bold text-xl">
                         Term and condition for Cancellation & Refunds
                     </h1>
                     <div className="flex flex-col gap-y-2">
@@ -100,7 +100,7 @@ const RefundpolicyPage = () => {
                         </ol>
                     </div>
                 </div>
-                <p className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
+                <p className="px-4 lg:px-10 py-3 source-sans-3-regular">
                     Any refund request failing to meet any of the requirements will not be accepted and no refund will be provided.
                 </p>
             </div>

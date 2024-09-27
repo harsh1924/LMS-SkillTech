@@ -102,9 +102,6 @@ export const Footer = () => {
                                 Email Address:
                             </p>
                             <p>
-                                Send Resume : cv@skilltechindia.net
-                            </p>
-                            <p>
                                 For Information : info@skilltechindia.net
                             </p>
                         </div>

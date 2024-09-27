@@ -6,12 +6,12 @@ const PrivacyPolicy = () => {
     return (
         <div>
             <HomeNavbar />
-            <div className="text-justify">
-                <h1 className="oxygen-bold text-xl lg:text-3xl px-4 lg:px-10 py-6">
+            <div className="text-justify py-6 px-4 lg:px-10">
+                <h1 className="source-sans-3-bold text-xl pb-2">
                     Privacy Policy
                 </h1>
-                <div className="px-4 lg:px-10 pb-3 source-sans-3-regular text-lg">
-                    <h1 className="source-sans-3-semibold text-xl lg:text-3xl pb-3">
+                <div className="pb-3 source-sans-3-regular">
+                    <h1 className="source-sans-3-bold pb-3 text-lg">
                         Purpose
                     </h1>
                     <p>
@@ -24,8 +24,8 @@ const PrivacyPolicy = () => {
                         For the purpose of this Privacy Policy, sensitive personal data or information of a personal nature is as defined under applicable privacy laws. Please note that usage of the terms personal information/ personally identifiable information/ personal data, in this Privacy Policy includes sensitive personal data or information, wherever appropriate and/or mandated under applicable privacy laws.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
-                    <h1 className="source-sans-3-semibold text-xl lg:text-3xl pb-3">
+                <div className="py-3 source-sans-3-regular">
+                    <h1 className="source-sans-3-bold text-xl pb-3">
                         Notice to End Users
                     </h1>
                     <p>
@@ -38,16 +38,16 @@ const PrivacyPolicy = () => {
                         Our client must have the authority to act on behalf of the end-user and to consent to the collection and use of their personal information as described in this privacy policy. If you are an End-User using our website, please direct your privacy inquiries to your administrator. We are not responsible for the privacy or security practices of our clients, which may differ from those set forth in this privacy statement
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
-                    <h1 className="source-sans-3-semibold text-xl lg:text-3xl pb-3">
+                <div className="py-3 source-sans-3-regular">
+                    <h1 className="source-sans-3-bold text-xl pb-3">
                         Use of your Personal Information and Other Data
                     </h1>
                     <p>
                         Skiltech uses this privacy policy to govern the use of personal information of users. We use your personal information solely to provide our services to you.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
-                    <h1 className="source-sans-3-semibold text-xl lg:text-3xl pb-3">
+                <div className="py-3 source-sans-3-regular">
+                    <h1 className="source-sans-3-bold text-xl pb-3">
                         Personal Identifiable Information
                     </h1>
                     <p>
@@ -76,8 +76,8 @@ const PrivacyPolicy = () => {
                         Users may, however, visit our Site anonymously. We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identifiable information, except that it may prevent them from engaging in certain Site related activities.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
-                    <h1 className="source-sans-3-semibold text-xl lg:text-3xl pb-3">
+                <div className="py-3 source-sans-3-regular">
+                    <h1 className="source-sans-3-bold text-xl pb-3">
                         Non-Personal Identifiable Data:
                     </h1>
                     <p>
@@ -107,8 +107,8 @@ const PrivacyPolicy = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
-                    <h1 className="source-sans-3-semibold text-xl lg:text-3xl pb-3">
+                <div className="py-3 source-sans-3-regular">
+                    <h1 className="source-sans-3-bold text-xl pb-3">
                         Use
                     </h1>
                     <p>
@@ -179,7 +179,7 @@ const PrivacyPolicy = () => {
                         </li>
                     </ul>
                 </div>
-                <p className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg">
+                <p className="py-3 source-sans-3-regular text-lg">
                     For any enquiry please contact us via email:
                     <span className="font-bold pl-1">
                         info@skilltechindia.net

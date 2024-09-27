@@ -9,20 +9,20 @@ const HelpPage = () => {
                 <HomeNavbar />
             </div>
             <div className="px-4 lg:px-10 py-6 flex flex-col gap-y-8 text-justify">
-                <div className="flex flex-col gap-y-3 lg:gap-y-6">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="flex flex-col gap-y-1">
+                    <h1 className="source-sans-3-bold text-xl lg:text-2xl">
                         SkillTech Help Page
                     </h1>
-                    <p className="lg:text-xl source-sans-3-regular">
+                    <p className="text-[18px] source-sans-3-regular">
                         Welcome to SkillTech Help! Here you will find answers to common questions and issues related to using our website effectively.
                     </p>
                 </div>
-                <div className="flex flex-col gap-y-4 lg:gap-y-4">
-                    <h2 className="oxygen-bold text-xl">
+                <div className="flex flex-col gap-y-2">
+                    <h2 className="source-sans-3-bold text-xl">
                         1. Getting Started
                     </h2>
-                    <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg">
+                    <div className="flex flex-col gap-y-2">
+                        <h3 className="source-sans-3-bold text-lg">
                             Creating an Account
                         </h3>
                         <p className="source-sans-3-regular">
@@ -50,8 +50,8 @@ const HelpPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg">
+                    <div className="flex flex-col gap-y-2">
+                        <h3 className="source-sans-3-bold text-lg">
                             Logging In
                         </h3>
                         <p className="source-sans-3-regular">
@@ -76,8 +76,8 @@ const HelpPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg">
+                    <div className="flex flex-col gap-y-2">
+                        <h3 className="source-sans-3-bold text-lg">
                             Resetting Password
                         </h3>
                         <p className="source-sans-3-regular">
@@ -105,12 +105,12 @@ const HelpPage = () => {
                 </div>
                 <Separator />
 
-                <div className="flex flex-col gap-y-4 lg:gap-y-4">
-                    <h2 className="oxygen-bold text-lg lg:text-xl">
+                <div className="flex flex-col gap-y-2">
+                    <h2 className="source-sans-3-bold text-lg lg:text-xl">
                         2. Using SkillTech
                     </h2>
-                    <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg">
+                    <div className="flex flex-col gap-y-2">
+                        <h3 className="source-sans-3-bold text-lg">
                             Browsing Courses
                         </h3>
                         <p className="source-sans-3-regular">
@@ -132,8 +132,8 @@ const HelpPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg">
+                    <div className="flex flex-col gap-y-2">
+                        <h3 className="source-sans-3-bold text-lg">
                             Enrolling in Courses
                         </h3>
                         <p className="source-sans-3-regular">
@@ -155,8 +155,8 @@ const HelpPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-y-3">
-                        <h3 className="oxygen-bold text-lg">
+                    <div className="flex flex-col gap-y-2">
+                        <h3 className="source-sans-3-bold text-lg">
                             Managing Your Profile
                         </h3>
                         <p className="source-sans-3-regular">
@@ -185,7 +185,7 @@ const HelpPage = () => {
                 <Separator />
 
 
-                <p className="text-lg source-sans-3-regular">
+                <p className="source-sans-3-regular">
                     This help page should provide you with the necessary information to navigate and use SkillTech effectively. If you have any specific questions or concerns not covered here, please don't hesitate to contact our support team. Happy learning!
                 </p>
             </div>

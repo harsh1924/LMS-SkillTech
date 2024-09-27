@@ -5,11 +5,11 @@ const InterviewTipsPage = () => {
     return (
         <div className="text-justify">
             <HomeNavbar />
-            <div>
-                <h1 className="oxygen-bold text-xl lg:text-3xl px-4 lg:px-10 py-6">
+            <div className="px-4 lg:px-10 py-6 flex flex-col gap-y-3 source-sans-3-regular">
+                <h1 className="source-sans-3-bold text-lg pb-1">
                     Preparation For Interview
                 </h1>
-                <div className="px-4 lg:px-10 pb-3 source-sans-3-regular text-lg">
+                <div>
                     <p>
                         An interview is a chance for an employer to see if you're the right person for the job. It's also a chance for you to make sure the job and company are the right fit for you.
                     </p>
@@ -17,16 +17,16 @@ const InterviewTipsPage = () => {
                         Make a good impression at a job interview, by carefully answering the question. Read about the job and company before the interview.
                     </p>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="flex flex-col gap-y-1">
+                    <h1 className="source-sans-3-bold text-lg">
                         Interview Questions
                     </h1>
-                    <div className="flex flex-col gap-y-2">
+                    <div className="flex flex-col gap-y-1">
                         Employers use different types of questions when interviewing. The question may include technical knowledge, subject matter, personal question, analytical question and situational awareness question.
                         <p>
                             Interviewer will check you on below points.
                         </p>
-                        <ul className="px-6 list-disc list-outside">
+                        <ul className="list-disc list-inside">
                             <li>
                                 Competency to support the job role.
                             </li>
@@ -51,11 +51,11 @@ const InterviewTipsPage = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
-                        Prepared well:
+                <div className="flex flex-col gap-y-1">
+                    <h1 className="source-sans-3-bold text-lg">
+                        Prepared well
                     </h1>
-                    <div className="flex flex-col gap-y-2">
+                    <div className="flex flex-col gap-y-1">
                         <p>
                             Read the job description and person specification carefully. Be clear on the skills and qualities the employer is looking for
                         </p>
@@ -64,12 +64,12 @@ const InterviewTipsPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
-                        Before interview:
+                <div className="flex flex-col gap-y-1">
+                    <h1 className="source-sans-3-bold text-lg">
+                        Before interview
                     </h1>
-                    <div className="flex flex-col gap-y-2">
-                        <ul className="px-6 list-disc list-outside">
+                    <div className="flex flex-col gap-y-1">
+                        <ul className="list-disc list-inside">
                             <li>
                                 Turn off your phone
                             </li>
@@ -85,12 +85,12 @@ const InterviewTipsPage = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-3">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="flex flex-col gap-y-1">
+                    <h1 className="source-sans-3-bold text-lg">
                         The Interview
                     </h1>
-                    <div className="flex flex-col gap-y-2">
-                        <ul className="px-6 list-disc list-outside">
+                    <div className="flex flex-col gap-y-1">
+                        <ul className="list-disc list-inside">
                             <li>
                                 Be polite and use the right language and tone for a formal situation
                             </li>
@@ -115,8 +115,8 @@ const InterviewTipsPage = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="px-4 lg:px-10 py-3 source-sans-3-regular text-lg flex flex-col gap-y-8">
-                    <h1 className="oxygen-bold text-xl lg:text-2xl">
+                <div className="flex flex-col gap-y-5">
+                    <h1 className="source-sans-3-bold text-lg">
                         Interview:Tips, Question and Answer:
                     </h1>
                     <div className="flex flex-col gap-y-1.5">

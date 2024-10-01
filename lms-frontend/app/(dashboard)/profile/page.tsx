@@ -98,7 +98,9 @@ const userIdPage = () => {
                         {!isTrainer && !isAdmin && (
                             <HoverAllCourses />
                         )}
-                        <SearchPage />
+                        <div className="hidden md:flex">
+                            <SearchPage />
+                        </div>
                         <div className="flex gap-x-3 items-center">
                             {!isAdmin && (
                                 <div>

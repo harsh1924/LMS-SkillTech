@@ -105,7 +105,7 @@ export async function POST(request: NextRequest,
         Course Name: ${course.title}
     </p>
     <p>
-        Order Number: ${razorpayPaymentId}
+        Payment Number: ${razorpayPaymentId}
     </p>
     <p>
         Date of Purchase: ${date}/${month}/${year} ${hours}:${minutes}
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest,
         User Name: ${user.name}
     </p>
     <p>
-        Order Number: ${razorpayPaymentId}
+        Payment Number: ${razorpayPaymentId}
     </p>
     <p>
         Date of Purchase: ${date}/${month}/${year} ${hours}:${minutes}

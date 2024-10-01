@@ -17,25 +17,25 @@ const DownloadReportsPage = () => {
         const res = await axios.get('/api/get-all-payment-details');
         const data = res.data.payments;
         setPaymentReportData(data);
+        getEnrolledusers();
         setIsLoading(false);
     }
     const getEnrolledusers = async () => {
         const res = await axios.get('/api/get-enrolled-users');
         const data = res.data.enrolledUsers;
         setEnrolledUsersReportData(data);
-        setIsLoading(false);
+        getAllUsers();
     }
     const getAllUsers = async () => {
         const res = await axios.get('/api/get-all-users');
         const data = res.data.allUsers;
         setAllUsersReportData(data);
-        setIsLoading(false);
+        getAllTrainers();
     }
     const getAllTrainers = async () => {
         const res = await axios.get('/api/get-trainer-details');
         const data = res.data.allUsers;
         setAllTrainersData(data);
-        setIsLoading(false);
     }
 
 
@@ -53,10 +53,7 @@ const DownloadReportsPage = () => {
     }
 
     useEffect(() => {
-        getPayments(),
-            getEnrolledusers(),
-            getAllUsers(),
-            getAllTrainers()
+        getPayments()
     }, []);
 
 

@@ -25,7 +25,7 @@ const EnrolledUsers = ({
                 {phoneNumber}
             </div>
             <div className="">
-                {userProgress.map((e: { course: any }) => <EnrolledUserCourses id={e.course.id} />)}
+                {userProgress.map((e: { course: any }) => <EnrolledUserCourses id={e.course.id} key={e.course.id} />)}
             </div>
         </div>
     );

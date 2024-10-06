@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
-import { File, ImageIcon, Pencil, PlusCircle } from 'lucide-react';
+import { File, ImageIcon, Pencil, PlusCircle, Trash } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
@@ -51,9 +51,7 @@ export const AttachmentForm = ({
         } catch (error: any) {
             toast.error('Something went wrong')
             console.log(error.message);
-
         }
-
     }
 
     return (
@@ -74,6 +72,7 @@ export const AttachmentForm = ({
                         <>
                             <Pencil className='h-4 w-4 mr-2' />
                             Upload File
+
                         </>
                     )}
                 </Button>
@@ -89,9 +88,14 @@ export const AttachmentForm = ({
             )}
             {initialData.syllabus && (
                 <div className='flex gap-x-2'>
-                    <File className='text-sky-500'/>
+                    <File className='text-sky-500' />
                     {initialData.syllabus}
                 </div>
+            )}
+            {initialData.syllabus && (
+                <Button className='mt-2 flex items-center'>
+                    Delete File
+                </Button>
             )}
             {isEditing && (
                 <div>

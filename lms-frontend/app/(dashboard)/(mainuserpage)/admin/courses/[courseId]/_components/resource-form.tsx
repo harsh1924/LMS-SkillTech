@@ -58,10 +58,24 @@ export const ResourceForm = ({
         } catch (error: any) {
             toast.error('Something went wrong')
             console.log(error.message);
-            
         }
-
     }
+
+    const deleteResource = async () => {
+        try {
+            const type = {
+                type: 'Resource'
+            };
+            await axios.put(`/api/course/${courseId}/deleteSyllabus`, type);
+            toast.success('Resource Link Removed');
+            router.refresh();
+        } catch (error: any) {
+            toast.error('Something went wrong')
+            console.log(error.message);
+        }
+    }
+
+    //https://drive.google.com/drive/folders/1uPIHbXr6R1rb-kfY7zR6z20r2pdJboSA
 
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
@@ -83,6 +97,20 @@ export const ResourceForm = ({
                     {initialData.resource}
                 </p>
             )}
+            {!isEditing && (
+                <div className="text-sm mt-2">
+                    {!initialData.resource && (
+                        <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
+                            No Attachments Yet
+                        </div>
+                    )}
+                </div>
+            )}
+            {initialData.resource && (
+                <Button className='mt-2 flex items-center' onClick={deleteResource}>
+                    Delete File
+                </Button>
+            )}
             {isEditing && (
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)}
@@ -100,10 +128,10 @@ export const ResourceForm = ({
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
-                            )} 
-                            />
+                            )}
+                        />
                         <div className="flex items-center gap-x-2">
-                            <Button disabled={ isSubmitting} type='submit'>
+                            <Button disabled={isSubmitting} type='submit'>
                                 Save
                             </Button>
                         </div>

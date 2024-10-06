@@ -74,13 +74,13 @@ const CourseEdit = async ({
                     <CreatedByForm
                         initialData={course}
                         courseId={course.id} />
-                    <AttachmentForm
-                        initialData={course}
-                        courseId={course.id} />
                     <DescriptionForm
                         initialData={course}
                         courseId={course.id} />
                     <ImageForm
+                        initialData={course}
+                        courseId={course.id} />
+                    <AttachmentForm
                         initialData={course}
                         courseId={course.id} />
                     <ResourceForm

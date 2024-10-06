@@ -13,7 +13,9 @@ const courses = [
     'AI and ML',
     'Digital Marketing',
     'IT Service',
-    'Project Management'
+    'Project Management',
+    'Workshop',
+    'On Job Training'
 ]
 
 const GetAllCourses = () => {

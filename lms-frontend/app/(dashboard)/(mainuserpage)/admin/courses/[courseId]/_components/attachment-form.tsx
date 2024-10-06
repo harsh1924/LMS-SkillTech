@@ -6,11 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
-import { File, ImageIcon, Pencil, PlusCircle, Trash } from 'lucide-react';
+import { File, Pencil, PlusCircle } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { FileUpload } from '@/components/file-upload';
 
 interface AttachmentFormProps {
@@ -54,6 +53,20 @@ export const AttachmentForm = ({
         }
     }
 
+    const deleteSyllabus = async () => {
+        try {
+            const type = {
+                type: 'Syllabus'
+            };
+            await axios.put(`/api/course/${courseId}/deleteSyllabus`, type);
+            toast.success('Syllabus Link Removed');
+            router.refresh();
+        } catch (error: any) {
+            toast.error('Something went wrong')
+            console.log(error.message);
+        }
+    }
+
     return (
         <div className='mt-6 border bg-slate-100 rounded-md p-4'>
             <div className='font-medium flex items-center justify-between'>
@@ -72,7 +85,6 @@ export const AttachmentForm = ({
                         <>
                             <Pencil className='h-4 w-4 mr-2' />
                             Upload File
-
                         </>
                     )}
                 </Button>
@@ -93,7 +105,7 @@ export const AttachmentForm = ({
                 </div>
             )}
             {initialData.syllabus && (
-                <Button className='mt-2 flex items-center'>
+                <Button className='mt-2 flex items-center' onClick={deleteSyllabus}>
                     Delete File
                 </Button>
             )}

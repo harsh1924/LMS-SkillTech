@@ -88,6 +88,8 @@ export default function CourseCreationPage() {
                         <option value="Digital Marketing">Digital Marketing</option>
                         <option value="IT Service">IT Service</option>
                         <option value="Project Management">Project Management</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="On Job Training">On Job Training</option>
                     </select>
                 </div>
                 <div className="gap-2 flex flex-col">

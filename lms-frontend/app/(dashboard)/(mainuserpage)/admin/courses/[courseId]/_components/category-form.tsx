@@ -40,7 +40,6 @@ export const CategoryForm = ({
     const router = useRouter();
 
     const onSubmit = async () => {
-        console.log(courseCategory);
         try {
             await axios.put(`/api/course/${courseId}/changeCategory`, courseCategory);
             toast.success('Course Updated');

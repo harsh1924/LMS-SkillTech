@@ -13,14 +13,12 @@ const AboutUsPage = () => {
             <HomeNavbar />
             <div className="flex flex-col items-center w-full justify-center text-justify">
                 <div className="flex flex-col gap-y-4">
-                    <div className="py-10 px-4 lg:px-12">
-                        <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
+                    <div className="py-5 px-4 lg:px-12">
+                        <h1 className="text-center source-sans-3-bold lg:text-2xl text-xl pb-2">
                             About Us
                         </h1>
-                        <p className="lg:text-xl text-lg source-sans-3-regular">
-                            <span className="font-bold pr-1">
-                                SkillTech is one of the India's leading skills development provider,
-                            </span>
+                        <p className="text-lg source-sans-3-regular">
+                            SkillTech is one of the India's leading skills development provider,
                             our training “mostly on-job trainings” enable candidate to get job faster as per their skillset.Our education programs and certifications helps learners to achieve their career goals. Founded in 2015, based in New Delhi, India. SkillTech trainings is specially designed and developed to skill, reskill and upskill Indian individuals through an online and offline training platform.
                         </p>
                     </div>
@@ -56,25 +54,25 @@ const AboutUsPage = () => {
                             </span>
                         </div>
                     </div> */}
-                    <div className="py-10 px-4 lg:px-12">
-                        <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
+                    <div className="py-5 px-4 lg:px-12">
+                        <h1 className="text-center source-sans-3-bold lg:text-2xl text-xl pb-2">
                             Who Are We?
                         </h1>
-                        <p className="lg:text-xl text-lg source-sans-3-regular">
+                        <p className="text-lg source-sans-3-regular">
                             We are providing trainings in many fields like Software, Automation, Artificial Intelligence, Data Science Full Stack, DevOps, Cloud Computing, Big Data, Deep Learning, AI & NLP, Engineering, Manufacturing Technology, Mechanical & Automobiles technology, Business & Business Application Business, Accounts & Finance, Business & Management, Process Engineering, Industrial Engineering, Electronic &Electrical Technology, Communication Technology, vocational trainings,we are preparing students for jobs, we helping millions of undergraduate, graduated and post graduate students to prepare for jobs.
                         </p>
                     </div>
-                    <div className="bg-slate-100 py-10 px-4 lg:px-12">
-                        <h1 className="text-center oxygen-bold lg:text-3xl text-2xl pb-6">
+                    <div className="bg-slate-100 py-5 px-4 lg:px-12">
+                        <h1 className="text-center source-sans-3-bold lg:text-2xl text-xl pb-2">
                             Our Mission
                         </h1>
-                        <p className="lg:text-xl text-lg source-sans-3-regular">
+                        <p className="text-lg source-sans-3-regular">
                             Through strategic partnerships and innovative models, we are building a robust skill ecosystem that will meets current and future industry demands, also we are analysing and developing training programs for future based on our future skill requirement research, we are helping India's youth to contribute significantly to the nation’s growth and development. Ours mission statement is “Learn Earn Grow”.
                         </p>
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <h1 className="text-center oxygen-bold lg:text-3xl text-2xl my-10">
+                    <h1 className="text-center source-sans-3-bold lg:text-2xl text-xl my-10">
                         Meet the Leadership Team
                     </h1>
                     <div className="flex gap-10 flex-wrap px-4 lg:px-10">

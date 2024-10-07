@@ -92,7 +92,7 @@ const AboutUsPage = () => {
                         </div>
                         <div className="rounded-sm w-[300px] group transition-all duration-300 ease-in-out h-[420px]">
                             <div className="group-hover:hidden">
-                                <img src={Rakesh.src} alt="Bharti Biswas" className="h-[300px] w-[300px] mb-3" />
+                                <img src={Rakesh.src} alt="Rakesh Kumar" className="h-[300px] w-[300px] mb-3" />
                                 <h2 className="oxygen-bold">
                                     Dr. Rakesh Kumar
                                 </h2>
@@ -106,7 +106,7 @@ const AboutUsPage = () => {
                         </div>
                         <div className="rounded-sm w-[300px] group transition-all duration-300 ease-in-out h-[420px]">
                             <div className="group-hover:hidden">
-                                <img src={Akhil.src} alt="Bharti Biswas" className="h-[300px] w-[300px] mb-3" />
+                                <img src={Akhil.src} alt="Akhil Biswas" className="h-[300px] w-[300px] mb-3" />
                                 <h2 className="oxygen-bold">
                                     Akhil Biswas
                                 </h2>

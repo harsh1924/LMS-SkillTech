@@ -1,4 +1,5 @@
-import { Facebook, Instagram, LinkedinIcon, Twitter } from "lucide-react"
+import { Facebook, Instagram, LinkedinIcon } from "lucide-react"
+import XLogo from '@/app/helpers/images/Xlogo.webp'
 import Link from "next/link"
 
 export const Footer = () => {
@@ -16,8 +17,8 @@ export const Footer = () => {
                         <Link href={'https://www.linkedin.com/in/skilltech-india-b11802312/'} target="_blank">
                             <LinkedinIcon size={22} className="text-white" />
                         </Link>
-                        <Link href={'/'}>
-                            <Twitter size={22} className="text-white" target="_blank" />
+                        <Link href={'/'} target="_blank">
+                            <img src={XLogo.src} alt="XLogo" className="h-5 w-5 mt-0.5" />
                         </Link>
                         <Link href={'https://www.instagram.com/skilltech_india01'} target="_blank">
                             <Instagram size={22} className="text-white" />

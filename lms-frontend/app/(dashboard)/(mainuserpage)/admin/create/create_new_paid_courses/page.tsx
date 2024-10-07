@@ -90,6 +90,7 @@ export default function CourseCreationPage() {
                         <option value="Project Management">Project Management</option>
                         <option value="Workshop">Workshop</option>
                         <option value="On Job Training">On Job Training</option>
+                        <option value="Language Course">Language Course</option>
                     </select>
                 </div>
                 <div className="gap-2 flex flex-col">

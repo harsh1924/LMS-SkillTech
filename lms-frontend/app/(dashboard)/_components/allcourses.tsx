@@ -15,7 +15,8 @@ const courses = [
     'IT Service',
     'Project Management',
     'Workshop',
-    'On Job Training'
+    'On Job Training',
+    'Language Course'
 ]
 
 const GetAllCourses = () => {

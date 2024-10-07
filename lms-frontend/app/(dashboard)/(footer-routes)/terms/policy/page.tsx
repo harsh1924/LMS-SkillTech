@@ -1,6 +1,5 @@
 import { Footer } from "@/app/(dashboard)/_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
-import { Separator } from "@/components/ui/separator";
 
 const PrivacyPolicy = () => {
     return (

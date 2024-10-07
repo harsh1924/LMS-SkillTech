@@ -94,6 +94,7 @@ export const CategoryForm = ({
                         <option value="Project Management">Project Management</option>
                         <option value="Workshop">Workshop</option>
                         <option value="On Job Training">On Job Training</option>
+                        <option value="Language Course">Language Course</option>
                     </select>
                     <Button type='submit'>
                         Save

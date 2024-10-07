@@ -60,6 +60,9 @@ export const Footer = () => {
                         <Link href={'/terms/policy'}>
                             Privacy Policy
                         </Link>
+                        <Link href={'/cancellation-policy'}>
+                            Cancellation Policy
+                        </Link>
                         <Link href={'/terms'}>
                             Terms & Conditions
                         </Link>

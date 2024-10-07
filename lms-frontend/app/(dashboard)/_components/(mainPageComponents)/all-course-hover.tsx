@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { AllCoursesHoverList } from "./all-course-hover-courses"
 import { useState } from "react"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link";
 
 const courses = [
     'Software Development',
@@ -13,7 +14,10 @@ const courses = [
     'AI and ML',
     'Digital Marketing',
     'IT Service',
-    'Project Management'
+    'Project Management',
+    'Workshop',
+    'On Job Training',
+    'Language Course'
 ]
 
 export const HoverAllCourses = () => {
@@ -24,7 +28,9 @@ export const HoverAllCourses = () => {
     return (
         <div className="navbar">
             <div className="outline-none border px-5 z-50 py-2 rounded-sm bg-[#0056d2] text-white oxygen-bold lg:flex items-center hidden group relative cursor-pointer">
-                All Courses
+                <Link href={'/all-courses'}>
+                    All Courses
+                </Link>
                 <div className="hidden border rounded-md flex-col gap-y-4 group-hover:flex hover:flex bg-white absolute text-black top-[41px] left-[-150px] text-lg py-2 w-[280px] transition-all ease-in-out duration-300">
                     <span className="pt-4 oxygen-bold px-5">
                         CATEGORIES
@@ -32,7 +38,7 @@ export const HoverAllCourses = () => {
                     <div className="w-full">
                         <Separator />
                     </div>
-                    <div className="flex flex-col gap-y-5 h-[400px]">
+                    <div className="flex flex-col gap-y-5 h-[400px] overflow-y-scroll no-scrollbar">
                         <div className="flex flex-col gap-y-3">
                             {courses.map((e) =>
                                 <button className={cn(

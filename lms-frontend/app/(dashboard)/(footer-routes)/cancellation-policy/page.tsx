@@ -1,14 +1,13 @@
-import { Separator } from "@radix-ui/react-dropdown-menu";
-import { Footer } from "../../_components/(mainPageComponents)/footer";
-import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
+import { Footer } from "@/app/(dashboard)/_components/(mainPageComponents)/footer";
+import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
 
-const RefundpolicyPage = () => {
+const CancellationPolicyPage = () => {
     return (
         <div>
             <HomeNavbar />
             <div className="text-justify py-3">
                 <h1 className="source-sans-3-bold text-xl px-4 lg:px-10 py-2">
-                    Refund Policy
+                    Cancellation  Policy
                 </h1>
                 <h1 className="source-sans-3-bold text-lg px-4 lg:px-10">
                     Term and Conditions:
@@ -21,12 +20,12 @@ const RefundpolicyPage = () => {
                         We understand that due to some unavoidable circumstances you require to cancel your course and you may require refund. We are governed by terms and conditions , when you purchase a training course from us, you agree to our privacy policy, terms & conditions, refund & cancellation policy.
                     </p>
                     <p>
-                        Send refund request to <span className="font-bold">info@skilltechindia.net.</span>
+                        Send cancellation and refund request to <span className="font-bold">info@skilltechindia.net.</span>
                     </p>
                 </div>
                 <div className="px-4 lg:px-10 py-3 source-sans-3-regular flex flex-col gap-y-3">
                     <h1 className="source-sans-3-bold text-xl">
-                        Refund Term and Conditions:
+                        Cancellation and Refund Term and Conditions:
                     </h1>
                     <h1 className="source-sans-3-bold text-xl">
                         Term and Condition for Self Paced Learning and Instructor Led Training:
@@ -35,10 +34,27 @@ const RefundpolicyPage = () => {
                         {/* To qualify for a refund, you must: */}
                         <ol className="px-4 list-decimal list-outside">
                             <li>
-                                Refund of enrolled course are allowed & refund will be paid within 10 working days.
+                                Cancelation of enrolled course are allowed & refund will paid as per below terms & condition.
                             </li>
+                            <ol className="px-4 list-disc list-outside">
+                                <li>
+                                    Cancel enrolled course before 24 hrs of commencement of the course, full refund will paid within 10 working days.
+                                </li>
+                                <li>
+                                    Cancel enrolled course with in 24 hrs of commencement of the course10% of the course fee will be fortified and 90% of the fee will be refunded within 10 working days.You will be eligible for 10% discount when you enrol/purchase the next course.
+                                </li>
+                                <li>
+                                    Cancel enrolled course after the commencement of the course, entire fee will be fortified, no-refund will be applicable.
+                                </li>
+                                <li>
+                                    If a candidate could not join the course due to medical emergency only, he can apply for cancellation and full refund. Medical certificate is mandatory for such a request.
+                                </li>
+                            </ol>
+                            {/* <li>
+                                Refund of enrolled course are allowed & refund will be paid within 10 working days.
+                            </li> */}
                             <li>
-                                Submit your refund request within 7 days of purchasing a course via mail to
+                                Submit your cancelation and refund request before 24 hrs of commencement of the course via mail to
                                 <span className="font-bold pl-1">info@skilltechindia.net</span>
                             </li>
                             <li>
@@ -48,7 +64,7 @@ const RefundpolicyPage = () => {
                                 Submit payment receipt, details of the course when you apply for cancelation and refund.
                             </li>
                             <li>
-                                Provide the details of course, purchase date, amount and mode of payment.
+                                Provide the details of course, purchase date, amount paid and mode of payment.
                             </li>
                             <li>
                                 Refund will be processed in 10 working days.
@@ -71,10 +87,31 @@ const RefundpolicyPage = () => {
                         Cancelation & refund request must be submitted for regular class (On campus, Live or Recorded Session as the case maybe) whether attended or not as per below terms and condition.
                         <ol className="px-4 list-decimal list-outside">
                             <li>
+                                Cancelation of enrolled course are allowed & refund will paid as per below terms & condition.
+                            </li>
+                            <ol className="px-4 list-disc list-outside">
+                                <li>
+                                    Cancel enrolled course before 24 hrs of commencement of the course, full refund will paid within 10 working days.
+                                </li>
+                                <li>
+                                    Cancel enrolled course with in 24 hrs of commencement of the course10% of the course fee will be fortified and 90% of the fee will be refunded within 10 working days.You will be eligible for 10% discount when you enrol/purchase the next course.
+                                </li>
+                                <li>
+                                    Cancel enrolled course after the commencement of the course, entire fee will be fortified, no-refund will be applicable.
+                                </li>
+                                <li>
+                                    If a candidate could not join the course due to medical emergency only, he can apply for cancellation and full refund. Medical certificate is mandatory for such a request.
+                                </li>
+                            </ol>
+                            {/* <li>
                                 Refund of enrolled course are allowed & refund will paid within 10 working days.
+                            </li> */}
+                            <li>
+                                Submit your cancelation and refund request before 24 hrs of commencement of the course via mail to
+                                <span className="font-bold pl-1">info@skilltechindia.net</span>
                             </li>
                             <li>
-                                Submit your refund request before 24 hrs of commencement of the course via mail to <span className="font-bold">info@skilltechindia.net</span>
+                                You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care
                             </li>
                             <li>
                                 Submit payment receipt, details of the course when you apply for cancelation and refund.
@@ -104,14 +141,32 @@ const RefundpolicyPage = () => {
                     <div className="flex flex-col gap-y-2">
                         We reserve the right to reschedule/cancel a class/session due to any unavoidable circumstances, or change the location of a class [if applicable]. To qualify for a refund, you must:
                         <ol className="px-4 list-decimal list-outside">
+                        <li>
+                                Cancelation of enrolled course are allowed & refund will paid as per below terms & condition.
+                            </li>
+                            <ol className="px-4 list-disc list-outside">
+                                <li>
+                                    Cancel enrolled course before 24 hrs of commencement of the course, full refund will paid within 10 working days.
+                                </li>
+                                <li>
+                                    Cancel enrolled course with in 24 hrs of commencement of the course10% of the course fee will be fortified and 90% of the fee will be refunded within 10 working days.You will be eligible for 10% discount when you enrol/purchase the next course.
+                                </li>
+                                <li>
+                                    Cancel enrolled course after the commencement of the course, entire fee will be fortified, no-refund will be applicable.
+                                </li>
+                                <li>
+                                    If a candidate could not join the course due to medical emergency only, he can apply for cancellation and full refund. Medical certificate is mandatory for such a request.
+                                </li>
+                            </ol>
+                            {/* <li>
+                                Refund of enrolled course are allowed & refund will paid within 10 working days.
+                            </li> */}
                             <li>
-                                Refund of enrolled course are allowed & refund will be paid within 10 working days.
+                                Submit your cancelation and refund request before 24 hrs of commencement of the course via mail to
+                                <span className="font-bold pl-1">info@skilltechindia.net</span>
                             </li>
                             <li>
-                                Submit your refund request before 24 hrs of commencement of the course via mail to <span className="font-bold">info@skilltechindia.net</span>
-                            </li>
-                            <li>
-                                You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care.
+                                You purchase the course just before the scheduled and started to attend regular class. No refund request will be taken care
                             </li>
                             <li>
                                 Submit payment receipt, details of the course when you apply for cancelation and refund.
@@ -137,4 +192,4 @@ const RefundpolicyPage = () => {
     );
 }
 
-export default RefundpolicyPage;
+export default CancellationPolicyPage;

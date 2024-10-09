@@ -1,9 +1,7 @@
 import { Footer } from "../_components/(mainPageComponents)/footer";
-import CertificationArea from "../_components/(mainPageComponents)/certificationArea";
 import AvailableCourses from "../_components/(mainPageComponents)/availabel-courses";
 import { HomeNavbar } from "../_components/(mainPageComponents)/navbar";
 import { HomePageCarousel } from "../_components/(mainPageComponents)/carousel";
-import { Testimony } from "../_components/(mainPageComponents)/testimony";
 import Head from "next/head";
 import MainPageImage from '@/app/helpers/images/MainPage-image/MainPage-Image.jpeg'
 

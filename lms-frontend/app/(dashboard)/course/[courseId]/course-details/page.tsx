@@ -206,7 +206,7 @@ const CourseDetails = ({
                             <span>
                                 {courseDurationData && (
                                     <div>
-                                        {courseDurationData} Months
+                                        {courseDurationData}
                                     </div>
                                 )}
                             </span>

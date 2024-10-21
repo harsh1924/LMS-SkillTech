@@ -11,7 +11,7 @@ interface PaymentData {
 }
 
 export const PaymentReport = async ({
-    courseName,
+    courseId,
     userId,
     paymentId
 }: PaymentData) => {
@@ -25,7 +25,8 @@ export const PaymentReport = async ({
                 {user.name}
             </span>
             <span>
-                {courseName}
+                {/*  it's course name not id */}
+                {courseId}
             </span>
             <span>
                 {paymentId}

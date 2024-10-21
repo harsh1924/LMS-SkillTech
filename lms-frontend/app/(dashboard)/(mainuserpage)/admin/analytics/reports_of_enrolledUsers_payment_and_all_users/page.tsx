@@ -64,7 +64,7 @@ const AnalyticsPage = async () => {
                         <span>Payment ID</span>
                     </div>
                     <div className="flex flex-col gap-y-3">
-                        {payment.map((e) => <PaymentReport key={e.paymentOrderId} userId={e.userId} courseName={e.courseName} paymentId={e.paymentOrderId} />)}
+                        {payment.map((e) => <PaymentReport key={e.paymentOrderId} userId={e.userId} courseId={e.courseName} paymentId={e.paymentOrderId} />)}
                     </div>
 
                 </div>

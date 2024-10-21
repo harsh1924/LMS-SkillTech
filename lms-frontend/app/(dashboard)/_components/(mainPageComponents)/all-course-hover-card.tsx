@@ -33,7 +33,7 @@ export const AllHoverCoursesCard = ({
                     <div className="text-sm flex mt-4 gap-x-1 items-center">
                         <Calendar size={16} className="text-gray-500 " />
                         <span className="text-[11px] text-gray-500">
-                            {duration} months
+                            {duration}
                         </span>
                     </div>
                 </Link>

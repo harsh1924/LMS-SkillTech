@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
             role: user.role
         }
         // create token
-        const token = await jwt.sign(tokenData, process.env.JWT_SECRET!, { expiresIn: '1d' });
+        const token = await jwt.sign(tokenData, process.env.JWT_SECRET!, { expiresIn: '365d' });
 
         const response = NextResponse.json({
             message: 'Login Successfull',
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
                 path: '/',
                 secure: true,
                 sameSite: "strict",
-                maxAge: 7 * 24 * 60 * 60 * 1000,
+                // maxAge: 7 * 24 * 60 * 60 * 1000,
             });
 
         return response;

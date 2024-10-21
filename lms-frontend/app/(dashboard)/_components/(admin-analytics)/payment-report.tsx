@@ -11,13 +11,13 @@ interface PaymentData {
 }
 
 export const PaymentReport = async ({
-    courseId,
+    courseName,
     userId,
     paymentId
 }: PaymentData) => {
 
     const user = await userModel.findById(userId);
-    const course = await courseModel.findById(courseId);
+    // const course = await courseModel.findById(courseId);
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 border-b py-2 source-sans-3-regular">
@@ -25,7 +25,7 @@ export const PaymentReport = async ({
                 {user.name}
             </span>
             <span>
-                {course.title}
+                {courseName}
             </span>
             <span>
                 {paymentId}

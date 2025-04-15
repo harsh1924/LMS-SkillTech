@@ -4,20 +4,7 @@ import { useState } from "react";
 import { MainPageCourses } from "./(mainPageComponents)/mainpage-courses";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-
-const courses = [
-    'Software Development',
-    'Data Science and Business Analytics',
-    'Cyber Security',
-    'Cloud Computing',
-    'AI and ML',
-    'Digital Marketing',
-    'IT Service',
-    'Project Management',
-    'Workshop',
-    'On Job Training',
-    'Language Course'
-]
+import { courses } from "@/app/data/courses"
 
 const GetAllCourses = () => {
 
@@ -36,7 +23,7 @@ const GetAllCourses = () => {
                         <Separator />
                         <div className="flex md:flex-col flex-wrap gap-y-2 text-[15px]">
                             {courses.map((e) =>
-                                <button className={cn(
+                                <button key={e} className={cn(
                                     'hover:text-[#347bdc] py-2 px-3 text-start source-sans-3-regular'
                                     , isActive === e && 'bg-[#ecf2fc] hover:text-black border-r-4 border-[#00419e]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
                                     {e}

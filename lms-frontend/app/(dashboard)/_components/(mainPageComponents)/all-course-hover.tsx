@@ -5,20 +5,7 @@ import { AllCoursesHoverList } from "./all-course-hover-courses"
 import { useState } from "react"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link";
-
-const courses = [
-    'Software Development',
-    'Data Science and Business Analytics',
-    'Cyber Security',
-    'Cloud Computing',
-    'AI and ML',
-    'Digital Marketing',
-    'IT Service',
-    'Project Management',
-    'Workshop',
-    'On Job Training',
-    'Language Course'
-]
+import { courses } from "@/app/data/courses"
 
 export const HoverAllCourses = () => {
 
@@ -41,7 +28,7 @@ export const HoverAllCourses = () => {
                     <div className="flex flex-col gap-y-5 h-[400px] overflow-y-scroll no-scrollbar">
                         <div className="flex flex-col gap-y-3">
                             {courses.map((e) =>
-                                <button className={cn(
+                                <button key={e} className={cn(
                                     'hover:text-[#347bdc] py-1 px-5 text-start text-[14px] source-sans-3-regular'
                                     , isActive === e && 'bg-[#ecf2fc] hover:text-black border-r-4 border-[#00419e]')} onClick={() => { setCourseName(e), setIsActive(e) }}>
                                     {e}

@@ -57,7 +57,7 @@ const config = withUt({
         primaryhoverblue: '#347bdc',
         categoryborder: '#00419e',
         categorybg: '#ecf2fc',
-        cardcheckblue: '#347dfb'
+        cardcheckblue: '#347dfb',
       },
       borderRadius: {
         lg: "var(--radius)",

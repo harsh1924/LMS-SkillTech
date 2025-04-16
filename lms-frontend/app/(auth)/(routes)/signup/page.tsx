@@ -92,18 +92,20 @@ export default function SignInPage() {
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
                         {isLoading ? (
-                            <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                            <button className="rounded-md px-4 py-2 bg-primaryblue text-white oxygen-regular hover:bg-categoryborder transition-all ease-in-out duration-300" type="submit">
                                 Create Account
                             </button>
                         ) : (
-                            <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                            <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-categoryborder transition-all ease-in-out duration-300 text-center">
                                 Processing....
                             </div>
                         )}
                     </div>
                     <div className="source-sans-3-regular text-[15px] text-gray-500">
                         Already have an account? {" "}
-                        <Link href={'/login'} className="text-[#347dfb]">Log In</Link>
+                        <Link href={'/login'} className="text-cardcheckblue">
+                            Log In
+                        </Link>
                     </div>
                 </div>
             </div>

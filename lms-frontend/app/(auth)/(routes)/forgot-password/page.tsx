@@ -15,7 +15,7 @@ const ForgotPassword = () => {
         email: '',
     });
 
-    const handleUserInput = (event: { target: { name: any; value: any; }; }) => {
+    const handleUserInput = (event: { target: { name: string; value: string; }; }) => {
         const { name, value } = event.target;
         setUser({
             ...user,
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
                         Forgot Password?
                     </h1>
                     <p className="text-lg source-sans-3-regular">
-                        Don't worry it happens! Just type your registered email and we will send you the reset password link.
+                        Don&apos;t worry it happens! Just type your registered email and we will send you the reset password link.
                     </p>
                 </div>
                 <form className="flex flex-col w-full gap-y-4" onSubmit={handleSubmit}>
@@ -57,17 +57,17 @@ const ForgotPassword = () => {
                         <input onChange={handleUserInput} value={user.email} type="email" name="email" id="email" placeholder="youremail@gmail.com" className="border outline-none px-5 py-1 w-full rounded-lg" />
                     </div>
                     {isLoading ? (
-                        <button className="rounded-md px-16 py-3 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                        <button className="rounded-md px-16 py-3 bg-primaryblue text-white oxygen-regular hover:bg-categoryborder transition-all ease-in-out duration-300" type="submit">
                             Submit
                         </button>
                     ) : (
-                        <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                        <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-categoryborder transition-all ease-in-out duration-300 text-center">
                             Sending Reset Link....
                         </div>
                     )}
                 </form>
                 <div className="flex items-center justify-center w-full ">
-                    <Link href={'/login'} className="text-[#347dfb]">
+                    <Link href={'/login'} className="text-primaryhoverblue">
                         Back to Login
                     </Link>
                 </div>

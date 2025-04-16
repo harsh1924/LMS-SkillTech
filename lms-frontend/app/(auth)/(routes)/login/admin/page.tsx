@@ -54,7 +54,7 @@ const LoginPage = () => {
             <Link href={'/'}>
                 <Logo />
             </Link>
-            <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_skyblue] px-6 py-4 flex flex-col gap-y-4">
+            <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
                 <div className="flex gap-y-2 flex-col">
                     <h2 className="font-bold text-2xl">
                         Welcome to Skill Tech
@@ -79,11 +79,11 @@ const LoginPage = () => {
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-center">
                         {isLoading ? (
-                            <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                            <button className="rounded-md px-4 py-2 bg-primaryblue text-white oxygen-regular hover:bg-categoryborder transition-all ease-in-out duration-300" type="submit">
                                 Admin Log In
                             </button>
                         ) : (
-                            <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                            <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-categoryborder transition-all ease-in-out duration-300 text-center">
                                 Processing....
                             </div>
                         )}

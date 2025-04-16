@@ -10,6 +10,8 @@ import { Logo } from "@/app/(dashboard)/_components/logo";
 
 import '@/app/(dashboard)/dashboard.css'
 
+import SignInImg from "@/app/helpers/signin-banner.svg"
+
 const LoginPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +22,7 @@ const LoginPage = () => {
         password: ''
     })
 
-    const handleUserInput = (event: { target: { name: any; value: any; }; }) => {
+    const handleUserInput = (event: { target: { name: string; value: string; }; }) => {
         const { name, value } = event.target;
         setUser({
             ...user,
@@ -53,7 +55,7 @@ const LoginPage = () => {
     return (
         <div className="flex h-screen items-center justify-center lg:justify-start">
             <div className="hidden lg:flex w-[70%] h-[100vh] bg-gray-50">
-                <img src="https://accounts.pwskills.com/images/signin-banner.svg" className="w-[100%] h-[100%]" />
+                <img src={SignInImg.src} className="w-[100%] h-[100%]" alt="SkillTech Logo" />
             </div>
             <form onSubmit={onLogin} className="flex w-[350px] lg:w-1/2 justify-center items-center h-full flex-col gap-10">
                 <div className="w-[400px] border shadow-lg lg:shadow-[0_0_10px_#347dfb] px-6 py-4 flex flex-col gap-y-4">
@@ -86,20 +88,22 @@ const LoginPage = () => {
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-center">
                             {isLoading ? (
-                                <button className="rounded-md px-4 py-2 bg-[#0056d2] text-white oxygen-regular hover:bg-[#00419e] transition-all ease-in-out duration-300" type="submit">
+                                <button className="rounded-md px-4 py-2 bg-primaryblue text-white oxygen-regular hover:bg-categoryborder transition-all ease-in-out duration-300" type="submit">
                                     Log In
                                 </button>
                             ) : (
-                                <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-[#00419e] transition-all ease-in-out duration-300 text-center">
+                                <div className="rounded-md px-16 py-3  text-white oxygen-regular bg-categoryborder transition-all ease-in-out duration-300 text-center">
                                     Processing....
                                 </div>
                             )}
                         </div>
                         <div className="text-[13px] text-center text-gray-500">
                             Dont have an account? {" "}
-                            <Link href={'/signup'} className="text-[#347dfb] oxygen-regular">Create New Account</Link>
+                            <Link href={'/signup'} className="text-cardcheckblue oxygen-regular">
+                                Create New Account
+                            </Link>
                         </div>
-                        <Link href={`/forgot-password`} className="text-[13px] oxygen-regular text-[#347dfb] text-center">
+                        <Link href={`/forgot-password`} className="text-[13px] oxygen-regular text-cardcheckblue text-center">
                             Forgot Password?
                         </Link>
                     </div>

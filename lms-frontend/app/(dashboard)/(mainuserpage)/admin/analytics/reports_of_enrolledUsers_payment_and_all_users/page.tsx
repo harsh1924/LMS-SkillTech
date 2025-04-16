@@ -3,7 +3,6 @@ import AllUsers from "@/app/(dashboard)/_components/(admin-analytics)/all-user";
 import EnrolledUsers from "@/app/(dashboard)/_components/(admin-analytics)/enrolled-users";
 import purchaseModel from "@/app/server/models/purchaseModel";
 import userModel from "@/app/server/models/userModel";
-
 import '@/app/(dashboard)/dashboard.css'
 import { PaymentReport } from "@/app/(dashboard)/_components/(admin-analytics)/payment-report";
 import connectToDB from "@/app/server/dbconfig/dbconfig";

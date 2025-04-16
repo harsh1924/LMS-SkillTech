@@ -35,7 +35,7 @@ export default function Home() {
           <p className="text-[22px] md:px-10 source-sans-3-regular">
             Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.
           </p>
-          <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-[#0056d2] text-white rounded-md font-sans font-semibold hover:bg-[#00419e] transition-all ease-in-out duration-300">
+          <a href={'#our-courses'} className="md:ml-10 border w-[200px] text-center px-5 py-3 bg-primaryblue text-white rounded-md font-sans font-semibold hover:bg-categoryborder transition-all ease-in-out duration-300">
             Explore Programs
           </a>
         </div>
@@ -46,7 +46,6 @@ export default function Home() {
 
       {/* Available Courses */}
       <AvailableCourses />
-
 
       {/* Footer */}
       <Footer />

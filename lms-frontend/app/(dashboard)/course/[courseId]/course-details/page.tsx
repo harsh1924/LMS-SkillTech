@@ -1,18 +1,13 @@
 'use client';
 
-import axios from "axios";
-
 import Link from "next/link";
-import { CheckCircle, Dot, IndianRupeeIcon } from "lucide-react";
+import { CheckCircle, Dot } from "lucide-react";
 
 import { Footer } from "@/app/(dashboard)/_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
 
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-
 import '@/app/(dashboard)/dashboard.css'
-import { useRouter } from "next/navigation";
+import useCourse from "@/hooks/useCourse";
 
 const CourseDetails = ({
     params
@@ -20,134 +15,19 @@ const CourseDetails = ({
     params: { courseId: string }
 }) => {
 
-    const router = useRouter();
-    const [isLoading, setIsLoading] = useState(false);
-    const [userId, setUserIdData] = useState('');
-
-    const getId = async () => {
-        const res = await axios.get('/api/user/user-details')
-        const userData = res.data.user;
-        const userIdData = res.data.user._id;
-        setUserIdData(userIdData);
-        setData({
-            ...data,
-            userId: userIdData
-        })
-    }
-
-    const [data, setData] = useState({
-        courseId: params.courseId,
-        userId: ''
-    })
-
-    const addFreeCourse = async () => {
-        const res = await axios.get('/api/user/user-details')
-        const userIdData = res.data.user._id;
-        setUserIdData(userIdData);
-        setData({
-            ...data,
-            userId: userIdData
-        })
-        const resp = await axios.post(`/api/course/${params.courseId}/user/${userIdData}/add-free-course`, data)
-        if (resp) {
-            toast.success('Enrolled Successfully');
-            router.push('/profile')
-        }
-    }
-
-    // basic data of course
-    const [courseTitleData, setCourseTitleData] = useState('');
-    const [courseDescData, setCourseDescData] = useState('');
-    const [coursePriceData, setCoursePriceData] = useState('');
-    const [courseCreatorData, setCourseCreatorData] = useState('');
-    const [courseImageURLData, setCourseImageURLData] = useState('');
-    const [courseDurationData, setCourseDurationData] = useState('');
-    const [isFree, setIsFree] = useState(false);
-    const [syllabusURL, setSyllabusURL] = useState('');
-
-    // overview of course
-    const [courseOverviewData, setCourseOverviewData] = useState('');
-
-    // key features of course
-    const [courseKeyFeatureOneData, setCourseKeyFeatureOneData] = useState('');
-    const [courseKeyFeatureTwoData, setCourseKeyFeatureTwoData] = useState('');
-    const [courseKeyFeatureThreeData, setCourseKeyFeatureThreeData] = useState('');
-    const [courseKeyFeatureFourData, setCourseKeyFeatureFourData] = useState('');
-    const [courseKeyFeatureFiveData, setCourseKeyFeatureFiveeData] = useState('');
-    const [courseKeyFeatureSixData, setCourseKeyFeatureSixData] = useState('');
-
-    // skills covered in course
-    const [courseSkillsCoveredOne, setCourseSkillsCoveredOne] = useState('');
-    const [courseSkillsCoveredTwo, setCourseSkillsCoveredTwo] = useState('');
-    const [courseSkillsCoveredThree, setCourseSkillsCoveredThree] = useState('');
-    const [courseSkillsCoveredFour, setCourseSkillsCoveredFour] = useState('');
-    const [courseSkillsCoveredFive, setCourseSkillsCoveredFive] = useState('');
-    const [courseSkillsCoveredSix, setCourseSkillsCoveredSix] = useState('');
-
-    // course cards
-    const [courseCardOne, setCourseCardOne] = useState('');
-    const [courseCardTwo, setCourseCardTwo] = useState('');
-    const [courseCardThree, setCourseCardThree] = useState('');
-    const [courseCardFour, setCourseCardFour] = useState('');
-
-    const courseDetails = async () => {
-        try {
-            const courseId = params.courseId;
-            const response = await axios.get(`/api/course/course-details/${courseId}`);
-            const course = response.data.course;
-            setCourseImageURLData(course.imageUrl)
-            setCourseTitleData(course.title);
-            setCourseDescData(course.description)
-            setCourseCreatorData(course.createdBy)
-            setCoursePriceData(course.price);
-            setCourseDurationData(course.duration);
-            setCourseOverviewData(course.overview);
-            setIsFree(course.isFree);
-            setSyllabusURL(course.syllabus);
-
-            // setting course key features
-            setCourseKeyFeatureOneData(course.keyFeaturesOne);
-            setCourseKeyFeatureTwoData(course.keyFeaturesTwo);
-            setCourseKeyFeatureThreeData(course.keyFeaturesThree);
-            setCourseKeyFeatureFourData(course.keyFeaturesFour);
-            setCourseKeyFeatureFiveeData(course.keyFeaturesFive);
-            setCourseKeyFeatureSixData(course.keyFeaturesSix);
-
-            // setting course skills covered
-            setCourseSkillsCoveredOne(course.skillsOne)
-            setCourseSkillsCoveredTwo(course.skillsTwo)
-            setCourseSkillsCoveredThree(course.skillsThree)
-            setCourseSkillsCoveredFour(course.skillsFour)
-            setCourseSkillsCoveredFive(course.skillsFive)
-            setCourseSkillsCoveredSix(course.skillsSix)
-
-            // setting course card details
-            setCourseCardOne(course.cardOne);
-            setCourseCardTwo(course.cardTwo);
-            setCourseCardThree(course.cardThree);
-            setCourseCardFour(course.cardFour);
-
-            setIsLoading(true);
-        } catch (error: any) {
-            toast.error('Something went wrong')
-        }
-    }
+    const { isLoading, course } = useCourse(params.courseId);
 
     const downloadFile = () => {
         // const pdfUrl = syllabusURL
         const link = document.createElement('a');
-        link.href = syllabusURL;
+        link.href = course!.syllabus;
         link.download = 'syllabus.pdf';
         link.click();
     }
 
-    useEffect(() => {
-        courseDetails()
-    }, []);
-
     return (
         <>
-            {isLoading ? (
+            {!isLoading ? (
                 <div className="flex flex-col gap-y-3 h-100vh items-center">
                     <div className="w-full">
                         <HomeNavbar />
@@ -159,21 +39,21 @@ const CourseDetails = ({
                             <div className="py-10 w-full lg:px-8 flex flex-col-reverse lg:flex-row gap-x-4  h-full justify-center">
                                 <div className="lg:w-[750px] flex gap-y-6 flex-col lg:px-8 py-3">
                                     <p>
-                                        <span className="lg:text-5xl text-2xl oxygen-bold font-sans pb-8">{courseTitleData}
+                                        <span className="lg:text-5xl text-2xl oxygen-bold font-sans pb-8">{course!.title}
                                         </span>
                                     </p>
                                     <p>
                                         <span className="oxygen-semibold text-gray-500 text-lg">
-                                            {courseCreatorData}
+                                            {course!.createdBy}
                                         </span>
                                     </p>
                                     <p>
                                         <span className="source-sans-3-regular text-lg">
-                                            {courseDescData}
+                                            {course!.description}
                                         </span>
                                     </p>
                                     <div className="flex items-center gap-x-10">
-                                        {!isFree ? (
+                                        {!course!.isFree ? (
                                             <Link href={`/course/${params.courseId}/purchase`} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center w-[130px]">
                                                 <span>Enroll Now</span>
                                             </Link>
@@ -182,7 +62,7 @@ const CourseDetails = ({
                                                 Enroll for Free
                                             </Link>
                                         )}
-                                        {syllabusURL && (
+                                        {course!.syllabus && (
                                             <button onClick={downloadFile} className="font-semibold text-sm text-center border flex bg-[#0056d2] hover:bg-[#00419e] transition-all ease-in-out duration-300 text-white px-6 py-3 rounded-md items-center">
                                                 Download Syllabus
                                             </button>
@@ -190,7 +70,7 @@ const CourseDetails = ({
                                     </div>
                                 </div>
                                 <p className="lg:w-1/2 w-[80%] text-center">
-                                    <img src={courseImageURLData} alt="Course Thumbnail" className="w-full rounded-xl" loading="lazy" />
+                                    <img src={course!.imageUrl} alt="Course Thumbnail" className="w-full rounded-xl" loading="lazy" />
                                 </p>
                             </div>
                         </div>
@@ -201,13 +81,15 @@ const CourseDetails = ({
                     <div className="shadow-md  w-full px-6 lg:px-10 py-5 flex flex-col lg:flex-row justify-center gap-y-4 lg:gap-y-0 source-sans-3-bold">
                         <p className="flex flex-col items-center gap-y-3 lg:border-r border-black py-2 lg:px-20 text-lg font-semibold text-center">
                             <span>
-                                Program Duration
-                            </span>
-                            <span>
-                                {courseDurationData && (
-                                    <div>
-                                        {courseDurationData}
-                                    </div>
+                                {course!.duration && (
+                                    <>
+                                        <span>
+                                            Program Duration
+                                        </span>
+                                        <div>
+                                            {course!.duration}
+                                        </div>
+                                    </>
                                 )}
                             </span>
                         </p>
@@ -231,86 +113,89 @@ const CourseDetails = ({
                         <p className="text-lg flex flex-col gap-y-4">
                             <span className="text-xl flex gap-x-2">
                                 <span className="hidden lg:flex oxygen-regular">
-                                    {courseTitleData}
+                                    {course!.title}
                                 </span>
                                 <span className="oxygen-semibold">
                                     Overview
                                 </span>
                             </span>
                             <span className="source-sans-3-regular">
-                                {courseOverviewData}
-                                {courseDescData}
+                                {course!.overview}
+                                {course!.description}
                             </span>
                         </p>
                     </div>
 
                     {/* Cards */}
                     <div className="px-6 lg:px-16 text-lg source-sans-3-regular py-10 flex flex-col md:flex-row flex-wrap gap-y-10 justify-between w-full">
-                        {courseCardOne && (
+                        {course!.cardOne && (
                             <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                                {courseCardOne}
+                                {course!.cardOne}
                             </p>
                         )}
-                        {courseCardTwo && (
+                        {course!.cardTwo && (
                             <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                                {courseCardTwo}
+                                {course!.cardTwo}
                             </p>
                         )}
-                        {courseCardThree && (
+                        {course!.cardThree && (
                             <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                                {courseCardThree}
+                                {course!.cardThree}
                             </p>
                         )}
-                        {courseCardFour && (
+                        {course!.cardFour && (
                             <p className="border-b-8 border-b-[#347dfb] border px-4 py-8 rounded-xl w-[300px]">
-                                {courseCardFour}
+                                {course!.cardFour}
                             </p>
                         )}
                     </div>
 
                     {/* key features */}
                     <div className="flex px-6 lg:px-16 flex-col py-10 shadow-md bg-slate-100 rounded-md">
-                        <p className=" pb-8 text-xl oxygen-semibold">KEY FEATURES</p>
+                        <p className=" pb-8 text-xl oxygen-semibold">
+                            KEY FEATURES
+                        </p>
                         <div className="flex flex-wrap gap-y-8 justify-between text-[17px] source-sans-3-regular">
-                            {courseKeyFeatureOneData && (
+                            {course!.keyFeaturesOne && (
                                 <p className="w-[400px]">
                                     <span className="flex items-start gap-x-3">
-                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureOneData}
+                                        <CheckCircle size={25} className="text-[#347dfb]" />
+                                        {course!.keyFeaturesOne}
                                     </span>
                                 </p>
                             )}
-                            {courseKeyFeatureTwoData && (
+                            {course!.keyFeaturesTwo && (
                                 <p className="w-[400px]">
                                     <span className="flex items-start gap-x-3">
-                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureTwoData}
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {course!.keyFeaturesTwo}
                                     </span>
                                 </p>
                             )}
-                            {courseKeyFeatureThreeData && (
+                            {course!.keyFeaturesThree && (
                                 <p className="w-[400px]">
                                     <span className="flex items-start gap-x-3">
-                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureThreeData}
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {course!.keyFeaturesThree}
                                     </span>
                                 </p>
                             )}
-                            {courseKeyFeatureFourData && (
+                            {course!.keyFeaturesFour && (
                                 <p className="w-[400px]">
                                     <span className="flex items-start gap-x-3">
-                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureFourData}
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {course!.keyFeaturesFour}
                                     </span>
                                 </p>
                             )}
-                            {courseKeyFeatureFiveData && (
+                            {course!.keyFeaturesFive && (
                                 <p className="w-[400px]">
                                     <span className="flex items-start gap-x-3">
-                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureFiveData}
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {course!.keyFeaturesFive}
                                     </span>
                                 </p>
                             )}
-                            {courseKeyFeatureSixData && (
+                            {course!.keyFeaturesSix && (
                                 <p className="w-[400px]">
                                     <span className="flex items-start gap-x-3">
-                                        <CheckCircle size={25} className="text-[#347dfb]" /> {courseKeyFeatureSixData}
+                                        <CheckCircle size={25} className="text-[#347dfb]" /> {course!.keyFeaturesSix}
                                     </span>
                                 </p>
                             )}
@@ -323,34 +208,35 @@ const CourseDetails = ({
                             SKILLS COVERED
                         </p>
                         <p className="flex flex-wrap justify-between source-sans-3-regular text-lg">
-                            {courseSkillsCoveredOne && (
+                            {course!.skillsOne && (
                                 <span className="flex items-center gap-x-1 w-[400px]">
-                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredOne}
+                                    <Dot size={40} className="text-[#347dfb]" />
+                                    {course!.skillsOne}
                                 </span>
                             )}
-                            {courseSkillsCoveredTwo && (
+                            {course!.skillsTwo && (
                                 <span className="flex w-[400px] items-center gap-x-1">
-                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredTwo}
+                                    <Dot size={40} className="text-[#347dfb]" />  {course!.skillsTwo}
                                 </span>
                             )}
-                            {courseSkillsCoveredThree && (
+                            {course!.skillsThree && (
                                 <span className="flex w-[400px] items-center gap-x-1">
-                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredThree}
+                                    <Dot size={40} className="text-[#347dfb]" />  {course!.skillsThree}
                                 </span>
                             )}
-                            {courseSkillsCoveredFour && (
+                            {course!.skillsFour && (
                                 <span className="flex w-[400px] items-center gap-x-1">
-                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredFour}
+                                    <Dot size={40} className="text-[#347dfb]" />  {course!.skillsFour}
                                 </span>
                             )}
-                            {courseSkillsCoveredFive && (
+                            {course!.skillsFive && (
                                 <span className="flex w-[400px] items-center gap-x-1">
-                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredFive}
+                                    <Dot size={40} className="text-[#347dfb]" />  {course!.skillsFive}
                                 </span>
                             )}
-                            {courseSkillsCoveredSix && (
+                            {course!.skillsSix && (
                                 <span className="flex w-[400px] items-center gap-x-1">
-                                    <Dot size={40} className="text-[#347dfb]" />  {courseSkillsCoveredSix}
+                                    <Dot size={40} className="text-[#347dfb]" />  {course!.skillsSix}
                                 </span>
                             )}
                         </p>

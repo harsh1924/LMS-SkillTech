@@ -14,6 +14,7 @@ interface User {
 
 export default function useUser() {
     const [user, setUser] = useState<User | null>(null);
+    const [id, setId] = useState<string>("");
     const [error, setError] = useState<Error | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -22,6 +23,7 @@ export default function useUser() {
         try {
             const res = await axios.get('/api/user/user-details')
             setUser(res.data.user);
+            setId(res.data.user._id);
         } catch (err: unknown) {
             if (err instanceof Error) {
                 setError(err); // Set the error if it's an instance of Error
@@ -37,5 +39,5 @@ export default function useUser() {
         fetchUser()
     }, []);
 
-    return { user, error, loading }
+    return { id, user, error, loading }
 }

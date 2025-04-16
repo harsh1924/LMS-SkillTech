@@ -1,4 +1,4 @@
-export const courses = [
+export const courses: string[] = [
     "Software Development",
     "Data Science and Business Analytics",
     "Cyber Security",

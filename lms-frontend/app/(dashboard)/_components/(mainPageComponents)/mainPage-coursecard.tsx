@@ -36,14 +36,14 @@ export const MainPageCourseCard = ({
                     <div className="text-gray-500 text-sm source-sans-3-regular">
                         <p className="flex items-center gap-x-2">
                             <Check size={13}
-                                className="text-[#347dfb]" />                            {skillsOne}
+                                className="text-cardcheckblue" />                            {skillsOne}
                         </p>
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-[#347dfb]" />
+                            <Check size={13} className="text-cardcheckblue" />
                             {skillsTwo}
                         </p>
                         <p className="flex items-center gap-x-2">
-                            <Check size={13} className="text-[#347dfb]" />
+                            <Check size={13} className="text-cardcheckblue" />
                             {skillsThree}
                         </p>
                     </div>
@@ -58,7 +58,7 @@ export const MainPageCourseCard = ({
                             <span className="text-[13px]">
                                 Online Bootcamp
                             </span>
-                            <span className="text-[#347dfb] text-[13px]">
+                            <span className="text-cardcheckblue text-[13px]">
                                 Know More
                             </span>
                         </p>

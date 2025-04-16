@@ -8,6 +8,16 @@ interface CourseName {
     category: string
 }
 
+interface CourseData {
+    title: string;
+    imageUrl: string;
+    isPublished: boolean;
+    _id: string;
+    skillsOne: string;
+    skillsTwo: string;
+    duration: number
+}
+
 export const AllCoursesHoverList = ({
     category
 }: CourseName) => {
@@ -27,7 +37,7 @@ export const AllCoursesHoverList = ({
 
     return (
         <div className="flex flex-wrap gap-y-6 h-[430px] gap-x-6 overflow-y-scroll no-scrollbar">
-            {categoryCourses.map((course: { title: string; imageUrl: string; isPublished: boolean; _id: string; skillsOne: string; skillsTwo: string; duration: number }) =>
+            {categoryCourses.map((course: CourseData) =>
                 <AllHoverCoursesCard key={course._id} title={course.title} imageUrl={course.imageUrl} isPublihed={course.isPublished} courseId={course._id} skillsOne={course.skillsOne} skillsTwo={course.skillsTwo} duration={course.duration} />
             )}
         </div>

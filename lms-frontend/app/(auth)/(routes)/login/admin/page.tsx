@@ -1,11 +1,12 @@
 'use client';
 
-import { Logo } from "@/app/(dashboard)/_components/logo";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+
+import { Logo } from "@/app/(dashboard)/_components/logo";
 
 const LoginPage = () => {
 

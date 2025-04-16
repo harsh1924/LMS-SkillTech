@@ -1,6 +1,7 @@
+import ContactUsImage from '@/app/helpers/images/ContactUs.jpg'
+
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
-import ContactUsImage from '@/app/helpers/images/ContactUs.jpg'
 
 const ContactUsPage = () => {
     return (

@@ -8,6 +8,7 @@ import { HoverAllCourses } from "./all-course-hover";
 
 import '@/app/(dashboard)/dashboard.css'
 import { ResourcePage } from "./resource-page";
+
 import { Suspense } from "react";
 
 export const HomeNavbar = () => {

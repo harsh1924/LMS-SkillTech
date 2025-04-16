@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export const GetToken = (request: NextRequest) => {
+export const GetToken = () => {
     try {
         const cookie = cookies()
         const token = cookie.get('token')?.value || ''

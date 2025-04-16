@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 
 import axios from "axios";
@@ -5,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import useSWR from 'swr'
 import toast from "react-hot-toast";
 import { Suspense, useState } from "react";
+
 import { HomeNavbar } from "../(dashboard)/_components/(mainPageComponents)/navbar";
 import { SearchPageCourses } from "../(dashboard)/_components/search-page-courses";
 

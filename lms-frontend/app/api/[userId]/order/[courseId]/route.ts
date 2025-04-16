@@ -1,5 +1,6 @@
 import Razorpay from 'razorpay';
 import { NextRequest, NextResponse } from 'next/server';
+
 import userModel from '@/app/server/models/userModel';
 import courseModel from '@/app/server/models/courseModel';
 

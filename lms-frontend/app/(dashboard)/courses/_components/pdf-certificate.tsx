@@ -1,6 +1,7 @@
 import React from 'react'
 import jsPDF from 'jspdf'
 import { Base64 } from 'js-base64';
+
 import img from '@/app/helpers/images/Final Certificate-01.jpg'
 
 const generateCertificate = (name: string, course: string) => {

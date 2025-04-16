@@ -1,5 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
+
+import { NextRequest, NextResponse } from 'next/server';
+
 import userModel from '@/app/server/models/userModel';
 import courseModel from '@/app/server/models/courseModel';
 import purchaseModel from '@/app/server/models/purchaseModel';

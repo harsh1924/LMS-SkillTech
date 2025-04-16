@@ -1,5 +1,6 @@
-import courseModel from "@/app/server/models/courseModel";
 import { NextRequest, NextResponse } from "next/server";
+
+import courseModel from "@/app/server/models/courseModel";
 
 export async function PUT(request: NextRequest,
     { params }: {
@@ -9,7 +10,7 @@ export async function PUT(request: NextRequest,
     try {
         const courseId = params.courseId;
         const category = await request.json();
-        const course = await courseModel.findByIdAndUpdate(
+        await courseModel.findByIdAndUpdate(
             courseId,
             {
                 $set: category

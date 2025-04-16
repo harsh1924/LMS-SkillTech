@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import userModel from "@/app/server/models/userModel";
-import { NextRequest, NextResponse } from "next/server";
 
 connectToDB();
 
@@ -10,7 +11,7 @@ export async function PUT(request: NextRequest,
     try {
         const userId = params.userId;
         const values = await request.json();
-        const user = await userModel.findByIdAndUpdate(
+        await userModel.findByIdAndUpdate(
             userId,
             {
                 $set: values

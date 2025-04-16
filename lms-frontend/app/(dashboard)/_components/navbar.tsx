@@ -1,7 +1,9 @@
+import Link from "next/link"
+
 import { NavbarRoutes } from "@/app/(dashboard)/(mainuserpage)/profilee/[userId]/_components/navbar-routes"
+
 import { MobileSidebar } from "./mobileSidebar"
 import { Logo } from "./logo"
-import Link from "next/link"
 
 export const Navbar = () => {
     return (

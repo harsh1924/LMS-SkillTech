@@ -1,7 +1,5 @@
 'use client'
 
-import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
-import { Logo } from "@/app/(dashboard)/_components/logo";
 import axios from "axios";
 import { ArrowLeftCircle, IndianRupeeIcon } from "lucide-react";
 import Image from "next/image";
@@ -9,6 +7,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+
+import { Logo } from "@/app/(dashboard)/_components/logo";
+import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
 
 const AddFreeCourse = ({
     params

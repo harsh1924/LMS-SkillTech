@@ -7,6 +7,7 @@ const courses = [
 ]
 
 import { Separator } from "@/components/ui/separator";
+
 import { Logo } from "./logo";
 import { SearchPage } from "./(mainPageComponents)/SeacrhInput";
 

@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import axios from "axios";
+import Link from "next/link";
+
 import { AdminMainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/admin-allCourse-page";
 import { cn } from "@/lib/utils";
-import axios from "axios";
 import courseModel from "@/app/server/models/courseModel";
 import LoadingState from "@/app/(dashboard)/_components/LoadingState";
-import Link from "next/link";
+
 
 const courses = [
     'All Courses',

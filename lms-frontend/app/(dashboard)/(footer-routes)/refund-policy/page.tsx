@@ -1,4 +1,5 @@
 import { Separator } from "@radix-ui/react-dropdown-menu";
+
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 

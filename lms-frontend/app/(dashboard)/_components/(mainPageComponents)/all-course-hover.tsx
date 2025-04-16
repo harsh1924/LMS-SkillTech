@@ -1,11 +1,13 @@
 'use client'
 
-import { cn } from "@/lib/utils";
-import { AllCoursesHoverList } from "./all-course-hover-courses"
 import { useState } from "react"
-import { Separator } from "@/components/ui/separator"
 import Link from "next/link";
+
+import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils";
 import { courses } from "@/app/data/courses"
+
+import { AllCoursesHoverList } from "./all-course-hover-courses"
 
 export const HoverAllCourses = () => {
 

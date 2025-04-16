@@ -1,5 +1,6 @@
-import userModel from "@/app/server/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
+
+import userModel from "@/app/server/models/userModel";
 
 export async function GET(request: NextRequest, { params }: {
     params: { userId: string }

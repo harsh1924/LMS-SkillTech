@@ -1,6 +1,7 @@
 import courseModel from "@/app/server/models/courseModel";
-import { LectureTitleForm } from "../../../../_components/lecture-title-form";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
+
+import { LectureTitleForm } from "../../../../_components/lecture-title-form";
 import { LectureDescriptionForm } from "../../../../_components/lecture-description-form";
 import { LectureVideoForm } from "../../../../_components/lecture-video-form";
 

@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 

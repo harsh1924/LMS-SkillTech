@@ -1,15 +1,18 @@
 'use client'
 
 import { Separator } from "@/components/ui/separator";
+
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 
 import '@/app/(dashboard)/dashboard.css'
-import { Footer } from "../../_components/(mainPageComponents)/footer";
 import Link from "next/link";
 import { useState } from "react";
+
 import { cn } from "@/lib/utils";
 import { resourceCourses } from "@/app/data/resourceCourses"
 import { courses } from "@/app/data/courses"
+
+import { Footer } from "../../_components/(mainPageComponents)/footer";
 
 const ResourcePages = () => {
 

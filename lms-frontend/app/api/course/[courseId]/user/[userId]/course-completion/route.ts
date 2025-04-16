@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import courseModel from "@/app/server/models/courseModel";
 import userModel from "@/app/server/models/userModel";
-import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(request: NextRequest, {
     params

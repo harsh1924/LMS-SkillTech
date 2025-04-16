@@ -1,11 +1,9 @@
-import { Book, Cloud, Computer, ComputerIcon, Laptop, WashingMachine } from "lucide-react";
-import { Footer } from "../../_components/(mainPageComponents)/footer";
-import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
-
 import Bharti from '@/app/helpers/images/Team/Bharti.jpg'
 import Akhil from '@/app/helpers/images/Team/Akhil.png'
 import Rakesh from '@/app/helpers/images/Team/Rakesh.jpg'
 
+import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
+import { Footer } from "../../_components/(mainPageComponents)/footer";
 
 const AboutUsPage = () => {
     return (

@@ -1,11 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 // @ts-nocheck
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         // const { searchParams } = new URL(req.url);
         // console.log(searchParams);
@@ -21,7 +22,7 @@ export async function GET(req: NextRequest) {
 
         return new (ImageResponse as any)(
             <div tw="flex flex-col w-full h-full bg-white">
-                <img src={imageData} tw="w-full h-full" />
+                <img src={imageData} tw="w-full h-full" alt="Img" />
                 {/* <div tw="flex flex-col px-6 pt-3">
                     <span tw="font-light text-2xl">
                         {title}

@@ -1,6 +1,7 @@
+import InstructorImage from '@/app/helpers/images/Instructor-images/Instructor1.jpg'
+
 import { Footer } from "../../_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
-import InstructorImage from '@/app/helpers/images/Instructor-images/Instructor1.jpg'
 
 const InstructorForm = () => {
     return (

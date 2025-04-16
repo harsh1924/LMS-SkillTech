@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { HomeNavbar } from "../../_components/(mainPageComponents)/navbar";
 import '@/app/(dashboard)/dashboard.css'
 import { Footer } from "../../_components/(mainPageComponents)/footer";

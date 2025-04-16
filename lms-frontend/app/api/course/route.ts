@@ -1,10 +1,8 @@
-import connectToDB from "@/app/server/dbconfig/dbconfig";
-import userModel from "@/app/server/models/userModel";
+/* eslint-disable import/no-unresolved */
 import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from 'bcryptjs'
-import jwt from 'jsonwebtoken'
+
 import courseModel from "@/app/server/models/courseModel";
-import { NextApiRequest } from "next";
+import connectToDB from "@/app/server/dbconfig/dbconfig";
 
 connectToDB();
 

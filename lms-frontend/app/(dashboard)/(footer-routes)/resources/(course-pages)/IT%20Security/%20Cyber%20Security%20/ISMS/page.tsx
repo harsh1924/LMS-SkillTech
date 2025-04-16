@@ -1,5 +1,6 @@
 import { Footer } from "@/app/(dashboard)/_components/(mainPageComponents)/footer";
 import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
+
 import Image from '@/app/helpers/images/images-1.jpeg'
 const ITPage = () => {
     return (

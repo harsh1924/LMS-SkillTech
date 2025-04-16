@@ -1,11 +1,12 @@
 'use client'
 
-import { Player } from "@/app/(dashboard)/learn/[userId]/_components/ReactPlayer"
 import axios from "axios"
 import { Pen, Trash2Icon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import YouTube from 'react-youtube';
+
+import { Player } from "@/app/(dashboard)/learn/[userId]/_components/ReactPlayer"
 
 interface courseData {
     title: string,

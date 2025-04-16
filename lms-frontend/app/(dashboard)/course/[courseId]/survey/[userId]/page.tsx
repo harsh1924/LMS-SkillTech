@@ -1,11 +1,12 @@
 'use client'
 
-import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
-import courseModel from "@/app/server/models/courseModel";
-import userModel from "@/app/server/models/userModel";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+
+import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
+import courseModel from "@/app/server/models/courseModel";
+import userModel from "@/app/server/models/userModel";
 
 const SurveyPage = ({
     params

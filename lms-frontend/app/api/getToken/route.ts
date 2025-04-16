@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import { GetToken } from "@/app/helpers/getToken";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
-import { NextRequest, NextResponse } from "next/server";
 
 connectToDB()
 

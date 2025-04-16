@@ -1,9 +1,10 @@
 "use client"
 
 import { BriefcaseBusiness, Info, PersonStanding, Smartphone } from "lucide-react";
+import Link from "next/link";
+
 import { HomeSidebarItem } from "./home-sidebar-items";
 import { Logo } from "../logo";
-import Link from "next/link";
 
 const HomeRoutes = [
     {

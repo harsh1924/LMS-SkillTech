@@ -1,11 +1,12 @@
+import { LayoutDashboard, Trash2 } from "lucide-react";
+import Link from "next/link";
+
 import courseModel from "@/app/server/models/courseModel";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { PublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/publish-course-button";
 import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/unpublish-course-button";
+import { Separator } from "@/components/ui/separator";
 
-import { LayoutDashboard, Trash2 } from "lucide-react";
-
-import Link from "next/link";
 import { DurationForm } from "../../_components/(extra-details)/duration-form";
 import { OverviewForm } from "../../_components/(extra-details)/overview-form";
 import { KeyFeaturesOneForm } from "../../_components/(extra-details)/(features)/key-feature-one";
@@ -20,7 +21,6 @@ import { SkillsThree } from "../../_components/(extra-details)/(skills-covered)/
 import { SkillsFour } from "../../_components/(extra-details)/(skills-covered)/skills-four";
 import { SkillsFive } from "../../_components/(extra-details)/(skills-covered)/skills-five";
 import { SkillsSix } from "../../_components/(extra-details)/(skills-covered)/skills-six";
-import { Separator } from "@/components/ui/separator";
 import { CardOne } from "../../_components/(extra-details)/(course-details-cards.tsx)/card-one";
 import { CardTwo } from "../../_components/(extra-details)/(course-details-cards.tsx)/card-two";
 import { CardThree } from "../../_components/(extra-details)/(course-details-cards.tsx)/card-three";

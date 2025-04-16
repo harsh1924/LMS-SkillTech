@@ -1,6 +1,7 @@
 import { Facebook, Instagram, LinkedinIcon } from "lucide-react"
-import XLogo from '@/app/helpers/images/Xlogo.webp'
 import Link from "next/link"
+
+import XLogo from '@/app/helpers/images/Xlogo.webp'
 
 export const Footer = () => {
     return (

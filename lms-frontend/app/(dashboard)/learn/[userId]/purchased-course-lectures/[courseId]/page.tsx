@@ -1,13 +1,15 @@
+import { ChevronLeft, DownloadIcon, Percent } from "lucide-react";
+import Link from "next/link";
+
 import { LectureList } from "@/app/(user)/(lectures)/lecture-list";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
 import userModel from "@/app/server/models/userModel";
-import { ChevronLeft, DownloadIcon, Percent } from "lucide-react";
-import Link from "next/link";
 
 
 import '@/app/(dashboard)/dashboard.css'
 import { Logo } from "@/app/(dashboard)/_components/logo";
+
 import { Player } from "../../_components/ReactPlayer";
 
 const PurchasedCourseLecture = async ({

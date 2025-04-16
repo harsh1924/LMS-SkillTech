@@ -1,11 +1,11 @@
-import { HomeNavbar } from "@/app/(dashboard)/_components/(mainPageComponents)/navbar";
+import { ArrowLeftCircle, PanelLeftDashed } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
 import { CourseEnrollButton } from "@/app/(dashboard)/_components/course-enroll-button";
 import { Logo } from "@/app/(dashboard)/_components/logo";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
-import { ArrowLeftCircle, PanelLeftDashed } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 
 connectToDB();
 

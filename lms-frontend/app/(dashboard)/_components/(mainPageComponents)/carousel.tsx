@@ -1,5 +1,9 @@
 'use client'
 
+import Autoplay from "embla-carousel-autoplay"
+import * as React from "react"
+import Link from "next/link"
+
 import {
     Carousel,
     CarouselContent,
@@ -7,11 +11,9 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
-import * as React from "react"
 import { Courses } from "@/app/data/carouselCourses"
 import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
+
 
 export const HomePageCarousel = () => {
 

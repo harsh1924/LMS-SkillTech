@@ -1,8 +1,9 @@
 "use client"
 
 import { BarChart, GraduationCapIcon, Laptop, Layout, LineChart, List, NotebookPenIcon } from "lucide-react";
-import { SidebarItem } from "./sidebaritem";
 import { usePathname } from "next/navigation";
+
+import { SidebarItem } from "./sidebaritem";
 
 const guestRoutes = [
     {

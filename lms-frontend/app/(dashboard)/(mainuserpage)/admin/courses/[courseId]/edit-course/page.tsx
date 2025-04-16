@@ -1,12 +1,12 @@
+import { LayoutDashboard, Trash2 } from "lucide-react";
+import Link from "next/link";
+
 import courseModel from "@/app/server/models/courseModel";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { PublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/publish-course-button";
 import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/unpublish-course-button";
-
-import { LayoutDashboard, Trash2 } from "lucide-react";
-
-import Link from "next/link";
 import userModel from "@/app/server/models/userModel";
+
 import { TitleForm } from "../_components/title-form";
 import { PriceForm } from "../_components/price-form";
 import { CategoryForm } from "../_components/category-form";

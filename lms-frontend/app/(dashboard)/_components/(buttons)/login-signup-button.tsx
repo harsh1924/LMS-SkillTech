@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
+import { UserCircle2Icon } from "lucide-react"
 
 import {
     DropdownMenu,
@@ -14,7 +15,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { UserCircle2Icon } from "lucide-react"
 
 
 export const LoginButtons = () => {

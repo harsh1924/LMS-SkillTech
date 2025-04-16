@@ -1,12 +1,13 @@
 "use client"
 
-import { Logo } from "@/app/(dashboard)/_components/logo";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { NextResponse } from "next/server";
 import { useState } from "react";
 import toast from "react-hot-toast";
+
+import { Logo } from "@/app/(dashboard)/_components/logo";
 
 export default function SignInPage() {
 

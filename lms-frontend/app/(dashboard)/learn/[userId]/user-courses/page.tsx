@@ -1,5 +1,4 @@
 import { UserPurchasedCoursesCard } from "@/app/(dashboard)/_components/(user-purchased-courses)/user-purcahased-course";
-
 import courseModel from "@/app/server/models/courseModel";
 import purchaseModel from "@/app/server/models/purchaseModel";
 

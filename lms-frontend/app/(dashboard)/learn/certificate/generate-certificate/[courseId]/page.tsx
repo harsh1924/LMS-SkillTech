@@ -1,7 +1,6 @@
 'use client'
 
 import '@/app/helpers/Certificate.css'
-import certificateImage from '@/app/helpers/images/Final Certificate-01.jpg'
 
 import {
     FacebookShareButton,
@@ -9,18 +8,18 @@ import {
     TwitterIcon,
     TwitterShareButton,
 } from "react-share";
-
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 import Image from 'next/image';
 import axios from 'axios';
-
 import {
     FacebookIcon,
 } from 'next-share'
 import { Linkedin } from 'lucide-react';
-import { Logo } from '@/app/(dashboard)/_components/logo';
 import { usePathname } from 'next/navigation';
+
+import { Logo } from '@/app/(dashboard)/_components/logo';
+import certificateImage from '@/app/helpers/images/Final Certificate-01.jpg'
 import CertificateGenerator from '@/app/(dashboard)/courses/_components/pdf-certificate';
 import LoadingState from '@/app/(dashboard)/_components/LoadingState';
 

@@ -1,19 +1,19 @@
+import { LayoutDashboard, Trash2 } from "lucide-react";
+import Link from "next/link";
+
 import courseModel from "@/app/server/models/courseModel";
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import { PublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/publish-course-button";
 import { UnPublishCourseButton } from "@/app/(dashboard)/_components/(buttons)/unpublish-course-button";
-
-import { LayoutDashboard, Trash2 } from "lucide-react";
-
-import Link from "next/link";
 import { CategoryForm } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/category-form";
 import { CreatedByForm } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/createdBy-form";
 import { DescriptionForm } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/description-form";
 import { ImageForm } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/image-form";
-import { TitleForm } from "../_components/title-form";
-import { PriceForm } from "../_components/price-form";
 import { AttachmentForm } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/attachment-form";
 import { ResourceForm } from "@/app/(dashboard)/(mainuserpage)/admin/courses/[courseId]/_components/resource-form";
+
+import { TitleForm } from "../_components/title-form";
+import { PriceForm } from "../_components/price-form";
 
 connectToDB();
 

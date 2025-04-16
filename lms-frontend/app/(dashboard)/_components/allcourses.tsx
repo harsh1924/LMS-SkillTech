@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from "react";
-import { MainPageCourses } from "./(mainPageComponents)/mainpage-courses";
+
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { courses } from "@/app/data/courses"
+
+import { MainPageCourses } from "./(mainPageComponents)/mainpage-courses";
 
 const GetAllCourses = () => {
 

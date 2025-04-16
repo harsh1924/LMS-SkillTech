@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import LogoImage from '@/app/helpers/images/BlueLogo.png'
 
 export const Logo = () => {

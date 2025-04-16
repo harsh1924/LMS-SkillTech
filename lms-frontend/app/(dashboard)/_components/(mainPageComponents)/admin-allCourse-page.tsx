@@ -2,6 +2,7 @@
 
 import axios from "axios"
 import { useEffect, useState } from "react"
+
 import AdminAllCourseCard from "../(admin-analytics)/admin-allCourses-card"
 
 interface CourseName {

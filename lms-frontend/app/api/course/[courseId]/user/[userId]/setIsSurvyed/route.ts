@@ -1,7 +1,8 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
 import userModel from "@/app/server/models/userModel";
-import { NextRequest, NextResponse } from "next/server";
 
 connectToDB();
 

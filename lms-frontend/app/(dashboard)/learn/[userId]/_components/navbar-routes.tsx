@@ -5,8 +5,11 @@ import axios from "axios";
 import '@/app/(dashboard)/dashboard.css'
 
 import { usePathname, useRouter } from "next/navigation";
-
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import { LogOut, UserCircle2Icon } from "lucide-react";
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -15,11 +18,6 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
-import toast from "react-hot-toast";
-import { useEffect, useState } from "react";
-
-import { LogOut, UserCircle2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 

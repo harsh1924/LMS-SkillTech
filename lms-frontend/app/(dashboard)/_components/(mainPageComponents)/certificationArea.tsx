@@ -1,5 +1,6 @@
-import { Separator } from "@/components/ui/separator";
 import { Book, Clock, Notebook, PersonStanding } from "lucide-react";
+
+import { Separator } from "@/components/ui/separator";
 
 const CertificationArea = () => {
     return (

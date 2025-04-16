@@ -1,6 +1,8 @@
+import { Layout } from "lucide-react";
+
 import connectToDB from "@/app/server/dbconfig/dbconfig";
 import courseModel from "@/app/server/models/courseModel";
-import { Layout } from "lucide-react";
+
 import { LectureCard } from "../../../_components/lecture-card";
 
 connectToDB();

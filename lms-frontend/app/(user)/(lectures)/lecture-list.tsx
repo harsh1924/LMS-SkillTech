@@ -1,13 +1,11 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
-import { Check, Play, PlayCircle } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Check } from "lucide-react";
+import { useEffect, useRef } from "react"
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { OKIcon } from "react-share";
 
 interface LectureData {
     title: string,
@@ -38,7 +36,7 @@ export const LectureList = ({
 
     const setLecture = async () => {
         try {
-            const res = await axios.put(`/api/user/${userId}/setLectureURL/course/${courseId}/lecture?lectureId=${id}`)
+            await axios.put(`/api/user/${userId}/setLectureURL/course/${courseId}/lecture?lectureId=${id}`)
             router.refresh();
         } catch (error: any) {
             console.log(error.message);

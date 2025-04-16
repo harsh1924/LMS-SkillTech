@@ -1,12 +1,11 @@
 "use client";
 
 import axios from "axios";
-
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
+import { LogOut, UserCircle2Icon } from "lucide-react";
 
 import {
     DropdownMenu,
@@ -18,6 +17,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import '@/app/(dashboard)/dashboard.css'
+import { Button } from "@/components/ui/button";
+
 import { NameForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/name-form";
 import { LastNameForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/last-name-form";
 import { EmailForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/email-form";
@@ -25,8 +26,6 @@ import { PhoneNumberForm } from "../(mainuserpage)/admin/courses/[courseId]/_com
 import { AddressForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/address-form";
 import { SearchPage } from "../_components/(mainPageComponents)/SeacrhInput";
 import { Logo } from "../_components/logo";
-import { LogOut, UserCircle2Icon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { HoverAllCourses } from "../_components/(mainPageComponents)/all-course-hover";
 
 const userIdPage = () => {

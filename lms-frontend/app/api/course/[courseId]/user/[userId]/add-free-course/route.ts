@@ -1,8 +1,9 @@
+import { NextRequest, NextResponse } from "next/server";
+
 import sendEmail from "@/app/helpers/mailer";
 import courseModel from "@/app/server/models/courseModel";
 import purchaseModel from "@/app/server/models/purchaseModel";
 import userModel from "@/app/server/models/userModel";
-import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest, {
     params

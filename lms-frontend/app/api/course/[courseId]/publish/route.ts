@@ -1,5 +1,6 @@
-import courseModel from "@/app/server/models/courseModel";
 import { NextRequest, NextResponse } from "next/server";
+
+import courseModel from "@/app/server/models/courseModel";
 
 export async function PUT(req: NextRequest,
     { params }: {
@@ -7,7 +8,7 @@ export async function PUT(req: NextRequest,
     }
 ) {
     try {
-        const course = await courseModel.findByIdAndUpdate(
+        await courseModel.findByIdAndUpdate(
             params.courseId,
         {
             'isPublished': true

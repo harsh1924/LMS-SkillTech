@@ -1,5 +1,6 @@
-import courseModel from "@/app/server/models/courseModel";
 import { NextRequest, NextResponse } from "next/server";
+
+import courseModel from "@/app/server/models/courseModel";
 
 export async function PUT(request: NextRequest,
     { params }: { params: { courseId: string; lectureId: string } }

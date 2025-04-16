@@ -2,6 +2,7 @@
 
 import axios from "axios"
 import { useEffect, useState } from "react"
+
 import { MainPageCourseCard } from "./mainPage-coursecard"
 
 interface CourseName {

@@ -1,14 +1,16 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import axios from "axios";
+
 import { Separator } from "@/components/ui/separator";
 import { MainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/mainpage-courses";
 import { AdminMainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/admin-allCourse-page";
 import { cn } from "@/lib/utils";
 import { TrainerMainPageCourses } from "@/app/(dashboard)/_components/(mainPageComponents)/trainer-allCourse-page";
-import Link from "next/link";
 import LoadingState from "@/app/(dashboard)/_components/LoadingState";
-import axios from "axios";
+
 
 const courses = [
     'All Courses',

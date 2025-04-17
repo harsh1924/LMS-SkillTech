@@ -1,27 +1,27 @@
 {
   "extends": [
-    // "next/babel",
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:import/errors"
+    "next/babel",
+    "next/core-web-vitals"
+    // "eslint:recommended",
+    // "plugin:import/errors"
   ],
   "plugins": ["import"],
   "rules": {
     "import/no-unresolved": "off",
     "no-unused-vars": "off",
-    "@next/next/no-img-element": "off",
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          ["sibling", "parent"],
-          "index"
-        ],
-        "newlines-between": "always"
-      }
-    ]
+    "@next/next/no-img-element": "off"
+    // "import/order": [
+    //   "error",
+    //   {
+    //     "groups": [
+    //       "builtin",
+    //       "external",
+    //       "internal",
+    //       ["sibling", "parent"],
+    //       "index"
+    //     ],
+    //     "newlines-between": "always"
+    //   }
+    // ]
   }
 }

@@ -7,18 +7,6 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { LogOut, UserCircle2Icon } from "lucide-react";
 
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-import '@/app/(dashboard)/dashboard.css'
-import { Button } from "@/components/ui/button";
-
 import { NameForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/name-form";
 import { LastNameForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/last-name-form";
 import { EmailForm } from "../(mainuserpage)/admin/courses/[courseId]/_components/(edit-user-details)/email-form";
@@ -28,7 +16,18 @@ import { SearchPage } from "../_components/(mainPageComponents)/SeacrhInput";
 import { Logo } from "../_components/logo";
 import { HoverAllCourses } from "../_components/(mainPageComponents)/all-course-hover";
 
-const userIdPage = () => {
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import '@/app/(dashboard)/dashboard.css'
+import { Button } from "@/components/ui/button";
+
+const UserIdPage = () => {
 
     const router = useRouter();
     const pathname = usePathname();
@@ -294,4 +293,4 @@ const userIdPage = () => {
     );
 }
 
-export default userIdPage;
+export default UserIdPage;

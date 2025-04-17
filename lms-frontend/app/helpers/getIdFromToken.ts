@@ -9,12 +9,12 @@ export const GetIdFromToken = (request: NextRequest) => {
             const decodedToken: any = jwt.verify(token, process.env.JWT_SECRET!)
             return decodedToken.id
         }
-        // if (decodedToken) {
+        // if (decodedToken) { 
         // }
         return NextResponse.json({
-            message: 'jo'
+            message: 'Done'
         })
-
+  
     } catch (error: any) {
         return NextResponse.json({
             error: error.message

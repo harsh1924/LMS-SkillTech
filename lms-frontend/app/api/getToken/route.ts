@@ -7,7 +7,7 @@ connectToDB()
 
 export async function GET(request: NextRequest) {
     try {
-        const token = await GetToken(request)
+        const token = await GetToken()
 
         return NextResponse.json({
             message: 'Token',
